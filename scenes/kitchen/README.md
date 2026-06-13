@@ -21,6 +21,6 @@ A detailed kitchen interior converted from PBRT v4 to glTF. It is useful for che
 
 - Use the extended glTF for clearcoat, transmission, IOR, and emissive-strength data.
 - Texture image maps are converted from TGA to embedded PNG.
-- Blinds transmittance and displacement details are preserved as metadata (such as the Bread word on the toaster).
+-Blinds transmittance and displacement details are preserved as metadata, including the "Bread" text on the toaster.
 - Area lights are represented with emissive mesh geometry.
 - Spectral metals and glass behavior are approximations; exact mappings are in the conversion report.

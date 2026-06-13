@@ -2,7 +2,7 @@
 
 ![Staircase reference](source/TungstenRender.png)
 
-A wooden staircase interior converted from PBRT v4 to glTF. It is useful for checking dense textured geometry, portrait camera conversion, clearcoat-style materials, glass, GI, and emissive mesh lighting
+A wooden staircase interior converted from PBRT v4 to glTF. It is useful for checking dense textured geometry, portrait camera conversion, clearcoat-style materials, glass, GI, and emissive mesh lighting.
 
 ## Source
 

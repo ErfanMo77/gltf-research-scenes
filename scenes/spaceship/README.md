@@ -2,7 +2,7 @@
 
 ![Spaceship reference](source/TungstenRender.png)
 
-A compact science-fiction model converted from PBRT v4 to glTF. Good scene for checking metallic materials, glass fallback behavior, emissive area-light approximations.
+A compact science-fiction model converted from PBRT v4 to glTF. Good for checking metallic materials, glass fallback behavior, emissive area-light approximations.
 
 ## Source
 

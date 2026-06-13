@@ -1,10 +1,10 @@
 # glTF Research Scenes
 
-glTF 2.0 adaptations of commonly used graphics research scenes, with conversion metadata and known limitations.
+glTF 2.0 versions of commonly used graphics research scenes, with conversion metadata and documented limitations.
 
-Many well-known research scenes are distributed in renderer-specific formats such as PBRT. These formats are excellent for offline rendering, but they are not always convenient for real-time engines, ray-tracing and path-tracing experiments, importer tests, or custom renderer prototypes.
+Many well-known research scenes are distributed in renderer-specific formats such as PBRT. Those formats are useful for offline rendering, but less convenient for real-time engines, ray-tracing and path-tracing experiments, importer tests, and custom renderer prototypes.
 
-This repository provides glTF 2.0 adaptations of research scenes so they are easier to inspect, load, compare, and reuse. The original source scenes remain the reference; the glTF outputs are documented approximations.
+This repository provides glTF 2.0 adaptations of those scenes so they are easier to inspect, load, compare, and reuse. The original source scenes remain the reference; the glTF outputs are documented approximations.
 
 Each scene includes the generated glTF assets and metadata describing how the conversion was done. The scenes are converted with Python scripts, then manually checked against the original files and available reference renders.
 
