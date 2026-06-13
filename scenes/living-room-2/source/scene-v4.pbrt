@@ -1,0 +1,850 @@
+Integrator "path"
+    "integer maxdepth" [ 33 ]
+Transform [ 0.900688 -0.0159147 -0.434176 -0 9.31322e-10 0.999329 -0.0366305 -0 -0.434467 -0.0329926 -0.900083 -0 0.657822 -1.07117 6.58634 1  ]
+Sampler "sobol"
+    "integer pixelsamples" [ 64 ]
+PixelFilter "triangle"
+    "float xradius" [ 1 ]
+    "float yradius" [ 1 ]
+Film "rgb"
+    "string filename" [ "living-room-2.png" ]
+    "integer yresolution" [ 720 ]
+    "integer xresolution" [ 1280 ]
+Camera "perspective"
+    "float fov" [ 58.715508 ]
+
+
+WorldBegin
+
+Texture "Texture01" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/radio-dial-idea.tga" ]
+Texture "Texture02" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/wood4.tga" ]
+Texture "Texture03" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/cushion-purple-yellow-stripe.tga" ]
+Texture "Texture04" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/cushion-green-circles.tga" ]
+Texture "Texture05" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/cushion-stripe-purple.tga" ]
+Texture "Texture06" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/shade-stripes.tga" ]
+Texture "Texture07" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/apple.tga" ]
+Texture "Texture08" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/book-spines.tga" ]
+Texture "Texture09" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/Shade-paper.tga" ]
+Texture "Texture10" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/carpet-text3b.tga" ]
+Texture "Texture11" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/picture11-vert.tga" ]
+Texture "Texture12" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/Frame.tga" ]
+Texture "Texture13" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/Frame.tga" ]
+Texture "Texture14" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/Frame.tga" ]
+Texture "Texture15" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/Frame.tga" ]
+Texture "Texture16" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/picure4-grey.tga" ]
+Texture "Texture17" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/radio-dial-idea.tga" ]
+MakeNamedMaterial "RadioDialRed"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture01" ]
+MakeNamedMaterial "RadioHandle"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.389509 0.372589 0.293747 ]
+MakeNamedMaterial "RadioInside"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.015078 0.015078 0.015078 ]
+MakeNamedMaterial "RadioKnob"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.358375 0.300936 0.128617 ]
+MakeNamedMaterial "RadioMetalRing"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.640514 0.625417 0.580126 ]
+MakeNamedMaterial "RadioSurround"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.066822 0.028495 0.013827 ]
+MakeNamedMaterial "Floor"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.15 ]
+    "float uroughness" [ 0.15 ]
+    "texture reflectance" [ "Texture02" ]
+MakeNamedMaterial "SofaLeather"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "rgb reflectance" [ 0.79311 0.79311 0.79311 ]
+MakeNamedMaterial "Cushion3"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture03" ]
+MakeNamedMaterial "Cushion"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture04" ]
+MakeNamedMaterial "Cushion1"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture05" ]
+MakeNamedMaterial "LampshaderOuter"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture06" ]
+MakeNamedMaterial "LampStand"
+    "string type" [ "coateddiffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+    "float vroughness" [ 0.001 ]
+    "float uroughness" [ 0.001 ]
+    "bool remaproughness" [ false ]
+MakeNamedMaterial "Dishes"
+    "string type" [ "coateddiffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+    "float vroughness" [ 0.001 ]
+    "float uroughness" [ 0.001 ]
+    "bool remaproughness" [ false ]
+MakeNamedMaterial "Ceramic"
+    "string type" [ "coateddiffuse" ]
+    "rgb reflectance" [ 1 1 1 ]
+    "float vroughness" [ 0.001 ]
+    "float uroughness" [ 0.001 ]
+    "bool remaproughness" [ false ]
+MakeNamedMaterial "Magazine"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.217638 0.217638 0.217638 ]
+MakeNamedMaterial "Apple"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture07" ]
+MakeNamedMaterial "Books"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture08" ]
+MakeNamedMaterial "LoveLettersBack"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.078431 0.039216 0.039216 ]
+MakeNamedMaterial "LoveLetters"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+MakeNamedMaterial "WhitePaint"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.15 ]
+    "float uroughness" [ 0.15 ]
+    "rgb reflectance" [ 1 1 1 ]
+MakeNamedMaterial "Walls"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.6 0.6 0.6 ]
+MakeNamedMaterial "TvScreen"
+    "string type" [ "coateddiffuse" ]
+    "rgb reflectance" [ 0.005 0.005 0.005 ]
+    "float vroughness" [ 0.05 ]
+    "float uroughness" [ 0.05 ]
+    "bool remaproughness" [ false ]
+MakeNamedMaterial "TvBevel"
+    "string type" [ "dielectric" ]
+    "float eta" [ 1.5 ]
+    "bool remaproughness" [ false ]
+MakeNamedMaterial "BlackRaughtIron"
+    "string type" [ "conductor" ]
+    "float vroughness" [ 0.4 ]
+    "float uroughness" [ 0.4 ]
+    "bool remaproughness" [ false ]
+    "rgb k" [ 3.500678 2.604865 2.273193 ]
+    "rgb eta" [ 4.370703 3.300297 2.998267 ]
+MakeNamedMaterial "SmallPictureFrame"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.01 0.01 0.01 ]
+MakeNamedMaterial "CeilingLampshade"
+    "string type" [ "diffusetransmission" ]
+    "float scale" [ 0.5 ]
+    "texture transmittance" [ "Texture09" ]
+    "texture reflectance" [ "Texture09" ]
+MakeNamedMaterial "LightFitting"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+MakeNamedMaterial "CeilingShadeWire"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+MakeNamedMaterial "Carpet"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture10" ]
+MakeNamedMaterial "RadioPlastic"
+    "string type" [ "coateddiffuse" ]
+    "rgb reflectance" [ 0.64 0.600153 0.43449 ]
+    "float vroughness" [ 0.001 ]
+    "float uroughness" [ 0.001 ]
+    "bool remaproughness" [ false ]
+MakeNamedMaterial "PictureFrame"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+MakeNamedMaterial "Picture"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture11" ]
+MakeNamedMaterial "SmallPictureD"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture12" ]
+MakeNamedMaterial "SmallPictureA"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture13" ]
+MakeNamedMaterial "SmallPictureB"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture14" ]
+MakeNamedMaterial "SmallPictureC"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture15" ]
+MakeNamedMaterial "Socket"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+MakeNamedMaterial "LargePicture"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture16" ]
+MakeNamedMaterial "RadiatorPanelsEnamel"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.15 ]
+    "float uroughness" [ 0.15 ]
+    "rgb reflectance" [ 0.79311 0.79311 0.79311 ]
+MakeNamedMaterial "RadiatorKnobOuter"
+    "string type" [ "conductor" ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "bool remaproughness" [ false ]
+MakeNamedMaterial "BlindStringKnob"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+MakeNamedMaterial "BlindString"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+MakeNamedMaterial "BlindMaterial"
+    "string type" [ "diffusetransmission" ]
+MakeNamedMaterial "CandleHolders"
+    "string type" [ "dielectric" ]
+    "float eta" [ 1.5 ]
+    "bool remaproughness" [ false ]
+MakeNamedMaterial "RadioGlass"
+    "string type" [ "dielectric" ]
+MakeNamedMaterial "RadioDialLine"
+    "string type" [ "conductor" ]
+    "float roughness" [ 0 ]
+    "spectrum eta" [ "metal-Ag-eta" ]
+    "spectrum k" [ "metal-Ag-k" ]
+MakeNamedMaterial "BushLogo"
+    "string type" [ "conductor" ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "bool remaproughness" [ false ]
+    "rgb k" [ 9.223869 6.269523 4.837001 ]
+    "rgb eta" [ 1.65746 0.880369 0.521229 ]
+MakeNamedMaterial "ChromeHandle"
+    "string type" [ "conductor" ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "bool remaproughness" [ false ]
+    "rgb k" [ 9.223869 6.269523 4.837001 ]
+    "rgb eta" [ 1.65746 0.880369 0.521229 ]
+MakeNamedMaterial "DrawerHandles"
+    "string type" [ "conductor" ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "bool remaproughness" [ false ]
+    "rgb k" [ 9.223869 6.269523 4.837001 ]
+    "rgb eta" [ 1.65746 0.880369 0.521229 ]
+MakeNamedMaterial "DullSteel"
+    "string type" [ "conductor" ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "bool remaproughness" [ false ]
+    "rgb k" [ 9.223869 6.269523 4.837001 ]
+    "rgb eta" [ 1.65746 0.880369 0.521229 ]
+MakeNamedMaterial "LampshadeInner"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.684615 0.684615 0.684615 ]
+MakeNamedMaterial "BlindEnds"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+MakeNamedMaterial "BlindWoodStrip"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+MakeNamedMaterial "Steel"
+    "string type" [ "conductor" ]
+    "float roughness" [ 0 ]
+    "spectrum eta" [ "metal-Ag-eta" ]
+    "spectrum k" [ "metal-Ag-k" ]
+MakeNamedMaterial "BlackMarble"
+    "string type" [ "dielectric" ]
+    "float eta" [ 1.5 ]
+    "bool remaproughness" [ false ]
+MakeNamedMaterial "TableLegs"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+MakeNamedMaterial "RadiatorBase"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "rgb reflectance" [ 1 1 1 ]
+MakeNamedMaterial "RadiatorKnobCentre"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+MakeNamedMaterial "RadioDialBack"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture17" ]
+MakeNamedMaterial "RadioEdges"
+    "string type" [ "conductor" ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "bool remaproughness" [ false ]
+    "rgb k" [ 9.223869 6.269523 4.837001 ]
+    "rgb eta" [ 1.65746 0.880369 0.521229 ]
+MakeNamedMaterial "Table"
+    "string type" [ "coateddiffuse" ]
+    "rgb reflectance" [ 1 1 1 ]
+    "float vroughness" [ 0.001 ]
+    "float uroughness" [ 0.001 ]
+    "bool remaproughness" [ false ]
+NamedMaterial "LampStand"
+AttributeBegin
+    Transform [ 1 0 0 0 0 1 0 0 0 0 1 0 0.1 0 0 1  ]
+    Shape "plymesh"
+        "string filename" [ "models/Mesh138.ply" ]
+AttributeEnd
+NamedMaterial "Walls"
+Shape "trianglemesh"
+    "point2 uv" [ 0 0 1 0 1 1 0 1 
+        ]
+    "normal N" [ 0 1.6932e-9 1 0 1.6932e-9 1 0 1.6932e-9 1 0 1.6932e-9 1 ]
+    "point3 P" [ -1.97219 -0.166445 8.18283 1.68657 -0.166445 8.18283 1.68657 3.22509 
+                 8.18283 -1.97219 3.22509 8.18283 ]
+    "integer indices" [ 0 1 2 0 2 3 ]
+NamedMaterial "CandleHolders"
+Shape "plymesh"
+    "string filename" [ "models/Mesh113.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh087.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh110.ply" ]
+NamedMaterial "Magazine"
+Shape "plymesh"
+    "string filename" [ "models/Mesh128.ply" ]
+NamedMaterial "LampshadeInner"
+AttributeBegin
+    Transform [ 1 0 0 0 0 1 0 0 0 0 1 0 0.1 0 0 1  ]
+    Shape "plymesh"
+        "string filename" [ "models/Mesh095.ply" ]
+AttributeEnd
+NamedMaterial "Apple"
+Shape "plymesh"
+    "string filename" [ "models/Mesh076.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh108.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh080.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh166.ply" ]
+NamedMaterial "Ceramic"
+Shape "plymesh"
+    "string filename" [ "models/Mesh088.ply" ]
+NamedMaterial "LoveLettersBack"
+Shape "plymesh"
+    "string filename" [ "models/Mesh059.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh073.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh099.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh103.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh155.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh065.ply" ]
+NamedMaterial "LoveLetters"
+Shape "plymesh"
+    "string filename" [ "models/Mesh069.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh090.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh063.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh062.ply" ]
+NamedMaterial "SmallPictureC"
+Shape "plymesh"
+    "string filename" [ "models/Mesh068.ply" ]
+NamedMaterial "SmallPictureFrame"
+Shape "plymesh"
+    "string filename" [ "models/Mesh131.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh098.ply" ]
+NamedMaterial "SmallPictureB"
+Shape "plymesh"
+    "string filename" [ "models/Mesh056.ply" ]
+NamedMaterial "SmallPictureA"
+Shape "plymesh"
+    "string filename" [ "models/Mesh077.ply" ]
+NamedMaterial "SmallPictureFrame"
+Shape "plymesh"
+    "string filename" [ "models/Mesh055.ply" ]
+NamedMaterial "Cushion1"
+Shape "plymesh"
+    "string filename" [ "models/Mesh118.ply" ]
+NamedMaterial "LightFitting"
+Shape "plymesh"
+    "string filename" [ "models/Mesh064.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh052.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh112.ply" ]
+NamedMaterial "CeilingShadeWire"
+Shape "plymesh"
+    "string filename" [ "models/Mesh066.ply" ]
+NamedMaterial "CeilingLampshade"
+Shape "plymesh"
+    "string filename" [ "models/Mesh122.ply" ]
+NamedMaterial "SmallPictureFrame"
+Shape "plymesh"
+    "string filename" [ "models/Mesh127.ply" ]
+NamedMaterial "SmallPictureD"
+Shape "plymesh"
+    "string filename" [ "models/Mesh129.ply" ]
+NamedMaterial "Books"
+Shape "plymesh"
+    "string filename" [ "models/Mesh132.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh140.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh156.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh135.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh175.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh136.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh078.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh141.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh147.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh071.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh148.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh149.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh150.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh153.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh109.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh083.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh157.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh159.ply" ]
+NamedMaterial "WhitePaint"
+Shape "plymesh"
+    "string filename" [ "models/Mesh161.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh143.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh176.ply" ]
+NamedMaterial "DrawerHandles"
+Shape "plymesh"
+    "string filename" [ "models/Mesh107.ply" ]
+NamedMaterial "WhitePaint"
+Shape "plymesh"
+    "string filename" [ "models/Mesh139.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh162.ply" ]
+NamedMaterial "TvBevel"
+Shape "plymesh"
+    "string filename" [ "models/Mesh126.ply" ]
+NamedMaterial "TvScreen"
+Shape "plymesh"
+    "string filename" [ "models/Mesh152.ply" ]
+NamedMaterial "Cushion3"
+Shape "plymesh"
+    "string filename" [ "models/Mesh104.ply" ]
+NamedMaterial "SofaLeather"
+Shape "plymesh"
+    "string filename" [ "models/Mesh167.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh091.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh145.ply" ]
+NamedMaterial "Cushion"
+Shape "plymesh"
+    "string filename" [ "models/Mesh160.ply" ]
+NamedMaterial "LampshaderOuter"
+AttributeBegin
+    Transform [ 1 0 0 0 0 1 0 0 0 0 1 0 0.1 0 0 1  ]
+    Shape "plymesh"
+        "string filename" [ "models/Mesh171.ply" ]
+AttributeEnd
+NamedMaterial "WhitePaint"
+Shape "plymesh"
+    "string filename" [ "models/Mesh092.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh067.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh172.ply" ]
+NamedMaterial "DrawerHandles"
+Shape "plymesh"
+    "string filename" [ "models/Mesh173.ply" ]
+NamedMaterial "Table"
+Shape "plymesh"
+    "string filename" [ "models/Mesh177.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh054.ply" ]
+NamedMaterial "Socket"
+Shape "plymesh"
+    "string filename" [ "models/Mesh165.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh100.ply" ]
+NamedMaterial "PictureFrame"
+Shape "plymesh"
+    "string filename" [ "models/Mesh096.ply" ]
+NamedMaterial "LargePicture"
+Shape "plymesh"
+    "string filename" [ "models/Mesh169.ply" ]
+NamedMaterial "Socket"
+Shape "plymesh"
+    "string filename" [ "models/Mesh085.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh116.ply" ]
+NamedMaterial "Picture"
+Shape "plymesh"
+    "string filename" [ "models/Mesh105.ply" ]
+NamedMaterial "PictureFrame"
+Shape "plymesh"
+    "string filename" [ "models/Mesh170.ply" ]
+NamedMaterial "BlindStringKnob"
+Shape "plymesh"
+    "string filename" [ "models/Mesh179.ply" ]
+NamedMaterial "BlindString"
+Shape "plymesh"
+    "string filename" [ "models/Mesh125.ply" ]
+NamedMaterial "BlindEnds"
+Shape "plymesh"
+    "string filename" [ "models/Mesh144.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh072.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh124.ply" ]
+NamedMaterial "BlindWoodStrip"
+Shape "plymesh"
+    "string filename" [ "models/Mesh050.ply" ]
+NamedMaterial "BlindMaterial"
+Shape "plymesh"
+    "string filename" [ "models/Mesh117.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh047.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh046.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh045.ply" ]
+NamedMaterial "BlindWoodStrip"
+Shape "plymesh"
+    "string filename" [ "models/Mesh043.ply" ]
+NamedMaterial "BlindEnds"
+Shape "plymesh"
+    "string filename" [ "models/Mesh070.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh042.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh041.ply" ]
+NamedMaterial "BlindString"
+Shape "plymesh"
+    "string filename" [ "models/Mesh039.ply" ]
+NamedMaterial "BlindStringKnob"
+Shape "plymesh"
+    "string filename" [ "models/Mesh038.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh037.ply" ]
+NamedMaterial "BlindString"
+Shape "plymesh"
+    "string filename" [ "models/Mesh036.ply" ]
+NamedMaterial "BlindEnds"
+Shape "plymesh"
+    "string filename" [ "models/Mesh034.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh033.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh031.ply" ]
+NamedMaterial "BlindWoodStrip"
+Shape "plymesh"
+    "string filename" [ "models/Mesh094.ply" ]
+NamedMaterial "BlindMaterial"
+Shape "plymesh"
+    "string filename" [ "models/Mesh102.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh058.ply" ]
+NamedMaterial "Steel"
+Shape "plymesh"
+    "string filename" [ "models/Mesh030.ply" ]
+NamedMaterial "BlackRaughtIron"
+Shape "plymesh"
+    "string filename" [ "models/Mesh028.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh027.ply" ]
+NamedMaterial "Steel"
+Shape "plymesh"
+    "string filename" [ "models/Mesh026.ply" ]
+NamedMaterial "BlackRaughtIron"
+Shape "plymesh"
+    "string filename" [ "models/Mesh097.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh035.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh024.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh023.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh089.ply" ]
+NamedMaterial "WhitePaint"
+Shape "plymesh"
+    "string filename" [ "models/Mesh022.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh137.ply" ]
+NamedMaterial "BlackMarble"
+Shape "plymesh"
+    "string filename" [ "models/Mesh121.ply" ]
+NamedMaterial "WhitePaint"
+Shape "plymesh"
+    "string filename" [ "models/Mesh021.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh115.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh120.ply" ]
+NamedMaterial "Walls"
+Shape "plymesh"
+    "string filename" [ "models/Mesh020.ply" ]
+NamedMaterial "Floor"
+Shape "plymesh"
+    "string filename" [ "models/Mesh019.ply" ]
+NamedMaterial "WhitePaint"
+Shape "plymesh"
+    "string filename" [ "models/Mesh017.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh016.ply" ]
+NamedMaterial "Walls"
+Shape "plymesh"
+    "string filename" [ "models/Mesh015.ply" ]
+NamedMaterial "WhitePaint"
+Shape "plymesh"
+    "string filename" [ "models/Mesh119.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh014.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh151.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh013.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh111.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh101.ply" ]
+NamedMaterial "Socket"
+Shape "plymesh"
+    "string filename" [ "models/Mesh011.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh053.ply" ]
+NamedMaterial "SofaLeather"
+Shape "plymesh"
+    "string filename" [ "models/Mesh010.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh082.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh086.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh134.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh057.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh081.ply" ]
+NamedMaterial "Cushion1"
+Shape "plymesh"
+    "string filename" [ "models/Mesh114.ply" ]
+NamedMaterial "Carpet"
+Shape "plymesh"
+    "string filename" [ "models/Mesh008.ply" ]
+NamedMaterial "Table"
+Shape "plymesh"
+    "string filename" [ "models/Mesh158.ply" ]
+NamedMaterial "DrawerHandles"
+Shape "plymesh"
+    "string filename" [ "models/Mesh174.ply" ]
+NamedMaterial "TableLegs"
+Shape "plymesh"
+    "string filename" [ "models/Mesh079.ply" ]
+NamedMaterial "Table"
+Shape "plymesh"
+    "string filename" [ "models/Mesh007.ply" ]
+NamedMaterial "RadiatorBase"
+Shape "plymesh"
+    "string filename" [ "models/Mesh006.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh005.ply" ]
+NamedMaterial "RadiatorKnobOuter"
+Shape "plymesh"
+    "string filename" [ "models/Mesh032.ply" ]
+NamedMaterial "RadiatorKnobCentre"
+Shape "plymesh"
+    "string filename" [ "models/Mesh025.ply" ]
+NamedMaterial "RadiatorPanelsEnamel"
+Shape "plymesh"
+    "string filename" [ "models/Mesh168.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh146.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh049.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh040.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh130.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh075.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh164.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh044.ply" ]
+NamedMaterial "Dishes"
+Shape "plymesh"
+    "string filename" [ "models/Mesh004.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh003.ply" ]
+NamedMaterial "DullSteel"
+Shape "plymesh"
+    "string filename" [ "models/Mesh061.ply" ]
+NamedMaterial "Ceramic"
+Shape "plymesh"
+    "string filename" [ "models/Mesh002.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh051.ply" ]
+NamedMaterial "RadioHandle"
+Shape "plymesh"
+    "string filename" [ "models/Mesh123.ply" ]
+NamedMaterial "RadioPlastic"
+Shape "plymesh"
+    "string filename" [ "models/Mesh178.ply" ]
+NamedMaterial "BushLogo"
+Shape "plymesh"
+    "string filename" [ "models/Mesh084.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh012.ply" ]
+NamedMaterial "RadioDialLine"
+Shape "plymesh"
+    "string filename" [ "models/Mesh001.ply" ]
+NamedMaterial "RadioDialBack"
+Shape "plymesh"
+    "string filename" [ "models/Mesh018.ply" ]
+NamedMaterial "RadioDialRed"
+Shape "plymesh"
+    "string filename" [ "models/Mesh000.ply" ]
+NamedMaterial "RadioMetalRing"
+Shape "plymesh"
+    "string filename" [ "models/Mesh074.ply" ]
+NamedMaterial "RadioGlass"
+Shape "plymesh"
+    "string filename" [ "models/Mesh106.ply" ]
+NamedMaterial "RadioPlastic"
+Shape "plymesh"
+    "string filename" [ "models/Mesh029.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh163.ply" ]
+NamedMaterial "ChromeHandle"
+Shape "plymesh"
+    "string filename" [ "models/Mesh154.ply" ]
+NamedMaterial "RadioPlastic"
+Shape "plymesh"
+    "string filename" [ "models/Mesh060.ply" ]
+NamedMaterial "RadioInside"
+Shape "plymesh"
+    "string filename" [ "models/Mesh048.ply" ]
+NamedMaterial "RadioKnob"
+Shape "plymesh"
+    "string filename" [ "models/Mesh009.ply" ]
+NamedMaterial "RadioSurround"
+Shape "plymesh"
+    "string filename" [ "models/Mesh093.ply" ]
+NamedMaterial "RadioEdges"
+Shape "plymesh"
+    "string filename" [ "models/Mesh133.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh142.ply" ]
+
+AttributeBegin
+    AreaLightSource "diffuse"
+        "rgb L" [ 13.748016 13.748016 13.748016 ]
+    Material "diffuse"
+        "rgb reflectance" [ 0 0 0 ]
+    Shape "trianglemesh"
+        "point2 uv" [ 0 0 1 0 1 1 0 1 
+            ]
+        "normal N" [ 0 9.99625e-8 1 0 9.99625e-8 1 0 9.99625e-8 1 0 9.99625e-8 1 ]
+        "point3 P" [ -0.209076 1.14136 0.383951 0.636219 1.14136 0.383951 0.636219 
+                     2.78479 0.383951 -0.209076 2.78479 0.383951 ]
+        "integer indices" [ 0 1 2 0 2 3 ]
+AttributeEnd
+
+AttributeBegin
+    AreaLightSource "diffuse"
+        "rgb L" [ 17.776966 17.776966 17.776966 ]
+    Material "diffuse"
+        "rgb reflectance" [ 0 0 0 ]
+    Shape "trianglemesh"
+        "point2 uv" [ 0 0 1 0 1 1 0 1 
+            ]
+        "normal N" [ 0.480773 1.08723e-7 0.876845 0.480773 1.08723e-7 0.876845 0.480773 
+                     1.08723e-7 0.876845 0.480773 1.08723e-7 0.876845 ]
+        "point3 P" [ -1.31115 1.12488 0.813454 -0.751105 1.12488 0.506383 -0.751106 
+                     2.80696 0.506383 -1.31115 2.80696 0.813454 ]
+        "integer indices" [ 0 1 2 0 2 3 ]
+AttributeEnd
+
+AttributeBegin
+    AreaLightSource "diffuse"
+        "rgb L" [ 17.776964 17.776964 17.776964 ]
+    Material "diffuse"
+        "rgb reflectance" [ 0 0 0 ]
+    Shape "trianglemesh"
+        "point2 uv" [ 0 0 1 0 1 1 0 1 
+            ]
+        "normal N" [ -0.475159 1.0859e-7 0.8799 -0.475159 1.0859e-7 0.8799 -0.475159 
+                     1.0859e-7 0.8799 -0.475159 1.0859e-7 0.8799 ]
+        "point3 P" [ 1.17484 1.12488 0.507193 1.73683 1.12488 0.810679 1.73683 2.80696 
+                     0.810679 1.17484 2.80696 0.507193 ]
+        "integer indices" [ 0 1 2 0 2 3 ]
+AttributeEnd
+
+AttributeBegin
+    AreaLightSource "diffuse"
+        "rgb L" [ 1.08059 1.08059 1.08059 ]
+    Material "diffuse"
+        "rgb reflectance" [ 0 0 0 ]
+    Shape "trianglemesh"
+        "point2 uv" [ 0 0 1 0 1 1 0 1 
+            ]
+        "normal N" [ 1.50996e-7 2.12385e-7 -1 1.50996e-7 2.12385e-7 -1 1.50996e-7 
+                     2.12385e-7 -1 1.50996e-7 2.12385e-7 -1 ]
+        "point3 P" [ 1.37697 1.06634 8.14201 -1.67652 1.06634 8.14201 -1.67652 2.99574 
+                     8.14201 1.37697 2.99574 8.14201 ]
+        "integer indices" [ 0 1 2 0 2 3 ]
+AttributeEnd

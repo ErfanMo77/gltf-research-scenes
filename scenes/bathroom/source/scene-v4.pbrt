@@ -1,0 +1,1995 @@
+Integrator "path"
+    "integer maxdepth" [ 17 ]
+Transform [ 0.659198 0.0116337 -0.751879 -0 -4.65661e-10 0.99988 0.015471 -0 -0.751969 0.0101985 -0.659119 -0 -0.175909 -0.910059 -0.158677 1  ]
+Sampler "sobol"
+    "integer pixelsamples" [ 64 ]
+PixelFilter "triangle"
+    "float xradius" [ 1 ]
+    "float yradius" [ 1 ]
+Film "rgb"
+    "string filename" [ "bathroom.png" ]
+    "integer yresolution" [ 1024 ]
+    "integer xresolution" [ 1024 ]
+Camera "perspective"
+    "float fov" [ 55 ]
+
+
+WorldBegin
+
+Texture "Texture01" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/rug.tga" ]
+Texture "Texture02" "float" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/rug_mask.tga" ]
+Texture "Texture03" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/wood.tga" ]
+Texture "Texture04" "float" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/floor_tiles.tga" ]
+Texture "Texture05" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/floor_tiles.tga" ]
+Texture "Texture06" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/marble.tga" ]
+Texture "Texture07" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/wood2.tga" ]
+Texture "Texture08" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/picture1.tga" ]
+Texture "Texture09" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/wallpaper-1.tga" ]
+Texture "Texture10" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/wood.tga" ]
+Texture "Texture11" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/wallpaper-2.tga" ]
+Texture "Texture12" "float" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/foam_bump.tga" ]
+MakeNamedMaterial "Rug"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture01" ]
+MakeNamedMaterial "Wood"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.15 ]
+    "float uroughness" [ 0.15 ]
+    "texture reflectance" [ "Texture03" ]
+MakeNamedMaterial "Mirror"
+    "string type" [ "conductor" ]
+    "float roughness" [ 0 ]
+    "spectrum eta" [ "metal-Ag-eta" ]
+    "spectrum k" [ "metal-Ag-k" ]
+MakeNamedMaterial "StainlessSmooth"
+    "string type" [ "conductor" ]
+    "bool remaproughness" [ false ]
+    "rgb k" [ 9.223869 6.269523 4.837001 ]
+    "rgb eta" [ 1.65746 0.880369 0.521229 ]
+MakeNamedMaterial "Bathtube"
+    "string type" [ "coateddiffuse" ]
+    "rgb reflectance" [ 0.612066 0.612066 0.612066 ]
+    "float vroughness" [ 0.001 ]
+    "float uroughness" [ 0.001 ]
+    "bool remaproughness" [ false ]
+MakeNamedMaterial "StainlessRough"
+    "string type" [ "conductor" ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "bool remaproughness" [ false ]
+    "rgb k" [ 9.223869 6.269523 4.837001 ]
+    "rgb eta" [ 1.65746 0.880369 0.521229 ]
+MakeNamedMaterial "Floor"
+    "string type" [ "coateddiffuse" ]
+    "texture displacement" [ "Texture04" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.2 ]
+    "float uroughness" [ 0.2 ]
+    "texture reflectance" [ "Texture05" ]
+MakeNamedMaterial "Pots"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "rgb reflectance" [ 0.00631 0.00631 0.00631 ]
+MakeNamedMaterial "Marble"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture06" ]
+MakeNamedMaterial "BulbGlass"
+    "string type" [ "dielectric" ]
+MakeNamedMaterial "BlackPlastic"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.2 ]
+    "float uroughness" [ 0.2 ]
+    "rgb reflectance" [ 0.00631 0.00631 0.00631 ]
+MakeNamedMaterial "Blinds"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.893289 0.893289 0.893289 ]
+MakeNamedMaterial "WoodFrame"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture07" ]
+MakeNamedMaterial "Painting3"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.058187 0.03423 0.017936 ]
+MakeNamedMaterial "Painting1"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture08" ]
+MakeNamedMaterial "Painting4"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.047776 0.020951 0.007155 ]
+MakeNamedMaterial "Light"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0 0 0 ]
+MakeNamedMaterial "GreyWall"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.893289 0.893289 0.893289 ]
+MakeNamedMaterial "WhiteWood"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "rgb reflectance" [ 0.893289 0.893289 0.893289 ]
+MakeNamedMaterial "Ceiling"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.684615 0.684615 0.684615 ]
+MakeNamedMaterial "Wallpaper"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture09" ]
+MakeNamedMaterial "Leaves"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.573159 0.215764 0.022013 ]
+MakeNamedMaterial "LeaveStems"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.063815 0.022013 0.001202 ]
+MakeNamedMaterial "Vase"
+    "string type" [ "coateddiffuse" ]
+    "rgb reflectance" [ 0.612066 0.612066 0.612066 ]
+    "float vroughness" [ 0.001 ]
+    "float uroughness" [ 0.001 ]
+    "bool remaproughness" [ false ]
+MakeNamedMaterial "WindowFrame"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.00631 0.00631 0.00631 ]
+MakeNamedMaterial "Paper"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+MakeNamedMaterial "WoodDiffuse"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture10" ]
+MakeNamedMaterial "Painting2"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture11" ]
+MakeNamedMaterial "MetalPlate"
+    "string type" [ "conductor" ]
+    "float vroughness" [ 0.05 ]
+    "float uroughness" [ 0.05 ]
+    "bool remaproughness" [ false ]
+    "rgb k" [ 9.223869 6.269523 4.837001 ]
+    "rgb eta" [ 1.65746 0.880369 0.521229 ]
+MakeNamedMaterial "BlindsString"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+MakeNamedMaterial "Gold"
+    "string type" [ "conductor" ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "bool remaproughness" [ false ]
+    "rgb k" [ 3.36846 1.943489 1.102012 ]
+    "rgb eta" [ 1.648469 1.150448 1.379779 ]
+MakeNamedMaterial "Foam"
+    "string type" [ "diffuse" ]
+    "texture displacement" [ "Texture12" ]
+    "rgb reflectance" [ 0.531049 0.531049 0.531049 ]
+NamedMaterial "StainlessRough"
+Shape "plymesh"
+    "string filename" [ "models/Mesh381.ply" ]
+NamedMaterial "StainlessSmooth"
+Shape "plymesh"
+    "string filename" [ "models/Mesh252.ply" ]
+NamedMaterial "Foam"
+Shape "plymesh"
+    "string filename" [ "models/Mesh238.ply" ]
+NamedMaterial "WhiteWood"
+Shape "plymesh"
+    "string filename" [ "models/Mesh633.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh235.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh351.ply" ]
+NamedMaterial "Wood"
+Shape "plymesh"
+    "string filename" [ "models/Mesh233.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh688.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh444.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh101.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh151.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh308.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh327.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh341.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh290.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh080.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh227.ply" ]
+
+AttributeBegin
+    AreaLightSource "diffuse"
+        "rgb L" [ 30 30 30 ]
+    NamedMaterial "Light"
+    Shape "trianglemesh"
+        "point2 uv" [ 0 0 1 0 1 1 0 1 
+            ]
+        "normal N" [ 1 6.70844e-8 -4.37114e-8 1 6.70844e-8 -4.37114e-8 1 6.70844e-8 
+                     -4.37114e-8 1 6.70844e-8 -4.37114e-8 ]
+        "point3 P" [ -2.89823 0.40504 -0.74107 -2.89823 0.40504 -2.04425 -2.89823 
+                     2.40504 -2.04425 -2.89823 2.40504 -0.74107 ]
+        "integer indices" [ 0 1 2 0 2 3 ]
+AttributeEnd
+NamedMaterial "BulbGlass"
+Shape "plymesh"
+    "string filename" [ "models/Mesh309.ply" ]
+NamedMaterial "BlackPlastic"
+Shape "plymesh"
+    "string filename" [ "models/Mesh199.ply" ]
+NamedMaterial "BulbGlass"
+Shape "plymesh"
+    "string filename" [ "models/Mesh342.ply" ]
+NamedMaterial "Light"
+Shape "plymesh"
+    "string filename" [ "models/Mesh317.ply" ]
+NamedMaterial "BulbGlass"
+Shape "plymesh"
+    "string filename" [ "models/Mesh726.ply" ]
+NamedMaterial "Light"
+Shape "plymesh"
+    "string filename" [ "models/Mesh540.ply" ]
+NamedMaterial "BulbGlass"
+Shape "plymesh"
+    "string filename" [ "models/Mesh276.ply" ]
+NamedMaterial "BlackPlastic"
+Shape "plymesh"
+    "string filename" [ "models/Mesh349.ply" ]
+NamedMaterial "BulbGlass"
+Shape "plymesh"
+    "string filename" [ "models/Mesh254.ply" ]
+NamedMaterial "BlackPlastic"
+Shape "plymesh"
+    "string filename" [ "models/Mesh229.ply" ]
+NamedMaterial "BulbGlass"
+Shape "plymesh"
+    "string filename" [ "models/Mesh359.ply" ]
+NamedMaterial "Light"
+Shape "plymesh"
+    "string filename" [ "models/Mesh166.ply" ]
+NamedMaterial "Paper"
+Shape "plymesh"
+    "string filename" [ "models/Mesh369.ply" ]
+NamedMaterial "Painting1"
+Shape "plymesh"
+    "string filename" [ "models/Mesh372.ply" ]
+NamedMaterial "Wood"
+Shape "plymesh"
+    "string filename" [ "models/Mesh793.ply" ]
+NamedMaterial "StainlessSmooth"
+Shape "plymesh"
+    "string filename" [ "models/Mesh378.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh380.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh363.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh046.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh118.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh345.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh251.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh219.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh589.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh659.ply" ]
+NamedMaterial "Marble"
+Shape "plymesh"
+    "string filename" [ "models/Mesh344.ply" ]
+NamedMaterial "Mirror"
+Shape "plymesh"
+    "string filename" [ "models/Mesh602.ply" ]
+NamedMaterial "Wood"
+Shape "plymesh"
+    "string filename" [ "models/Mesh367.ply" ]
+NamedMaterial "Rug"
+Shape "plymesh"
+    "texture alpha" [ "Texture02" ]
+    "string filename" [ "models/Mesh206.ply" ]
+NamedMaterial "WoodDiffuse"
+Shape "plymesh"
+    "string filename" [ "models/Mesh031.ply" ]
+NamedMaterial "Gold"
+Shape "plymesh"
+    "string filename" [ "models/Mesh515.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh377.ply" ]
+NamedMaterial "Painting2"
+Shape "plymesh"
+    "string filename" [ "models/Mesh205.ply" ]
+NamedMaterial "BlackPlastic"
+Shape "plymesh"
+    "string filename" [ "models/Mesh424.ply" ]
+NamedMaterial "MetalPlate"
+Shape "plymesh"
+    "string filename" [ "models/Mesh425.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh474.ply" ]
+NamedMaterial "Painting3"
+Shape "plymesh"
+    "string filename" [ "models/Mesh209.ply" ]
+NamedMaterial "Painting4"
+Shape "plymesh"
+    "string filename" [ "models/Mesh203.ply" ]
+NamedMaterial "Blinds"
+Shape "plymesh"
+    "string filename" [ "models/Mesh263.ply" ]
+NamedMaterial "BlindsString"
+Shape "plymesh"
+    "string filename" [ "models/Mesh405.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh253.ply" ]
+NamedMaterial "Blinds"
+Shape "plymesh"
+    "string filename" [ "models/Mesh197.ply" ]
+NamedMaterial "WindowFrame"
+Shape "plymesh"
+    "string filename" [ "models/Mesh052.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh629.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh268.ply" ]
+NamedMaterial "Vase"
+Shape "plymesh"
+    "string filename" [ "models/Mesh195.ply" ]
+NamedMaterial "LeaveStems"
+Shape "plymesh"
+    "string filename" [ "models/Mesh295.ply" ]
+NamedMaterial "Leaves"
+Shape "plymesh"
+    "string filename" [ "models/Mesh434.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh193.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh357.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh136.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh450.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh269.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh592.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh192.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh191.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh331.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh297.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh343.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh304.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh815.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh293.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh282.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh226.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh189.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh463.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh709.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh361.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh247.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh236.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh595.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh301.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh386.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh387.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh324.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh299.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh126.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh763.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh217.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh390.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh244.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh392.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh393.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh336.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh218.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh401.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh577.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh364.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh259.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh409.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh414.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh320.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh816.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh224.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh723.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh210.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh036.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh419.ply" ]
+NamedMaterial "LeaveStems"
+Shape "plymesh"
+    "string filename" [ "models/Mesh421.ply" ]
+NamedMaterial "Leaves"
+Shape "plymesh"
+    "string filename" [ "models/Mesh699.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh404.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh590.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh608.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh427.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh430.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh111.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh412.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh432.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh439.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh440.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh433.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh575.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh473.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh447.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh064.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh137.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh220.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh354.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh415.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh438.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh250.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh853.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh454.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh033.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh456.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh458.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh394.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh200.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh462.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh841.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh330.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh464.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh468.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh728.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh820.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh472.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh242.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh504.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh476.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh053.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh484.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh311.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh485.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh232.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh162.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh365.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh489.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh264.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh582.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh491.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh493.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh167.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh461.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh437.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh285.ply" ]
+NamedMaterial "LeaveStems"
+Shape "plymesh"
+    "string filename" [ "models/Mesh497.ply" ]
+NamedMaterial "Leaves"
+Shape "plymesh"
+    "string filename" [ "models/Mesh465.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh410.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh667.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh370.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh068.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh211.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh411.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh294.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh321.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh507.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh514.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh179.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh516.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh358.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh606.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh183.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh180.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh501.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh178.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh355.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh176.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh175.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh174.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh460.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh172.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh284.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh420.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh266.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh124.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh170.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh744.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh455.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh249.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh169.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh429.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh204.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh448.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh332.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh313.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh165.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh642.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh100.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh267.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh164.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh163.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh469.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh146.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh337.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh161.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh160.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh154.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh318.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh152.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh442.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh481.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh045.ply" ]
+NamedMaterial "LeaveStems"
+Shape "plymesh"
+    "string filename" [ "models/Mesh500.ply" ]
+NamedMaterial "Leaves"
+Shape "plymesh"
+    "string filename" [ "models/Mesh148.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh145.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh107.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh142.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh079.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh721.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh724.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh129.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh128.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh486.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh123.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh201.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh093.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh799.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh121.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh119.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh553.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh431.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh373.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh490.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh114.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh185.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh325.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh216.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh112.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh049.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh085.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh374.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh138.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh159.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh110.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh551.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh449.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh215.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh399.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh196.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh134.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh248.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh466.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh271.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh106.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh104.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh495.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh347.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh102.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh208.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh243.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh622.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh673.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh801.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh231.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh099.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh258.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh322.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh260.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh092.ply" ]
+NamedMaterial "LeaveStems"
+Shape "plymesh"
+    "string filename" [ "models/Mesh090.ply" ]
+NamedMaterial "Leaves"
+Shape "plymesh"
+    "string filename" [ "models/Mesh087.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh832.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh720.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh400.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh082.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh181.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh529.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh078.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh117.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh509.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh255.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh077.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh225.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh122.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh303.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh656.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh482.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh687.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh083.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh483.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh075.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh073.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh646.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh116.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh156.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh705.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh506.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh237.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh071.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh823.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh069.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh418.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh329.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh065.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh240.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh188.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh738.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh063.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh280.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh062.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh061.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh141.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh060.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh849.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh144.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh312.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh305.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh133.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh067.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh479.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh730.ply" ]
+NamedMaterial "LeaveStems"
+Shape "plymesh"
+    "string filename" [ "models/Mesh648.ply" ]
+NamedMaterial "Leaves"
+Shape "plymesh"
+    "string filename" [ "models/Mesh207.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh499.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh057.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh452.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh487.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh055.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh155.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh139.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh054.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh413.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh222.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh095.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh127.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh310.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh830.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh278.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh422.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh669.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh048.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh214.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh089.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh212.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh086.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh047.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh459.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh292.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh043.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh070.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh279.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh042.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh040.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh423.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh619.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh503.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh202.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh694.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh108.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh616.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh035.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh113.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh034.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh428.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh105.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh652.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh528.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh477.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh296.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh288.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh030.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh028.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh389.ply" ]
+NamedMaterial "LeaveStems"
+Shape "plymesh"
+    "string filename" [ "models/Mesh027.ply" ]
+NamedMaterial "Leaves"
+Shape "plymesh"
+    "string filename" [ "models/Mesh150.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh051.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh025.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh024.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh754.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh356.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh022.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh518.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh519.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh520.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh710.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh522.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh526.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh527.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh319.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh532.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh533.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh508.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh534.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh536.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh538.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh467.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh541.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh543.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh352.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh512.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh545.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh023.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh539.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh029.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh547.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh544.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh376.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh548.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh362.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh475.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh157.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh549.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh554.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh517.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh555.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh125.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh109.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh239.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh076.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh556.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh557.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh634.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh559.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh561.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh562.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh088.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh395.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh563.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh565.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh568.ply" ]
+NamedMaterial "LeaveStems"
+Shape "plymesh"
+    "string filename" [ "models/Mesh569.ply" ]
+NamedMaterial "Leaves"
+Shape "plymesh"
+    "string filename" [ "models/Mesh072.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh571.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh572.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh573.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh574.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh576.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh182.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh579.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh581.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh059.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh283.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh446.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh570.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh583.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh586.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh591.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh593.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh594.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh348.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh597.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh601.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh605.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh607.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh186.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh115.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh609.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh610.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh612.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh558.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh050.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh190.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh614.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh850.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh812.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh617.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh470.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh618.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh620.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh621.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh158.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh623.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh492.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh435.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh624.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh625.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh135.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh627.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh657.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh306.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh782.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh628.ply" ]
+NamedMaterial "LeaveStems"
+Shape "plymesh"
+    "string filename" [ "models/Mesh834.ply" ]
+NamedMaterial "Leaves"
+Shape "plymesh"
+    "string filename" [ "models/Mesh631.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh326.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh245.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh636.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh505.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh791.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh637.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh391.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh638.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh639.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh265.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh230.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh748.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh228.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh168.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh766.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh478.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh643.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh647.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh261.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh796.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh768.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh649.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh651.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh789.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh653.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh655.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh658.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh660.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh234.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh314.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh661.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh177.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh626.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh131.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh662.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh494.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh396.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh663.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh081.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh032.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh664.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh560.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh665.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh416.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh471.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh281.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh674.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh666.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh670.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh671.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh672.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh675.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh397.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh511.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh388.ply" ]
+NamedMaterial "LeaveStems"
+Shape "plymesh"
+    "string filename" [ "models/Mesh676.ply" ]
+NamedMaterial "Leaves"
+Shape "plymesh"
+    "string filename" [ "models/Mesh678.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh453.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh198.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh598.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh513.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh679.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh680.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh681.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh718.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh701.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh683.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh340.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh241.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh256.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh684.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh221.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh689.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh690.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh691.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh692.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh350.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh530.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh693.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh368.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh496.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh686.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh546.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh406.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh695.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh379.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh382.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh074.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh696.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh697.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh700.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh613.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh702.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh644.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh704.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh677.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh706.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh707.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh708.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh525.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh603.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh566.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh058.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh091.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh366.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh712.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh587.ply" ]
+NamedMaterial "LeaveStems"
+Shape "plymesh"
+    "string filename" [ "models/Mesh426.ply" ]
+NamedMaterial "Leaves"
+Shape "plymesh"
+    "string filename" [ "models/Mesh714.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh140.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh147.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh713.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh143.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh716.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh149.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh719.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh722.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh725.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh727.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh731.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh632.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh103.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh732.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh550.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh746.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh761.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh316.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh443.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh735.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh715.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh084.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh026.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh277.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh703.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh403.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh153.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh041.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh736.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh535.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh737.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh510.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh739.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh480.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh096.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh274.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh654.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh740.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh682.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh741.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh742.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh743.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh747.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh750.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh751.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh752.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh745.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh334.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh753.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh044.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh711.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh273.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh398.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh650.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh756.ply" ]
+NamedMaterial "LeaveStems"
+Shape "plymesh"
+    "string filename" [ "models/Mesh488.ply" ]
+NamedMaterial "Leaves"
+Shape "plymesh"
+    "string filename" [ "models/Mesh640.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh384.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh758.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh759.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh760.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh762.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh764.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh596.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh767.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh611.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh769.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh323.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh770.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh771.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh772.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh773.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh775.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh580.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh037.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh776.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh777.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh779.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh781.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh784.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh289.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh585.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh729.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh328.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh785.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh786.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh270.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh788.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh790.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh552.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh275.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh780.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh039.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh335.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh523.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh792.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh778.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh794.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh795.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh797.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh846.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh800.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh802.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh272.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh734.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh803.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh804.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh806.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh765.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh807.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh808.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh809.ply" ]
+NamedMaterial "LeaveStems"
+Shape "plymesh"
+    "string filename" [ "models/Mesh056.ply" ]
+NamedMaterial "Leaves"
+Shape "plymesh"
+    "string filename" [ "models/Mesh307.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh749.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh564.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh338.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh811.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh615.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh685.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh813.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh291.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh814.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh173.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh223.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh817.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh120.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh818.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh733.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh298.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh819.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh821.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh066.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh531.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh822.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh194.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh824.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh698.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh339.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh825.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh826.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh097.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh407.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh827.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh098.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh828.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh286.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh831.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh833.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh502.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh668.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh645.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh783.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh835.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh521.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh838.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh717.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh524.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh787.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh836.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh257.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh171.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh353.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh839.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh346.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh840.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh315.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh130.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh578.ply" ]
+NamedMaterial "LeaveStems"
+Shape "plymesh"
+    "string filename" [ "models/Mesh842.ply" ]
+NamedMaterial "Leaves"
+Shape "plymesh"
+    "string filename" [ "models/Mesh287.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh436.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh187.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh383.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh371.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh246.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh457.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh843.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh588.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh132.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh441.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh635.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh844.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh845.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh805.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh810.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh641.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh630.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh847.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh755.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh360.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh848.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh584.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh599.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh184.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh600.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh851.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh757.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh852.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh262.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh333.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh854.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh021.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh020.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh445.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh019.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh498.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh537.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh451.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh829.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh094.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh018.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh017.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh774.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh213.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh016.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh015.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh417.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh014.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh385.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh013.ply" ]
+NamedMaterial "WoodFrame"
+Shape "plymesh"
+    "string filename" [ "models/Mesh798.ply" ]
+NamedMaterial "StainlessSmooth"
+Shape "plymesh"
+    "string filename" [ "models/Mesh012.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh837.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh402.ply" ]
+NamedMaterial "Pots"
+Shape "plymesh"
+    "string filename" [ "models/Mesh604.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh011.ply" ]
+NamedMaterial "Marble"
+Shape "plymesh"
+    "string filename" [ "models/Mesh567.ply" ]
+NamedMaterial "Wood"
+Shape "plymesh"
+    "string filename" [ "models/Mesh010.ply" ]
+NamedMaterial "WhiteWood"
+Shape "plymesh"
+    "string filename" [ "models/Mesh038.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh300.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh009.ply" ]
+NamedMaterial "Bathtube"
+Shape "plymesh"
+    "string filename" [ "models/Mesh302.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh008.ply" ]
+NamedMaterial "Floor"
+Shape "plymesh"
+    "string filename" [ "models/Mesh007.ply" ]
+NamedMaterial "Wood"
+Shape "plymesh"
+    "string filename" [ "models/Mesh006.ply" ]
+NamedMaterial "GreyWall"
+Shape "plymesh"
+    "string filename" [ "models/Mesh005.ply" ]
+NamedMaterial "Wallpaper"
+Shape "plymesh"
+    "string filename" [ "models/Mesh004.ply" ]
+NamedMaterial "Ceiling"
+Shape "plymesh"
+    "string filename" [ "models/Mesh003.ply" ]
+NamedMaterial "WhiteWood"
+Shape "plymesh"
+    "string filename" [ "models/Mesh542.ply" ]
+NamedMaterial "BulbGlass"
+Shape "plymesh"
+    "string filename" [ "models/Mesh375.ply" ]
+NamedMaterial "Light"
+Shape "plymesh"
+    "string filename" [ "models/Mesh408.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh002.ply" ]
+NamedMaterial "BulbGlass"
+Shape "plymesh"
+    "string filename" [ "models/Mesh001.ply" ]
+NamedMaterial "BlackPlastic"
+Shape "plymesh"
+    "string filename" [ "models/Mesh000.ply" ]

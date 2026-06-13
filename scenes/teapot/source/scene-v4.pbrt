@@ -1,0 +1,50 @@
+Integrator "path"
+    "integer maxdepth" [ 65 ]
+Transform [ 0.00552692 -0.342144 -0.939631 -0 -0 0.939646 -0.342149 -0 -0.999985 -0.0018952 -0.00517328 -0 -0.0919892 -2.36787 26.2919 1  ]
+Sampler "sobol"
+    "integer pixelsamples" [ 64 ]
+PixelFilter "triangle"
+    "float xradius" [ 1 ]
+    "float yradius" [ 1 ]
+Film "rgb"
+    "string filename" [ "teapot.png" ]
+    "integer yresolution" [ 720 ]
+    "integer xresolution" [ 1280 ]
+Camera "perspective"
+    "float fov" [ 20.114292 ]
+
+
+WorldBegin
+
+Texture "Texture01" "spectrum" "checkerboard"
+    "rgb tex2" [ 0.725 0.71 0.68 ]
+    "rgb tex1" [ 0.325 0.31 0.25 ]
+    "float vscale" [ 20 ]
+    "float uscale" [ 20 ]
+MakeNamedMaterial "Material"
+    "string type" [ "coateddiffuse" ]
+    "rgb reflectance" [ 0.9 0.9 0.9 ]
+    "float vroughness" [ 0.001 ]
+    "float uroughness" [ 0.001 ]
+    "bool remaproughness" [ false ]
+MakeNamedMaterial "Floor"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture01" ]
+NamedMaterial "Floor"
+Shape "trianglemesh"
+    "point2 uv" [ 0 0 1 0 1 1 0 1 
+        ]
+    "normal N" [ 0 -1 -1.23634e-7 0 -1 -1.23634e-7 0 -1 -1.23634e-7 0 -1 -1.23634e-7 ]
+    "point3 P" [ 0 -0.00000988498 79.9533 -79.9533 0 0 0 0.00000988498 -79.9533 79.9533 
+                 0 0 ]
+    "integer indices" [ 0 1 2 0 2 3 ]
+AttributeBegin
+    Transform [ -0.386527 0 0.922278 0 -0.922278 0 -0.386527 0 0 1 0 0 0 0 0 1  ]
+    LightSource "infinite"
+        "string filename" "textures/envmap.pfm"
+AttributeEnd
+NamedMaterial "Material"
+Shape "plymesh"
+    "string filename" [ "models/Mesh001.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh000.ply" ]

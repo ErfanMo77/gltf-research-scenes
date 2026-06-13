@@ -1,0 +1,87 @@
+scene:
+  id: "teapot-full"
+  format: "pbrt-v4"
+  source: "scenes/teapot-full/source/scene-v4.pbrt"
+  license: "mixed; see source license file"
+  license_file: "scenes/teapot-full/source/LICENSE.txt"
+outputs:
+  core: "scenes/teapot-full/gltf/teapot_full_core.gltf"
+  extended: "scenes/teapot-full/gltf/teapot_full_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_volume"]
+summary:
+  meshes: 5
+  triangles: 126744
+  materials: 4
+  textures: 1
+  lights: 1
+  media: 1
+render:
+  integrator: "volpath"
+  max_depth: 65
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1280, 720]
+  fov_degrees: 20.114292
+conversion:
+  double_sided: false
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    name: "Floor"
+    pbrt: "diffuse checkerboard"
+    texture: "Texture01"
+    gltf: "baked baseColorTexture with nearest repeat sampler"
+  -
+    name: "dielectric_00"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+    pbrt_remaproughness: false
+  -
+    name: "dielectric_01_Tea_to_air"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.33
+    pbrt_remaproughness: false
+    medium: "Tea"
+    volume_gltf: "KHR_materials_volume"
+    thickness_factor: 6.136313
+    attenuation_color: [0.817175, 0.646526, 0.367879]
+    attenuation_distance: 1.358696
+  -
+    name: "dielectric_02_air_to_Tea"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.13
+    pbrt_remaproughness: false
+    medium: "Tea"
+    volume_gltf: "KHR_materials_volume"
+    thickness_factor: 6.244814
+    attenuation_color: [0.817175, 0.646526, 0.367879]
+    attenuation_distance: 1.358696
+light_mappings:
+  -
+    pbrt: "infinite"
+    gltf: "metadata_only"
+    source: "textures/envmap.pfm"
+    pbrt_transform: [-0.386527, 0.0, 0.922278, 0.0, -0.922278, 0.0, -0.386527, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+approximations: ["dielectric_transmission_ior", "homogeneous_medium_volume"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light", "medium_interface"]
+medium_mappings:
+  -
+    name: "Tea"
+    type: "homogeneous"
+    scale: 1.0
+    sigma_a: [0.1486, 0.321, 0.736]
+    sigma_s: [0.0, 0.0, 0.0]
+    sigma_t: [0.1486, 0.321, 0.736]
+    gltf: "KHR_materials_volume attenuation"
+    attenuation_color: [0.817175, 0.646526, 0.367879]
+    attenuation_distance: 1.358696

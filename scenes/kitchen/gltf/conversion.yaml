@@ -1,0 +1,533 @@
+scene:
+  id: "kitchen"
+  format: "pbrt-v4"
+  source: "scenes/kitchen/source/scene-v4.pbrt"
+  license: "see source license file"
+  license_file: "scenes/kitchen/source/LICENSE.txt"
+outputs:
+  core: "scenes/kitchen/gltf/kitchen_core.gltf"
+  extended: "scenes/kitchen/gltf/kitchen_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength"]
+summary:
+  meshes: 299
+  triangles: 1443517
+  materials: 90
+  textures: 20
+  lights: 4
+render:
+  integrator: "path"
+  max_depth: 17
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1280, 720]
+  fov_degrees: 35.9834
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 28
+  -
+    name: "SteelPot"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "KettleGreen"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "RadioGlass"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+  -
+    name: "Utensils"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [4.369683, 2.916703, 1.654701]
+    k: [5.206434, 4.231365, 3.754947]
+    base_color: [0.687548, 0.649066, 0.687011]
+    roughness: 0.05
+    pbrt_roughness: [0.05, 0.05]
+    pbrt_remaproughness: false
+  -
+    name: "MetalHandles"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [4.369683, 2.916703, 1.654701]
+    k: [5.206434, 4.231365, 3.754947]
+    base_color: [0.687548, 0.649066, 0.687011]
+    roughness: 0.075
+    pbrt_roughness: [0.075, 0.075]
+    pbrt_remaproughness: false
+  -
+    name: "SmallWorktop"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture01"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Worktopt-light.tga"
+  -
+    name: "ExtractorHood"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [4.369683, 2.916703, 1.654701]
+    k: [5.206434, 4.231365, 3.754947]
+    base_color: [0.687548, 0.649066, 0.687011]
+    roughness: 0.08
+    pbrt_roughness: [0.08, 0.08]
+    pbrt_remaproughness: false
+  -
+    name: "Plates"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.001
+    pbrt_roughness: [0.001, 0.001]
+    pbrt_remaproughness: false
+  -
+    name: "WineGlasses"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+    pbrt_remaproughness: false
+  -
+    name: "Tabletop"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture02"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Tabletop-light.tga"
+  -
+    name: "ChoppingBoard"
+    pbrt: "diffuse imagemap"
+    texture: "Texture03"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Chopping-Board.tga"
+  -
+    name: "LeftPage"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture04"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Kitchen-book-leftpage.tga"
+  -
+    name: "BookPages"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture05"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Kitchen-bookpage-large.tga"
+  -
+    name: "Carrots"
+    pbrt: "diffuse imagemap"
+    texture: "Texture06"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Kitchen-carrot-uv.tga"
+  -
+    name: "Tomatoes"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Pepper-Green"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Pepper-Yellow"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Pepper-Red"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "SlicedMushroms"
+    pbrt: "diffuse imagemap"
+    texture: "Texture07"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Kitchen-mushroom-texture.tga"
+  -
+    name: "ChoppingKnifeBlade"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [4.369683, 2.916703, 1.654701]
+    k: [5.206434, 4.231365, 3.754947]
+    base_color: [0.687548, 0.649066, 0.687011]
+    roughness: 0.02
+    pbrt_roughness: [0.02, 0.02]
+    pbrt_remaproughness: false
+  -
+    name: "ChoppingKnifeHandle"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "ChoppingKnifeEdge"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "WhitePot"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.001
+    pbrt_roughness: [0.001, 0.001]
+    pbrt_remaproughness: false
+  -
+    name: "Worktops"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture08"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Worktopt-light.tga"
+  -
+    name: "Towel"
+    pbrt: "diffuse imagemap"
+    texture: "Texture09"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Tea-Towel.tga"
+  -
+    name: "CookerBlack"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.08
+    pbrt_roughness: [0.08, 0.08]
+    pbrt_remaproughness: false
+  -
+    name: "CookerIron"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.02
+    pbrt_roughness: [0.02, 0.02]
+    pbrt_remaproughness: false
+  -
+    name: "CookerGlass"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+    pbrt_remaproughness: false
+  -
+    name: "CookerChrome"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [4.369683, 2.916703, 1.654701]
+    k: [5.206434, 4.231365, 3.754947]
+    base_color: [0.687548, 0.649066, 0.687011]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "BushLogo"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "RadioMetalRing"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [4.369683, 2.916703, 1.654701]
+    k: [5.206434, 4.231365, 3.754947]
+    base_color: [0.687548, 0.649066, 0.687011]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "RadioDialBack"
+    pbrt: "diffuse imagemap"
+    texture: "Texture10"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/radio-dial-idea.tga"
+  -
+    name: "RadioDialLine"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.155, 0.116, 0.138]
+    k: [4.828, 3.122, 2.146]
+    named_spectra:
+      eta: "metal-Ag-eta"
+      k: "metal-Ag-k"
+    base_color: [0.974841, 0.957789, 0.906446]
+    roughness: 0.0
+  -
+    name: "MicrowaveGlass"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+    pbrt_remaproughness: false
+  -
+    name: "Microwave"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "MicrowaveBack"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "MicrowaveDigital"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+    pbrt_remaproughness: false
+  -
+    name: "Blinds"
+    pbrt: "diffusetransmission"
+    gltf: "baseColorFactor; transmittance metadata_only"
+    reflectance: [0.3, 0.25, 0.2]
+    transmittance: [0.3, 0.25, 0.2]
+  -
+    name: "WindowLock"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.155, 0.116, 0.138]
+    k: [4.828, 3.122, 2.146]
+    named_spectra:
+      eta: "metal-Ag-eta"
+      k: "metal-Ag-k"
+    base_color: [0.974841, 0.957789, 0.906446]
+    roughness: 0.0
+  -
+    name: "Cutlery"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [4.369683, 2.916703, 1.654701]
+    k: [5.206434, 4.231365, 3.754947]
+    base_color: [0.687548, 0.649066, 0.687011]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Cushion1"
+    pbrt: "diffuse imagemap"
+    texture: "Texture12"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/cushion-red.tga"
+    displacement_texture: "Texture11"
+    displacement_source: "textures/cushion-bump.tga"
+    displacement_gltf: "metadata_only"
+  -
+    name: "TableCross"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "PotHandles"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Kettle"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [4.369683, 2.916703, 1.654701]
+    k: [5.206434, 4.231365, 3.754947]
+    base_color: [0.687548, 0.649066, 0.687011]
+    roughness: 0.05
+    pbrt_roughness: [0.05, 0.05]
+    pbrt_remaproughness: false
+  -
+    name: "KettleHandle"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Burners"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "BurnersTop"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "BreadBinHandle"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [4.369683, 2.916703, 1.654701]
+    k: [5.206434, 4.231365, 3.754947]
+    base_color: [0.687548, 0.649066, 0.687011]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "BreadBinFront"
+    pbrt: "diffuse imagemap"
+    texture: "Texture14"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Worktopt-light.tga"
+    displacement_texture: "Texture13"
+    displacement_source: "textures/bread-bin-front-bump.tga"
+    displacement_gltf: "metadata_only"
+  -
+    name: "BreadBinSides"
+    pbrt: "diffuse imagemap"
+    texture: "Texture15"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Worktopt-light.tga"
+  -
+    name: "BreadBinTop"
+    pbrt: "diffuse imagemap"
+    texture: "Texture16"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Worktopt-light.tga"
+  -
+    name: "WoodTop"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture17"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Tabletop-light.tga"
+  -
+    name: "CushionTies"
+    pbrt: "diffuse imagemap"
+    texture: "Texture18"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/cushion-red.tga"
+  -
+    name: "Cable"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "CeilingLightFitting"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Floor"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture19"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/wood.tga"
+  -
+    name: "MushroomEnds"
+    pbrt: "diffuse imagemap"
+    texture: "Texture20"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Kitchen-mushroom-texture.tga"
+  -
+    name: "Lamp"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "RadioEdges"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.155, 0.116, 0.138]
+    k: [4.828, 3.122, 2.146]
+    named_spectra:
+      eta: "metal-Ag-eta"
+      k: "metal-Ag-k"
+    base_color: [0.974841, 0.957789, 0.906446]
+    roughness: 0.0
+light_mappings:
+  -
+    pbrt: "diffuse area light"
+    mesh: "295_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [16.032043, 16.032043, 16.032043]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "296_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [11.221238, 11.221238, 11.221238]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "297_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [11.221238, 11.221238, 11.221238]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "298_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [11.221238, 11.221238, 11.221238]
+    twosided: false
+approximations: ["area_light_emissive_mesh", "coateddiffuse_clearcoat", "dielectric_transmission_ior", "conductor_metallic"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "displacement_texture", "diffusetransmission_transmittance"]

@@ -1,0 +1,92 @@
+scene:
+  id: "glass-of-water"
+  format: "pbrt-v4"
+  source: "scenes/glass-of-water/source/scene-v4.pbrt"
+  license: "CC0-1.0"
+  license_file: "scenes/glass-of-water/source/LICENSE.txt"
+outputs:
+  core: "scenes/glass-of-water/gltf/glass_of_water_core.gltf"
+  extended: "scenes/glass-of-water/gltf/glass_of_water_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength"]
+summary:
+  meshes: 17
+  triangles: 406387
+  materials: 7
+  textures: 0
+  lights: 1
+render:
+  integrator: "bdpt"
+  max_depth: 33
+  sampler: "independent"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1280, 720]
+  fov_degrees: 20.114292
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 1
+  -
+    name: "Backdrop"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [4.277513, 3.513154, 2.761126]
+    k: [3.491184, 2.889358, 3.111696]
+    base_color: [0.572681, 0.510651, 0.536505]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Floor"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "WaterAir"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.33
+    pbrt_remaproughness: false
+  -
+    name: "IceAir"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.31
+    pbrt_remaproughness: false
+  -
+    name: "Glass"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+    pbrt_remaproughness: false
+  -
+    name: "AirIce"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 0.763
+    pbrt_remaproughness: false
+    gltf_ior: 1.310616
+light_mappings:
+  -
+    pbrt: "diffuse area light"
+    mesh: "16_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [15.915494, 27.05634, 31.830988]
+    twosided: false
+approximations: ["area_light_emissive_mesh", "dielectric_transmission_ior", "sub_one_dielectric_ior", "conductor_metallic"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output"]

@@ -1,0 +1,97 @@
+scene:
+  id: "veach-mis"
+  format: "pbrt-v4"
+  source: "scenes/veach-mis/source/scene-v4.pbrt"
+  license: "CC0-1.0"
+  license_file: "scenes/veach-mis/source/LICENSE.txt"
+outputs:
+  core: "scenes/veach-mis/gltf/veach_mis_core.gltf"
+  extended: "scenes/veach-mis/gltf/veach_mis_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_emissive_strength"]
+summary:
+  meshes: 9
+  triangles: 2932
+  materials: 8
+  textures: 0
+  lights: 3
+render:
+  integrator: "path"
+  max_depth: 3
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1280, 720]
+  fov_degrees: 20.114292
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 2
+  -
+    name: "Smooth"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.200438, 0.924033, 1.102212]
+    k: [3.912949, 2.452848, 2.142188]
+    base_color: [0.952141, 0.619676, 0.510577]
+    roughness: 0.01
+    pbrt_roughness: [0.01, 0.01]
+    pbrt_remaproughness: false
+  -
+    name: "Glossy"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.200438, 0.924033, 1.102212]
+    k: [3.912949, 2.452848, 2.142188]
+    base_color: [0.952141, 0.619676, 0.510577]
+    roughness: 0.05
+    pbrt_roughness: [0.05, 0.05]
+    pbrt_remaproughness: false
+  -
+    name: "Rough"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.200438, 0.924033, 1.102212]
+    k: [3.912949, 2.452848, 2.142188]
+    base_color: [0.952141, 0.619676, 0.510577]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "SuperRough"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.200438, 0.924033, 1.102212]
+    k: [3.912949, 2.452848, 2.142188]
+    base_color: [0.952141, 0.619676, 0.510577]
+    roughness: 0.25
+    pbrt_roughness: [0.25, 0.25]
+    pbrt_remaproughness: false
+light_mappings:
+  -
+    pbrt: "diffuse area light"
+    mesh: "05_Null"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [7.599088, 7.599088, 7.599088]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "06_Null"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [30.396353, 30.396353, 30.396353]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "07_Null"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [3039.6353, 3039.6353, 3039.6353]
+    twosided: false
+approximations: ["area_light_emissive_mesh", "sphere_mesh", "conductor_metallic"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output"]

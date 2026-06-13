@@ -1,0 +1,74 @@
+Integrator "volpath"
+    "integer maxdepth" [ 65 ]
+Transform [ -0.00561587 -0.488405 -0.872599 -0 -0 0.872613 -0.488413 -0 -0.999984 0.00273835 0.00489243 -0 -0.0423531 -2.39555 27.8941 1  ]
+Sampler "sobol"
+    "integer pixelsamples" [ 64 ]
+PixelFilter "triangle"
+    "float xradius" [ 1 ]
+    "float yradius" [ 1 ]
+Film "rgb"
+    "string filename" [ "teapot-full.png" ]
+    "integer yresolution" [ 720 ]
+    "integer xresolution" [ 1280 ]
+Camera "perspective"
+    "float fov" [ 20.114292 ]
+
+
+WorldBegin
+
+Texture "Texture01" "spectrum" "checkerboard"
+    "rgb tex2" [ 0.725 0.71 0.68 ]
+    "rgb tex1" [ 0.325 0.31 0.25 ]
+    "float vscale" [ 20 ]
+    "float uscale" [ 20 ]
+MakeNamedMedium "Tea"
+    "float scale" [ 1 ]
+    "rgb sigma_a" [ 0.1486 0.321 0.736 ]
+    "rgb sigma_s" [ 0 0 0 ]
+    "string type" [ "homogeneous" ]
+
+MakeNamedMaterial "Floor"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture01" ]
+NamedMaterial "Floor"
+Shape "trianglemesh"
+    "point2 uv" [ 0 0 1 0 1 1 0 1
+        ]
+    "normal N" [ 1.2361e-7 -1 2.4837e-9 1.2361e-7 -1 2.4837e-9 1.2361e-7 -1 2.4837e-9
+                 1.2361e-7 -1 2.4837e-9 ]
+    "point3 P" [ -2.13123 0 70.0611 -71.502 -0.00000875425 -2.15457 0.713687 0 -71.5254
+                 70.0845 0.00000875425 0.690351 ]
+    "integer indices" [ 0 1 2 0 2 3 ]
+AttributeBegin
+    Transform [ -0.386527 0 0.922278 0 -0.922278 0 -0.386527 0 0 1 0 0 0 0 0 1  ]
+    LightSource "infinite"
+        "string filename" "textures/envmap.pfm"
+AttributeEnd
+Material "dielectric"
+    "float eta" [ 1.5 ]
+    "bool remaproughness" [ false ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh003.ply" ]
+Material "dielectric"
+    "float eta" [ 1.5 ]
+    "bool remaproughness" [ false ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh001.ply" ]
+
+AttributeBegin
+    MediumInterface "Tea" ""
+    Material "dielectric"
+        "float eta" [ 1.33 ]
+        "bool remaproughness" [ false ]
+    Shape "plymesh"
+        "string filename" [ "models/Mesh002.ply" ]
+AttributeEnd
+
+AttributeBegin
+    MediumInterface "" "Tea"
+    Material "dielectric"
+        "float eta" [ 1.13 ]
+        "bool remaproughness" [ false ]
+    Shape "plymesh"
+        "string filename" [ "models/Mesh000.ply" ]
+AttributeEnd

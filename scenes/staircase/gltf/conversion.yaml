@@ -1,0 +1,173 @@
+scene:
+  id: "staircase"
+  format: "pbrt-v4"
+  source: "scenes/staircase/source/scene-v4.pbrt"
+  license: "see source license file"
+  license_file: "scenes/staircase/source/LICENSE.txt"
+outputs:
+  core: "scenes/staircase/gltf/staircase_core.gltf"
+  extended: "scenes/staircase/gltf/staircase_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength"]
+summary:
+  meshes: 775
+  triangles: 262663
+  materials: 25
+  textures: 10
+  lights: 1
+render:
+  integrator: "path"
+  max_depth: 65
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [720, 1280]
+  fov_degrees: 35.0
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 8
+  -
+    name: "WoodFloor"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture01"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/WoodFloor.tga"
+  -
+    name: "WoodStairs"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture02"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/WoodPanel.tga"
+  -
+    name: "WoodChair"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture03"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Wood.tga"
+  -
+    name: "WoodLamp"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture04"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/WoodChair.tga"
+  -
+    name: "Lampshade"
+    pbrt: "diffuse imagemap"
+    texture: "Texture05"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Fabric.tga"
+  -
+    name: "Brass"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [2.865601, 2.119182, 1.940077]
+    k: [3.032326, 2.056108, 1.616293]
+    base_color: [0.525128, 0.392649, 0.31059]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "BrushedAluminium"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+    displacement_texture: "Texture06"
+    displacement_source: "textures/BrushedAluminium.tga"
+    displacement_gltf: "metadata_only"
+  -
+    name: "Glass"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+    pbrt_remaproughness: false
+  -
+    name: "MagnoliaPaint"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "WhitePaint"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.2
+    pbrt_roughness: [0.2, 0.2]
+    pbrt_remaproughness: false
+  -
+    name: "Painting1"
+    pbrt: "diffuse imagemap"
+    texture: "Texture07"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Painting1.tga"
+  -
+    name: "Painting2"
+    pbrt: "diffuse imagemap"
+    texture: "Texture08"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Painting2.tga"
+  -
+    name: "Painting3"
+    pbrt: "diffuse imagemap"
+    texture: "Texture09"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Painting3.tga"
+  -
+    name: "StainlessSteel"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.0
+    pbrt_remaproughness: false
+  -
+    name: "Gold"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.143119, 0.374957, 1.442479]
+    k: [3.98316, 2.385721, 1.603215]
+    base_color: [0.966663, 0.80219, 0.324049]
+    roughness: 0.0
+    pbrt_remaproughness: false
+  -
+    name: "Copper"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.265787, 0.19561, 0.22092]
+    k: [3.540174, 2.311131, 1.668593]
+    base_color: [0.924786, 0.884439, 0.793284]
+    roughness: 0.0
+    pbrt_remaproughness: false
+  -
+    name: "Wallpaper"
+    pbrt: "diffuse imagemap"
+    texture: "Texture10"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Wallpaper.tga"
+light_mappings:
+  -
+    pbrt: "diffuse area light"
+    mesh: "774_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [30.0, 30.0, 30.0]
+    twosided: false
+approximations: ["area_light_emissive_mesh", "coateddiffuse_clearcoat", "dielectric_transmission_ior", "conductor_metallic"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "displacement_texture"]

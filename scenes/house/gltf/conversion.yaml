@@ -1,0 +1,64 @@
+scene:
+  id: "house"
+  format: "pbrt-v4"
+  source: "scenes/house/source/scene-v4.pbrt"
+  license: "CC0-1.0"
+  license_file: "scenes/house/source/LICENSE.txt"
+outputs:
+  core: "scenes/house/gltf/house_core.gltf"
+  extended: "scenes/house/gltf/house_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_transmission", "KHR_materials_ior"]
+summary:
+  meshes: 272
+  triangles: 1818777
+  materials: 31
+  textures: 1
+  lights: 2
+render:
+  integrator: "path"
+  max_depth: 65
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1280, 720]
+  fov_degrees: 20.114292
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 29
+  -
+    name: "RoofTiles"
+    pbrt: "diffuse imagemap"
+    texture: "Texture01"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Tiles.tga"
+  -
+    name: "Glass"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+light_mappings:
+  -
+    pbrt: "infinite"
+    gltf: "metadata_only"
+    source: "textures/Skydome.pfm"
+    pbrt_transform: [-1.0, 0.0, 8.74228e-08, 0.0, -8.74228e-08, 0.0, -1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+  -
+    pbrt: "distant"
+    gltf: "metadata_only"
+    radiance_rgb: [5.0, 5.0, 5.0]
+    from: [-0.445695, 0.655031, -0.610156]
+    to: [0.0, 0.0, 0.0]
+    pbrt_transform: [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+approximations: ["dielectric_transmission_ior"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light", "distant_light"]

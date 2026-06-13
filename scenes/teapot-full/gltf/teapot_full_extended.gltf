@@ -1,0 +1,811 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "pbrt_to_gltf.py"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "teapot-full",
+      "nodes": [
+        6
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "00_Floor",
+      "mesh": 0
+    },
+    {
+      "name": "01_dielectric_00",
+      "mesh": 1
+    },
+    {
+      "name": "02_dielectric_00",
+      "mesh": 2
+    },
+    {
+      "name": "03_dielectric_01_Tea_to_air",
+      "mesh": 3
+    },
+    {
+      "name": "04_dielectric_02_air_to_Tea",
+      "mesh": 4
+    },
+    {
+      "name": "Camera",
+      "camera": 0,
+      "matrix": [
+        -0.005606643371947885,
+        -5.80249959989968e-09,
+        -0.9999845135719039,
+        0.0,
+        -0.4884051517500852,
+        0.8726124535603037,
+        0.0027428637253783575,
+        0.0,
+        0.8725989780863677,
+        0.4884125300951915,
+        -0.004900480830759182,
+        0.0,
+        23.170126734636636,
+        15.714214718608913,
+        -0.1724762792457118,
+        1.0
+      ]
+    },
+    {
+      "name": "teapot-full_root",
+      "translation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "children": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "name": "00_Floor",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "01_dielectric_00",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "02_dielectric_00",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9,
+            "TEXCOORD_0": 10
+          },
+          "indices": 11,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "03_dielectric_01_Tea_to_air",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 12,
+            "TEXCOORD_0": 13
+          },
+          "indices": 14,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "04_dielectric_02_air_to_Tea",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 15,
+            "NORMAL": 16,
+            "TEXCOORD_0": 17
+          },
+          "indices": 18,
+          "material": 3,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Floor",
+      "doubleSided": false,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 1.0,
+        "baseColorTexture": {
+          "index": 0
+        }
+      },
+      "extras": {
+        "pbrt": {
+          "type": "diffuse",
+          "reflectance_rgb": [
+            0.525,
+            0.51,
+            0.465
+          ],
+          "reflectance_texture": "Texture01",
+          "reflectance_texture_type": "checkerboard",
+          "Kd": {
+            "encoding": "texture",
+            "value": "Texture01"
+          }
+        }
+      },
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularFactor": 0.0
+        }
+      }
+    },
+    {
+      "name": "dielectric_00",
+      "doubleSided": false,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.0
+      },
+      "extras": {
+        "pbrt": {
+          "type": "dielectric",
+          "reflectance_rgb": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "eta": 1.5,
+          "remaproughness": false,
+          "Kd": {
+            "encoding": "rgb",
+            "value": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        }
+      },
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularFactor": 1.0
+        },
+        "KHR_materials_transmission": {
+          "transmissionFactor": 1.0
+        },
+        "KHR_materials_ior": {
+          "ior": 1.5
+        }
+      }
+    },
+    {
+      "name": "dielectric_01_Tea_to_air",
+      "doubleSided": false,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.0
+      },
+      "extras": {
+        "pbrt": {
+          "type": "dielectric",
+          "reflectance_rgb": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "eta": 1.33,
+          "remaproughness": false,
+          "medium_interface": {
+            "inside": "Tea",
+            "outside": ""
+          },
+          "Kd": {
+            "encoding": "rgb",
+            "value": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "medium": {
+            "name": "Tea",
+            "type": "homogeneous",
+            "scale": 1.0,
+            "sigma_a": [
+              0.1486,
+              0.321,
+              0.736
+            ],
+            "sigma_s": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "sigma_t": [
+              0.1486,
+              0.321,
+              0.736
+            ]
+          },
+          "volume_approximation": {
+            "thicknessFactor": 6.136313,
+            "attenuationColor": [
+              0.817175,
+              0.646526,
+              0.367879
+            ],
+            "attenuationDistance": 1.358696
+          }
+        }
+      },
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularFactor": 1.0
+        },
+        "KHR_materials_transmission": {
+          "transmissionFactor": 1.0
+        },
+        "KHR_materials_ior": {
+          "ior": 1.33
+        },
+        "KHR_materials_volume": {
+          "thicknessFactor": 6.136313,
+          "attenuationColor": [
+            0.817175,
+            0.646526,
+            0.367879
+          ],
+          "attenuationDistance": 1.358696
+        }
+      }
+    },
+    {
+      "name": "dielectric_02_air_to_Tea",
+      "doubleSided": false,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.0
+      },
+      "extras": {
+        "pbrt": {
+          "type": "dielectric",
+          "reflectance_rgb": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "eta": 1.13,
+          "remaproughness": false,
+          "medium_interface": {
+            "inside": "",
+            "outside": "Tea"
+          },
+          "Kd": {
+            "encoding": "rgb",
+            "value": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "medium": {
+            "name": "Tea",
+            "type": "homogeneous",
+            "scale": 1.0,
+            "sigma_a": [
+              0.1486,
+              0.321,
+              0.736
+            ],
+            "sigma_s": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "sigma_t": [
+              0.1486,
+              0.321,
+              0.736
+            ]
+          },
+          "volume_approximation": {
+            "thicknessFactor": 6.244814,
+            "attenuationColor": [
+              0.817175,
+              0.646526,
+              0.367879
+            ],
+            "attenuationDistance": 1.358696
+          }
+        }
+      },
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularFactor": 1.0
+        },
+        "KHR_materials_transmission": {
+          "transmissionFactor": 1.0
+        },
+        "KHR_materials_ior": {
+          "ior": 1.13
+        },
+        "KHR_materials_volume": {
+          "thicknessFactor": 6.244814,
+          "attenuationColor": [
+            0.817175,
+            0.646526,
+            0.367879
+          ],
+          "attenuationDistance": 1.358696
+        }
+      }
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "teapot_full.bin",
+      "byteLength": 2798256
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 1406
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1408,
+      "byteLength": 48,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1456,
+      "byteLength": 48,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1504,
+      "byteLength": 32,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1536,
+      "byteLength": 12,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1548,
+      "byteLength": 287256,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 288804,
+      "byteLength": 287256,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 576060,
+      "byteLength": 191504,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 767564,
+      "byteLength": 287232,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1054796,
+      "byteLength": 417216,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1472012,
+      "byteLength": 417216,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1889228,
+      "byteLength": 278144,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2167372,
+      "byteLength": 415860,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2583232,
+      "byteLength": 2784,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2586016,
+      "byteLength": 1856,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2587872,
+      "byteLength": 1380,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2589252,
+      "byteLength": 57384,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2646636,
+      "byteLength": 57384,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2704020,
+      "byteLength": 38256,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2742276,
+      "byteLength": 55980,
+      "target": 34963
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 4,
+      "type": "VEC3",
+      "min": [
+        -71.502,
+        -8.75425e-06,
+        -71.5254
+      ],
+      "max": [
+        70.0845,
+        8.75425e-06,
+        70.0611
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 4,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 4,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5123,
+      "count": 6,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 23938,
+      "type": "VEC3",
+      "min": [
+        -1.9239720106124878,
+        4.583067893981934,
+        -1.9239710569381714
+      ],
+      "max": [
+        1.9239710569381714,
+        6.165119171142578,
+        1.9239710569381714
+      ]
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 23938,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 23938,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5123,
+      "count": 143616,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 34768,
+      "type": "VEC3",
+      "min": [
+        -3.0831298828125,
+        0.031957998871803284,
+        -4.82663106918335
+      ],
+      "max": [
+        3.0831298828125,
+        4.740152835845947,
+        4.577331066131592
+      ]
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5126,
+      "count": 34768,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5126,
+      "count": 34768,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 12,
+      "componentType": 5123,
+      "count": 207930,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 13,
+      "componentType": 5126,
+      "count": 232,
+      "type": "VEC3",
+      "min": [
+        -2.739809036254883,
+        2.5558040142059326,
+        -2.739809036254883
+      ],
+      "max": [
+        2.739809036254883,
+        2.5558040142059326,
+        3.3965039253234863
+      ]
+    },
+    {
+      "bufferView": 14,
+      "componentType": 5126,
+      "count": 232,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 15,
+      "componentType": 5123,
+      "count": 690,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 16,
+      "componentType": 5126,
+      "count": 4782,
+      "type": "VEC3",
+      "min": [
+        -2.8483099937438965,
+        0.24503199756145477,
+        -2.8483099937438965
+      ],
+      "max": [
+        2.8483099937438965,
+        2.5558040142059326,
+        3.3965039253234863
+      ]
+    },
+    {
+      "bufferView": 17,
+      "componentType": 5126,
+      "count": 4782,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 18,
+      "componentType": 5126,
+      "count": 4782,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 19,
+      "componentType": 5123,
+      "count": 27990,
+      "type": "SCALAR"
+    }
+  ],
+  "extras": {
+    "sourceFormat": "pbrt-v4",
+    "sceneId": "teapot-full",
+    "pbrt": {
+      "render": {
+        "integrator": "volpath",
+        "max_depth": 65,
+        "sampler": "sobol",
+        "samples_per_pixel": 64,
+        "pixel_filter": "triangle",
+        "resolution": [
+          1280,
+          720
+        ],
+        "fov_degrees": 20.114292
+      },
+      "media": [
+        {
+          "name": "Tea",
+          "type": "homogeneous",
+          "scale": 1.0,
+          "sigma_a": [
+            0.1486,
+            0.321,
+            0.736
+          ],
+          "sigma_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sigma_t": [
+            0.1486,
+            0.321,
+            0.736
+          ]
+        }
+      ],
+      "light_sources": [
+        {
+          "pbrt": "infinite",
+          "gltf": "metadata_only",
+          "source": "textures/envmap.pfm",
+          "pbrt_transform": [
+            -0.386527,
+            0.0,
+            0.922278,
+            0.0,
+            -0.922278,
+            0.0,
+            -0.386527,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ]
+    }
+  },
+  "images": [
+    {
+      "name": "Texture01",
+      "bufferView": 0,
+      "mimeType": "image/png"
+    }
+  ],
+  "textures": [
+    {
+      "source": 0,
+      "sampler": 0
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9728,
+      "minFilter": 9728,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_materials_specular",
+    "KHR_materials_transmission",
+    "KHR_materials_ior",
+    "KHR_materials_volume"
+  ],
+  "extensionsRequired": [
+    "KHR_materials_specular",
+    "KHR_materials_transmission",
+    "KHR_materials_ior",
+    "KHR_materials_volume"
+  ],
+  "cameras": [
+    {
+      "name": "Camera",
+      "type": "perspective",
+      "perspective": {
+        "yfov": 0.35106062210755523,
+        "znear": 0.01
+      }
+    }
+  ]
+}

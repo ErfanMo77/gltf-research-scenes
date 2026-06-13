@@ -1,0 +1,57 @@
+scene:
+  id: "material-testball"
+  format: "pbrt-v4"
+  source: "scenes/material-testball/source/scene-v4.pbrt"
+  license: "mixed; see source license file"
+  license_file: "scenes/material-testball/source/LICENSE.txt"
+outputs:
+  core: "scenes/material-testball/gltf/material_testball_core.gltf"
+  extended: "scenes/material-testball/gltf/material_testball_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat"]
+summary:
+  meshes: 4
+  triangles: 80770
+  materials: 3
+  textures: 1
+  lights: 1
+render:
+  integrator: "path"
+  max_depth: 65
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1280, 720]
+  fov_degrees: 20.114292
+conversion:
+  double_sided: false
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 1
+  -
+    name: "Material"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.001
+    pbrt_roughness: [0.001, 0.001]
+    pbrt_remaproughness: false
+  -
+    name: "Floor"
+    pbrt: "diffuse checkerboard"
+    texture: "Texture01"
+    gltf: "baked baseColorTexture with nearest repeat sampler"
+light_mappings:
+  -
+    pbrt: "infinite"
+    gltf: "metadata_only"
+    source: "textures/envmap.pfm"
+    pbrt_transform: [-0.386527, 0.0, 0.922278, 0.0, -0.922278, 0.0, -0.386527, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+approximations: ["coateddiffuse_clearcoat"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light"]

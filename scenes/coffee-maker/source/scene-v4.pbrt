@@ -1,0 +1,144 @@
+Integrator "path"
+    "integer maxdepth" [ 17 ]
+Transform [ 0.999974 0.000285892 0.00726552 -0 -0 0.999227 -0.0393187 -0 0.00727114 -0.0393177 -0.9992 -0 -0.00306164 -0.165588 0.835307 1  ]
+Sampler "sobol"
+    "integer pixelsamples" [ 64 ]
+PixelFilter "triangle"
+    "float xradius" [ 1 ]
+    "float yradius" [ 1 ]
+Film "rgb"
+    "string filename" [ "coffee.png" ]
+    "integer yresolution" [ 1000 ]
+    "integer xresolution" [ 800 ]
+Camera "perspective"
+    "float fov" [ 25 ]
+
+
+WorldBegin
+
+MakeNamedMaterial "Plastic_Orange"
+    "string type" [ "coateddiffuse" ]
+    "rgb reflectance" [ 1 0.378676 0.013473 ]
+    "float vroughness" [ 0.001 ]
+    "float uroughness" [ 0.001 ]
+    "bool remaproughness" [ false ]
+MakeNamedMaterial "Plastic_Black"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "rgb reflectance" [ 0.00631 0.00631 0.00631 ]
+MakeNamedMaterial "Glass"
+    "string type" [ "dielectric" ]
+    "float eta" [ 1.5 ]
+    "bool remaproughness" [ false ]
+MakeNamedMaterial "Metal"
+    "string type" [ "conductor" ]
+    "float roughness" [ 0 ]
+    "spectrum eta" [ "metal-Ag-eta" ]
+    "spectrum k" [ "metal-Ag-k" ]
+MakeNamedMaterial "Floor"
+    "string type" [ "coateddiffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+    "float vroughness" [ 0.001 ]
+    "float uroughness" [ 0.001 ]
+    "bool remaproughness" [ false ]
+NamedMaterial "Plastic_Black"
+Shape "plymesh"
+    "string filename" [ "models/Mesh013.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh008.ply" ]
+NamedMaterial "Glass"
+Shape "plymesh"
+    "string filename" [ "models/Mesh010.ply" ]
+NamedMaterial "Plastic_Orange"
+Shape "plymesh"
+    "string filename" [ "models/Mesh009.ply" ]
+NamedMaterial "Metal"
+Shape "plymesh"
+    "string filename" [ "models/Mesh015.ply" ]
+NamedMaterial "Plastic_Orange"
+Shape "plymesh"
+    "string filename" [ "models/Mesh012.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh016.ply" ]
+NamedMaterial "Plastic_Black"
+Shape "plymesh"
+    "string filename" [ "models/Mesh017.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh018.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh019.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh007.ply" ]
+NamedMaterial "Plastic_Orange"
+Shape "plymesh"
+    "string filename" [ "models/Mesh006.ply" ]
+NamedMaterial "Plastic_Black"
+Shape "plymesh"
+    "string filename" [ "models/Mesh005.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh003.ply" ]
+NamedMaterial "Metal"
+Shape "plymesh"
+    "string filename" [ "models/Mesh002.ply" ]
+NamedMaterial "Plastic_Orange"
+Shape "plymesh"
+    "string filename" [ "models/Mesh001.ply" ]
+NamedMaterial "Plastic_Black"
+Shape "plymesh"
+    "string filename" [ "models/Mesh011.ply" ]
+NamedMaterial "Plastic_Orange"
+Shape "plymesh"
+    "string filename" [ "models/Mesh000.ply" ]
+NamedMaterial "Plastic_Black"
+Shape "plymesh"
+    "string filename" [ "models/Mesh014.ply" ]
+NamedMaterial "Floor"
+Shape "plymesh"
+    "string filename" [ "models/Mesh004.ply" ]
+
+AttributeBegin
+    AreaLightSource "diffuse"
+        "rgb L" [ 2 2 2 ]
+    Material "diffuse"
+        "rgb reflectance" [ 0 0 0 ]
+    Shape "trianglemesh"
+        "point2 uv" [ 0 0 1 0 1 1 0 1 
+            ]
+        "normal N" [ 0.906308 -2.5889e-7 -0.422619 0.906308 -2.5889e-7 -0.422619 
+                     0.906308 -2.5889e-7 -0.422619 0.906308 -2.5889e-7 -0.422619 ]
+        "point3 P" [ -0.359309 0.449693 -0.010809 -0.196537 0.449693 0.338256 -0.196537 
+                     0.000849009 0.338256 -0.359309 0.000848979 -0.010809 ]
+        "integer indices" [ 0 1 2 0 2 3 ]
+AttributeEnd
+
+AttributeBegin
+    AreaLightSource "diffuse"
+        "rgb L" [ 2 2 2 ]
+    Material "diffuse"
+        "rgb reflectance" [ 0 0 0 ]
+    Shape "trianglemesh"
+        "point2 uv" [ 0 0 1 0 1 1 0 1 
+            ]
+        "normal N" [ -0.999923 -4.37114e-8 -0.0124461 -0.999923 -4.37114e-8 -0.0124461 
+                     -0.999923 -4.37114e-8 -0.0124461 -0.999923 -4.37114e-8 -0.0124461 ]
+        "point3 P" [ 0.320673 0.027337 0.228975 0.320673 0.476182 0.228975 0.325221 
+                     0.476182 -0.136419 0.325221 0.027337 -0.136419 ]
+        "integer indices" [ 0 1 2 0 2 3 ]
+AttributeEnd
+
+AttributeBegin
+    AreaLightSource "diffuse"
+        "rgb L" [ 2 2 2 ]
+    Material "diffuse"
+        "rgb reflectance" [ 0 0 0 ]
+    Shape "trianglemesh"
+        "point2 uv" [ 0 0 1 0 1 1 0 1 
+            ]
+        "normal N" [ 1.50996e-7 -1 -1.89944e-7 1.50996e-7 -1 -1.89944e-7 1.50996e-7 
+                     -1 -1.89944e-7 1.50996e-7 -1 -1.89944e-7 ]
+        "point3 P" [ 0.230128 0.50385 0.267372 -0.230128 0.50385 0.267372 -0.230128 
+                     0.50385 -0.192885 0.230128 0.50385 -0.192885 ]
+        "integer indices" [ 0 1 2 0 2 3 ]
+AttributeEnd

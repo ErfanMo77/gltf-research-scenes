@@ -1,0 +1,112 @@
+scene:
+  id: "pontiac-gto"
+  format: "pbrt-v4"
+  source: "scenes/pontiac-gto/source/scene-v4.pbrt"
+  license: "CC0-1.0"
+  license_file: "scenes/pontiac-gto/source/LICENSE.txt"
+outputs:
+  core: "scenes/pontiac-gto/gltf/pontiac_gto_core.gltf"
+  extended: "scenes/pontiac-gto/gltf/pontiac_gto_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior"]
+summary:
+  meshes: 63
+  triangles: 1063260
+  materials: 13
+  textures: 0
+  lights: 1
+render:
+  integrator: "path"
+  max_depth: 65
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1280, 720]
+  fov_degrees: 20.114292
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 5
+  -
+    name: "CarPaint"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.001
+    pbrt_roughness: [0.001, 0.001]
+    pbrt_remaproughness: false
+  -
+    name: "WindowGlass"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+  -
+    name: "Chrome"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [4.369683, 2.916703, 1.654701]
+    k: [5.206434, 4.231365, 3.754947]
+    base_color: [0.687548, 0.649066, 0.687011]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "BlackRubber"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.4
+    pbrt_roughness: [0.4, 0.4]
+    pbrt_remaproughness: false
+  -
+    name: "Steel"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.155, 0.116, 0.138]
+    k: [4.828, 3.122, 2.146]
+    named_spectra:
+      eta: "metal-Ag-eta"
+      k: "metal-Ag-k"
+    base_color: [0.974841, 0.957789, 0.906446]
+    roughness: 0.0
+  -
+    name: "Leather"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.4
+    pbrt_roughness: [0.4, 0.4]
+    pbrt_remaproughness: false
+  -
+    name: "Leather2"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.3
+    pbrt_roughness: [0.3, 0.3]
+    pbrt_remaproughness: false
+  -
+    name: "Dash"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+light_mappings:
+  -
+    pbrt: "infinite"
+    gltf: "metadata_only"
+    source: "textures/envmap.pfm"
+    pbrt_transform: [0.693251, 0.0, -0.720696, 0.0, 0.720696, 0.0, 0.693251, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+approximations: ["coateddiffuse_clearcoat", "dielectric_transmission_ior", "conductor_metallic"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light"]

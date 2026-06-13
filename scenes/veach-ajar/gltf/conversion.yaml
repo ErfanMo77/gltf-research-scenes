@@ -1,0 +1,106 @@
+scene:
+  id: "veach-ajar"
+  format: "pbrt-v4"
+  source: "scenes/veach-ajar/source/scene-v4.pbrt"
+  license: "CC0-1.0"
+  license_file: "scenes/veach-ajar/source/LICENSE.txt"
+outputs:
+  core: "scenes/veach-ajar/gltf/veach_ajar_core.gltf"
+  extended: "scenes/veach-ajar/gltf/veach_ajar_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength"]
+summary:
+  meshes: 22
+  triangles: 382690
+  materials: 13
+  textures: 4
+  lights: 1
+render:
+  integrator: "path"
+  max_depth: 13
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1280, 720]
+  fov_degrees: 35.9834
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 5
+  -
+    name: "Landscape"
+    pbrt: "diffuse imagemap"
+    texture: "Texture01"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/landscape-with-a-lake.tga"
+  -
+    name: "Table"
+    pbrt: "diffuse imagemap"
+    texture: "Texture02"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Good Textures_005844.tga"
+  -
+    name: "DoorHandle"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.25
+    pbrt_roughness: [0.25, 0.25]
+    pbrt_remaproughness: false
+  -
+    name: "Door"
+    pbrt: "diffuse imagemap"
+    texture: "Texture03"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/cherry-wood-texture.tga"
+  -
+    name: "Floor"
+    pbrt: "diffuse checkerboard"
+    texture: "FloorChecker"
+    gltf: "baked baseColorTexture with nearest repeat sampler"
+  -
+    name: "Hinge"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Pot2"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.15
+    pbrt_roughness: [0.15, 0.15]
+    pbrt_remaproughness: false
+  -
+    name: "Material"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+    pbrt_remaproughness: false
+light_mappings:
+  -
+    pbrt: "diffuse area light"
+    mesh: "00_Light"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [1000.0, 1000.0, 1000.0]
+    twosided: false
+approximations: ["area_light_emissive_mesh", "dielectric_transmission_ior", "conductor_metallic"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output"]

@@ -1,0 +1,144 @@
+scene:
+  id: "spaceship"
+  format: "pbrt-v4"
+  source: "scenes/spaceship/source/scene-v4.pbrt"
+  license: "CC0-1.0"
+  license_file: "scenes/spaceship/source/LICENSE.txt"
+outputs:
+  core: "scenes/spaceship/gltf/spaceship_core.gltf"
+  extended: "scenes/spaceship/gltf/spaceship_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength"]
+summary:
+  meshes: 91
+  triangles: 457560
+  materials: 15
+  textures: 0
+  lights: 5
+render:
+  integrator: "path"
+  max_depth: 65
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1280, 720]
+  fov_degrees: 35.9834
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 3
+  -
+    name: "RoughAluminium"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "RoughSteel"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [2.0, 2.0, 2.0]
+    k: [0.0, 0.0, 0.0]
+    base_color: [0.111111, 0.111111, 0.111111]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "DarkPlastic"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.2
+    pbrt_roughness: [0.2, 0.2]
+    pbrt_remaproughness: false
+  -
+    name: "PinkLeather"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.4
+    pbrt_roughness: [0.4, 0.4]
+    pbrt_remaproughness: false
+  -
+    name: "Leather"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.4
+    pbrt_roughness: [0.4, 0.4]
+    pbrt_remaproughness: false
+  -
+    name: "RedLeather"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.4
+    pbrt_roughness: [0.4, 0.4]
+    pbrt_remaproughness: false
+  -
+    name: "BrightPinkLeather"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.4
+    pbrt_roughness: [0.4, 0.4]
+    pbrt_remaproughness: false
+  -
+    name: "Glass"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+    pbrt_remaproughness: false
+  -
+    name: "DarkRubber"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.4
+    pbrt_roughness: [0.4, 0.4]
+    pbrt_remaproughness: false
+light_mappings:
+  -
+    pbrt: "diffuse area light"
+    mesh: "07_Black"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [20.0, 3.0, 3.0]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "18_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [3.88628, 3.77255, 3.43137]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "88_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [9.0, 9.0, 10.0]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "89_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [9.0, 9.0, 10.0]
+    twosided: false
+  -
+    pbrt: "infinite"
+    gltf: "metadata_only"
+    radiance_rgb: [0.3, 0.3, 0.3]
+    pbrt_transform: [-1.0, 0.0, 8.74228e-08, 0.0, -8.74228e-08, 0.0, -1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+approximations: ["area_light_emissive_mesh", "coateddiffuse_clearcoat", "dielectric_transmission_ior", "conductor_metallic"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light"]

@@ -1,0 +1,95 @@
+scene:
+  id: "vintage-car"
+  format: "pbrt-v4"
+  source: "scenes/vintage-car/source/scene-v4.pbrt"
+  license: "mixed; see source license file"
+  license_file: "scenes/vintage-car/source/LICENSE.txt"
+outputs:
+  core: "scenes/vintage-car/gltf/vintage_car_core.gltf"
+  extended: "scenes/vintage-car/gltf/vintage_car_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior"]
+summary:
+  meshes: 48
+  triangles: 771776
+  materials: 13
+  textures: 0
+  lights: 1
+render:
+  integrator: "path"
+  max_depth: 65
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1280, 720]
+  fov_degrees: 35.9834
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 7
+  -
+    name: "CarPaint"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.001
+    pbrt_roughness: [0.001, 0.001]
+    pbrt_remaproughness: false
+  -
+    name: "Chrome"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [4.369683, 2.916703, 1.654701]
+    k: [5.206434, 4.231365, 3.754947]
+    base_color: [0.687548, 0.649066, 0.687011]
+    roughness: 0.01
+    pbrt_roughness: [0.01, 0.01]
+    pbrt_remaproughness: false
+  -
+    name: "WhiteRubber"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.4
+    pbrt_roughness: [0.4, 0.4]
+    pbrt_remaproughness: false
+  -
+    name: "DarkRubber"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.4
+    pbrt_roughness: [0.4, 0.4]
+    pbrt_remaproughness: false
+  -
+    name: "WindowGlass"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+  -
+    name: "RoughSteel"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [4.369683, 2.916703, 1.654701]
+    k: [5.206434, 4.231365, 3.754947]
+    base_color: [0.687548, 0.649066, 0.687011]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+light_mappings:
+  -
+    pbrt: "infinite"
+    gltf: "metadata_only"
+    source: "textures/envmap.pfm"
+    pbrt_transform: [-1.0, 0.0, 8.74228e-08, 0.0, -8.74228e-08, 0.0, -1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+approximations: ["coateddiffuse_clearcoat", "dielectric_transmission_ior", "conductor_metallic"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light"]

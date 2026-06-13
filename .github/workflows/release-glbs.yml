@@ -1,0 +1,144 @@
+name: Release GLB Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: Release tag to create or update.
+        required: true
+        type: string
+      release_name:
+        description: Optional release title. Defaults to the tag name.
+        required: false
+        type: string
+      draft:
+        description: Create a draft release when the release does not already exist.
+        required: true
+        default: true
+        type: boolean
+      prerelease:
+        description: Mark the release as a prerelease.
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  release-glbs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+        with:
+          lfs: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+
+      - name: Generate GLBs
+        run: |
+          python - <<'PY'
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          scenes = sorted(path.name for path in Path("scenes").iterdir() if (path / "gltf").is_dir())
+          subprocess.run([sys.executable, "tools/gltf_to_glb.py", *scenes], check=True)
+          PY
+
+      - name: Build package
+        run: |
+          python - <<'PY'
+          import shutil
+          import zipfile
+          from pathlib import Path
+
+          dist = Path("dist")
+          package_root = dist / "gltf_research_scenes"
+          zip_path = dist / "gltf_research_scenes_glb.zip"
+
+          if package_root.exists():
+              shutil.rmtree(package_root)
+          package_root.mkdir(parents=True)
+
+          for scene_dir in sorted(path for path in Path("scenes").iterdir() if (path / "gltf").is_dir()):
+              base_name = scene_dir.name.replace("-", "_")
+              gltf_dir = scene_dir / "gltf"
+              source_dir = scene_dir / "source"
+              output_dir = package_root / scene_dir.name
+              output_dir.mkdir()
+
+              if not source_dir.is_dir():
+                  raise SystemExit(f"missing source directory: {source_dir}")
+
+              for variant in ("core", "extended"):
+                  source = gltf_dir / f"{base_name}_{variant}.glb"
+                  if not source.is_file():
+                      raise SystemExit(f"missing generated GLB: {source}")
+                  shutil.copy2(source, output_dir / source.name)
+
+              conversion = gltf_dir / "conversion.yaml"
+              if not conversion.is_file():
+                  raise SystemExit(f"missing conversion report: {conversion}")
+              shutil.copy2(conversion, output_dir / conversion.name)
+
+              license_files = sorted(
+                  path
+                  for path in source_dir.iterdir()
+                  if path.is_file() and "license" in path.name.lower()
+              )
+              if not license_files:
+                  raise SystemExit(f"missing source license: {source_dir}")
+              for source in license_files:
+                  shutil.copy2(source, output_dir / source.name)
+
+              reference_images = sorted(
+                  path
+                  for path in source_dir.iterdir()
+                  if path.is_file() and path.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp"}
+              )
+              if not reference_images:
+                  raise SystemExit(f"missing source reference image: {source_dir}")
+              for source in reference_images:
+                  shutil.copy2(source, output_dir / source.name)
+
+          with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as archive:
+              for path in sorted(package_root.rglob("*")):
+                  if path.is_file():
+                      archive.write(path, path.relative_to(dist).as_posix())
+
+          print(zip_path.as_posix())
+          PY
+
+      - name: Publish release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG_NAME: ${{ inputs.tag_name }}
+          RELEASE_NAME: ${{ inputs.release_name }}
+          DRAFT: ${{ inputs.draft }}
+          PRERELEASE: ${{ inputs.prerelease }}
+          ZIP_PATH: dist/gltf_research_scenes_glb.zip
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          title="${RELEASE_NAME:-$TAG_NAME}"
+          notes="GLB package generated from commit ${GITHUB_SHA}."
+
+          if gh release view "$TAG_NAME" --repo "$REPOSITORY" >/dev/null 2>&1; then
+            gh release upload "$TAG_NAME" "$ZIP_PATH" --clobber --repo "$REPOSITORY"
+          else
+            args=(release create "$TAG_NAME" "$ZIP_PATH" --repo "$REPOSITORY" --title "$title" --notes "$notes" --target "$GITHUB_SHA")
+            if [ "$DRAFT" = "true" ]; then
+              args+=(--draft)
+            fi
+            if [ "$PRERELEASE" = "true" ]; then
+              args+=(--prerelease --latest=false)
+            fi
+            gh "${args[@]}"
+          fi

@@ -1,0 +1,92 @@
+Integrator "path"
+    "integer maxdepth" [ 17 ]
+Transform [ 0.678116 -0.167853 -0.715531 -0 -0 0.973571 -0.228385 -0 -0.734955 -0.154871 -0.660194 -0 -0.554465 -6.29907 82.2988 1  ]
+Sampler "sobol"
+    "integer pixelsamples" [ 64 ]
+PixelFilter "triangle"
+    "float xradius" [ 1 ]
+    "float yradius" [ 1 ]
+Film "rgb"
+    "string filename" [ "dragon.png" ]
+    "integer yresolution" [ 720 ]
+    "integer xresolution" [ 1280 ]
+Camera "perspective"
+    "float fov" [ 20.114292 ]
+
+
+WorldBegin
+
+MakeNamedMaterial "GroundInner"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.456263 0.456263 0.456263 ]
+MakeNamedMaterial "GroundOuter"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.456263 0.456263 0.456263 ]
+MakeNamedMaterial "Cloth"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.456263 0.456263 0.456263 ]
+MakeNamedMaterial "Dragon"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.79311 0.79311 0.79311 ]
+MakeNamedMaterial "Blade"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.79311 0.79311 0.79311 ]
+MakeNamedMaterial "Sword"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.79311 0.79311 0.79311 ]
+MakeNamedMaterial "Deco"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.79311 0.79311 0.79311 ]
+MakeNamedMaterial "Diamond"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.79311 0.79311 0.79311 ]
+MakeNamedMaterial "Deco2"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.79311 0.79311 0.79311 ]
+NamedMaterial "GroundOuter"
+Shape "plymesh"
+    "string filename" [ "models/Mesh011.ply" ]
+NamedMaterial "Cloth"
+Shape "plymesh"
+    "string filename" [ "models/Mesh010.ply" ]
+NamedMaterial "GroundOuter"
+Shape "plymesh"
+    "string filename" [ "models/Mesh005.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh006.ply" ]
+NamedMaterial "GroundInner"
+Shape "plymesh"
+    "string filename" [ "models/Mesh012.ply" ]
+NamedMaterial "GroundOuter"
+Shape "plymesh"
+    "string filename" [ "models/Mesh007.ply" ]
+NamedMaterial "Dragon"
+Shape "plymesh"
+    "string filename" [ "models/Mesh008.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh013.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh014.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh015.ply" ]
+NamedMaterial "Blade"
+Shape "plymesh"
+    "string filename" [ "models/Mesh004.ply" ]
+NamedMaterial "Sword"
+Shape "plymesh"
+    "string filename" [ "models/Mesh009.ply" ]
+NamedMaterial "Deco"
+Shape "plymesh"
+    "string filename" [ "models/Mesh003.ply" ]
+NamedMaterial "Diamond"
+Shape "plymesh"
+    "string filename" [ "models/Mesh002.ply" ]
+NamedMaterial "Deco2"
+Shape "plymesh"
+    "string filename" [ "models/Mesh001.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh000.ply" ]
+LightSource "distant"
+    "rgb L" [ 8 8 8 ]
+    "point3 to" [ 0 0 0 ]
+    "point3 from" [ -0.18862 0.692312 0.69651 ]

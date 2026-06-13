@@ -1,0 +1,431 @@
+Integrator "path"
+    "integer maxdepth" [ 17 ]
+Transform [ 0.988479 -0.00428443 0.151294 -0 -0 0.999599 0.0283071 -0 0.151355 0.027981 -0.988083 -0 0.780055 -1.44302 6.03615 1  ]
+Sampler "sobol"
+    "integer pixelsamples" [ 64 ]
+PixelFilter "triangle"
+    "float xradius" [ 1 ]
+    "float yradius" [ 1 ]
+Film "rgb"
+    "string filename" [ "classroom.png" ]
+    "integer yresolution" [ 720 ]
+    "integer xresolution" [ 1280 ]
+Camera "perspective"
+    "float fov" [ 35.9834 ]
+
+
+WorldBegin
+
+Texture "Texture01" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/wood1.tga" ]
+Texture "Texture02" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/wood2.tga" ]
+Texture "Texture03" "spectrum" "imagemap"
+    "string filter" "trilinear"
+    "string filename" [ "textures/blackboard.tga" ]
+MakeNamedMaterial "Walls"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.654071 0.67408 0.8 ]
+MakeNamedMaterial "Lectern"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture01" ]
+MakeNamedMaterial "FlagRed"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.8 0.008214 0 ]
+MakeNamedMaterial "FlagWhite"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 1 1 1 ]
+MakeNamedMaterial "FlagBase"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.779661 0.653162 0.349188 ]
+MakeNamedMaterial "ChalkHolder"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.8 0.644901 0.412119 ]
+MakeNamedMaterial "ProjectorScreen"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 1 1 1 ]
+MakeNamedMaterial "StickyNote1"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.612066 0.612066 0.612066 ]
+MakeNamedMaterial "Whiteboard"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 1 1 1 ]
+MakeNamedMaterial "StickyNote7"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.612066 0.612066 0.612066 ]
+MakeNamedMaterial "StickyNote8"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.612066 0.612066 0.612066 ]
+MakeNamedMaterial "Bin2"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.8 0.717509 0.190456 ]
+MakeNamedMaterial "Boxes2"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.8 0.791642 0.388399 ]
+MakeNamedMaterial "Boxes1"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.64 0.472188 0.319233 ]
+MakeNamedMaterial "StickyNote4"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.612066 0.612066 0.612066 ]
+MakeNamedMaterial "Whiteboard2"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.79311 0.79311 0.79311 ]
+MakeNamedMaterial "BluePencil"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0 0.030764 0.8 ]
+MakeNamedMaterial "GreenPencil"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.145676 0.64 0 ]
+MakeNamedMaterial "RedPencil"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.626651 0 0 ]
+MakeNamedMaterial "Bookshelf"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.491301 0.305177 0.8 ]
+MakeNamedMaterial "Hallway"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.784314 0.784314 0.784314 ]
+MakeNamedMaterial "CeilingLight"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "rgb reflectance" [ 0.647814 0.647814 0.647814 ]
+MakeNamedMaterial "Black"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.00631 0.00631 0.00631 ]
+MakeNamedMaterial "BlackPlastic"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "rgb reflectance" [ 0.00631 0.00631 0.00631 ]
+MakeNamedMaterial "Projector"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.00631 0.00631 0.00631 ]
+MakeNamedMaterial "ScreenEnds"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.028991 0.028991 0.028991 ]
+MakeNamedMaterial "FoamEraser"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.684615 0.684615 0.684615 ]
+MakeNamedMaterial "Whiteboard3"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.05 ]
+    "float uroughness" [ 0.05 ]
+    "rgb reflectance" [ 1 1 1 ]
+MakeNamedMaterial "ChairWood"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.05 ]
+    "float uroughness" [ 0.05 ]
+    "texture reflectance" [ "Texture02" ]
+MakeNamedMaterial "ChairFrame"
+    "string type" [ "conductor" ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "bool remaproughness" [ false ]
+    "rgb k" [ 9.223869 6.269523 4.837001 ]
+    "rgb eta" [ 1.65746 0.880369 0.521229 ]
+MakeNamedMaterial "ChairStainless"
+    "string type" [ "conductor" ]
+    "bool remaproughness" [ false ]
+    "rgb k" [ 9.223869 6.269523 4.837001 ]
+    "rgb eta" [ 1.65746 0.880369 0.521229 ]
+MakeNamedMaterial "Floor"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.659224 0.592438 0.517401 ]
+MakeNamedMaterial "WoodFrame"
+    "string type" [ "diffuse" ]
+    "texture reflectance" [ "Texture03" ]
+MakeNamedMaterial "WhiteboardFrame"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.056173 0.056173 0.056173 ]
+MakeNamedMaterial "StickyNote3"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.612066 0.612066 0.612066 ]
+MakeNamedMaterial "StickyNote5"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.612066 0.612066 0.612066 ]
+MakeNamedMaterial "StickyNote6"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.612066 0.612066 0.612066 ]
+MakeNamedMaterial "Speakers"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.03598 0.03598 0.03598 ]
+MakeNamedMaterial "Wall"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.450837 0.453663 0.499605 ]
+MakeNamedMaterial "WindowFrame"
+    "string type" [ "conductor" ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "bool remaproughness" [ false ]
+    "rgb k" [ 9.223869 6.269523 4.837001 ]
+    "rgb eta" [ 1.65746 0.880369 0.521229 ]
+MakeNamedMaterial "Bin1"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.327125 0.578596 0.280561 ]
+MakeNamedMaterial "Rubber"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.687031 0.715465 0.560499 ]
+MakeNamedMaterial "FluorescentTube"
+    "string type" [ "coateddiffuse" ]
+    "rgb reflectance" [ 0.612066 0.612066 0.612066 ]
+    "float vroughness" [ 0.001 ]
+    "float uroughness" [ 0.001 ]
+    "bool remaproughness" [ false ]
+MakeNamedMaterial "StickyNote2"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.612066 0.612066 0.612066 ]
+NamedMaterial "Walls"
+Shape "plymesh"
+    "string filename" [ "models/Mesh036.ply" ]
+NamedMaterial "FluorescentTube"
+Shape "plymesh"
+    "string filename" [ "models/Mesh048.ply" ]
+NamedMaterial "CeilingLight"
+Shape "plymesh"
+    "string filename" [ "models/Mesh062.ply" ]
+NamedMaterial "FluorescentTube"
+Shape "plymesh"
+    "string filename" [ "models/Mesh038.ply" ]
+NamedMaterial "Black"
+Shape "plymesh"
+    "string filename" [ "models/Mesh054.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh077.ply" ]
+NamedMaterial "BlackPlastic"
+Shape "plymesh"
+    "string filename" [ "models/Mesh052.ply" ]
+NamedMaterial "Black"
+Shape "plymesh"
+    "string filename" [ "models/Mesh061.ply" ]
+NamedMaterial "Projector"
+Shape "plymesh"
+    "string filename" [ "models/Mesh031.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh030.ply" ]
+NamedMaterial "Black"
+Shape "plymesh"
+    "string filename" [ "models/Mesh057.ply" ]
+NamedMaterial "Walls"
+Shape "plymesh"
+    "string filename" [ "models/Mesh023.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh027.ply" ]
+NamedMaterial "Bin2"
+Shape "plymesh"
+    "string filename" [ "models/Mesh047.ply" ]
+NamedMaterial "Boxes1"
+TransformBegin
+    Transform [ 1 0 0 0 0 1 0 0 0 0 1 0 0 -0.0734223 0 1  ]
+    Shape "plymesh"
+        "string filename" [ "models/Mesh049.ply" ]
+TransformEnd
+NamedMaterial "Black"
+Shape "plymesh"
+    "string filename" [ "models/Mesh022.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh029.ply" ]
+NamedMaterial "Whiteboard"
+Shape "plymesh"
+    "string filename" [ "models/Mesh033.ply" ]
+NamedMaterial "Walls"
+Shape "plymesh"
+    "string filename" [ "models/Mesh040.ply" ]
+NamedMaterial "Black"
+Shape "plymesh"
+    "string filename" [ "models/Mesh028.ply" ]
+NamedMaterial "ProjectorScreen"
+Shape "plymesh"
+    "string filename" [ "models/Mesh076.ply" ]
+NamedMaterial "ScreenEnds"
+Shape "plymesh"
+    "string filename" [ "models/Mesh050.ply" ]
+NamedMaterial "FlagBase"
+Shape "plymesh"
+    "string filename" [ "models/Mesh055.ply" ]
+NamedMaterial "FoamEraser"
+Shape "plymesh"
+    "string filename" [ "models/Mesh053.ply" ]
+NamedMaterial "ChalkHolder"
+Shape "plymesh"
+    "string filename" [ "models/Mesh058.ply" ]
+NamedMaterial "ChairWood"
+Shape "plymesh"
+    "string filename" [ "models/Mesh060.ply" ]
+NamedMaterial "ChairStainless"
+Shape "plymesh"
+    "string filename" [ "models/Mesh063.ply" ]
+NamedMaterial "ChairFrame"
+Shape "plymesh"
+    "string filename" [ "models/Mesh064.ply" ]
+NamedMaterial "ChairWood"
+Shape "plymesh"
+    "string filename" [ "models/Mesh037.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh067.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh073.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh024.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh041.ply" ]
+NamedMaterial "Rubber"
+Shape "plymesh"
+    "string filename" [ "models/Mesh026.ply" ]
+NamedMaterial "ChairWood"
+Shape "plymesh"
+    "string filename" [ "models/Mesh069.ply" ]
+NamedMaterial "Floor"
+TransformBegin
+    Transform [ 11.6517 0 0 0 0 11.6517 0 0 0 0 11.6517 0 0 0 0 1  ]
+    Shape "plymesh"
+        "string filename" [ "models/Mesh035.ply" ]
+TransformEnd
+NamedMaterial "WoodFrame"
+Shape "plymesh"
+    "string filename" [ "models/Mesh043.ply" ]
+NamedMaterial "Whiteboard2"
+Shape "plymesh"
+    "string filename" [ "models/Mesh072.ply" ]
+NamedMaterial "StickyNote1"
+Shape "plymesh"
+    "string filename" [ "models/Mesh045.ply" ]
+NamedMaterial "StickyNote2"
+Shape "plymesh"
+    "string filename" [ "models/Mesh044.ply" ]
+NamedMaterial "RedPencil"
+Shape "plymesh"
+    "string filename" [ "models/Mesh074.ply" ]
+NamedMaterial "BluePencil"
+Shape "plymesh"
+    "string filename" [ "models/Mesh070.ply" ]
+NamedMaterial "GreenPencil"
+Shape "plymesh"
+    "string filename" [ "models/Mesh078.ply" ]
+NamedMaterial "Whiteboard3"
+Shape "plymesh"
+    "string filename" [ "models/Mesh021.ply" ]
+NamedMaterial "WhiteboardFrame"
+Shape "plymesh"
+    "string filename" [ "models/Mesh018.ply" ]
+NamedMaterial "Lectern"
+Shape "plymesh"
+    "string filename" [ "models/Mesh017.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh066.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh056.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh016.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh015.ply" ]
+NamedMaterial "Hallway"
+Shape "plymesh"
+    "string filename" [ "models/Mesh014.ply" ]
+NamedMaterial "WoodFrame"
+Shape "plymesh"
+    "string filename" [ "models/Mesh025.ply" ]
+NamedMaterial "Whiteboard2"
+Shape "plymesh"
+    "string filename" [ "models/Mesh046.ply" ]
+NamedMaterial "BluePencil"
+Shape "plymesh"
+    "string filename" [ "models/Mesh012.ply" ]
+NamedMaterial "GreenPencil"
+Shape "plymesh"
+    "string filename" [ "models/Mesh011.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh010.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh009.ply" ]
+NamedMaterial "BluePencil"
+Shape "plymesh"
+    "string filename" [ "models/Mesh008.ply" ]
+NamedMaterial "RedPencil"
+Shape "plymesh"
+    "string filename" [ "models/Mesh059.ply" ]
+NamedMaterial "Bookshelf"
+Shape "plymesh"
+    "string filename" [ "models/Mesh065.ply" ]
+NamedMaterial "StickyNote3"
+Shape "plymesh"
+    "string filename" [ "models/Mesh032.ply" ]
+NamedMaterial "StickyNote4"
+Shape "plymesh"
+    "string filename" [ "models/Mesh007.ply" ]
+NamedMaterial "StickyNote5"
+Shape "plymesh"
+    "string filename" [ "models/Mesh075.ply" ]
+NamedMaterial "StickyNote6"
+Shape "plymesh"
+    "string filename" [ "models/Mesh071.ply" ]
+NamedMaterial "StickyNote7"
+Shape "plymesh"
+    "string filename" [ "models/Mesh039.ply" ]
+NamedMaterial "StickyNote8"
+Shape "plymesh"
+    "string filename" [ "models/Mesh006.ply" ]
+NamedMaterial "Black"
+Shape "plymesh"
+    "string filename" [ "models/Mesh051.ply" ]
+NamedMaterial "FlagRed"
+Shape "plymesh"
+    "string filename" [ "models/Mesh013.ply" ]
+NamedMaterial "FlagWhite"
+Shape "plymesh"
+    "string filename" [ "models/Mesh005.ply" ]
+NamedMaterial "Walls"
+Shape "plymesh"
+    "string filename" [ "models/Mesh042.ply" ]
+NamedMaterial "Speakers"
+Shape "plymesh"
+    "string filename" [ "models/Mesh003.ply" ]
+NamedMaterial "FluorescentTube"
+Shape "plymesh"
+    "string filename" [ "models/Mesh020.ply" ]
+NamedMaterial "CeilingLight"
+Shape "plymesh"
+    "string filename" [ "models/Mesh002.ply" ]
+NamedMaterial "Wall"
+Shape "plymesh"
+    "string filename" [ "models/Mesh019.ply" ]
+NamedMaterial "WindowFrame"
+Shape "plymesh"
+    "string filename" [ "models/Mesh068.ply" ]
+NamedMaterial "Bin1"
+Shape "plymesh"
+    "string filename" [ "models/Mesh001.ply" ]
+NamedMaterial "Boxes1"
+TransformBegin
+    Transform [ 1 0 0 0 0 1 0 0 0 0 1 0 0 -0.0734223 0 1  ]
+    Shape "plymesh"
+        "string filename" [ "models/Mesh004.ply" ]
+TransformEnd
+NamedMaterial "Boxes2"
+TransformBegin
+    Transform [ 1 0 0 0 0 1 0 0 0 0 1 0 0 -0.0734223 0 1  ]
+    Shape "plymesh"
+        "string filename" [ "models/Mesh034.ply" ]
+TransformEnd
+NamedMaterial "Boxes1"
+TransformBegin
+    Transform [ 1 0 0 0 0 1 0 0 0 0 1 0 0 -0.0734223 0 1  ]
+    Shape "plymesh"
+        "string filename" [ "models/Mesh000.ply" ]
+TransformEnd
+LightSource "distant"
+    "rgb L" [ 10 10 10 ]
+    "point3 to" [ 0 0 0 ]
+    "point3 from" [ -0.865804 0.416766 -0.276929 ]
+TransformBegin
+    Transform [ -1 0 8.74228e-8 0 -8.74228e-8 0 -1 0 0 1 0 0 0 0 0 1  ]
+    LightSource "infinite"
+        "string filename" "textures/Skydome.pfm"
+TransformEnd

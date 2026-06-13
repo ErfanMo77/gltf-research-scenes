@@ -1,0 +1,372 @@
+scene:
+  id: "living-room-2"
+  format: "pbrt-v4"
+  source: "scenes/living-room-2/source/scene-v4.pbrt"
+  license: "see source license file"
+  license_file: "scenes/living-room-2/source/LICENSE.txt"
+outputs:
+  core: "scenes/living-room-2/gltf/living_room_2_core.gltf"
+  extended: "scenes/living-room-2/gltf/living_room_2_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength"]
+summary:
+  meshes: 185
+  triangles: 601209
+  materials: 66
+  textures: 17
+  lights: 4
+render:
+  integrator: "path"
+  max_depth: 33
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1280, 720]
+  fov_degrees: 58.715508
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 22
+  -
+    name: "RadioDialRed"
+    pbrt: "diffuse imagemap"
+    texture: "Texture01"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/radio-dial-idea.tga"
+  -
+    name: "Floor"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture02"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/wood4.tga"
+  -
+    name: "SofaLeather"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Cushion3"
+    pbrt: "diffuse imagemap"
+    texture: "Texture03"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/cushion-purple-yellow-stripe.tga"
+  -
+    name: "Cushion"
+    pbrt: "diffuse imagemap"
+    texture: "Texture04"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/cushion-green-circles.tga"
+  -
+    name: "Cushion1"
+    pbrt: "diffuse imagemap"
+    texture: "Texture05"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/cushion-stripe-purple.tga"
+  -
+    name: "LampshaderOuter"
+    pbrt: "diffuse imagemap"
+    texture: "Texture06"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/shade-stripes.tga"
+  -
+    name: "LampStand"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.001
+    pbrt_roughness: [0.001, 0.001]
+    pbrt_remaproughness: false
+  -
+    name: "Dishes"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.001
+    pbrt_roughness: [0.001, 0.001]
+    pbrt_remaproughness: false
+  -
+    name: "Ceramic"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.001
+    pbrt_roughness: [0.001, 0.001]
+    pbrt_remaproughness: false
+  -
+    name: "Apple"
+    pbrt: "diffuse imagemap"
+    texture: "Texture07"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/apple.tga"
+  -
+    name: "Books"
+    pbrt: "diffuse imagemap"
+    texture: "Texture08"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/book-spines.tga"
+  -
+    name: "WhitePaint"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.15
+    pbrt_roughness: [0.15, 0.15]
+    pbrt_remaproughness: false
+  -
+    name: "TvScreen"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.05
+    pbrt_roughness: [0.05, 0.05]
+    pbrt_remaproughness: false
+  -
+    name: "TvBevel"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+    pbrt_remaproughness: false
+  -
+    name: "BlackRaughtIron"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [4.370703, 3.300297, 2.998267]
+    k: [3.500678, 2.604865, 2.273193]
+    base_color: [0.574619, 0.477757, 0.433047]
+    roughness: 0.4
+    pbrt_roughness: [0.4, 0.4]
+    pbrt_remaproughness: false
+  -
+    name: "CeilingLampshade"
+    pbrt: "diffusetransmission imagemap"
+    texture: "Texture09"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Shade-paper.tga"
+    transmittance_texture: "Texture09"
+    transmittance_source: "textures/Shade-paper.tga"
+    transmittance_gltf: "metadata_only"
+    scale: 0.5
+  -
+    name: "Carpet"
+    pbrt: "diffuse imagemap"
+    texture: "Texture10"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/carpet-text3b.tga"
+  -
+    name: "RadioPlastic"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.001
+    pbrt_roughness: [0.001, 0.001]
+    pbrt_remaproughness: false
+  -
+    name: "Picture"
+    pbrt: "diffuse imagemap"
+    texture: "Texture11"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/picture11-vert.tga"
+  -
+    name: "SmallPictureD"
+    pbrt: "diffuse imagemap"
+    texture: "Texture12"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Frame.tga"
+  -
+    name: "SmallPictureA"
+    pbrt: "diffuse imagemap"
+    texture: "Texture13"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Frame.tga"
+  -
+    name: "SmallPictureB"
+    pbrt: "diffuse imagemap"
+    texture: "Texture14"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Frame.tga"
+  -
+    name: "SmallPictureC"
+    pbrt: "diffuse imagemap"
+    texture: "Texture15"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Frame.tga"
+  -
+    name: "LargePicture"
+    pbrt: "diffuse imagemap"
+    texture: "Texture16"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/picure4-grey.tga"
+  -
+    name: "RadiatorPanelsEnamel"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.15
+    pbrt_roughness: [0.15, 0.15]
+    pbrt_remaproughness: false
+  -
+    name: "RadiatorKnobOuter"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.0, 1.0, 1.0]
+    k: [1.0, 1.0, 1.0]
+    base_color: [0.2, 0.2, 0.2]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "BlindMaterial"
+    pbrt: "diffusetransmission"
+    gltf: "baseColorFactor; transmittance metadata_only"
+    reflectance: [0.8, 0.8, 0.8]
+    transmittance: [0.0, 0.0, 0.0]
+  -
+    name: "CandleHolders"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+    pbrt_remaproughness: false
+  -
+    name: "RadioGlass"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+  -
+    name: "RadioDialLine"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.155, 0.116, 0.138]
+    k: [4.828, 3.122, 2.146]
+    named_spectra:
+      eta: "metal-Ag-eta"
+      k: "metal-Ag-k"
+    base_color: [0.974841, 0.957789, 0.906446]
+    roughness: 0.0
+  -
+    name: "BushLogo"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "ChromeHandle"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "DrawerHandles"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "DullSteel"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Steel"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.155, 0.116, 0.138]
+    k: [4.828, 3.122, 2.146]
+    named_spectra:
+      eta: "metal-Ag-eta"
+      k: "metal-Ag-k"
+    base_color: [0.974841, 0.957789, 0.906446]
+    roughness: 0.0
+  -
+    name: "BlackMarble"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+    pbrt_remaproughness: false
+  -
+    name: "RadiatorBase"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "RadioDialBack"
+    pbrt: "diffuse imagemap"
+    texture: "Texture17"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/radio-dial-idea.tga"
+  -
+    name: "RadioEdges"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Table"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.001
+    pbrt_roughness: [0.001, 0.001]
+    pbrt_remaproughness: false
+light_mappings:
+  -
+    pbrt: "diffuse area light"
+    mesh: "181_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [13.748016, 13.748016, 13.748016]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "182_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [17.776966, 17.776966, 17.776966]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "183_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [17.776964, 17.776964, 17.776964]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "184_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [1.08059, 1.08059, 1.08059]
+    twosided: false
+approximations: ["area_light_emissive_mesh", "coateddiffuse_clearcoat", "dielectric_transmission_ior", "conductor_metallic"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "diffusetransmission_transmittance"]

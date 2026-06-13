@@ -1,0 +1,127 @@
+scene:
+  id: "bathroom2"
+  format: "pbrt-v4"
+  source: "scenes/bathroom2/source/scene-v4.pbrt"
+  license: "see source license file"
+  license_file: "scenes/bathroom2/source/LICENSE.txt"
+outputs:
+  core: "scenes/bathroom2/gltf/bathroom2_core.gltf"
+  extended: "scenes/bathroom2/gltf/bathroom2_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength"]
+summary:
+  meshes: 72
+  triangles: 1243943
+  materials: 19
+  textures: 3
+  lights: 1
+render:
+  integrator: "path"
+  max_depth: 65
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1280, 720]
+  fov_degrees: 35.9834
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 8
+  -
+    name: "Mirror"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.155, 0.116, 0.138]
+    k: [4.828, 3.122, 2.146]
+    named_spectra:
+      eta: "metal-Ag-eta"
+      k: "metal-Ag-k"
+    base_color: [0.974841, 0.957789, 0.906446]
+    roughness: 0.0
+  -
+    name: "StainlessRough"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.01
+    pbrt_roughness: [0.01, 0.01]
+    pbrt_remaproughness: false
+  -
+    name: "BlackWoodLacquer"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Wood"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture01"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/WoodPanel.tga"
+  -
+    name: "WoodFloor"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture02"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/WoodFloor.tga"
+  -
+    name: "Label"
+    pbrt: "diffuse imagemap"
+    texture: "Texture03"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Label.tga"
+  -
+    name: "RoughGlass"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+    pbrt_remaproughness: false
+  -
+    name: "Plastic"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.001
+    pbrt_roughness: [0.001, 0.001]
+    pbrt_remaproughness: false
+  -
+    name: "Bin"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.155, 0.116, 0.138]
+    k: [4.828, 3.122, 2.146]
+    named_spectra:
+      eta: "metal-Ag-eta"
+      k: "metal-Ag-k"
+    base_color: [0.974841, 0.957789, 0.906446]
+    roughness: 0.0
+  -
+    name: "Ceramic"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.001
+    pbrt_roughness: [0.001, 0.001]
+    pbrt_remaproughness: false
+light_mappings:
+  -
+    pbrt: "diffuse area light"
+    mesh: "71_diffuse_01"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [125.0, 100.0, 75.0]
+    twosided: false
+approximations: ["area_light_emissive_mesh", "coateddiffuse_clearcoat", "dielectric_transmission_ior", "conductor_metallic"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output"]

@@ -1,0 +1,147 @@
+scene:
+  id: "breakfast-room"
+  format: "pbrt-v4"
+  source: "scenes/breakfast-room/source/scene-v4.pbrt"
+  license: "see source license file"
+  license_file: "scenes/breakfast-room/source/LICENSE.txt"
+outputs:
+  core: "scenes/breakfast-room/gltf/breakfast_room_core.gltf"
+  extended: "scenes/breakfast-room/gltf/breakfast_room_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat"]
+summary:
+  meshes: 53
+  triangles: 269538
+  materials: 15
+  textures: 3
+  lights: 2
+render:
+  integrator: "path"
+  max_depth: 65
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1280, 720]
+  fov_degrees: 35.9834
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 3
+  -
+    name: "WhitePlastic"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Chrome"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [4.369683, 2.916703, 1.654701]
+    k: [5.206434, 4.231365, 3.754947]
+    base_color: [0.687548, 0.649066, 0.687011]
+    roughness: 0.05
+    pbrt_roughness: [0.05, 0.05]
+    pbrt_remaproughness: false
+  -
+    name: "BlackRubber"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.2
+    pbrt_roughness: [0.2, 0.2]
+    pbrt_remaproughness: false
+  -
+    name: "Artwork"
+    pbrt: "diffuse imagemap"
+    texture: "Texture01"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/picture3.tga"
+  -
+    name: "FloorTiles"
+    pbrt: "diffuse imagemap"
+    texture: "Texture02"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Tiles.tga"
+  -
+    name: "BlackPaint"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.2
+    pbrt_roughness: [0.2, 0.2]
+    pbrt_remaproughness: false
+  -
+    name: "Gold"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.143119, 0.374957, 1.442479]
+    k: [3.98316, 2.385721, 1.603215]
+    base_color: [0.966663, 0.80219, 0.324049]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Ceramic"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.01
+    pbrt_roughness: [0.01, 0.01]
+    pbrt_remaproughness: false
+  -
+    name: "RoughMetal"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "PaintedCeramic"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture03"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Teacup.tga"
+  -
+    name: "SkirtWood"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "FrostedGlass"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+light_mappings:
+  -
+    pbrt: "distant"
+    gltf: "metadata_only"
+    radiance_rgb: [10.0, 10.0, 10.0]
+    from: [0.88698, 0.288862, 0.360313]
+    to: [0.0, 0.0, 0.0]
+    pbrt_transform: [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+  -
+    pbrt: "infinite"
+    gltf: "metadata_only"
+    source: "textures/Skydome.pfm"
+    pbrt_transform: [-0.992546151641322, 0.12186934340514748, 8.74228e-08, 0.0, -8.677116370570897e-08, 1.0654159234639527e-08, -1.0, 0.0, 0.12186934340514748, 0.992546151641322, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+approximations: ["coateddiffuse_clearcoat", "conductor_metallic"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light", "distant_light"]

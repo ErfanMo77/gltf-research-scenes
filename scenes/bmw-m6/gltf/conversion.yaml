@@ -1,0 +1,185 @@
+scene:
+  id: "bmw-m6"
+  format: "pbrt-v4"
+  source: "scenes/bmw-m6/source/bmw-m6.pbrt"
+  license: "CC0-1.0"
+  license_file: "scenes/bmw-m6/source/BLENDSWAP_LICENSE.txt"
+outputs:
+  core: "scenes/bmw-m6/gltf/bmw_m6_core.gltf"
+  extended: "scenes/bmw-m6/gltf/bmw_m6_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior"]
+summary:
+  meshes: 114
+  triangles: 792746
+  materials: 26
+  textures: 0
+  lights: 1
+render:
+  integrator: "volpath"
+  max_depth: 8
+  sampler: "halton"
+  samples_per_pixel: 65536
+  resolution: [1400, 1000]
+  fov_degrees: 30.0
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 6
+  -
+    name: "CarPaint"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.0
+  -
+    name: "HeadLight"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.010408
+  -
+    name: "HeadLightGlass"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+  -
+    name: "HeadLightGlass01"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+  -
+    name: "LEATHER"
+    pbrt: "mix"
+    gltf: "baseColorFactor weighted from referenced materials"
+    materials: ["LEATHER-black", "LEATHER-white"]
+    amount: 0.2
+    reflectance: [0.16800000000000004, 0.16800000000000004, 0.16800000000000004]
+  -
+    name: "LightGlass"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+  -
+    name: "LogoSilver"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.49, 0.963, 0.62]
+    k: [7.82, 6.7, 5.48]
+    named_spectra:
+      eta: "metal-Al-eta"
+      k: "metal-Al-k"
+    base_color: [0.91151, 0.920974, 0.924054]
+    roughness: 0.0
+  -
+    name: "None"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+  -
+    name: "Seal"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.010408
+  -
+    name: "WheelRim"
+    pbrt: "coatedconductor"
+    gltf: "metallicFactor + baseColorFactor from conductor eta and k + KHR_materials_clearcoat in extended"
+    eta: [1.49, 0.963, 0.62]
+    k: [7.82, 6.7, 5.48]
+    named_spectra:
+      eta: "metal-Al-eta"
+      k: "metal-Al-k"
+    base_color: [0.91151, 0.920974, 0.924054]
+    roughness: 0.05
+    interface_roughness: 0
+  -
+    name: "WindowSeal"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.010408
+  -
+    name: "WindscreenGlass"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+  -
+    name: "brakeDisc"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.010408
+  -
+    name: "brake_clipper"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.010408
+  -
+    name: "carbonfibre"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.01
+    pbrt_roughness: [0.01, 0.01]
+  -
+    name: "floor"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.010408
+    pbrt_roughness: [0.010408, 0.010408]
+  -
+    name: "grillmetal"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.49, 0.963, 0.62]
+    k: [7.82, 6.7, 5.48]
+    named_spectra:
+      eta: "metal-Al-eta"
+      k: "metal-Al-k"
+    base_color: [0.91151, 0.920974, 0.924054]
+    roughness: 0.0
+  -
+    name: "shinychrome"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.49, 0.963, 0.62]
+    k: [7.82, 6.7, 5.48]
+    named_spectra:
+      eta: "metal-Al-eta"
+      k: "metal-Al-k"
+    base_color: [0.91151, 0.920974, 0.924054]
+    roughness: 0.01
+  -
+    name: "tire"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.10408
+  -
+    name: "tiresidewall"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.10408
+light_mappings:
+  -
+    pbrt: "infinite"
+    gltf: "metadata_only"
+    source: "textures/sunflowers_equiarea.exr"
+    pbrt_transform: [0.17364817766693041, 0.0, -0.984807753012208, 0.0, -0.984807753012208, 0.0, -0.17364817766693041, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+approximations: ["coateddiffuse_clearcoat", "coatedconductor_metallic_clearcoat", "mix_weighted_base_color", "dielectric_transmission_ior", "conductor_metallic"]
+losses: ["render_integrator", "render_sampler", "film_output", "infinite_environment_light"]

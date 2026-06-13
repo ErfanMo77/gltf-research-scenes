@@ -1,0 +1,130 @@
+scene:
+  id: "classroom"
+  format: "pbrt-v4"
+  source: "scenes/classroom/source/scene-v4.pbrt"
+  license: "see source license file"
+  license_file: "scenes/classroom/source/LICENSE.txt"
+outputs:
+  core: "scenes/classroom/gltf/classroom_core.gltf"
+  extended: "scenes/classroom/gltf/classroom_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat"]
+summary:
+  meshes: 79
+  triangles: 103832
+  materials: 44
+  textures: 3
+  lights: 2
+render:
+  integrator: "path"
+  max_depth: 17
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1280, 720]
+  fov_degrees: 35.9834
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 34
+  -
+    name: "Lectern"
+    pbrt: "diffuse imagemap"
+    texture: "Texture01"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/wood1.tga"
+  -
+    name: "CeilingLight"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "BlackPlastic"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Whiteboard3"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.05
+    pbrt_roughness: [0.05, 0.05]
+    pbrt_remaproughness: false
+  -
+    name: "ChairWood"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture02"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/wood2.tga"
+  -
+    name: "ChairFrame"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "ChairStainless"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.0
+    pbrt_remaproughness: false
+  -
+    name: "WoodFrame"
+    pbrt: "diffuse imagemap"
+    texture: "Texture03"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/blackboard.tga"
+  -
+    name: "WindowFrame"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "FluorescentTube"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.001
+    pbrt_roughness: [0.001, 0.001]
+    pbrt_remaproughness: false
+light_mappings:
+  -
+    pbrt: "distant"
+    gltf: "metadata_only"
+    radiance_rgb: [10.0, 10.0, 10.0]
+    from: [-0.865804, 0.416766, -0.276929]
+    to: [0.0, 0.0, 0.0]
+    pbrt_transform: [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+  -
+    pbrt: "infinite"
+    gltf: "metadata_only"
+    source: "textures/Skydome.pfm"
+    pbrt_transform: [-1.0, 0.0, 8.74228e-08, 0.0, -8.74228e-08, 0.0, -1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+approximations: ["coateddiffuse_clearcoat", "conductor_metallic"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light", "distant_light"]

@@ -1,0 +1,45 @@
+scene:
+  id: "cornell-box"
+  format: "pbrt-v4"
+  source: "scenes/cornell-box/source/scene-v4.pbrt"
+  license: "CC0-1.0"
+  license_file: "scenes/cornell-box/source/LICENSE.txt"
+outputs:
+  core: "scenes/cornell-box/gltf/cornell_box_core.gltf"
+  extended: "scenes/cornell-box/gltf/cornell_box_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_emissive_strength"]
+summary:
+  meshes: 8
+  triangles: 36
+  materials: 8
+  textures: 0
+  lights: 1
+render:
+  integrator: "path"
+  max_depth: 65
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1024, 1024]
+  fov_degrees: 19.5
+conversion:
+  double_sided: false
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 8
+light_mappings:
+  -
+    pbrt: "diffuse area light"
+    mesh: "07_Light"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [17.0, 12.0, 4.0]
+    twosided: false
+approximations: ["area_light_emissive_mesh"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output"]

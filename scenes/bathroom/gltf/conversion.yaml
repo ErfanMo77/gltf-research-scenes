@@ -1,0 +1,208 @@
+scene:
+  id: "bathroom"
+  format: "pbrt-v4"
+  source: "scenes/bathroom/source/scene-v4.pbrt"
+  license: "CC0-1.0"
+  license_file: "scenes/bathroom/source/LICENSE.txt"
+outputs:
+  core: "scenes/bathroom/gltf/bathroom_core.gltf"
+  extended: "scenes/bathroom/gltf/bathroom_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength"]
+summary:
+  meshes: 856
+  triangles: 592188
+  materials: 33
+  textures: 12
+  lights: 1
+render:
+  integrator: "path"
+  max_depth: 17
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1024, 1024]
+  fov_degrees: 55.0
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 11
+  -
+    name: "Wood"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture03"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/wood.tga"
+  -
+    name: "Mirror"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.155, 0.116, 0.138]
+    k: [4.828, 3.122, 2.146]
+    named_spectra:
+      eta: "metal-Ag-eta"
+      k: "metal-Ag-k"
+    base_color: [0.974841, 0.957789, 0.906446]
+    roughness: 0.0
+  -
+    name: "StainlessSmooth"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.0
+    pbrt_remaproughness: false
+  -
+    name: "Bathtube"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.001
+    pbrt_roughness: [0.001, 0.001]
+    pbrt_remaproughness: false
+  -
+    name: "StainlessRough"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Floor"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture05"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/floor_tiles.tga"
+    displacement_texture: "Texture04"
+    displacement_source: "textures/floor_tiles.tga"
+    displacement_gltf: "metadata_only"
+  -
+    name: "Pots"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Marble"
+    pbrt: "diffuse imagemap"
+    texture: "Texture06"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/marble.tga"
+  -
+    name: "BulbGlass"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+  -
+    name: "BlackPlastic"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.2
+    pbrt_roughness: [0.2, 0.2]
+    pbrt_remaproughness: false
+  -
+    name: "WoodFrame"
+    pbrt: "diffuse imagemap"
+    texture: "Texture07"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/wood2.tga"
+  -
+    name: "Painting1"
+    pbrt: "diffuse imagemap"
+    texture: "Texture08"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/picture1.tga"
+  -
+    name: "WhiteWood"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Wallpaper"
+    pbrt: "diffuse imagemap"
+    texture: "Texture09"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/wallpaper-1.tga"
+  -
+    name: "Vase"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.001
+    pbrt_roughness: [0.001, 0.001]
+    pbrt_remaproughness: false
+  -
+    name: "WoodDiffuse"
+    pbrt: "diffuse imagemap"
+    texture: "Texture10"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/wood.tga"
+  -
+    name: "Painting2"
+    pbrt: "diffuse imagemap"
+    texture: "Texture11"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/wallpaper-2.tga"
+  -
+    name: "MetalPlate"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.05
+    pbrt_roughness: [0.05, 0.05]
+    pbrt_remaproughness: false
+  -
+    name: "Gold"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.648469, 1.150448, 1.379779]
+    k: [3.36846, 1.943489, 1.102012]
+    base_color: [0.640874, 0.45227, 0.197544]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Foam"
+    pbrt: "diffuse displacement"
+    gltf: "baseColorFactor; displacement texture metadata_only"
+    displacement_texture: "Texture12"
+    displacement_source: "textures/foam_bump.tga"
+  -
+    name: "Rug_Texture02_alpha"
+    pbrt: "diffuse imagemap"
+    texture: "Texture01"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/rug.tga"
+    alpha_texture: "Texture02"
+    alpha_source: "textures/rug_mask.tga"
+    alpha_gltf: "baked into baseColorTexture alpha"
+light_mappings:
+  -
+    pbrt: "diffuse area light"
+    mesh: "17_Light"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [30.0, 30.0, 30.0]
+    twosided: false
+approximations: ["area_light_emissive_mesh", "coateddiffuse_clearcoat", "dielectric_transmission_ior", "conductor_metallic"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "displacement_texture"]

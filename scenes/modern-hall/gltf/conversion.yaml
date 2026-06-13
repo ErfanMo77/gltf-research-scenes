@@ -1,0 +1,180 @@
+scene:
+  id: "modern-hall"
+  format: "pbrt-v4"
+  source: "scenes/modern-hall/source/scene-v4.pbrt"
+  license: "see source license file"
+  license_file: "scenes/modern-hall/source/LICENSE.txt"
+outputs:
+  core: "scenes/modern-hall/gltf/modern_hall_core.gltf"
+  extended: "scenes/modern-hall/gltf/modern_hall_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_volume", "KHR_materials_emissive_strength"]
+summary:
+  meshes: 32
+  triangles: 31087
+  materials: 21
+  textures: 3
+  lights: 13
+  media: 1
+render:
+  integrator: "volpath"
+  max_depth: 65
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1024, 1024]
+  fov_degrees: 70.0
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 3
+  -
+    name: "Wood"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture01"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/wood5.tga"
+  -
+    name: "FloorTiles"
+    pbrt: "coateddiffuse imagemap"
+    texture: "Texture02"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Tiles.tga"
+  -
+    name: "Wallpaper"
+    pbrt: "diffuse imagemap"
+    texture: "Texture03"
+    gltf: "image map converted to embedded PNG"
+    source: "textures/Wallpaper.tga"
+  -
+    name: "Metal"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [1.65746, 0.880369, 0.521229]
+    k: [9.223869, 6.269523, 4.837001]
+    base_color: [0.928047, 0.917805, 0.918909]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Chrome"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [4.369683, 2.916703, 1.654701]
+    k: [5.206434, 4.231365, 3.754947]
+    base_color: [0.687548, 0.649066, 0.687011]
+    roughness: 0.1
+    pbrt_roughness: [0.1, 0.1]
+    pbrt_remaproughness: false
+  -
+    name: "Glass_green_to_air"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+    pbrt_remaproughness: false
+    medium: "green"
+    volume_gltf: "KHR_materials_volume"
+    thickness_factor: 8.841464
+    attenuation_color: [0.367879, 0.67032, 0.449329]
+    attenuation_distance: 2.0
+light_mappings:
+  -
+    pbrt: "diffuse area light"
+    mesh: "19_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [1.5, 1.5, 1.5]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "20_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [1.5, 1.5, 1.5]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "21_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [1.5, 1.5, 1.5]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "22_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [1.5, 1.5, 1.5]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "23_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [1.5, 1.5, 1.5]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "24_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [1.5, 1.5, 1.5]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "25_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [1.5, 1.5, 1.5]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "26_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [1.5, 1.5, 1.5]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "27_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [1.5, 1.5, 1.5]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "28_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [1.598913, 1.598913, 1.598913]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "29_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [4.575005, 3.590758, 1.549771]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "30_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [4.575005, 3.590758, 1.549771]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "31_diffuse_00"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [3.265813, 3.265813, 3.265813]
+    twosided: false
+approximations: ["area_light_emissive_mesh", "disk_mesh", "coateddiffuse_clearcoat", "dielectric_transmission_ior", "conductor_metallic", "homogeneous_medium_volume"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "medium_interface"]
+medium_mappings:
+  -
+    name: "green"
+    type: "homogeneous"
+    scale: 1.0
+    sigma_a: [0.5, 0.2, 0.4]
+    sigma_s: [0.0, 0.0, 0.0]
+    sigma_t: [0.5, 0.2, 0.4]
+    gltf: "KHR_materials_volume attenuation"
+    attenuation_color: [0.367879, 0.67032, 0.449329]
+    attenuation_distance: 2.0

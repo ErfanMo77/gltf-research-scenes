@@ -1,0 +1,69 @@
+scene:
+  id: "veach-bidir"
+  format: "pbrt-v4"
+  source: "scenes/veach-bidir/source/scene-v4.pbrt"
+  license: "CC0-1.0"
+  license_file: "scenes/veach-bidir/source/LICENSE.txt"
+outputs:
+  core: "scenes/veach-bidir/gltf/veach_bidir_core.gltf"
+  extended: "scenes/veach-bidir/gltf/veach_bidir_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength"]
+summary:
+  meshes: 14
+  triangles: 11544
+  materials: 6
+  textures: 0
+  lights: 2
+render:
+  integrator: "bdpt"
+  max_depth: 7
+  sampler: "independent"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1024, 1024]
+  fov_degrees: 35.0
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 2
+  -
+    name: "Glass"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.5
+    pbrt_remaproughness: false
+  -
+    name: "Lamp"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [2.865601, 2.119182, 1.940077]
+    k: [3.032326, 2.056108, 1.616293]
+    base_color: [0.525128, 0.392649, 0.31059]
+    roughness: 0.25
+    pbrt_roughness: [0.25, 0.25]
+    pbrt_remaproughness: false
+light_mappings:
+  -
+    pbrt: "diffuse area light"
+    mesh: "02_Diffuse"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [523.2578, 523.2578, 523.2578]
+    twosided: false
+  -
+    pbrt: "diffuse area light"
+    mesh: "03_Diffuse"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [12048.179, 8605.842, 6196.206]
+    twosided: false
+approximations: ["area_light_emissive_mesh", "dielectric_transmission_ior", "conductor_metallic"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output"]

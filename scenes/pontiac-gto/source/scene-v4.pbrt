@@ -1,0 +1,248 @@
+Integrator "path"
+    "integer maxdepth" [ 65 ]
+Transform [ 0.872027 0.135655 0.470284 -0 -0 0.960826 -0.277154 -0 0.489459 -0.241686 -0.837866 -0 0.549931 -0.876605 18.0241 1  ]
+Sampler "sobol"
+    "integer pixelsamples" [ 64 ]
+PixelFilter "triangle"
+    "float xradius" [ 1 ]
+    "float yradius" [ 1 ]
+Film "rgb"
+    "string filename" [ "car2.png" ]
+    "integer yresolution" [ 720 ]
+    "integer xresolution" [ 1280 ]
+Camera "perspective"
+    "float fov" [ 20.114292 ]
+
+
+WorldBegin
+
+MakeNamedMaterial "CarPaint"
+    "string type" [ "coateddiffuse" ]
+    "float vroughness" [ 0.001 ]
+    "float uroughness" [ 0.001 ]
+    "bool remaproughness" [ false ]
+    "rgb reflectance" [ 0.020939 0.072837 0.003349 ]
+MakeNamedMaterial "WindowGlass"
+    "string type" [ "dielectric" ]
+MakeNamedMaterial "Chrome"
+    "string type" [ "conductor" ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "bool remaproughness" [ false ]
+    "rgb k" [ 5.206434 4.231365 3.754947 ]
+    "rgb eta" [ 4.369683 2.916703 1.654701 ]
+MakeNamedMaterial "BlackRubber"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.4 ]
+    "float uroughness" [ 0.4 ]
+    "rgb reflectance" [ 0.028991 0.028991 0.028991 ]
+MakeNamedMaterial "Steel"
+    "string type" [ "conductor" ]
+    "float roughness" [ 0 ]
+    "spectrum eta" [ "metal-Ag-eta" ]
+    "spectrum k" [ "metal-Ag-k" ]
+MakeNamedMaterial "WhiteRubber"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.578596 0.578596 0.578596 ]
+MakeNamedMaterial "Ground"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.07074 0.07074 0.07074 ]
+MakeNamedMaterial "Black"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0 0 0 ]
+MakeNamedMaterial "Leather"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.4 ]
+    "float uroughness" [ 0.4 ]
+    "rgb reflectance" [ 0.417004 0.403278 0.391924 ]
+MakeNamedMaterial "Leather2"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.3 ]
+    "float uroughness" [ 0.3 ]
+    "rgb reflectance" [ 0.612066 0.612066 0.612066 ]
+MakeNamedMaterial "InnerBody"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.028991 0.028991 0.028991 ]
+MakeNamedMaterial "Dash"
+    "string type" [ "coateddiffuse" ]
+    "bool remaproughness" [ false ]
+    "float vroughness" [ 0.1 ]
+    "float uroughness" [ 0.1 ]
+    "rgb reflectance" [ 0.434446 0.434446 0.434446 ]
+MakeNamedMaterial "Cabin"
+    "string type" [ "diffuse" ]
+    "rgb reflectance" [ 0.531049 0.531049 0.531049 ]
+NamedMaterial "BlackRubber"
+Shape "plymesh"
+    "string filename" [ "models/Mesh032.ply" ]
+NamedMaterial "WhiteRubber"
+Shape "plymesh"
+    "string filename" [ "models/Mesh025.ply" ]
+NamedMaterial "Chrome"
+Shape "plymesh"
+    "string filename" [ "models/Mesh031.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh022.ply" ]
+NamedMaterial "Ground"
+Shape "plymesh"
+    "string filename" [ "models/Mesh034.ply" ]
+NamedMaterial "InnerBody"
+Shape "plymesh"
+    "string filename" [ "models/Mesh048.ply" ]
+NamedMaterial "Steel"
+Shape "plymesh"
+    "string filename" [ "models/Mesh030.ply" ]
+NamedMaterial "Chrome"
+Shape "plymesh"
+    "string filename" [ "models/Mesh040.ply" ]
+NamedMaterial "Leather"
+Shape "plymesh"
+    "string filename" [ "models/Mesh023.ply" ]
+NamedMaterial "Steel"
+Shape "plymesh"
+    "string filename" [ "models/Mesh015.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh038.ply" ]
+NamedMaterial "Leather2"
+Shape "plymesh"
+    "string filename" [ "models/Mesh027.ply" ]
+NamedMaterial "Steel"
+Shape "plymesh"
+    "string filename" [ "models/Mesh036.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh054.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh026.ply" ]
+NamedMaterial "Chrome"
+Shape "plymesh"
+    "string filename" [ "models/Mesh028.ply" ]
+NamedMaterial "CarPaint"
+Shape "plymesh"
+    "string filename" [ "models/Mesh046.ply" ]
+NamedMaterial "InnerBody"
+Shape "plymesh"
+    "string filename" [ "models/Mesh019.ply" ]
+NamedMaterial "WindowGlass"
+Shape "plymesh"
+    "string filename" [ "models/Mesh017.ply" ]
+NamedMaterial "BlackRubber"
+Shape "plymesh"
+    "string filename" [ "models/Mesh014.ply" ]
+NamedMaterial "WhiteRubber"
+Shape "plymesh"
+    "string filename" [ "models/Mesh013.ply" ]
+NamedMaterial "Chrome"
+Shape "plymesh"
+    "string filename" [ "models/Mesh035.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh042.ply" ]
+NamedMaterial "Black"
+Shape "plymesh"
+    "string filename" [ "models/Mesh029.ply" ]
+NamedMaterial "Steel"
+Shape "plymesh"
+    "string filename" [ "models/Mesh018.ply" ]
+NamedMaterial "Chrome"
+Shape "plymesh"
+    "string filename" [ "models/Mesh024.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh041.ply" ]
+NamedMaterial "CarPaint"
+Shape "plymesh"
+    "string filename" [ "models/Mesh044.ply" ]
+NamedMaterial "Steel"
+Shape "plymesh"
+    "string filename" [ "models/Mesh045.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh058.ply" ]
+NamedMaterial "CarPaint"
+Shape "plymesh"
+    "string filename" [ "models/Mesh047.ply" ]
+NamedMaterial "Chrome"
+Shape "plymesh"
+    "string filename" [ "models/Mesh021.ply" ]
+NamedMaterial "Steel"
+Shape "plymesh"
+    "string filename" [ "models/Mesh037.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh049.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh050.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh043.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh051.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh052.ply" ]
+NamedMaterial "Chrome"
+Shape "plymesh"
+    "string filename" [ "models/Mesh053.ply" ]
+NamedMaterial "Steel"
+Shape "plymesh"
+    "string filename" [ "models/Mesh033.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh055.ply" ]
+NamedMaterial "CarPaint"
+Shape "plymesh"
+    "string filename" [ "models/Mesh060.ply" ]
+NamedMaterial "Dash"
+Shape "plymesh"
+    "string filename" [ "models/Mesh059.ply" ]
+NamedMaterial "Black"
+Shape "plymesh"
+    "string filename" [ "models/Mesh020.ply" ]
+NamedMaterial "Cabin"
+Shape "plymesh"
+    "string filename" [ "models/Mesh061.ply" ]
+NamedMaterial "CarPaint"
+Shape "plymesh"
+    "string filename" [ "models/Mesh062.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh012.ply" ]
+NamedMaterial "WindowGlass"
+Shape "plymesh"
+    "string filename" [ "models/Mesh016.ply" ]
+NamedMaterial "Steel"
+Shape "plymesh"
+    "string filename" [ "models/Mesh011.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh010.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh007.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh006.ply" ]
+NamedMaterial "WindowGlass"
+Shape "plymesh"
+    "string filename" [ "models/Mesh004.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh003.ply" ]
+NamedMaterial "Steel"
+Shape "plymesh"
+    "string filename" [ "models/Mesh005.ply" ]
+NamedMaterial "InnerBody"
+Shape "plymesh"
+    "string filename" [ "models/Mesh039.ply" ]
+NamedMaterial "Chrome"
+Shape "plymesh"
+    "string filename" [ "models/Mesh057.ply" ]
+NamedMaterial "Steel"
+Shape "plymesh"
+    "string filename" [ "models/Mesh009.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh008.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh056.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh002.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh001.ply" ]
+Shape "plymesh"
+    "string filename" [ "models/Mesh000.ply" ]
+AttributeBegin
+    Transform [ 0.693251 0 -0.720696 0 0.720696 0 0.693251 0 0 1 0 0 0 0 0 1  ]
+    LightSource "infinite"
+        "string filename" "textures/envmap.pfm"
+AttributeEnd

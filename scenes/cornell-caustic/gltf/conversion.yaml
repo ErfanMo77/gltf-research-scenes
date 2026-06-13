@@ -1,0 +1,53 @@
+scene:
+  id: "cornell-caustic"
+  format: "pbrt-v4"
+  source: "scenes/cornell-caustic/source/scene-v4.pbrt"
+  license: "CC0-1.0"
+  license_file: "scenes/cornell-caustic/source/LICENSE.txt"
+outputs:
+  core: "scenes/cornell-caustic/gltf/cornell_caustic_core.gltf"
+  extended: "scenes/cornell-caustic/gltf/cornell_caustic_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength"]
+summary:
+  meshes: 10
+  triangles: 103487
+  materials: 9
+  textures: 0
+  lights: 1
+render:
+  integrator: "sppm"
+  max_depth: 9
+  sampler: "independent"
+  samples_per_pixel: 200
+  pixel_filter: "triangle"
+  resolution: [1024, 1024]
+  fov_degrees: 19.5
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 8
+  -
+    name: "Water"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.8
+    pbrt_remaproughness: false
+light_mappings:
+  -
+    pbrt: "diffuse area light"
+    mesh: "07_Light"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [541126.75, 381971.8, 127323.94]
+    twosided: false
+approximations: ["area_light_emissive_mesh", "dielectric_transmission_ior"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output"]

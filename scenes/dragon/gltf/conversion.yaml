@@ -1,0 +1,46 @@
+scene:
+  id: "dragon"
+  format: "pbrt-v4"
+  source: "scenes/dragon/source/scene-v4.pbrt"
+  license: "see source license file"
+  license_file: "scenes/dragon/source/LICENSE.txt"
+outputs:
+  core: "scenes/dragon/gltf/dragon_core.gltf"
+  extended: "scenes/dragon/gltf/dragon_extended.gltf"
+  extended_extensions: ["KHR_materials_specular"]
+summary:
+  meshes: 16
+  triangles: 831812
+  materials: 9
+  textures: 0
+  lights: 1
+render:
+  integrator: "path"
+  max_depth: 17
+  sampler: "sobol"
+  samples_per_pixel: 64
+  pixel_filter: "triangle"
+  resolution: [1280, 720]
+  fov_degrees: 20.114292
+conversion:
+  double_sided: true
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 9
+light_mappings:
+  -
+    pbrt: "distant"
+    gltf: "metadata_only"
+    radiance_rgb: [8.0, 8.0, 8.0]
+    from: [-0.18862, 0.692312, 0.69651]
+    to: [0.0, 0.0, 0.0]
+    pbrt_transform: [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+approximations: []
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "distant_light"]
