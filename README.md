@@ -41,7 +41,7 @@ Each scene includes the generated glTF assets and metadata describing how the co
 
 ## Download
 
-Download the [`v0.1.0-alpha.1` release](https://github.com/ErfanMo77/glTF_research_scenes/releases/tag/v0.1.0-alpha.1) if you only need the packaged `.glb` files and do not need the source PBRT files or separate `.gltf` outputs.
+Download the [`v1.0.0 release`](https://github.com/ErfanMo77/gltf-research-scenes/releases/tag/v1.0.0) if you only need the packaged `.glb` files and do not need the source PBRT files or separate `.gltf` outputs.
 
 Clone the repository for the full asset set: sources, .gltf files, buffers, textures, metadata, and licenses.
 
