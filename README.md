@@ -2,11 +2,34 @@
 
 glTF 2.0 versions of commonly used graphics research scenes, with conversion metadata and documented limitations.
 
+<p align="center">
+  <img src="docs/preview.jpg" width="100%" alt="Collage of glTF research scene reference renders">
+</p>
+
+<p align="center">
+  <em>A preview of selected glTF scenes included in the repository.</em>
+</p>
+
 Many well-known research scenes are distributed in renderer-specific formats such as PBRT. Those formats are useful for offline rendering, but less convenient for real-time engines, ray-tracing and path-tracing experiments, importer tests, and custom renderer prototypes.
 
 This repository provides glTF 2.0 adaptations of those scenes so they are easier to inspect, load, compare, and reuse. The original source scenes remain the reference; the glTF outputs are documented approximations.
 
 Each scene includes the generated glTF assets and metadata describing how the conversion was done. The scenes are converted with Python scripts, then manually checked against the original files and available reference renders.
+
+## glTF variants
+
+Each scene includes two generated glTF variants:
+
+- `*_core.gltf`: standard glTF 2.0 material model, for easier loading in engines.
+- `*_extended.gltf`: a richer material mapping using supported glTF extensions, with PBRT-specific information preserved in `extras` and `conversion.yaml`
+
+For basic importer and engine testing, use the `core` version. And use the `extended` version for richer material representation and PBRT conversion details.
+
+## Download
+
+Download the [`v1.0.0 release`](https://github.com/ErfanMo77/gltf-research-scenes/releases/tag/v1.0.0) if you only need the packaged `.glb` files and do not need the source PBRT files or separate `.gltf` outputs.
+
+Clone the repository for the full asset set: sources, .gltf files, buffers, textures, metadata, and licenses.
 
 ## Scenes
 
@@ -39,12 +62,6 @@ Each scene includes the generated glTF assets and metadata describing how the co
 | [`veach-mis`](scenes/veach-mis/) | <img src="scenes/veach-mis/veach_mis_thumbnail.png" width="160" alt="Veach MIS reference"> | CC0-1.0 | Compact MIS scene with tessellated emissive mesh lighting |
 | [`vintage-car`](scenes/vintage-car/) | <img src="scenes/vintage-car/vintage_car_thumbnail.png" width="160" alt="Vintage Car reference"> | Mixed; see scene license | Vehicle scene with clearcoat car paint, glass, chrome, rough steel, and environment map data |
 
-## Download
-
-Download the [`v1.0.0 release`](https://github.com/ErfanMo77/gltf-research-scenes/releases/tag/v1.0.0) if you only need the packaged `.glb` files and do not need the source PBRT files or separate `.gltf` outputs.
-
-Clone the repository for the full asset set: sources, .gltf files, buffers, textures, metadata, and licenses.
-
 ## Limitations
 
 Some PBRT scene features are outside the current conversion scope because glTF cannot represent them directly and a practical approximation is not always available. B-spline curves used for fur, hair, or carpet fibers are the main example: converting them to triangle meshes can make the generated assets too large, so scenes that depend on them are not currently included.
@@ -61,8 +78,6 @@ Each scene's `gltf/` directory contains:
 - `scenes/<scene-id>/gltf/<scene_id>_extended.gltf`
 - `scenes/<scene-id>/gltf/<scene_id>.bin`
 - `scenes/<scene-id>/gltf/conversion.yaml`
-
-The `core` output contains baseline glTF material features and avoids optional material extensions. The `extended` output includes supported and available glTF extensions, plus renderer-specific PBRT data in glTF `extras` and `conversion.yaml`.
 
 The `conversion.yaml` report may include:
 
