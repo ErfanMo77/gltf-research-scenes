@@ -1,4 +1,5 @@
 dist/
+build/
 scenes/*/gltf/*.glb
 __pycache__/
 *.pyc

@@ -1,0 +1,50 @@
+name: glTF Validation
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-gltf:
+    name: Validate glTF assets
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+        with:
+          lfs: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+
+      - name: Install Khronos glTF Validator
+        env:
+          GLTF_VALIDATOR_VERSION: 2.0.0-dev.3.10
+        run: |
+          set -euo pipefail
+          mkdir -p .tools/gltf-validator
+          curl -L -o gltf_validator.tar.xz \
+            "https://github.com/KhronosGroup/glTF-Validator/releases/download/${GLTF_VALIDATOR_VERSION}/gltf_validator-${GLTF_VALIDATOR_VERSION}-linux64.tar.xz"
+          tar -xJf gltf_validator.tar.xz -C .tools/gltf-validator
+          chmod +x .tools/gltf-validator/gltf_validator
+          echo "$PWD/.tools/gltf-validator" >> "$GITHUB_PATH"
+
+      - name: Validate committed glTF scenes
+        run: |
+          python tools/validate_gltf.py --report-dir build/gltf-validation --fail-on errors
+
+      - name: Upload validation reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gltf-validation-reports
+          path: build/gltf-validation
+          if-no-files-found: ignore

@@ -1,5 +1,7 @@
 # glTF Research Scenes
 
+[![glTF Validation](https://github.com/ErfanMo77/gltf-research-scenes/actions/workflows/validate-gltf.yml/badge.svg)](https://github.com/ErfanMo77/gltf-research-scenes/actions/workflows/validate-gltf.yml)
+
 glTF 2.0 versions of commonly used graphics research scenes, with conversion metadata and documented limitations.
 
 <p align="center">
@@ -15,6 +17,8 @@ Many well-known research scenes are distributed in renderer-specific formats suc
 This repository provides glTF 2.0 adaptations of those scenes so they are easier to inspect, load, compare, and reuse. The original source scenes remain the reference; the glTF outputs are documented approximations.
 
 Each scene includes the generated glTF assets and metadata describing how the conversion was done. The scenes are converted with Python scripts, then manually checked against the original files and available reference renders.
+
+glTF scenes are validated in GitHub Actions with the Khronos glTF Validator.
 
 ## glTF variants
 
