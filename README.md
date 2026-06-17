@@ -33,6 +33,8 @@ For basic importer and engine testing, use the `core` version. And use the `exte
 
 Download the [`v1.0.0 release`](https://github.com/ErfanMo77/gltf-research-scenes/releases/tag/v1.0.0) if you only need the packaged `.glb` files and do not need the source PBRT files or separate `.gltf` outputs.
 
+Install [Git LFS](https://git-lfs.com/) before cloning this repository so the asset files are downloaded correctly.
+
 Clone the repository for the full asset set: sources, .gltf files, buffers, textures, metadata, and licenses.
 
 ## Scenes
