@@ -31,6 +31,9 @@ conversion:
     dielectric_transmission_factor: 1.0
     dielectric_roughness: 0.0
   coateddiffuse_clearcoat_factor: 1.0
+  gltf_camera:
+    znear: 0.01
+    zfar: 100.0
 material_mappings:
   -
     pbrt: "diffuse"

@@ -1535,7 +1535,8 @@
       "type": "perspective",
       "perspective": {
         "yfov": 0.35106062210755523,
-        "znear": 0.01
+        "znear": 0.01,
+        "zfar": 1000.0
       }
     }
   ]

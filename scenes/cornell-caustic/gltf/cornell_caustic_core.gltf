@@ -288,9 +288,10 @@
         {
           "attributes": {
             "POSITION": 36,
-            "TEXCOORD_0": 37
+            "NORMAL": 37,
+            "TEXCOORD_0": 38
           },
-          "indices": 38,
+          "indices": 39,
           "material": 8,
           "mode": 4
         }
@@ -532,7 +533,7 @@
   "buffers": [
     {
       "uri": "cornell_caustic.bin",
-      "byteLength": 2674182
+      "byteLength": 2680410
     }
   ],
   "bufferViews": [
@@ -761,12 +762,18 @@
     {
       "buffer": 0,
       "byteOffset": 2666952,
+      "byteLength": 6228,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2673180,
       "byteLength": 4152,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 2671104,
+      "byteOffset": 2677332,
       "byteLength": 3078,
       "target": 34963
     }
@@ -1098,10 +1105,16 @@
       "bufferView": 37,
       "componentType": 5126,
       "count": 519,
-      "type": "VEC2"
+      "type": "VEC3"
     },
     {
       "bufferView": 38,
+      "componentType": 5126,
+      "count": 519,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 39,
       "componentType": 5123,
       "count": 1539,
       "type": "SCALAR"
@@ -1117,7 +1130,8 @@
       "type": "perspective",
       "perspective": {
         "yfov": 0.34033920413889424,
-        "znear": 0.01
+        "znear": 0.01,
+        "zfar": 100.0
       }
     }
   ]

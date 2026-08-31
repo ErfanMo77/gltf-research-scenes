@@ -29,6 +29,9 @@ conversion:
     roughness: 1.0
     extended_specular_factor: 0.0
   coateddiffuse_clearcoat_factor: 1.0
+  gltf_camera:
+    znear: 0.01
+    zfar: 1000.0
 material_mappings:
   -
     pbrt: "diffuse"

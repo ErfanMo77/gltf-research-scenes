@@ -124,9 +124,10 @@
         {
           "attributes": {
             "POSITION": 12,
-            "TEXCOORD_0": 13
+            "NORMAL": 13,
+            "TEXCOORD_0": 14
           },
-          "indices": 14,
+          "indices": 15,
           "material": 2,
           "mode": 4
         }
@@ -137,11 +138,11 @@
       "primitives": [
         {
           "attributes": {
-            "POSITION": 15,
-            "NORMAL": 16,
-            "TEXCOORD_0": 17
+            "POSITION": 16,
+            "NORMAL": 17,
+            "TEXCOORD_0": 18
           },
-          "indices": 18,
+          "indices": 19,
           "material": 3,
           "mode": 4
         }
@@ -410,7 +411,7 @@
   "buffers": [
     {
       "uri": "teapot_full.bin",
-      "byteLength": 2798256
+      "byteLength": 2801232
     }
   ],
   "bufferViews": [
@@ -494,42 +495,48 @@
     {
       "buffer": 0,
       "byteOffset": 2583232,
-      "byteLength": 2784,
+      "byteLength": 2856,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 2586016,
-      "byteLength": 1856,
+      "byteOffset": 2586088,
+      "byteLength": 2856,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 2587872,
+      "byteOffset": 2588944,
+      "byteLength": 1904,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2590848,
       "byteLength": 1380,
       "target": 34963
     },
     {
       "buffer": 0,
-      "byteOffset": 2589252,
+      "byteOffset": 2592228,
       "byteLength": 57384,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 2646636,
+      "byteOffset": 2649612,
       "byteLength": 57384,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 2704020,
+      "byteOffset": 2706996,
       "byteLength": 38256,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 2742276,
+      "byteOffset": 2745252,
       "byteLength": 55980,
       "target": 34963
     }
@@ -640,7 +647,7 @@
     {
       "bufferView": 13,
       "componentType": 5126,
-      "count": 232,
+      "count": 238,
       "type": "VEC3",
       "min": [
         -2.739809036254883,
@@ -656,17 +663,23 @@
     {
       "bufferView": 14,
       "componentType": 5126,
-      "count": 232,
-      "type": "VEC2"
+      "count": 238,
+      "type": "VEC3"
     },
     {
       "bufferView": 15,
+      "componentType": 5126,
+      "count": 238,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 16,
       "componentType": 5123,
       "count": 690,
       "type": "SCALAR"
     },
     {
-      "bufferView": 16,
+      "bufferView": 17,
       "componentType": 5126,
       "count": 4782,
       "type": "VEC3",
@@ -682,19 +695,19 @@
       ]
     },
     {
-      "bufferView": 17,
+      "bufferView": 18,
       "componentType": 5126,
       "count": 4782,
       "type": "VEC3"
     },
     {
-      "bufferView": 18,
+      "bufferView": 19,
       "componentType": 5126,
       "count": 4782,
       "type": "VEC2"
     },
     {
-      "bufferView": 19,
+      "bufferView": 20,
       "componentType": 5123,
       "count": 27990,
       "type": "SCALAR"
@@ -804,7 +817,8 @@
       "type": "perspective",
       "perspective": {
         "yfov": 0.35106062210755523,
-        "znear": 0.01
+        "znear": 0.01,
+        "zfar": 100.0
       }
     }
   ]

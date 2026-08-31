@@ -12,11 +12,11 @@ glTF 2.0 versions of commonly used graphics research scenes, with conversion met
   <em>A preview of selected glTF scenes included in the repository.</em>
 </p>
 
-Many well-known research scenes are distributed in renderer-specific formats such as PBRT. Those formats are useful for offline rendering, but less convenient for real-time engines, ray-tracing and path-tracing experiments, importer tests, and custom renderer prototypes.
+Many well-known research scenes are distributed in renderer-specific formats such as PBRT. Those formats are useful for offline renderers, but less convenient to use in real-time engines, and web experiments.
 
-This repository provides glTF 2.0 adaptations of those scenes so they are easier to inspect, load, compare, and reuse. The original source scenes remain the reference; the glTF outputs are documented approximations.
+This repository provides glTF 2.0 adaptations of those scenes so they are easier to inspect, load, and reuse. The glTF outputs are close approximations of the original scenes.
 
-Each scene includes the generated glTF assets and metadata describing how the conversion was done. The scenes are converted with Python scripts, then manually checked against the original files and available reference renders.
+Each scene includes the generated glTF assets and metadata describing how the conversion was done. The scenes were converted with Python scripts, then manually checked against the original files and reference renders.
 
 glTF scenes are validated in GitHub Actions with the Khronos glTF Validator.
 
@@ -25,17 +25,15 @@ glTF scenes are validated in GitHub Actions with the Khronos glTF Validator.
 Each scene includes two generated glTF variants:
 
 - `*_core.gltf`: standard glTF 2.0 material model, for easier loading in engines.
-- `*_extended.gltf`: a richer material mapping using supported glTF extensions, with PBRT-specific information preserved in `extras` and `conversion.yaml`
+- `*_extended.gltf`: a richer material mapping using supported glTF extensions.
 
-For basic importer and engine testing, use the `core` version. And use the `extended` version for richer material representation and PBRT conversion details.
+For basic importer and engine testing, use the `core` version. And use the `extended` version for richer material representation.
 
 ## Download
 
-Download the [`v1.0.0 release`](https://github.com/ErfanMo77/gltf-research-scenes/releases/tag/v1.0.0) if you only need the packaged `.glb` files and do not need the source PBRT files or separate `.gltf` outputs.
+Download the [`v1.0.0 release`](https://github.com/ErfanMo77/gltf-research-scenes/releases/tag/v1.0.0) if you only need the packaged `.glb` files.
 
-Install [Git LFS](https://git-lfs.com/) before cloning this repository so the asset files are downloaded correctly.
-
-Clone the repository for the full asset set: sources, .gltf files, buffers, textures, metadata, and licenses.
+Clone the repository for the full asset set: sources, .gltf files, textures, metadata, and licenses.
 
 ## Scenes
 
