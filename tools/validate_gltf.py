@@ -34,6 +34,9 @@ def discover_scenes() -> list[Path]:
 def expected_assets(scene_dir: Path) -> list[Path]:
     base = scene_dir.name.replace("-", "_")
     gltf_dir = scene_dir / "gltf"
+    single_glb = gltf_dir / f"{base}.glb"
+    if single_glb.is_file():
+        return [single_glb, gltf_dir / "conversion.yaml"]
     return [
         gltf_dir / f"{base}_core.gltf",
         gltf_dir / f"{base}_extended.gltf",
@@ -125,12 +128,13 @@ def main() -> int:
     annotations_left = args.max_annotations
 
     for scene_dir in discover_scenes():
-        for path in expected_assets(scene_dir):
+        assets = expected_assets(scene_dir)
+        for path in assets:
             if not path.is_file():
                 missing.append(path)
                 annotation("error", path, "Missing glTF scene asset", "Expected generated scene output is missing.")
 
-        for gltf_path in expected_assets(scene_dir)[:2]:
+        for gltf_path in (path for path in assets if path.suffix in {".gltf", ".glb"}):
             if not gltf_path.is_file():
                 continue
             try:
@@ -143,7 +147,9 @@ def main() -> int:
             rows.append(
                 {
                     "scene": scene_dir.name,
-                    "variant": "core" if gltf_path.name.endswith("_core.gltf") else "extended",
+                    "variant": "single"
+                    if gltf_path.suffix == ".glb"
+                    else "core" if gltf_path.name.endswith("_core.gltf") else "extended",
                     "errors": errors,
                     "warnings": warnings,
                     "infos": infos,

@@ -1,0 +1,35 @@
+scene:
+  id: "classroom2"
+  format: "glb"
+  author: "Christophe Seux"
+  source: "Blender Classroom demo"
+  source_url: "https://www.blender.org/download/demo-files/"
+  license: "CC0-1.0"
+  license_file: "scenes/classroom2/source/LICENSE.txt"
+  original_readme: "scenes/classroom2/source/ReadMe.txt"
+outputs:
+  glb: "scenes/classroom2/gltf/classroom2.glb"
+conversion:
+  method: "Blender glTF export"
+  input_filename: "classroom.glb"
+  generator: "Khronos glTF Blender I/O v5.1.19"
+  variants: "single"
+  modified_after_export: false
+asset:
+  bytes: 96115780
+  sha256: "ab0465363ef4057a7db8ccb2e2e4fc8c5bd235e4c0e378a320a880db6d8a793a"
+  self_contained: true
+  extensions_used: ["KHR_materials_transmission", "KHR_materials_emissive_strength", "KHR_materials_ior"]
+  extensions_required: []
+summary:
+  scenes: 1
+  nodes: 893
+  meshes: 330
+  materials: 78
+  textures: 99
+  images: 99
+  cameras: 1
+reference_image:
+  file: "scenes/classroom2/source/classroom2.png"
+  renderer: "RTVK"
+  resolution: [1920, 1009]

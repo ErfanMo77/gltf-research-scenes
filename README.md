@@ -16,22 +16,24 @@ Many well-known research scenes are distributed in renderer-specific formats suc
 
 This repository provides glTF 2.0 adaptations of those scenes so they are easier to inspect, load, and reuse. The glTF outputs are close approximations of the original scenes.
 
-Each scene includes the generated glTF assets and metadata describing how the conversion was done. The scenes were converted with Python scripts, then manually checked against the original files and reference renders.
+Each scene includes glTF assets and metadata describing how the conversion was done. PBRT scenes were converted with Python scripts, then manually checked against the original files and reference renders.
 
 glTF scenes are validated in GitHub Actions with the Khronos glTF Validator.
 
 ## glTF variants
 
-Each scene includes two generated glTF variants:
+PBRT scenes include two generated glTF variants:
 
 - `*_core.gltf`: standard glTF 2.0 material model, for easier loading in engines.
 - `*_extended.gltf`: a richer material mapping using supported glTF extensions.
 
 For basic importer and engine testing, use the `core` version. And use the `extended` version for richer material representation.
 
+Classroom 2 is supplied as a single `classroom2.glb`, with its textures and camera embedded.
+
 ## Download
 
-Download the [`v1.0.0 release`](https://github.com/ErfanMo77/gltf-research-scenes/releases/tag/v1.0.0) if you only need the packaged `.glb` files.
+Download the [`latest release`](https://github.com/ErfanMo77/gltf-research-scenes/releases/tag/v1.1.0) if you only need the packaged `.glb` files.
 
 Clone the repository for the full asset set: sources, .gltf files, textures, metadata, and licenses.
 
@@ -44,6 +46,7 @@ Clone the repository for the full asset set: sources, .gltf files, textures, met
 | [`bathroom2`](scenes/bathroom2/) | <img src="scenes/bathroom2/bathroom2_thumbnail.png" width="160" alt="Bathroom 2 reference"> | CC-BY-3.0 | Bathroom interior with textured coated wood, rough glass, mirrors, and emissive mesh lighting |
 | [`bmw-m6`](scenes/bmw-m6/) | <img src="scenes/bmw-m6/bmw_m6_thumbnail.png" width="160" alt="BMW M6 reference"> | CC0-1.0 | Vehicle scene with clearcoat paint, dielectric glass, aluminum metals, coated conductors, and environment map data |
 | [`classroom`](scenes/classroom/) | <img src="scenes/classroom/classroom_thumbnail.png" width="160" alt="Classroom reference"> | CC-BY-3.0 | Classroom interior with textured wood, clearcoat materials, metals, environment map data, and distant-light data |
+| [`classroom2`](scenes/classroom2/) | <img src="scenes/classroom2/classroom2_thumbnail.png" width="160" alt="Classroom 2 rendered in RTVK"> | CC0-1.0 | Blender Classroom by Christophe Seux, supplied as one GLB with embedded textures and camera |
 | [`coffee-maker`](scenes/coffee-maker/) | <img src="scenes/coffee-maker/coffee_maker_thumbnail.png" width="160" alt="Coffee Maker reference"> | CC-BY-3.0 | Compact appliance scene with coated plastics, glass, metal, and emissive mesh lighting |
 | [`cornell-box`](scenes/cornell-box/) | <img src="scenes/cornell-box/cornell_box_thumbnail.png" width="160" alt="Cornell Box reference"> | CC0-1.0 | Small diffuse box scene with emissive mesh lighting |
 | [`cornell-caustic`](scenes/cornell-caustic/) | <img src="scenes/cornell-caustic/cornell_caustic_thumbnail.png" width="160" alt="Cornell Caustic reference"> | CC0-1.0 | Cornell Box caustics scene with dielectric water and emissive mesh lighting |
@@ -76,7 +79,7 @@ The generated glTF files do not use explicit light objects. Base glTF 2.0 has no
 
 ## Generated Outputs
 
-Each scene's `gltf/` directory contains:
+Each PBRT scene's `gltf/` directory contains:
 
 - `scenes/<scene-id>/gltf/<scene_id>_core.gltf`
 - `scenes/<scene-id>/gltf/<scene_id>_extended.gltf`

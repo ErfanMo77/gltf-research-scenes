@@ -76,8 +76,11 @@ jobs:
               if not source_dir.is_dir():
                   raise SystemExit(f"missing source directory: {source_dir}")
 
-              for variant in ("core", "extended"):
-                  source = gltf_dir / f"{base_name}_{variant}.glb"
+              single_glb = gltf_dir / f"{base_name}.glb"
+              glbs = [single_glb] if single_glb.is_file() else [
+                  gltf_dir / f"{base_name}_{variant}.glb" for variant in ("core", "extended")
+              ]
+              for source in glbs:
                   if not source.is_file():
                       raise SystemExit(f"missing generated GLB: {source}")
                   shutil.copy2(source, output_dir / source.name)

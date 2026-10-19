@@ -78,6 +78,8 @@ def scene_gltf_paths(scene_id_or_dir: str, variant: str) -> list[Path]:
         scene_dir = Path("scenes") / scene_id_or_dir
 
     base_name = scene_dir.name.replace("-", "_")
+    if (scene_dir / "gltf" / f"{base_name}.glb").is_file():
+        return []
     variants = ("core", "extended") if variant == "both" else (variant,)
     return [scene_dir / "gltf" / f"{base_name}_{name}.gltf" for name in variants]
 
