@@ -44,6 +44,15 @@ material_mappings:
     name: "Wood"
     pbrt: "coateddiffuse imagemap"
     texture: "Texture03"
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.15
+          vroughness: 0.15
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.15, 0.15]
+        gltf_roughness: 0.3872983346207417
     gltf: "image map converted to embedded PNG"
     source: "textures/wood.tga"
   -
@@ -57,6 +66,13 @@ material_mappings:
       k: "metal-Ag-k"
     base_color: [0.974841, 0.957789, 0.906446]
     roughness: 0.0
+    roughness_mapping:
+      base:
+        source:
+          roughness: 0
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "StainlessSmooth"
     pbrt: "conductor"
@@ -65,13 +81,29 @@ material_mappings:
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
     roughness: 0.0
+    roughness_mapping:
+      base:
+        source:
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
     pbrt_remaproughness: false
   -
     name: "Bathtube"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.001
+    clearcoat_roughness: 0.03162277660168379
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.001
+          vroughness: 0.001
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.001, 0.001]
+        gltf_roughness: 0.03162277660168379
     pbrt_roughness: [0.001, 0.001]
     pbrt_remaproughness: false
   -
@@ -81,13 +113,31 @@ material_mappings:
     eta: [1.65746, 0.880369, 0.521229]
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
-    roughness: 0.1
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
     name: "Floor"
     pbrt: "coateddiffuse imagemap"
     texture: "Texture05"
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.2
+          vroughness: 0.2
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.2, 0.2]
+        gltf_roughness: 0.4472135954999579
     gltf: "image map converted to embedded PNG"
     source: "textures/floor_tiles.tga"
     displacement_texture: "Texture04"
@@ -98,7 +148,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.1
+    clearcoat_roughness: 0.31622776601683794
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -112,12 +171,26 @@ material_mappings:
     pbrt: "dielectric"
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.5
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "BlackPlastic"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.2
+    clearcoat_roughness: 0.4472135954999579
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.2
+          vroughness: 0.2
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.2, 0.2]
+        gltf_roughness: 0.4472135954999579
     pbrt_roughness: [0.2, 0.2]
     pbrt_remaproughness: false
   -
@@ -137,7 +210,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.1
+    clearcoat_roughness: 0.31622776601683794
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -151,7 +233,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.001
+    clearcoat_roughness: 0.03162277660168379
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.001
+          vroughness: 0.001
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.001, 0.001]
+        gltf_roughness: 0.03162277660168379
     pbrt_roughness: [0.001, 0.001]
     pbrt_remaproughness: false
   -
@@ -173,7 +264,16 @@ material_mappings:
     eta: [1.65746, 0.880369, 0.521229]
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
-    roughness: 0.05
+    roughness: 0.22360679774997896
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.05
+          vroughness: 0.05
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.05, 0.05]
+        gltf_roughness: 0.22360679774997896
     pbrt_roughness: [0.05, 0.05]
     pbrt_remaproughness: false
   -
@@ -183,7 +283,16 @@ material_mappings:
     eta: [1.648469, 1.150448, 1.379779]
     k: [3.36846, 1.943489, 1.102012]
     base_color: [0.640874, 0.45227, 0.197544]
-    roughness: 0.1
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -

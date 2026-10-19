@@ -389,7 +389,7 @@
           1.0
         ],
         "metallicFactor": 1.0,
-        "roughnessFactor": 0.01
+        "roughnessFactor": 0.1
       },
       "extras": {
         "pbrt": {
@@ -399,6 +399,21 @@
             0.8,
             0.8
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "uroughness": 0.01,
+                "vroughness": 0.01,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.01,
+                0.01
+              ],
+              "gltf_roughness": 0.1
+            }
+          },
           "eta": [
             0.200438,
             0.924033,
@@ -444,7 +459,7 @@
           1.0
         ],
         "metallicFactor": 1.0,
-        "roughnessFactor": 0.05
+        "roughnessFactor": 0.22360679774997896
       },
       "extras": {
         "pbrt": {
@@ -454,6 +469,21 @@
             0.8,
             0.8
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "uroughness": 0.05,
+                "vroughness": 0.05,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.05,
+                0.05
+              ],
+              "gltf_roughness": 0.22360679774997896
+            }
+          },
           "eta": [
             0.200438,
             0.924033,
@@ -499,7 +529,7 @@
           1.0
         ],
         "metallicFactor": 1.0,
-        "roughnessFactor": 0.1
+        "roughnessFactor": 0.31622776601683794
       },
       "extras": {
         "pbrt": {
@@ -509,6 +539,21 @@
             0.8,
             0.8
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "uroughness": 0.1,
+                "vroughness": 0.1,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.1,
+                0.1
+              ],
+              "gltf_roughness": 0.31622776601683794
+            }
+          },
           "eta": [
             0.200438,
             0.924033,
@@ -554,7 +599,7 @@
           1.0
         ],
         "metallicFactor": 1.0,
-        "roughnessFactor": 0.25
+        "roughnessFactor": 0.5
       },
       "extras": {
         "pbrt": {
@@ -564,6 +609,21 @@
             0.8,
             0.8
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "uroughness": 0.25,
+                "vroughness": 0.25,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.25,
+                0.25
+              ],
+              "gltf_roughness": 0.5
+            }
+          },
           "eta": [
             0.200438,
             0.924033,

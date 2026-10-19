@@ -523,6 +523,19 @@
             1.0,
             1.0
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.0,
+                0.0
+              ],
+              "gltf_roughness": 0.0
+            }
+          },
           "eta": 1.8,
           "remaproughness": false
         }

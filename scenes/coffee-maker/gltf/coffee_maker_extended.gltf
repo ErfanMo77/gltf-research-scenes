@@ -588,6 +588,21 @@
             0.378676,
             0.013473
           ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.001,
+                "vroughness": 0.001,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.001,
+                0.001
+              ],
+              "gltf_roughness": 0.03162277660168379
+            }
+          },
           "Kd": {
             "encoding": "rgb",
             "value": [
@@ -598,7 +613,7 @@
           },
           "coateddiffuse": {
             "clearcoat_factor": 1.0,
-            "clearcoat_roughness": 0.001,
+            "clearcoat_roughness": 0.03162277660168379,
             "uroughness": 0.001,
             "vroughness": 0.001,
             "remaproughness": false
@@ -611,7 +626,7 @@
         },
         "KHR_materials_clearcoat": {
           "clearcoatFactor": 1.0,
-          "clearcoatRoughnessFactor": 0.001
+          "clearcoatRoughnessFactor": 0.03162277660168379
         }
       }
     },
@@ -636,6 +651,21 @@
             0.00631,
             0.00631
           ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.1,
+                "vroughness": 0.1,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.1,
+                0.1
+              ],
+              "gltf_roughness": 0.31622776601683794
+            }
+          },
           "Kd": {
             "encoding": "rgb",
             "value": [
@@ -646,7 +676,7 @@
           },
           "coateddiffuse": {
             "clearcoat_factor": 1.0,
-            "clearcoat_roughness": 0.1,
+            "clearcoat_roughness": 0.31622776601683794,
             "uroughness": 0.1,
             "vroughness": 0.1,
             "remaproughness": false
@@ -659,7 +689,7 @@
         },
         "KHR_materials_clearcoat": {
           "clearcoatFactor": 1.0,
-          "clearcoatRoughnessFactor": 0.1
+          "clearcoatRoughnessFactor": 0.31622776601683794
         }
       }
     },
@@ -684,6 +714,19 @@
             1.0,
             1.0
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.0,
+                0.0
+              ],
+              "gltf_roughness": 0.0
+            }
+          },
           "eta": 1.5,
           "remaproughness": false,
           "Kd": {
@@ -729,6 +772,19 @@
             0.8,
             0.8
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "roughness": 0
+              },
+              "remaproughness": true,
+              "alpha": [
+                0.0,
+                0.0
+              ],
+              "gltf_roughness": 0.0
+            }
+          },
           "eta": [
             0.155,
             0.116,
@@ -786,6 +842,21 @@
             0.578596,
             0.578596
           ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.001,
+                "vroughness": 0.001,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.001,
+                0.001
+              ],
+              "gltf_roughness": 0.03162277660168379
+            }
+          },
           "Kd": {
             "encoding": "rgb",
             "value": [
@@ -796,7 +867,7 @@
           },
           "coateddiffuse": {
             "clearcoat_factor": 1.0,
-            "clearcoat_roughness": 0.001,
+            "clearcoat_roughness": 0.03162277660168379,
             "uroughness": 0.001,
             "vroughness": 0.001,
             "remaproughness": false
@@ -809,7 +880,7 @@
         },
         "KHR_materials_clearcoat": {
           "clearcoatFactor": 1.0,
-          "clearcoatRoughnessFactor": 0.001
+          "clearcoatRoughnessFactor": 0.03162277660168379
         }
       }
     },

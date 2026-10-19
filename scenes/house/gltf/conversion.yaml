@@ -51,6 +51,11 @@ material_mappings:
     pbrt: "dielectric"
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.5
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
 light_mappings:
   -
     pbrt: "infinite"

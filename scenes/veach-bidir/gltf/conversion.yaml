@@ -46,6 +46,13 @@ material_mappings:
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.5
     pbrt_remaproughness: false
+    roughness_mapping:
+      base:
+        source:
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "Lamp"
     pbrt: "conductor"
@@ -53,7 +60,16 @@ material_mappings:
     eta: [2.865601, 2.119182, 1.940077]
     k: [3.032326, 2.056108, 1.616293]
     base_color: [0.525128, 0.392649, 0.31059]
-    roughness: 0.25
+    roughness: 0.5
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.25
+          vroughness: 0.25
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.25, 0.25]
+        gltf_roughness: 0.5
     pbrt_roughness: [0.25, 0.25]
     pbrt_remaproughness: false
 light_mappings:

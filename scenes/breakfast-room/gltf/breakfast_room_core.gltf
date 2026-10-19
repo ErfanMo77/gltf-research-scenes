@@ -1166,7 +1166,22 @@
             1.0,
             1.0,
             1.0
-          ]
+          ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.1,
+                "vroughness": 0.1,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.1,
+                0.1
+              ],
+              "gltf_roughness": 0.31622776601683794
+            }
+          }
         }
       }
     },
@@ -1181,7 +1196,7 @@
           1.0
         ],
         "metallicFactor": 1.0,
-        "roughnessFactor": 0.05
+        "roughnessFactor": 0.22360679774997896
       },
       "extras": {
         "pbrt": {
@@ -1191,6 +1206,21 @@
             0.8,
             0.8
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "uroughness": 0.05,
+                "vroughness": 0.05,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.05,
+                0.05
+              ],
+              "gltf_roughness": 0.22360679774997896
+            }
+          },
           "eta": [
             4.369683,
             2.916703,
@@ -1232,7 +1262,22 @@
             0.05,
             0.05,
             0.05
-          ]
+          ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.2,
+                "vroughness": 0.2,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.2,
+                0.2
+              ],
+              "gltf_roughness": 0.4472135954999579
+            }
+          }
         }
       }
     },
@@ -1366,7 +1411,22 @@
             0.01,
             0.01,
             0.01
-          ]
+          ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.2,
+                "vroughness": 0.2,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.2,
+                0.2
+              ],
+              "gltf_roughness": 0.4472135954999579
+            }
+          }
         }
       }
     },
@@ -1405,7 +1465,7 @@
           1.0
         ],
         "metallicFactor": 1.0,
-        "roughnessFactor": 0.1
+        "roughnessFactor": 0.31622776601683794
       },
       "extras": {
         "pbrt": {
@@ -1415,6 +1475,21 @@
             0.8,
             0.8
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "uroughness": 0.1,
+                "vroughness": 0.1,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.1,
+                0.1
+              ],
+              "gltf_roughness": 0.31622776601683794
+            }
+          },
           "eta": [
             0.143119,
             0.374957,
@@ -1456,7 +1531,22 @@
             1.0,
             1.0,
             1.0
-          ]
+          ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.01,
+                "vroughness": 0.01,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.01,
+                0.01
+              ],
+              "gltf_roughness": 0.1
+            }
+          }
         }
       }
     },
@@ -1471,7 +1561,7 @@
           1.0
         ],
         "metallicFactor": 1.0,
-        "roughnessFactor": 0.1
+        "roughnessFactor": 0.31622776601683794
       },
       "extras": {
         "pbrt": {
@@ -1481,6 +1571,21 @@
             0.8,
             0.8
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "uroughness": 0.1,
+                "vroughness": 0.1,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.1,
+                0.1
+              ],
+              "gltf_roughness": 0.31622776601683794
+            }
+          },
           "eta": [
             1.65746,
             0.880369,
@@ -1526,6 +1631,21 @@
             0.8,
             0.8
           ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.01,
+                "vroughness": 0.01,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.01,
+                0.01
+              ],
+              "gltf_roughness": 0.1
+            }
+          },
           "reflectance_texture": "Texture03",
           "reflectance_texture_type": "imagemap",
           "reflectance_texture_filename": "textures/Teacup.tga",
@@ -1553,7 +1673,22 @@
             0.684615,
             0.684615,
             0.684615
-          ]
+          ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.1,
+                "vroughness": 0.1,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.1,
+                0.1
+              ],
+              "gltf_roughness": 0.31622776601683794
+            }
+          }
         }
       }
     },
@@ -1577,7 +1712,22 @@
             0.79311,
             0.79311,
             0.79311
-          ]
+          ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.1,
+                "vroughness": 0.1,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.1,
+                0.1
+              ],
+              "gltf_roughness": 0.31622776601683794
+            }
+          }
         }
       }
     }

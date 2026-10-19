@@ -44,7 +44,16 @@ material_mappings:
     eta: [0.200438, 0.924033, 1.102212]
     k: [3.912949, 2.452848, 2.142188]
     base_color: [0.952141, 0.619676, 0.510577]
-    roughness: 0.01
+    roughness: 0.1
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.01
+          vroughness: 0.01
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.01, 0.01]
+        gltf_roughness: 0.1
     pbrt_roughness: [0.01, 0.01]
     pbrt_remaproughness: false
   -
@@ -54,7 +63,16 @@ material_mappings:
     eta: [0.200438, 0.924033, 1.102212]
     k: [3.912949, 2.452848, 2.142188]
     base_color: [0.952141, 0.619676, 0.510577]
-    roughness: 0.05
+    roughness: 0.22360679774997896
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.05
+          vroughness: 0.05
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.05, 0.05]
+        gltf_roughness: 0.22360679774997896
     pbrt_roughness: [0.05, 0.05]
     pbrt_remaproughness: false
   -
@@ -64,7 +82,16 @@ material_mappings:
     eta: [0.200438, 0.924033, 1.102212]
     k: [3.912949, 2.452848, 2.142188]
     base_color: [0.952141, 0.619676, 0.510577]
-    roughness: 0.1
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -74,7 +101,16 @@ material_mappings:
     eta: [0.200438, 0.924033, 1.102212]
     k: [3.912949, 2.452848, 2.142188]
     base_color: [0.952141, 0.619676, 0.510577]
-    roughness: 0.25
+    roughness: 0.5
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.25
+          vroughness: 0.25
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.25, 0.25]
+        gltf_roughness: 0.5
     pbrt_roughness: [0.25, 0.25]
     pbrt_remaproughness: false
 light_mappings:

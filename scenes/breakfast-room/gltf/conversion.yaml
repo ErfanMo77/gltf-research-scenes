@@ -43,7 +43,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.1
+    clearcoat_roughness: 0.31622776601683794
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -53,7 +62,16 @@ material_mappings:
     eta: [4.369683, 2.916703, 1.654701]
     k: [5.206434, 4.231365, 3.754947]
     base_color: [0.687548, 0.649066, 0.687011]
-    roughness: 0.05
+    roughness: 0.22360679774997896
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.05
+          vroughness: 0.05
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.05, 0.05]
+        gltf_roughness: 0.22360679774997896
     pbrt_roughness: [0.05, 0.05]
     pbrt_remaproughness: false
   -
@@ -61,7 +79,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.2
+    clearcoat_roughness: 0.4472135954999579
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.2
+          vroughness: 0.2
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.2, 0.2]
+        gltf_roughness: 0.4472135954999579
     pbrt_roughness: [0.2, 0.2]
     pbrt_remaproughness: false
   -
@@ -81,7 +108,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.2
+    clearcoat_roughness: 0.4472135954999579
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.2
+          vroughness: 0.2
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.2, 0.2]
+        gltf_roughness: 0.4472135954999579
     pbrt_roughness: [0.2, 0.2]
     pbrt_remaproughness: false
   -
@@ -91,7 +127,16 @@ material_mappings:
     eta: [0.143119, 0.374957, 1.442479]
     k: [3.98316, 2.385721, 1.603215]
     base_color: [0.966663, 0.80219, 0.324049]
-    roughness: 0.1
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -99,7 +144,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.01
+    clearcoat_roughness: 0.1
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.01
+          vroughness: 0.01
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.01, 0.01]
+        gltf_roughness: 0.1
     pbrt_roughness: [0.01, 0.01]
     pbrt_remaproughness: false
   -
@@ -109,13 +163,31 @@ material_mappings:
     eta: [1.65746, 0.880369, 0.521229]
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
-    roughness: 0.1
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
     name: "PaintedCeramic"
     pbrt: "coateddiffuse imagemap"
     texture: "Texture03"
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.01
+          vroughness: 0.01
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.01, 0.01]
+        gltf_roughness: 0.1
     gltf: "image map converted to embedded PNG"
     source: "textures/Teacup.tga"
   -
@@ -123,7 +195,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.1
+    clearcoat_roughness: 0.31622776601683794
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -131,7 +212,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.1
+    clearcoat_roughness: 0.31622776601683794
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
 light_mappings:

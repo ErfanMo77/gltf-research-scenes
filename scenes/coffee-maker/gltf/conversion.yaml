@@ -45,7 +45,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.001
+    clearcoat_roughness: 0.03162277660168379
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.001
+          vroughness: 0.001
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.001, 0.001]
+        gltf_roughness: 0.03162277660168379
     pbrt_roughness: [0.001, 0.001]
     pbrt_remaproughness: false
   -
@@ -53,7 +62,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.1
+    clearcoat_roughness: 0.31622776601683794
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -62,6 +80,13 @@ material_mappings:
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.5
     pbrt_remaproughness: false
+    roughness_mapping:
+      base:
+        source:
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "Metal"
     pbrt: "conductor"
@@ -73,12 +98,28 @@ material_mappings:
       k: "metal-Ag-k"
     base_color: [0.974841, 0.957789, 0.906446]
     roughness: 0.0
+    roughness_mapping:
+      base:
+        source:
+          roughness: 0
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "Floor"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.001
+    clearcoat_roughness: 0.03162277660168379
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.001
+          vroughness: 0.001
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.001, 0.001]
+        gltf_roughness: 0.03162277660168379
     pbrt_roughness: [0.001, 0.001]
     pbrt_remaproughness: false
 light_mappings:

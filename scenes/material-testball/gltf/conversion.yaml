@@ -42,7 +42,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.001
+    clearcoat_roughness: 0.03162277660168379
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.001
+          vroughness: 0.001
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.001, 0.001]
+        gltf_roughness: 0.03162277660168379
     pbrt_roughness: [0.001, 0.001]
     pbrt_remaproughness: false
   -

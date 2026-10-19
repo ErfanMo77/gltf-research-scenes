@@ -1548,6 +1548,19 @@
             0.8,
             0.8
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "roughness": 0
+              },
+              "remaproughness": true,
+              "alpha": [
+                0.0,
+                0.0
+              ],
+              "gltf_roughness": 0.0
+            }
+          },
           "eta": [
             0.155,
             0.116,
@@ -1582,7 +1595,7 @@
           1.0
         ],
         "metallicFactor": 1.0,
-        "roughnessFactor": 0.01
+        "roughnessFactor": 0.1
       },
       "extras": {
         "pbrt": {
@@ -1592,6 +1605,21 @@
             0.8,
             0.8
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "uroughness": 0.01,
+                "vroughness": 0.01,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.01,
+                0.01
+              ],
+              "gltf_roughness": 0.1
+            }
+          },
           "eta": [
             1.65746,
             0.880369,
@@ -1657,7 +1685,22 @@
             0.05,
             0.05,
             0.05
-          ]
+          ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.1,
+                "vroughness": 0.1,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.1,
+                0.1
+              ],
+              "gltf_roughness": 0.31622776601683794
+            }
+          }
         }
       }
     },
@@ -1685,6 +1728,21 @@
             0.8,
             0.8
           ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.1,
+                "vroughness": 0.1,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.1,
+                0.1
+              ],
+              "gltf_roughness": 0.31622776601683794
+            }
+          },
           "reflectance_texture": "Texture01",
           "reflectance_texture_type": "imagemap",
           "reflectance_texture_filename": "textures/WoodPanel.tga",
@@ -1716,6 +1774,21 @@
             0.8,
             0.8
           ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.1,
+                "vroughness": 0.1,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.1,
+                0.1
+              ],
+              "gltf_roughness": 0.31622776601683794
+            }
+          },
           "reflectance_texture": "Texture02",
           "reflectance_texture_type": "imagemap",
           "reflectance_texture_filename": "textures/WoodFloor.tga",
@@ -1765,7 +1838,7 @@
           0.35
         ],
         "metallicFactor": 0.0,
-        "roughnessFactor": 0.0
+        "roughnessFactor": 0.31622776601683794
       },
       "extras": {
         "pbrt": {
@@ -1775,6 +1848,21 @@
             1.0,
             1.0
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "uroughness": 0.1,
+                "vroughness": 0.1,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.1,
+                0.1
+              ],
+              "gltf_roughness": 0.31622776601683794
+            }
+          },
           "eta": 1.5,
           "remaproughness": false
         }
@@ -1801,7 +1889,22 @@
             0.578596,
             0.578596,
             0.578596
-          ]
+          ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.001,
+                "vroughness": 0.001,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.001,
+                0.001
+              ],
+              "gltf_roughness": 0.03162277660168379
+            }
+          }
         }
       }
     },
@@ -1850,6 +1953,19 @@
             0.8,
             0.8
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "roughness": 0
+              },
+              "remaproughness": true,
+              "alpha": [
+                0.0,
+                0.0
+              ],
+              "gltf_roughness": 0.0
+            }
+          },
           "eta": [
             0.155,
             0.116,
@@ -1965,7 +2081,22 @@
             0.578596,
             0.578596,
             0.578596
-          ]
+          ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.001,
+                "vroughness": 0.001,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.001,
+                0.001
+              ],
+              "gltf_roughness": 0.03162277660168379
+            }
+          }
         }
       }
     },

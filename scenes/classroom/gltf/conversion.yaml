@@ -49,7 +49,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.1
+    clearcoat_roughness: 0.31622776601683794
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -57,7 +66,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.1
+    clearcoat_roughness: 0.31622776601683794
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -65,13 +83,31 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.05
+    clearcoat_roughness: 0.22360679774997896
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.05
+          vroughness: 0.05
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.05, 0.05]
+        gltf_roughness: 0.22360679774997896
     pbrt_roughness: [0.05, 0.05]
     pbrt_remaproughness: false
   -
     name: "ChairWood"
     pbrt: "coateddiffuse imagemap"
     texture: "Texture02"
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.05
+          vroughness: 0.05
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.05, 0.05]
+        gltf_roughness: 0.22360679774997896
     gltf: "image map converted to embedded PNG"
     source: "textures/wood2.tga"
   -
@@ -81,7 +117,16 @@ material_mappings:
     eta: [1.65746, 0.880369, 0.521229]
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
-    roughness: 0.1
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -92,6 +137,13 @@ material_mappings:
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
     roughness: 0.0
+    roughness_mapping:
+      base:
+        source:
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
     pbrt_remaproughness: false
   -
     name: "WoodFrame"
@@ -106,7 +158,16 @@ material_mappings:
     eta: [1.65746, 0.880369, 0.521229]
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
-    roughness: 0.1
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -114,7 +175,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.001
+    clearcoat_roughness: 0.03162277660168379
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.001
+          vroughness: 0.001
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.001, 0.001]
+        gltf_roughness: 0.03162277660168379
     pbrt_roughness: [0.001, 0.001]
     pbrt_remaproughness: false
 light_mappings:

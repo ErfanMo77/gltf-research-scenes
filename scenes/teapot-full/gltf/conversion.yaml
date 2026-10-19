@@ -48,12 +48,26 @@ material_mappings:
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.5
     pbrt_remaproughness: false
+    roughness_mapping:
+      base:
+        source:
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "dielectric_01_Tea_to_air"
     pbrt: "dielectric"
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.33
     pbrt_remaproughness: false
+    roughness_mapping:
+      base:
+        source:
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
     medium: "Tea"
     volume_gltf: "KHR_materials_volume"
     thickness_factor: 6.136313
@@ -65,6 +79,13 @@ material_mappings:
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.13
     pbrt_remaproughness: false
+    roughness_mapping:
+      base:
+        source:
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
     medium: "Tea"
     volume_gltf: "KHR_materials_volume"
     thickness_factor: 6.244814

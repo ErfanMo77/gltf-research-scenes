@@ -50,6 +50,15 @@ material_mappings:
     name: "Floor"
     pbrt: "coateddiffuse imagemap"
     texture: "Texture02"
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.15
+          vroughness: 0.15
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.15, 0.15]
+        gltf_roughness: 0.3872983346207417
     gltf: "image map converted to embedded PNG"
     source: "textures/wood4.tga"
   -
@@ -57,7 +66,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.1
+    clearcoat_roughness: 0.31622776601683794
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -89,7 +107,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.001
+    clearcoat_roughness: 0.03162277660168379
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.001
+          vroughness: 0.001
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.001, 0.001]
+        gltf_roughness: 0.03162277660168379
     pbrt_roughness: [0.001, 0.001]
     pbrt_remaproughness: false
   -
@@ -97,7 +124,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.001
+    clearcoat_roughness: 0.03162277660168379
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.001
+          vroughness: 0.001
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.001, 0.001]
+        gltf_roughness: 0.03162277660168379
     pbrt_roughness: [0.001, 0.001]
     pbrt_remaproughness: false
   -
@@ -105,7 +141,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.001
+    clearcoat_roughness: 0.03162277660168379
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.001
+          vroughness: 0.001
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.001, 0.001]
+        gltf_roughness: 0.03162277660168379
     pbrt_roughness: [0.001, 0.001]
     pbrt_remaproughness: false
   -
@@ -125,7 +170,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.15
+    clearcoat_roughness: 0.3872983346207417
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.15
+          vroughness: 0.15
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.15, 0.15]
+        gltf_roughness: 0.3872983346207417
     pbrt_roughness: [0.15, 0.15]
     pbrt_remaproughness: false
   -
@@ -133,7 +187,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.05
+    clearcoat_roughness: 0.22360679774997896
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.05
+          vroughness: 0.05
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.05, 0.05]
+        gltf_roughness: 0.22360679774997896
     pbrt_roughness: [0.05, 0.05]
     pbrt_remaproughness: false
   -
@@ -142,6 +205,13 @@ material_mappings:
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.5
     pbrt_remaproughness: false
+    roughness_mapping:
+      base:
+        source:
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "BlackRaughtIron"
     pbrt: "conductor"
@@ -149,7 +219,16 @@ material_mappings:
     eta: [4.370703, 3.300297, 2.998267]
     k: [3.500678, 2.604865, 2.273193]
     base_color: [0.574619, 0.477757, 0.433047]
-    roughness: 0.4
+    roughness: 0.6324555320336759
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.4
+          vroughness: 0.4
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.4, 0.4]
+        gltf_roughness: 0.6324555320336759
     pbrt_roughness: [0.4, 0.4]
     pbrt_remaproughness: false
   -
@@ -173,7 +252,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.001
+    clearcoat_roughness: 0.03162277660168379
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.001
+          vroughness: 0.001
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.001, 0.001]
+        gltf_roughness: 0.03162277660168379
     pbrt_roughness: [0.001, 0.001]
     pbrt_remaproughness: false
   -
@@ -217,7 +305,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.15
+    clearcoat_roughness: 0.3872983346207417
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.15
+          vroughness: 0.15
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.15, 0.15]
+        gltf_roughness: 0.3872983346207417
     pbrt_roughness: [0.15, 0.15]
     pbrt_remaproughness: false
   -
@@ -227,7 +324,16 @@ material_mappings:
     eta: [1.0, 1.0, 1.0]
     k: [1.0, 1.0, 1.0]
     base_color: [0.2, 0.2, 0.2]
-    roughness: 0.1
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -242,11 +348,23 @@ material_mappings:
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.5
     pbrt_remaproughness: false
+    roughness_mapping:
+      base:
+        source:
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "RadioGlass"
     pbrt: "dielectric"
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.5
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "RadioDialLine"
     pbrt: "conductor"
@@ -258,6 +376,13 @@ material_mappings:
       k: "metal-Ag-k"
     base_color: [0.974841, 0.957789, 0.906446]
     roughness: 0.0
+    roughness_mapping:
+      base:
+        source:
+          roughness: 0
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "BushLogo"
     pbrt: "conductor"
@@ -265,7 +390,16 @@ material_mappings:
     eta: [1.65746, 0.880369, 0.521229]
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
-    roughness: 0.1
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -275,7 +409,16 @@ material_mappings:
     eta: [1.65746, 0.880369, 0.521229]
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
-    roughness: 0.1
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -285,7 +428,16 @@ material_mappings:
     eta: [1.65746, 0.880369, 0.521229]
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
-    roughness: 0.1
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -295,7 +447,16 @@ material_mappings:
     eta: [1.65746, 0.880369, 0.521229]
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
-    roughness: 0.1
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -309,18 +470,41 @@ material_mappings:
       k: "metal-Ag-k"
     base_color: [0.974841, 0.957789, 0.906446]
     roughness: 0.0
+    roughness_mapping:
+      base:
+        source:
+          roughness: 0
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "BlackMarble"
     pbrt: "dielectric"
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.5
     pbrt_remaproughness: false
+    roughness_mapping:
+      base:
+        source:
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "RadiatorBase"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.1
+    clearcoat_roughness: 0.31622776601683794
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -336,7 +520,16 @@ material_mappings:
     eta: [1.65746, 0.880369, 0.521229]
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
-    roughness: 0.1
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -344,7 +537,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.001
+    clearcoat_roughness: 0.03162277660168379
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.001
+          vroughness: 0.001
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.001, 0.001]
+        gltf_roughness: 0.03162277660168379
     pbrt_roughness: [0.001, 0.001]
     pbrt_remaproughness: false
 light_mappings:

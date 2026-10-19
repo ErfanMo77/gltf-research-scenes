@@ -46,6 +46,13 @@ material_mappings:
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.8
     pbrt_remaproughness: false
+    roughness_mapping:
+      base:
+        source:
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
 light_mappings:
   -
     pbrt: "diffuse area light"

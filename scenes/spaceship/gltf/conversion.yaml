@@ -47,7 +47,16 @@ material_mappings:
     eta: [1.65746, 0.880369, 0.521229]
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
-    roughness: 0.1
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -57,7 +66,16 @@ material_mappings:
     eta: [2.0, 2.0, 2.0]
     k: [0.0, 0.0, 0.0]
     base_color: [0.111111, 0.111111, 0.111111]
-    roughness: 0.1
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -65,7 +83,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.2
+    clearcoat_roughness: 0.4472135954999579
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.2
+          vroughness: 0.2
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.2, 0.2]
+        gltf_roughness: 0.4472135954999579
     pbrt_roughness: [0.2, 0.2]
     pbrt_remaproughness: false
   -
@@ -73,7 +100,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.4
+    clearcoat_roughness: 0.6324555320336759
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.4
+          vroughness: 0.4
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.4, 0.4]
+        gltf_roughness: 0.6324555320336759
     pbrt_roughness: [0.4, 0.4]
     pbrt_remaproughness: false
   -
@@ -81,7 +117,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.4
+    clearcoat_roughness: 0.6324555320336759
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.4
+          vroughness: 0.4
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.4, 0.4]
+        gltf_roughness: 0.6324555320336759
     pbrt_roughness: [0.4, 0.4]
     pbrt_remaproughness: false
   -
@@ -89,7 +134,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.4
+    clearcoat_roughness: 0.6324555320336759
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.4
+          vroughness: 0.4
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.4, 0.4]
+        gltf_roughness: 0.6324555320336759
     pbrt_roughness: [0.4, 0.4]
     pbrt_remaproughness: false
   -
@@ -97,7 +151,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.4
+    clearcoat_roughness: 0.6324555320336759
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.4
+          vroughness: 0.4
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.4, 0.4]
+        gltf_roughness: 0.6324555320336759
     pbrt_roughness: [0.4, 0.4]
     pbrt_remaproughness: false
   -
@@ -106,12 +169,30 @@ material_mappings:
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.5
     pbrt_remaproughness: false
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.01
+          vroughness: 0.01
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.01, 0.01]
+        gltf_roughness: 0.1
   -
     name: "DarkRubber"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.4
+    clearcoat_roughness: 0.6324555320336759
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.4
+          vroughness: 0.4
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.4, 0.4]
+        gltf_roughness: 0.6324555320336759
     pbrt_roughness: [0.4, 0.4]
     pbrt_remaproughness: false
 light_mappings:

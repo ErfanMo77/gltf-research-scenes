@@ -59,7 +59,16 @@ material_mappings:
     eta: [1.65746, 0.880369, 0.521229]
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
-    roughness: 0.25
+    roughness: 0.5
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.25
+          vroughness: 0.25
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.25, 0.25]
+        gltf_roughness: 0.5
     pbrt_roughness: [0.25, 0.25]
     pbrt_remaproughness: false
   -
@@ -80,7 +89,16 @@ material_mappings:
     eta: [1.65746, 0.880369, 0.521229]
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
-    roughness: 0.1
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.1
+          vroughness: 0.1
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.1, 0.1]
     pbrt_remaproughness: false
   -
@@ -90,7 +108,16 @@ material_mappings:
     eta: [1.65746, 0.880369, 0.521229]
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
-    roughness: 0.15
+    roughness: 0.3872983346207417
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.15
+          vroughness: 0.15
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.15, 0.15]
+        gltf_roughness: 0.3872983346207417
     pbrt_roughness: [0.15, 0.15]
     pbrt_remaproughness: false
   -
@@ -99,6 +126,13 @@ material_mappings:
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.5
     pbrt_remaproughness: false
+    roughness_mapping:
+      base:
+        source:
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
 light_mappings:
   -
     pbrt: "diffuse area light"

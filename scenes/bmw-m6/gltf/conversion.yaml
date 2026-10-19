@@ -44,22 +44,46 @@ material_mappings:
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
     clearcoat_roughness: 0.0
+    roughness_mapping:
+      clearcoat:
+        source:
+          roughness: 0
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "HeadLight"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.010408
+    clearcoat_roughness: 0.3194050812978009
+    roughness_mapping:
+      clearcoat:
+        source:
+          roughness: 0.010408
+        remaproughness: true
+        alpha: [0.1020196059588548, 0.1020196059588548]
+        gltf_roughness: 0.3194050812978009
   -
     name: "HeadLightGlass"
     pbrt: "dielectric"
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.5
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "HeadLightGlass01"
     pbrt: "dielectric"
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.5
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "LEATHER"
     pbrt: "mix"
@@ -72,6 +96,11 @@ material_mappings:
     pbrt: "dielectric"
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.5
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "LogoSilver"
     pbrt: "conductor"
@@ -83,18 +112,37 @@ material_mappings:
       k: "metal-Al-k"
     base_color: [0.91151, 0.920974, 0.924054]
     roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "None"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.1
+    clearcoat_roughness: 0.5623413251903491
+    roughness_mapping:
+      clearcoat:
+        source:
+          roughness: 0.1
+        remaproughness: true
+        alpha: [0.31622776601683794, 0.31622776601683794]
+        gltf_roughness: 0.5623413251903491
   -
     name: "Seal"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.010408
+    clearcoat_roughness: 0.3194050812978009
+    roughness_mapping:
+      clearcoat:
+        source:
+          roughness: 0.010408
+        remaproughness: true
+        alpha: [0.1020196059588548, 0.1020196059588548]
+        gltf_roughness: 0.3194050812978009
   -
     name: "WheelRim"
     pbrt: "coatedconductor"
@@ -105,44 +153,99 @@ material_mappings:
       eta: "metal-Al-eta"
       k: "metal-Al-k"
     base_color: [0.91151, 0.920974, 0.924054]
-    roughness: 0.05
+    roughness: 0.4728708045015879
+    roughness_mapping:
+      base:
+        source:
+          conductor.roughness: 0.05
+        remaproughness: true
+        alpha: [0.22360679774997896, 0.22360679774997896]
+        gltf_roughness: 0.4728708045015879
+      clearcoat:
+        source:
+          interface.roughness: 0
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
     interface_roughness: 0
   -
     name: "WindowSeal"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.010408
+    clearcoat_roughness: 0.3194050812978009
+    roughness_mapping:
+      clearcoat:
+        source:
+          roughness: 0.010408
+        remaproughness: true
+        alpha: [0.1020196059588548, 0.1020196059588548]
+        gltf_roughness: 0.3194050812978009
   -
     name: "WindscreenGlass"
     pbrt: "dielectric"
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.5
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "brakeDisc"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.010408
+    clearcoat_roughness: 0.3194050812978009
+    roughness_mapping:
+      clearcoat:
+        source:
+          roughness: 0.010408
+        remaproughness: true
+        alpha: [0.1020196059588548, 0.1020196059588548]
+        gltf_roughness: 0.3194050812978009
   -
     name: "brake_clipper"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.010408
+    clearcoat_roughness: 0.3194050812978009
+    roughness_mapping:
+      clearcoat:
+        source:
+          roughness: 0.010408
+        remaproughness: true
+        alpha: [0.1020196059588548, 0.1020196059588548]
+        gltf_roughness: 0.3194050812978009
   -
     name: "carbonfibre"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.01
+    clearcoat_roughness: 0.31622776601683794
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.01
+          vroughness: 0.01
+        remaproughness: true
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
     pbrt_roughness: [0.01, 0.01]
   -
     name: "floor"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.010408
+    clearcoat_roughness: 0.3194050812978009
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.010408
+          vroughness: 0.010408
+        remaproughness: true
+        alpha: [0.1020196059588548, 0.1020196059588548]
+        gltf_roughness: 0.3194050812978009
     pbrt_roughness: [0.010408, 0.010408]
   -
     name: "grillmetal"
@@ -155,6 +258,11 @@ material_mappings:
       k: "metal-Al-k"
     base_color: [0.91151, 0.920974, 0.924054]
     roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "shinychrome"
     pbrt: "conductor"
@@ -165,19 +273,40 @@ material_mappings:
       eta: "metal-Al-eta"
       k: "metal-Al-k"
     base_color: [0.91151, 0.920974, 0.924054]
-    roughness: 0.01
+    roughness: 0.31622776601683794
+    roughness_mapping:
+      base:
+        source:
+          roughness: 0.01
+        remaproughness: true
+        alpha: [0.1, 0.1]
+        gltf_roughness: 0.31622776601683794
   -
     name: "tire"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.10408
+    clearcoat_roughness: 0.5679914795336876
+    roughness_mapping:
+      clearcoat:
+        source:
+          roughness: 0.10408
+        remaproughness: true
+        alpha: [0.3226143208228674, 0.3226143208228674]
+        gltf_roughness: 0.5679914795336876
   -
     name: "tiresidewall"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.10408
+    clearcoat_roughness: 0.5679914795336876
+    roughness_mapping:
+      clearcoat:
+        source:
+          roughness: 0.10408
+        remaproughness: true
+        alpha: [0.3226143208228674, 0.3226143208228674]
+        gltf_roughness: 0.5679914795336876
 light_mappings:
   -
     pbrt: "infinite"

@@ -44,12 +44,30 @@ material_mappings:
     name: "Floor"
     pbrt: "coateddiffuse imagemap"
     texture: "Texture01"
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.15
+          vroughness: 0.15
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.15, 0.15]
+        gltf_roughness: 0.3872983346207417
     gltf: "image map converted to embedded PNG"
     source: "textures/wood.tga"
   -
     name: "TableWood"
     pbrt: "coateddiffuse imagemap"
     texture: "Texture02"
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.05
+          vroughness: 0.05
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.05, 0.05]
+        gltf_roughness: 0.22360679774997896
     gltf: "image map converted to embedded PNG"
     source: "textures/wood5.tga"
   -
@@ -57,7 +75,16 @@ material_mappings:
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
-    clearcoat_roughness: 0.2
+    clearcoat_roughness: 0.4472135954999579
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.2
+          vroughness: 0.2
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.2, 0.2]
+        gltf_roughness: 0.4472135954999579
     pbrt_roughness: [0.2, 0.2]
     pbrt_remaproughness: false
   -
@@ -71,6 +98,13 @@ material_mappings:
       k: "metal-Ag-k"
     base_color: [0.974841, 0.957789, 0.906446]
     roughness: 0.0
+    roughness_mapping:
+      base:
+        source:
+          roughness: 0
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "BrushedStainlessSteel"
     pbrt: "conductor"
@@ -78,7 +112,16 @@ material_mappings:
     eta: [1.65746, 0.880369, 0.521229]
     k: [9.223869, 6.269523, 4.837001]
     base_color: [0.928047, 0.917805, 0.918909]
-    roughness: 0.02
+    roughness: 0.1414213562373095
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.02
+          vroughness: 0.02
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.02, 0.02]
+        gltf_roughness: 0.1414213562373095
     pbrt_roughness: [0.02, 0.02]
     pbrt_remaproughness: false
   -
@@ -93,6 +136,13 @@ material_mappings:
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 1.5
     pbrt_remaproughness: false
+    roughness_mapping:
+      base:
+        source:
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "FireplaceGlass"
     pbrt: "conductor"
@@ -104,6 +154,13 @@ material_mappings:
       k: "metal-Ag-k"
     base_color: [0.974841, 0.957789, 0.906446]
     roughness: 0.0
+    roughness_mapping:
+      base:
+        source:
+          roughness: 0
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
   -
     name: "Leaves"
     pbrt: "diffusetransmission imagemap"

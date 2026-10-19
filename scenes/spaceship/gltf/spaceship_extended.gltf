@@ -1994,7 +1994,7 @@
           1.0
         ],
         "metallicFactor": 1.0,
-        "roughnessFactor": 0.1
+        "roughnessFactor": 0.31622776601683794
       },
       "extras": {
         "pbrt": {
@@ -2004,6 +2004,21 @@
             0.8,
             0.8
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "uroughness": 0.1,
+                "vroughness": 0.1,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.1,
+                0.1
+              ],
+              "gltf_roughness": 0.31622776601683794
+            }
+          },
           "eta": [
             1.65746,
             0.880369,
@@ -2049,7 +2064,7 @@
           1.0
         ],
         "metallicFactor": 1.0,
-        "roughnessFactor": 0.1
+        "roughnessFactor": 0.31622776601683794
       },
       "extras": {
         "pbrt": {
@@ -2059,6 +2074,21 @@
             0.8,
             0.8
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "uroughness": 0.1,
+                "vroughness": 0.1,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.1,
+                0.1
+              ],
+              "gltf_roughness": 0.31622776601683794
+            }
+          },
           "eta": [
             2.0,
             2.0,
@@ -2114,6 +2144,21 @@
             0.01,
             0.01
           ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.2,
+                "vroughness": 0.2,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.2,
+                0.2
+              ],
+              "gltf_roughness": 0.4472135954999579
+            }
+          },
           "Kd": {
             "encoding": "rgb",
             "value": [
@@ -2124,7 +2169,7 @@
           },
           "coateddiffuse": {
             "clearcoat_factor": 1.0,
-            "clearcoat_roughness": 0.2,
+            "clearcoat_roughness": 0.4472135954999579,
             "uroughness": 0.2,
             "vroughness": 0.2,
             "remaproughness": false
@@ -2137,7 +2182,7 @@
         },
         "KHR_materials_clearcoat": {
           "clearcoatFactor": 1.0,
-          "clearcoatRoughnessFactor": 0.2
+          "clearcoatRoughnessFactor": 0.4472135954999579
         }
       }
     },
@@ -2162,6 +2207,21 @@
             0.013,
             0.08
           ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.4,
+                "vroughness": 0.4,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.4,
+                0.4
+              ],
+              "gltf_roughness": 0.6324555320336759
+            }
+          },
           "Kd": {
             "encoding": "rgb",
             "value": [
@@ -2172,7 +2232,7 @@
           },
           "coateddiffuse": {
             "clearcoat_factor": 1.0,
-            "clearcoat_roughness": 0.4,
+            "clearcoat_roughness": 0.6324555320336759,
             "uroughness": 0.4,
             "vroughness": 0.4,
             "remaproughness": false
@@ -2185,7 +2245,7 @@
         },
         "KHR_materials_clearcoat": {
           "clearcoatFactor": 1.0,
-          "clearcoatRoughnessFactor": 0.4
+          "clearcoatRoughnessFactor": 0.6324555320336759
         }
       }
     },
@@ -2210,6 +2270,21 @@
             0.014,
             0.008
           ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.4,
+                "vroughness": 0.4,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.4,
+                0.4
+              ],
+              "gltf_roughness": 0.6324555320336759
+            }
+          },
           "Kd": {
             "encoding": "rgb",
             "value": [
@@ -2220,7 +2295,7 @@
           },
           "coateddiffuse": {
             "clearcoat_factor": 1.0,
-            "clearcoat_roughness": 0.4,
+            "clearcoat_roughness": 0.6324555320336759,
             "uroughness": 0.4,
             "vroughness": 0.4,
             "remaproughness": false
@@ -2233,7 +2308,7 @@
         },
         "KHR_materials_clearcoat": {
           "clearcoatFactor": 1.0,
-          "clearcoatRoughnessFactor": 0.4
+          "clearcoatRoughnessFactor": 0.6324555320336759
         }
       }
     },
@@ -2258,6 +2333,21 @@
             0.03,
             0.037
           ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.4,
+                "vroughness": 0.4,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.4,
+                0.4
+              ],
+              "gltf_roughness": 0.6324555320336759
+            }
+          },
           "Kd": {
             "encoding": "rgb",
             "value": [
@@ -2268,7 +2358,7 @@
           },
           "coateddiffuse": {
             "clearcoat_factor": 1.0,
-            "clearcoat_roughness": 0.4,
+            "clearcoat_roughness": 0.6324555320336759,
             "uroughness": 0.4,
             "vroughness": 0.4,
             "remaproughness": false
@@ -2281,7 +2371,7 @@
         },
         "KHR_materials_clearcoat": {
           "clearcoatFactor": 1.0,
-          "clearcoatRoughnessFactor": 0.4
+          "clearcoatRoughnessFactor": 0.6324555320336759
         }
       }
     },
@@ -2306,6 +2396,21 @@
             0.175,
             0.262
           ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.4,
+                "vroughness": 0.4,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.4,
+                0.4
+              ],
+              "gltf_roughness": 0.6324555320336759
+            }
+          },
           "Kd": {
             "encoding": "rgb",
             "value": [
@@ -2316,7 +2421,7 @@
           },
           "coateddiffuse": {
             "clearcoat_factor": 1.0,
-            "clearcoat_roughness": 0.4,
+            "clearcoat_roughness": 0.6324555320336759,
             "uroughness": 0.4,
             "vroughness": 0.4,
             "remaproughness": false
@@ -2329,7 +2434,7 @@
         },
         "KHR_materials_clearcoat": {
           "clearcoatFactor": 1.0,
-          "clearcoatRoughnessFactor": 0.4
+          "clearcoatRoughnessFactor": 0.6324555320336759
         }
       }
     },
@@ -2344,7 +2449,7 @@
           1.0
         ],
         "metallicFactor": 0.0,
-        "roughnessFactor": 0.0
+        "roughnessFactor": 0.1
       },
       "extras": {
         "pbrt": {
@@ -2354,6 +2459,21 @@
             1.0,
             1.0
           ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "uroughness": 0.01,
+                "vroughness": 0.01,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.01,
+                0.01
+              ],
+              "gltf_roughness": 0.1
+            }
+          },
           "eta": 1.5,
           "remaproughness": false,
           "Kd": {
@@ -2399,6 +2519,21 @@
             0.025,
             0.025
           ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "uroughness": 0.4,
+                "vroughness": 0.4,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.4,
+                0.4
+              ],
+              "gltf_roughness": 0.6324555320336759
+            }
+          },
           "Kd": {
             "encoding": "rgb",
             "value": [
@@ -2409,7 +2544,7 @@
           },
           "coateddiffuse": {
             "clearcoat_factor": 1.0,
-            "clearcoat_roughness": 0.4,
+            "clearcoat_roughness": 0.6324555320336759,
             "uroughness": 0.4,
             "vroughness": 0.4,
             "remaproughness": false
@@ -2422,7 +2557,7 @@
         },
         "KHR_materials_clearcoat": {
           "clearcoatFactor": 1.0,
-          "clearcoatRoughnessFactor": 0.4
+          "clearcoatRoughnessFactor": 0.6324555320336759
         }
       }
     },
