@@ -3,3 +3,4 @@ build/
 scenes/*/gltf/*.glb
 __pycache__/
 *.pyc
+!scenes/classroom2/gltf/classroom2.glb

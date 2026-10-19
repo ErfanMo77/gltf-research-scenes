@@ -1,0 +1,11 @@
+Classroom by Christophe Seux
+
+Source: https://www.blender.org/download/demo-files/
+Original Blender download: https://download.blender.org/demo/test/classroom.zip
+
+Blender lists this demo under CC0 (Creative Commons Zero 1.0 Universal).
+License: https://creativecommons.org/publicdomain/zero/1.0/
+Legal text: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+This glTF export is derived from the Blender demo. The original author's
+ReadMe is preserved alongside this file as ReadMe.txt.
