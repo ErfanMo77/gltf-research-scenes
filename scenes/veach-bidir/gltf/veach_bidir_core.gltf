@@ -382,7 +382,7 @@
     },
     {
       "name": "Glass",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -479,7 +479,7 @@
     },
     {
       "name": "Wood",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.32963,

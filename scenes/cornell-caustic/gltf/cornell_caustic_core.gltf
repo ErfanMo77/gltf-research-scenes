@@ -23,15 +23,69 @@
     },
     {
       "name": "02_BackWall",
-      "mesh": 2
+      "mesh": 2,
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -2.0,
+        1.0
+      ]
     },
     {
       "name": "03_RightWall",
-      "mesh": 3
+      "mesh": 3,
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        1.0
+      ]
     },
     {
       "name": "04_LeftWall",
-      "mesh": 4
+      "mesh": 4,
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        -2.0,
+        0.0,
+        0.0,
+        1.0
+      ]
     },
     {
       "name": "05_ShortBox",
@@ -301,7 +355,7 @@
   "materials": [
     {
       "name": "LeftWall",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.63,
@@ -325,7 +379,7 @@
     },
     {
       "name": "RightWall",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.14,
@@ -349,7 +403,7 @@
     },
     {
       "name": "Floor",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.725,
@@ -373,7 +427,7 @@
     },
     {
       "name": "Ceiling",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.725,
@@ -397,7 +451,7 @@
     },
     {
       "name": "BackWall",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.725,
@@ -421,7 +475,7 @@
     },
     {
       "name": "ShortBox",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.725,
@@ -445,7 +499,7 @@
     },
     {
       "name": "TallBox",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.725,
@@ -504,7 +558,7 @@
     },
     {
       "name": "Water",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,

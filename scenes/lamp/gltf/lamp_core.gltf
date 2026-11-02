@@ -1096,7 +1096,7 @@
   "materials": [
     {
       "name": "ShinyMetal",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -1153,7 +1153,7 @@
     },
     {
       "name": "Cable",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.00631,
@@ -1216,7 +1216,7 @@
     },
     {
       "name": "LampInterior",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -1273,7 +1273,7 @@
     },
     {
       "name": "Lightbulb",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1411,7 +1411,7 @@
     },
     {
       "name": "Backdrop",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,

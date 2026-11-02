@@ -655,7 +655,7 @@
   "materials": [
     {
       "name": "Landscape",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -695,7 +695,7 @@
     },
     {
       "name": "Table",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -735,7 +735,7 @@
     },
     {
       "name": "DoorHandle",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -805,7 +805,7 @@
     },
     {
       "name": "Door",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -882,7 +882,7 @@
     },
     {
       "name": "Floor",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -920,7 +920,7 @@
     },
     {
       "name": "DoorFrame",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.247059,
@@ -957,7 +957,7 @@
     },
     {
       "name": "PictureFrame",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.258824,
@@ -994,7 +994,7 @@
     },
     {
       "name": "Hinge",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -1121,7 +1121,7 @@
     },
     {
       "name": "Pot2",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -1191,7 +1191,7 @@
     },
     {
       "name": "Material",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1249,7 +1249,7 @@
     },
     {
       "name": "Pot3",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.8,

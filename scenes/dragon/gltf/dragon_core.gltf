@@ -372,7 +372,7 @@
   "materials": [
     {
       "name": "GroundInner",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.456263,
@@ -396,7 +396,7 @@
     },
     {
       "name": "GroundOuter",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.456263,
@@ -420,7 +420,7 @@
     },
     {
       "name": "Cloth",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.456263,
@@ -444,7 +444,7 @@
     },
     {
       "name": "Dragon",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.79311,
@@ -468,7 +468,7 @@
     },
     {
       "name": "Blade",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.79311,
@@ -492,7 +492,7 @@
     },
     {
       "name": "Sword",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.79311,
@@ -516,7 +516,7 @@
     },
     {
       "name": "Deco",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.79311,
@@ -540,7 +540,7 @@
     },
     {
       "name": "Diamond",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.79311,
@@ -564,7 +564,7 @@
     },
     {
       "name": "Deco2",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.79311,

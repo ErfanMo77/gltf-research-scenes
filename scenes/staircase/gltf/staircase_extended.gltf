@@ -327,7 +327,25 @@
     },
     {
       "name": "78_WhitePaint",
-      "mesh": 78
+      "mesh": 78,
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -5.760625958442688,
+        6.219550132751465,
+        0.0,
+        1.0
+      ]
     },
     {
       "name": "79_WoodStairs",
@@ -687,7 +705,25 @@
     },
     {
       "name": "168_WoodFloor",
-      "mesh": 168
+      "mesh": 168,
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        7.117259979248047,
+        -2.1665306091308594,
+        1.0
+      ]
     },
     {
       "name": "169_WoodStairs",
@@ -15571,7 +15607,7 @@
   "materials": [
     {
       "name": "WoodFloor",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -15703,7 +15739,7 @@
     },
     {
       "name": "WoodChair",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -15769,7 +15805,7 @@
     },
     {
       "name": "WoodLamp",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -15835,7 +15871,7 @@
     },
     {
       "name": "Lampshade",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -15945,7 +15981,7 @@
     },
     {
       "name": "BrushedAluminium",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -16017,7 +16053,7 @@
     },
     {
       "name": "ChairSeat",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.117647,
@@ -16054,7 +16090,7 @@
     },
     {
       "name": "Glass",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -16112,7 +16148,7 @@
     },
     {
       "name": "MagnoliaPaint",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -16175,7 +16211,7 @@
     },
     {
       "name": "WhitePaint",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -16238,7 +16274,7 @@
     },
     {
       "name": "Painting1",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -16278,7 +16314,7 @@
     },
     {
       "name": "Painting2",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -16318,7 +16354,7 @@
     },
     {
       "name": "Painting3",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -16358,7 +16394,7 @@
     },
     {
       "name": "Black",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.01,
@@ -16395,7 +16431,7 @@
     },
     {
       "name": "StainlessSteel",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -16461,7 +16497,7 @@
     },
     {
       "name": "Emission",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -16498,7 +16534,7 @@
     },
     {
       "name": "Candles",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -16601,7 +16637,7 @@
     },
     {
       "name": "WhitePaint2",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -16638,7 +16674,7 @@
     },
     {
       "name": "White",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.691535,
@@ -16675,7 +16711,7 @@
     },
     {
       "name": "WhitePlastic",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -16712,7 +16748,7 @@
     },
     {
       "name": "Copper",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.924786,

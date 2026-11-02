@@ -17191,7 +17191,7 @@
   "materials": [
     {
       "name": "Wood",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -17257,7 +17257,7 @@
     },
     {
       "name": "Mirror",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.974841,
@@ -17327,7 +17327,7 @@
     },
     {
       "name": "StainlessSmooth",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -17393,7 +17393,7 @@
     },
     {
       "name": "Bathtube",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.612066,
@@ -17456,7 +17456,7 @@
     },
     {
       "name": "StainlessRough",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -17526,7 +17526,7 @@
     },
     {
       "name": "Floor",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -17594,7 +17594,7 @@
     },
     {
       "name": "Pots",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.00631,
@@ -17657,7 +17657,7 @@
     },
     {
       "name": "Marble",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -17697,7 +17697,7 @@
     },
     {
       "name": "BulbGlass",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -17751,7 +17751,7 @@
     },
     {
       "name": "BlackPlastic",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.00631,
@@ -17814,7 +17814,7 @@
     },
     {
       "name": "Blinds",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.893289,
@@ -17851,7 +17851,7 @@
     },
     {
       "name": "WoodFrame",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -17891,7 +17891,7 @@
     },
     {
       "name": "Painting3",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.058187,
@@ -17928,7 +17928,7 @@
     },
     {
       "name": "Painting1",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -17968,7 +17968,7 @@
     },
     {
       "name": "Painting4",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.047776,
@@ -18005,7 +18005,7 @@
     },
     {
       "name": "Light",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.0,
@@ -18142,7 +18142,7 @@
     },
     {
       "name": "Ceiling",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.684615,
@@ -18256,7 +18256,7 @@
     },
     {
       "name": "LeaveStems",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.063815,
@@ -18293,7 +18293,7 @@
     },
     {
       "name": "Vase",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.612066,
@@ -18356,7 +18356,7 @@
     },
     {
       "name": "WindowFrame",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.00631,
@@ -18430,7 +18430,7 @@
     },
     {
       "name": "WoodDiffuse",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -18470,7 +18470,7 @@
     },
     {
       "name": "Painting2",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -18510,7 +18510,7 @@
     },
     {
       "name": "MetalPlate",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -18580,7 +18580,7 @@
     },
     {
       "name": "BlindsString",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -18617,7 +18617,7 @@
     },
     {
       "name": "Gold",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.640874,
@@ -18687,7 +18687,7 @@
     },
     {
       "name": "Foam",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.531049,
@@ -18726,7 +18726,7 @@
     },
     {
       "name": "Rug_Texture02_alpha",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,

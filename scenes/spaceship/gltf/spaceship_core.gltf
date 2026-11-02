@@ -427,7 +427,25 @@
     },
     {
       "name": "90_Backdrop",
-      "mesh": 90
+      "mesh": 90,
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        78.4000503,
+        -60.416,
+        1.0
+      ]
     },
     {
       "name": "Camera",
@@ -1924,7 +1942,7 @@
   "materials": [
     {
       "name": "Backdrop",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.1,
@@ -2062,7 +2080,7 @@
     },
     {
       "name": "DarkPlastic",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.01,
@@ -2101,7 +2119,7 @@
     },
     {
       "name": "PinkLeather",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.256,
@@ -2140,7 +2158,7 @@
     },
     {
       "name": "Leather",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.034,
@@ -2179,7 +2197,7 @@
     },
     {
       "name": "RedLeather",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.163,
@@ -2218,7 +2236,7 @@
     },
     {
       "name": "BrightPinkLeather",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.772,
@@ -2257,7 +2275,7 @@
     },
     {
       "name": "Glass",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -2299,7 +2317,7 @@
     },
     {
       "name": "DarkRubber",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.025,
@@ -2338,7 +2356,7 @@
     },
     {
       "name": "Black",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.0,

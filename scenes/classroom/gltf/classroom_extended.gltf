@@ -101,7 +101,25 @@
     },
     {
       "name": "17_Whiteboard",
-      "mesh": 17
+      "mesh": 17,
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        3.48601096868515,
+        11.815279960632324,
+        1.0
+      ]
     },
     {
       "name": "18_Walls",
@@ -1759,7 +1777,7 @@
     },
     {
       "name": "Lectern",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1873,7 +1891,7 @@
     },
     {
       "name": "FlagBase",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.779661,
@@ -1910,7 +1928,7 @@
     },
     {
       "name": "ChalkHolder",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.8,
@@ -1947,7 +1965,7 @@
     },
     {
       "name": "ProjectorScreen",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -2021,7 +2039,7 @@
     },
     {
       "name": "Whiteboard",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -2132,7 +2150,7 @@
     },
     {
       "name": "Bin2",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.8,
@@ -2280,7 +2298,7 @@
     },
     {
       "name": "Whiteboard2",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.79311,
@@ -2317,7 +2335,7 @@
     },
     {
       "name": "BluePencil",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.0,
@@ -2354,7 +2372,7 @@
     },
     {
       "name": "GreenPencil",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.145676,
@@ -2391,7 +2409,7 @@
     },
     {
       "name": "RedPencil",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.626651,
@@ -2428,7 +2446,7 @@
     },
     {
       "name": "Bookshelf",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.491301,
@@ -2465,7 +2483,7 @@
     },
     {
       "name": "Hallway",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.784314,
@@ -2502,7 +2520,7 @@
     },
     {
       "name": "CeilingLight",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.647814,
@@ -2602,7 +2620,7 @@
     },
     {
       "name": "BlackPlastic",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.00631,
@@ -2702,7 +2720,7 @@
     },
     {
       "name": "ScreenEnds",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.028991,
@@ -2739,7 +2757,7 @@
     },
     {
       "name": "FoamEraser",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.684615,
@@ -2776,7 +2794,7 @@
     },
     {
       "name": "Whiteboard3",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -2839,7 +2857,7 @@
     },
     {
       "name": "ChairWood",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -2975,7 +2993,7 @@
     },
     {
       "name": "ChairStainless",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -3041,7 +3059,7 @@
     },
     {
       "name": "Floor",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.659224,
@@ -3078,7 +3096,7 @@
     },
     {
       "name": "WoodFrame",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -3118,7 +3136,7 @@
     },
     {
       "name": "WhiteboardFrame",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.056173,
@@ -3266,7 +3284,7 @@
     },
     {
       "name": "Speakers",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.03598,
@@ -3303,7 +3321,7 @@
     },
     {
       "name": "Wall",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.450837,
@@ -3340,7 +3358,7 @@
     },
     {
       "name": "WindowFrame",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -3410,7 +3428,7 @@
     },
     {
       "name": "Bin1",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.327125,
@@ -3447,7 +3465,7 @@
     },
     {
       "name": "Rubber",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.687031,
@@ -3484,7 +3502,7 @@
     },
     {
       "name": "FluorescentTube",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.612066,
