@@ -12,7 +12,7 @@ summary:
   meshes: 856
   triangles: 592188
   materials: 33
-  textures: 13
+  textures: 15
   lights: 1
   generated_flat_normal_meshes: 48
 render:
@@ -95,6 +95,14 @@ material_mappings:
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
     clearcoat_roughness: 0.03162277660168379
+    base_color_mapping:
+      method: "internal_fresnel_diffuse"
+      internal_reflectance: 0.5963457597077118
+      formula: "c * (1 - F) / (1 - F * c), blended with c by clearcoat_factor"
+      color_space: "linear RGB; texture RGB decoded from and re-encoded to sRGB"
+      gltf: "baseColorFactor"
+      base_color_factor: [0.38907746357709216, 0.38907746357709216, 0.38907746357709216]
+      approximation: "smooth IOR 1.5 internal-reflection approximation; PBRT spectral and angular layer scattering are not exact"
     roughness_mapping:
       clearcoat:
         source:
@@ -149,6 +157,14 @@ material_mappings:
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
     clearcoat_roughness: 0.31622776601683794
+    base_color_mapping:
+      method: "internal_fresnel_diffuse"
+      internal_reflectance: 0.5963457597077118
+      formula: "c * (1 - F) / (1 - F * c), blended with c by clearcoat_factor"
+      color_space: "linear RGB; texture RGB decoded from and re-encoded to sRGB"
+      gltf: "baseColorFactor"
+      base_color_factor: [0.002556678889964766, 0.002556678889964766, 0.002556678889964766]
+      approximation: "smooth IOR 1.5 internal-reflection approximation; PBRT spectral and angular layer scattering are not exact"
     roughness_mapping:
       clearcoat:
         source:
@@ -182,6 +198,14 @@ material_mappings:
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
     clearcoat_roughness: 0.4472135954999579
+    base_color_mapping:
+      method: "internal_fresnel_diffuse"
+      internal_reflectance: 0.5963457597077118
+      formula: "c * (1 - F) / (1 - F * c), blended with c by clearcoat_factor"
+      color_space: "linear RGB; texture RGB decoded from and re-encoded to sRGB"
+      gltf: "baseColorFactor"
+      base_color_factor: [0.002556678889964766, 0.002556678889964766, 0.002556678889964766]
+      approximation: "smooth IOR 1.5 internal-reflection approximation; PBRT spectral and angular layer scattering are not exact"
     roughness_mapping:
       clearcoat:
         source:
@@ -211,6 +235,14 @@ material_mappings:
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
     clearcoat_roughness: 0.31622776601683794
+    base_color_mapping:
+      method: "internal_fresnel_diffuse"
+      internal_reflectance: 0.5963457597077118
+      formula: "c * (1 - F) / (1 - F * c), blended with c by clearcoat_factor"
+      color_space: "linear RGB; texture RGB decoded from and re-encoded to sRGB"
+      gltf: "baseColorFactor"
+      base_color_factor: [0.7716390332510684, 0.7716390332510684, 0.7716390332510684]
+      approximation: "smooth IOR 1.5 internal-reflection approximation; PBRT spectral and angular layer scattering are not exact"
     roughness_mapping:
       clearcoat:
         source:
@@ -234,6 +266,14 @@ material_mappings:
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
     clearcoat_roughness: 0.03162277660168379
+    base_color_mapping:
+      method: "internal_fresnel_diffuse"
+      internal_reflectance: 0.5963457597077118
+      formula: "c * (1 - F) / (1 - F * c), blended with c by clearcoat_factor"
+      color_space: "linear RGB; texture RGB decoded from and re-encoded to sRGB"
+      gltf: "baseColorFactor"
+      base_color_factor: [0.38907746357709216, 0.38907746357709216, 0.38907746357709216]
+      approximation: "smooth IOR 1.5 internal-reflection approximation; PBRT spectral and angular layer scattering are not exact"
     roughness_mapping:
       clearcoat:
         source:

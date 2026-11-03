@@ -573,8 +573,8 @@
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
-          0.378676,
-          0.013473,
+          0.19744056137034247,
+          0.005482482952892503,
           1.0
         ],
         "metallicFactor": 0.0,
@@ -616,7 +616,20 @@
             "clearcoat_roughness": 0.03162277660168379,
             "uroughness": 0.001,
             "vroughness": 0.001,
-            "remaproughness": false
+            "remaproughness": false,
+            "base_color_mapping": {
+              "method": "internal_fresnel_diffuse",
+              "internal_reflectance": 0.5963457597077118,
+              "formula": "c * (1 - F) / (1 - F * c), blended with c by clearcoat_factor",
+              "color_space": "linear RGB; texture RGB decoded from and re-encoded to sRGB",
+              "gltf": "baseColorFactor",
+              "base_color_factor": [
+                1.0,
+                0.19744056137034247,
+                0.005482482952892503
+              ],
+              "approximation": "smooth IOR 1.5 internal-reflection approximation; PBRT spectral and angular layer scattering are not exact"
+            }
           }
         }
       },
@@ -635,9 +648,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.00631,
-          0.00631,
-          0.00631,
+          0.002556678889964766,
+          0.002556678889964766,
+          0.002556678889964766,
           1.0
         ],
         "metallicFactor": 0.0,
@@ -679,7 +692,20 @@
             "clearcoat_roughness": 0.31622776601683794,
             "uroughness": 0.1,
             "vroughness": 0.1,
-            "remaproughness": false
+            "remaproughness": false,
+            "base_color_mapping": {
+              "method": "internal_fresnel_diffuse",
+              "internal_reflectance": 0.5963457597077118,
+              "formula": "c * (1 - F) / (1 - F * c), blended with c by clearcoat_factor",
+              "color_space": "linear RGB; texture RGB decoded from and re-encoded to sRGB",
+              "gltf": "baseColorFactor",
+              "base_color_factor": [
+                0.002556678889964766,
+                0.002556678889964766,
+                0.002556678889964766
+              ],
+              "approximation": "smooth IOR 1.5 internal-reflection approximation; PBRT spectral and angular layer scattering are not exact"
+            }
           }
         }
       },
@@ -826,9 +852,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.578596,
-          0.578596,
-          0.578596,
+          0.35659260916107627,
+          0.35659260916107627,
+          0.35659260916107627,
           1.0
         ],
         "metallicFactor": 0.0,
@@ -870,7 +896,20 @@
             "clearcoat_roughness": 0.03162277660168379,
             "uroughness": 0.001,
             "vroughness": 0.001,
-            "remaproughness": false
+            "remaproughness": false,
+            "base_color_mapping": {
+              "method": "internal_fresnel_diffuse",
+              "internal_reflectance": 0.5963457597077118,
+              "formula": "c * (1 - F) / (1 - F * c), blended with c by clearcoat_factor",
+              "color_space": "linear RGB; texture RGB decoded from and re-encoded to sRGB",
+              "gltf": "baseColorFactor",
+              "base_color_factor": [
+                0.35659260916107627,
+                0.35659260916107627,
+                0.35659260916107627
+              ],
+              "approximation": "smooth IOR 1.5 internal-reflection approximation; PBRT spectral and angular layer scattering are not exact"
+            }
           }
         }
       },

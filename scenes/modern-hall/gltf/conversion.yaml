@@ -12,7 +12,7 @@ summary:
   meshes: 32
   triangles: 31087
   materials: 21
-  textures: 3
+  textures: 5
   lights: 13
   media: 1
   generated_flat_normal_meshes: 14

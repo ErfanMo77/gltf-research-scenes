@@ -1315,9 +1315,9 @@
       "doubleSided": true,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.020939,
-          0.072837,
-          0.003349,
+          0.008558991267416776,
+          0.03073601453717087,
+          0.0013545432930624044,
           1.0
         ],
         "metallicFactor": 0.0,
@@ -1447,9 +1447,9 @@
       "doubleSided": true,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.028991,
-          0.028991,
-          0.028991,
+          0.011908217197694426,
+          0.011908217197694426,
+          0.011908217197694426,
           1.0
         ],
         "metallicFactor": 0.0,
@@ -1615,9 +1615,9 @@
       "doubleSided": true,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.417004,
-          0.403278,
-          0.391924,
+          0.2240391734697539,
+          0.21432969224582182,
+          0.20645487534426954,
           1.0
         ],
         "metallicFactor": 0.0,
@@ -1654,9 +1654,9 @@
       "doubleSided": true,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.612066,
-          0.612066,
-          0.612066,
+          0.38907746357709216,
+          0.38907746357709216,
+          0.38907746357709216,
           1.0
         ],
         "metallicFactor": 0.0,
@@ -1717,9 +1717,9 @@
       "doubleSided": true,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.434446,
-          0.434446,
-          0.434446,
+          0.2366867909628031,
+          0.2366867909628031,
+          0.2366867909628031,
           1.0
         ],
         "metallicFactor": 0.0,
