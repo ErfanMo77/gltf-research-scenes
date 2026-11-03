@@ -259,7 +259,25 @@
     },
     {
       "name": "61_diffuse_00",
-      "mesh": 61
+      "mesh": 61,
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        34.199951,
+        103.8036,
+        1.0
+      ]
     },
     {
       "name": "62_diffuse_01",
@@ -267,11 +285,47 @@
     },
     {
       "name": "63_diffuse_00",
-      "mesh": 63
+      "mesh": 63,
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        71.8,
+        30.799999999999997,
+        1.0
+      ]
     },
     {
       "name": "64_diffuse_00",
-      "mesh": 64
+      "mesh": 64,
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        -38.7758,
+        0.0,
+        30.799999999999997,
+        1.0
+      ]
     },
     {
       "name": "65_diffuse_00",
@@ -283,7 +337,25 @@
     },
     {
       "name": "67_diffuse_00",
-      "mesh": 67
+      "mesh": 67,
+      "matrix": [
+        0.9999999999999543,
+        -3.017115739622458e-07,
+        0.0,
+        0.0,
+        -3.017115739622458e-07,
+        -0.9999999999999545,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        -2.368713103440001e-08,
+        -0.15701837737623076,
+        30.799999999999997,
+        1.0
+      ]
     },
     {
       "name": "68_diffuse_00",
@@ -291,7 +363,25 @@
     },
     {
       "name": "69_diffuse_00",
-      "mesh": 69
+      "mesh": 69,
+      "matrix": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        34.3946,
+        0.0,
+        30.7998,
+        1.0
+      ]
     },
     {
       "name": "70_diffuse_00",
@@ -1529,7 +1619,7 @@
     },
     {
       "name": "Mirror",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.974841,
@@ -1643,7 +1733,7 @@
     },
     {
       "name": "Towel",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -1752,7 +1842,7 @@
     },
     {
       "name": "WoodFloor",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1910,7 +2000,7 @@
     },
     {
       "name": "DarkPlastic",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.05,
@@ -1934,7 +2024,7 @@
     },
     {
       "name": "Bin",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.974841,
@@ -1991,7 +2081,7 @@
     },
     {
       "name": "WallRight",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -2039,7 +2129,7 @@
     },
     {
       "name": "Trims",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -2102,7 +2192,7 @@
     },
     {
       "name": "diffuse_00",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -2126,7 +2216,7 @@
     },
     {
       "name": "diffuse_01",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.0,

@@ -451,7 +451,25 @@
     },
     {
       "name": "109_MirrorMaterial",
-      "mesh": 109
+      "mesh": 109,
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        9.439428806304932,
+        -16.05948257446289,
+        1.0
+      ]
     },
     {
       "name": "110_Chrome",
@@ -5529,7 +5547,7 @@
     },
     {
       "name": "Blue",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.052861,
@@ -5566,7 +5584,7 @@
     },
     {
       "name": "BlueGlossy",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.205138,
@@ -5677,7 +5695,7 @@
     },
     {
       "name": "Brown",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.334323,
@@ -5751,7 +5769,7 @@
     },
     {
       "name": "Chrome2",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.575677,
@@ -5862,7 +5880,7 @@
     },
     {
       "name": "DrivewayBase",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.424737,
@@ -5936,7 +5954,7 @@
     },
     {
       "name": "Floorboards",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.416131,
@@ -5973,7 +5991,7 @@
     },
     {
       "name": "Grey",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.080011,
@@ -6010,7 +6028,7 @@
     },
     {
       "name": "Ground",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.661862,
@@ -6047,7 +6065,7 @@
     },
     {
       "name": "MirrorMaterial",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.487458,
@@ -6084,7 +6102,7 @@
     },
     {
       "name": "None",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.8,
@@ -6158,7 +6176,7 @@
     },
     {
       "name": "Pink",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.028991,
@@ -6195,7 +6213,7 @@
     },
     {
       "name": "Red",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.8,
@@ -6531,7 +6549,7 @@
     },
     {
       "name": "YellowDiffuse",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.698193,

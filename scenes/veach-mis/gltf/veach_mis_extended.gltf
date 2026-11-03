@@ -343,7 +343,7 @@
   "materials": [
     {
       "name": "Diffuse",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.5,
@@ -380,7 +380,7 @@
     },
     {
       "name": "Smooth",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.952141,
@@ -450,7 +450,7 @@
     },
     {
       "name": "Glossy",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.952141,
@@ -520,7 +520,7 @@
     },
     {
       "name": "Rough",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.952141,
@@ -590,7 +590,7 @@
     },
     {
       "name": "SuperRough",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.952141,

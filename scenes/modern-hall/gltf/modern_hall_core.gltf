@@ -97,13 +97,13 @@
         -1.50996e-07,
         -1.50996e-07,
         0.0,
+        -1.50996e-07,
+        8.74228e-08,
+        -1.0,
+        0.0,
         1.50996e-07,
         1.0,
         8.74227e-08,
-        0.0,
-        1.50996e-07,
-        -8.74228e-08,
-        1.0,
         0.0,
         1.80703,
         5.61029,
@@ -132,13 +132,13 @@
         -1.50996e-07,
         -1.50996e-07,
         0.0,
+        -1.50996e-07,
+        8.74228e-08,
+        -1.0,
+        0.0,
         1.50996e-07,
         1.0,
         8.74228e-08,
-        0.0,
-        1.50996e-07,
-        -8.74228e-08,
-        1.0,
         0.0,
         -1.5106,
         5.61029,
@@ -167,13 +167,13 @@
         -1.50996e-07,
         -1.50996e-07,
         0.0,
+        -1.50996e-07,
+        8.74228e-08,
+        -1.0,
+        0.0,
         1.50996e-07,
         1.0,
         8.74228e-08,
-        0.0,
-        1.50996e-07,
-        -8.74228e-08,
-        1.0,
         0.0,
         -4.82824,
         5.61029,
@@ -202,13 +202,13 @@
         -1.50996e-07,
         -1.50996e-07,
         0.0,
+        -1.50996e-07,
+        8.74228e-08,
+        -1.0,
+        0.0,
         1.50996e-07,
         1.0,
         8.74227e-08,
-        0.0,
-        1.50996e-07,
-        -8.74228e-08,
-        1.0,
         0.0,
         -8.14588,
         5.61029,
@@ -237,13 +237,13 @@
         -1.50996e-07,
         -1.50996e-07,
         0.0,
+        -1.50996e-07,
+        8.74228e-08,
+        -1.0,
+        0.0,
         1.50996e-07,
         1.0,
         8.74227e-08,
-        0.0,
-        1.50996e-07,
-        -8.74228e-08,
-        1.0,
         0.0,
         -11.4635,
         5.61029,
@@ -951,7 +951,7 @@
   "materials": [
     {
       "name": "Wood",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -997,7 +997,7 @@
     },
     {
       "name": "FloorTiles",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1098,7 +1098,7 @@
     },
     {
       "name": "SpotHolder",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1122,7 +1122,7 @@
     },
     {
       "name": "Metal",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -1179,7 +1179,7 @@
     },
     {
       "name": "Chrome",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.687548,
@@ -1236,7 +1236,7 @@
     },
     {
       "name": "Glass_green_to_air",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,

@@ -63,7 +63,25 @@
     },
     {
       "name": "12_Backdrop",
-      "mesh": 12
+      "mesh": 12,
+      "matrix": [
+        -0.9999999999998734,
+        -5.031196404983367e-07,
+        0.0,
+        0.0,
+        -5.031196404983367e-07,
+        0.9999999999998415,
+        2.5155982024916834e-07,
+        0.0,
+        0.0,
+        2.5155982024916834e-07,
+        -0.9999999999999684,
+        0.0,
+        0.16182447924717497,
+        4.363526402345608e-06,
+        -34.36811062422645,
+        1.0
+      ]
     },
     {
       "name": "13_Floor",
@@ -411,7 +429,7 @@
   "materials": [
     {
       "name": "Backdrop",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.572681,
@@ -481,7 +499,7 @@
     },
     {
       "name": "Floor",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -551,7 +569,7 @@
     },
     {
       "name": "WaterAir",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -609,7 +627,7 @@
     },
     {
       "name": "IceAir",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -667,7 +685,7 @@
     },
     {
       "name": "Glass",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -725,7 +743,7 @@
     },
     {
       "name": "AirIce",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,

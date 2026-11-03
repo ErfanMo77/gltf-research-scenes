@@ -1478,7 +1478,7 @@
   "materials": [
     {
       "name": "Dirt",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.098504,
@@ -1502,7 +1502,7 @@
     },
     {
       "name": "Floor",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1594,7 +1594,7 @@
     },
     {
       "name": "Sofa",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1618,7 +1618,7 @@
     },
     {
       "name": "SofaLegs",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.1,
@@ -1705,7 +1705,7 @@
     },
     {
       "name": "Mirror",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.974841,
@@ -1819,7 +1819,7 @@
     },
     {
       "name": "MattePaint",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -1843,7 +1843,7 @@
     },
     {
       "name": "Painting",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1874,7 +1874,7 @@
     },
     {
       "name": "PaintingBack",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.26,
@@ -1898,7 +1898,7 @@
     },
     {
       "name": "Glass",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1938,7 +1938,7 @@
     },
     {
       "name": "PlantPot",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.1,
@@ -2082,7 +2082,7 @@
     },
     {
       "name": "Branches",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.160444,
@@ -2106,7 +2106,7 @@
     },
     {
       "name": "BottleCap",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.456263,

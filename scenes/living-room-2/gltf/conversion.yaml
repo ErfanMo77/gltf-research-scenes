@@ -24,7 +24,7 @@ render:
   resolution: [1280, 720]
   fov_degrees: 58.715508
 conversion:
-  double_sided: true
+  double_sided: "auto"
   defaults:
     metallic: 0.0
     roughness: 1.0

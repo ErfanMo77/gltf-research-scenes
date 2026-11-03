@@ -3858,7 +3858,7 @@
   "materials": [
     {
       "name": "RadioDialRed",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -3889,7 +3889,7 @@
     },
     {
       "name": "RadioHandle",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.389509,
@@ -3937,7 +3937,7 @@
     },
     {
       "name": "RadioKnob",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.358375,
@@ -3961,7 +3961,7 @@
     },
     {
       "name": "RadioMetalRing",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.640514,
@@ -3985,7 +3985,7 @@
     },
     {
       "name": "RadioSurround",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.066822,
@@ -4009,7 +4009,7 @@
     },
     {
       "name": "Floor",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -4055,7 +4055,7 @@
     },
     {
       "name": "SofaLeather",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.79311,
@@ -4094,7 +4094,7 @@
     },
     {
       "name": "Cushion3",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -4125,7 +4125,7 @@
     },
     {
       "name": "Cushion",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -4156,7 +4156,7 @@
     },
     {
       "name": "Cushion1",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -4187,7 +4187,7 @@
     },
     {
       "name": "LampshaderOuter",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -4218,7 +4218,7 @@
     },
     {
       "name": "LampStand",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -4257,7 +4257,7 @@
     },
     {
       "name": "Dishes",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -4296,7 +4296,7 @@
     },
     {
       "name": "Ceramic",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -4335,7 +4335,7 @@
     },
     {
       "name": "Magazine",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.217638,
@@ -4359,7 +4359,7 @@
     },
     {
       "name": "Apple",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -4390,7 +4390,7 @@
     },
     {
       "name": "Books",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -4445,7 +4445,7 @@
     },
     {
       "name": "LoveLetters",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -4532,7 +4532,7 @@
     },
     {
       "name": "TvScreen",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.005,
@@ -4571,7 +4571,7 @@
     },
     {
       "name": "TvBevel",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -4668,7 +4668,7 @@
     },
     {
       "name": "SmallPictureFrame",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.01,
@@ -4728,7 +4728,7 @@
     },
     {
       "name": "LightFitting",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -4752,7 +4752,7 @@
     },
     {
       "name": "CeilingShadeWire",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -4776,7 +4776,7 @@
     },
     {
       "name": "Carpet",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -4807,7 +4807,7 @@
     },
     {
       "name": "RadioPlastic",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.64,
@@ -4846,7 +4846,7 @@
     },
     {
       "name": "PictureFrame",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -4870,7 +4870,7 @@
     },
     {
       "name": "Picture",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -4901,7 +4901,7 @@
     },
     {
       "name": "SmallPictureD",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -4932,7 +4932,7 @@
     },
     {
       "name": "SmallPictureA",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -4963,7 +4963,7 @@
     },
     {
       "name": "SmallPictureB",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -4994,7 +4994,7 @@
     },
     {
       "name": "SmallPictureC",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -5025,7 +5025,7 @@
     },
     {
       "name": "Socket",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -5049,7 +5049,7 @@
     },
     {
       "name": "LargePicture",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -5080,7 +5080,7 @@
     },
     {
       "name": "RadiatorPanelsEnamel",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.79311,
@@ -5119,7 +5119,7 @@
     },
     {
       "name": "RadiatorKnobOuter",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.2,
@@ -5176,7 +5176,7 @@
     },
     {
       "name": "BlindStringKnob",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -5253,7 +5253,7 @@
     },
     {
       "name": "CandleHolders",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -5293,7 +5293,7 @@
     },
     {
       "name": "RadioGlass",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -5329,7 +5329,7 @@
     },
     {
       "name": "RadioDialLine",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.974841,
@@ -5386,7 +5386,7 @@
     },
     {
       "name": "BushLogo",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -5443,7 +5443,7 @@
     },
     {
       "name": "ChromeHandle",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -5500,7 +5500,7 @@
     },
     {
       "name": "DrawerHandles",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -5557,7 +5557,7 @@
     },
     {
       "name": "DullSteel",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -5614,7 +5614,7 @@
     },
     {
       "name": "LampshadeInner",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.684615,
@@ -5662,7 +5662,7 @@
     },
     {
       "name": "BlindWoodStrip",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -5743,7 +5743,7 @@
     },
     {
       "name": "BlackMarble",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -5783,7 +5783,7 @@
     },
     {
       "name": "TableLegs",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -5807,7 +5807,7 @@
     },
     {
       "name": "RadiatorBase",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -5846,7 +5846,7 @@
     },
     {
       "name": "RadiatorKnobCentre",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.578596,
@@ -5870,7 +5870,7 @@
     },
     {
       "name": "RadioDialBack",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -5901,7 +5901,7 @@
     },
     {
       "name": "RadioEdges",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -5958,7 +5958,7 @@
     },
     {
       "name": "Table",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,

@@ -1307,7 +1307,7 @@
     },
     {
       "name": "Artwork",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1362,7 +1362,7 @@
     },
     {
       "name": "FloorTiles",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1393,7 +1393,7 @@
     },
     {
       "name": "BlackPaint",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.01,
@@ -1432,7 +1432,7 @@
     },
     {
       "name": "WhiteMarble",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.325037,
@@ -1456,7 +1456,7 @@
     },
     {
       "name": "Gold",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.966663,
@@ -1513,7 +1513,7 @@
     },
     {
       "name": "Ceramic",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1552,7 +1552,7 @@
     },
     {
       "name": "RoughMetal",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.928047,
@@ -1609,7 +1609,7 @@
     },
     {
       "name": "PaintedCeramic",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1655,7 +1655,7 @@
     },
     {
       "name": "SkirtWood",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.684615,
@@ -1694,7 +1694,7 @@
     },
     {
       "name": "FrostedGlass",
-      "doubleSided": true,
+      "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.79311,
