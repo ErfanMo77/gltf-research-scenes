@@ -7,7 +7,7 @@ scene:
 outputs:
   core: "scenes/house/gltf/house_core.gltf"
   extended: "scenes/house/gltf/house_extended.gltf"
-  extended_extensions: ["KHR_materials_specular", "KHR_materials_transmission", "KHR_materials_ior"]
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_transmission", "KHR_materials_ior", "KHR_lights_punctual"]
 summary:
   meshes: 272
   triangles: 1818777
@@ -64,10 +64,10 @@ light_mappings:
     pbrt_transform: [-1.0, 0.0, 8.74228e-08, 0.0, -8.74228e-08, 0.0, -1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
   -
     pbrt: "distant"
-    gltf: "metadata_only"
-    radiance_rgb: [5.0, 5.0, 5.0]
-    from: [-0.445695, 0.655031, -0.610156]
-    to: [0.0, 0.0, 0.0]
-    pbrt_transform: [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+    gltf: "KHR_lights_punctual directional light (extended)"
+    node: "DistantLight_0"
+    color: [1.0, 1.0, 1.0]
+    intensity: 5.0
+    direction: [0.445695, -0.655031, 0.610156]
 approximations: ["dielectric_transmission_ior"]
-losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light", "distant_light"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light"]

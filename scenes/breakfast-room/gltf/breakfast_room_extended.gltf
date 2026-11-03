@@ -8,7 +8,7 @@
     {
       "name": "breakfast-room",
       "nodes": [
-        54
+        55
       ]
     }
   ],
@@ -284,6 +284,20 @@
       ]
     },
     {
+      "name": "DistantLight_0",
+      "rotation": [
+        -0.17512814510994343,
+        0.5377486902036875,
+        0.0,
+        0.8247159989806001
+      ],
+      "extensions": {
+        "KHR_lights_punctual": {
+          "light": 0
+        }
+      }
+    },
+    {
       "name": "breakfast-room_root",
       "translation": [
         0.0,
@@ -344,7 +358,8 @@
         50,
         51,
         52,
-        53
+        53,
+        54
       ]
     }
   ],
@@ -5200,43 +5215,6 @@
       },
       "light_sources": [
         {
-          "pbrt": "distant",
-          "gltf": "metadata_only",
-          "radiance_rgb": [
-            10.0,
-            10.0,
-            10.0
-          ],
-          "from": [
-            0.88698,
-            0.288862,
-            0.360313
-          ],
-          "to": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "pbrt_transform": [
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0
-          ]
-        },
-        {
           "pbrt": "infinite",
           "gltf": "metadata_only",
           "source": "textures/Skydome.pfm",
@@ -5312,12 +5290,29 @@
   ],
   "extensionsUsed": [
     "KHR_materials_specular",
-    "KHR_materials_clearcoat"
+    "KHR_materials_clearcoat",
+    "KHR_lights_punctual"
   ],
   "extensionsRequired": [
     "KHR_materials_specular",
     "KHR_materials_clearcoat"
   ],
+  "extensions": {
+    "KHR_lights_punctual": {
+      "lights": [
+        {
+          "name": "DistantLight_0",
+          "type": "directional",
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "intensity": 10.0
+        }
+      ]
+    }
+  },
   "cameras": [
     {
       "name": "Camera",

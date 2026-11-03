@@ -23,5 +23,5 @@ A Japanese classroom interior converted from PBRT v4 to glTF. Useful for checkin
 - Use the extended glTF for clearcoat and specular data.
 - Texture image maps are converted from TGA to embedded PNG.
 - The scene contains 79 meshes and 103,832 triangles.
-- Distant and infinite lights are preserved as metadata.
+- The PBRT distant light is a `KHR_lights_punctual` directional light in the extended glTF; the infinite light is preserved as metadata.
 - Spectral metals and coated diffuse materials are approximations; exact mappings are in the conversion report.

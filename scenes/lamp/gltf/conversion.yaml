@@ -7,7 +7,7 @@ scene:
 outputs:
   core: "scenes/lamp/gltf/lamp_core.gltf"
   extended: "scenes/lamp/gltf/lamp_extended.gltf"
-  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength"]
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength", "KHR_lights_punctual"]
 summary:
   meshes: 50
   triangles: 619358
@@ -176,10 +176,10 @@ light_mappings:
     twosided: false
   -
     pbrt: "distant"
-    gltf: "metadata_only"
-    radiance_rgb: [1.0, 1.0, 1.0]
-    from: [0.0, 0.804621, -0.593788]
-    to: [0.0, 0.0, 0.0]
-    pbrt_transform: [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+    gltf: "KHR_lights_punctual directional light (extended)"
+    node: "DistantLight_0"
+    color: [1.0, 1.0, 1.0]
+    intensity: 1.0
+    direction: [0.0, -0.804621, 0.593788]
 approximations: ["area_light_emissive_mesh", "coateddiffuse_clearcoat", "dielectric_transmission_ior", "conductor_metallic"]
-losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "distant_light"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output"]

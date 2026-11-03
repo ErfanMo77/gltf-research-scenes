@@ -7,7 +7,7 @@ scene:
 outputs:
   core: "scenes/classroom/gltf/classroom_core.gltf"
   extended: "scenes/classroom/gltf/classroom_extended.gltf"
-  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat"]
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_lights_punctual"]
 summary:
   meshes: 79
   triangles: 103832
@@ -222,15 +222,15 @@ material_mappings:
 light_mappings:
   -
     pbrt: "distant"
-    gltf: "metadata_only"
-    radiance_rgb: [10.0, 10.0, 10.0]
-    from: [-0.865804, 0.416766, -0.276929]
-    to: [0.0, 0.0, 0.0]
-    pbrt_transform: [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+    gltf: "KHR_lights_punctual directional light (extended)"
+    node: "DistantLight_0"
+    color: [1.0, 1.0, 1.0]
+    intensity: 10.0
+    direction: [0.865804, -0.416766, 0.276929]
   -
     pbrt: "infinite"
     gltf: "metadata_only"
     source: "textures/Skydome.pfm"
     pbrt_transform: [-1.0, 0.0, 8.74228e-08, 0.0, -8.74228e-08, 0.0, -1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
 approximations: ["coateddiffuse_clearcoat", "conductor_metallic"]
-losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light", "distant_light"]
+losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light"]

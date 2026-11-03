@@ -8,7 +8,7 @@
     {
       "name": "house",
       "nodes": [
-        273
+        274
       ]
     }
   ],
@@ -1142,6 +1142,20 @@
       ]
     },
     {
+      "name": "DistantLight_0",
+      "rotation": [
+        -0.741824945500997,
+        -0.5047511783183801,
+        0.0,
+        0.44149971485681566
+      ],
+      "extensions": {
+        "KHR_lights_punctual": {
+          "light": 0
+        }
+      }
+    },
+    {
       "name": "house_root",
       "translation": [
         0.0,
@@ -1421,7 +1435,8 @@
         269,
         270,
         271,
-        272
+        272,
+        273
       ]
     }
   ],
@@ -22506,43 +22521,6 @@
             0.0,
             1.0
           ]
-        },
-        {
-          "pbrt": "distant",
-          "gltf": "metadata_only",
-          "radiance_rgb": [
-            5.0,
-            5.0,
-            5.0
-          ],
-          "from": [
-            -0.445695,
-            0.655031,
-            -0.610156
-          ],
-          "to": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "pbrt_transform": [
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0
-          ]
         }
       ]
     }
@@ -22571,13 +22549,30 @@
   "extensionsUsed": [
     "KHR_materials_specular",
     "KHR_materials_transmission",
-    "KHR_materials_ior"
+    "KHR_materials_ior",
+    "KHR_lights_punctual"
   ],
   "extensionsRequired": [
     "KHR_materials_specular",
     "KHR_materials_transmission",
     "KHR_materials_ior"
   ],
+  "extensions": {
+    "KHR_lights_punctual": {
+      "lights": [
+        {
+          "name": "DistantLight_0",
+          "type": "directional",
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "intensity": 5.0
+        }
+      ]
+    }
+  },
   "cameras": [
     {
       "name": "Camera",

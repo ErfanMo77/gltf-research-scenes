@@ -8,7 +8,7 @@
     {
       "name": "dragon",
       "nodes": [
-        17
+        18
       ]
     }
   ],
@@ -100,6 +100,20 @@
       ]
     },
     {
+      "name": "DistantLight_0",
+      "rotation": [
+        -0.37584495097013565,
+        -0.10239873734961545,
+        0.0,
+        0.9210076391754093
+      ],
+      "extensions": {
+        "KHR_lights_punctual": {
+          "light": 0
+        }
+      }
+    },
+    {
       "name": "dragon_root",
       "translation": [
         0.0,
@@ -123,7 +137,8 @@
         13,
         14,
         15,
-        16
+        16,
+        17
       ]
     }
   ],
@@ -1657,54 +1672,32 @@
           720
         ],
         "fov_degrees": 20.114292
-      },
-      "light_sources": [
-        {
-          "pbrt": "distant",
-          "gltf": "metadata_only",
-          "radiance_rgb": [
-            8.0,
-            8.0,
-            8.0
-          ],
-          "from": [
-            -0.18862,
-            0.692312,
-            0.69651
-          ],
-          "to": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "pbrt_transform": [
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0
-          ]
-        }
-      ]
+      }
     }
   },
   "extensionsUsed": [
-    "KHR_materials_specular"
+    "KHR_materials_specular",
+    "KHR_lights_punctual"
   ],
   "extensionsRequired": [
     "KHR_materials_specular"
   ],
+  "extensions": {
+    "KHR_lights_punctual": {
+      "lights": [
+        {
+          "name": "DistantLight_0",
+          "type": "directional",
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "intensity": 8.0
+        }
+      ]
+    }
+  },
   "cameras": [
     {
       "name": "Camera",

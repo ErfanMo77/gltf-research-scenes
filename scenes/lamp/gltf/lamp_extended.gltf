@@ -8,7 +8,7 @@
     {
       "name": "lamp",
       "nodes": [
-        51
+        52
       ]
     }
   ],
@@ -292,6 +292,20 @@
       ]
     },
     {
+      "name": "DistantLight_0",
+      "rotation": [
+        -0.8926892669236963,
+        0.0,
+        0.0,
+        0.4506726891206451
+      ],
+      "extensions": {
+        "KHR_lights_punctual": {
+          "light": 0
+        }
+      }
+    },
+    {
       "name": "lamp_root",
       "translation": [
         0.0,
@@ -349,7 +363,8 @@
         47,
         48,
         49,
-        50
+        50,
+        51
       ]
     }
   ],
@@ -4665,43 +4680,6 @@
             5.0
           ],
           "twosided": false
-        },
-        {
-          "pbrt": "distant",
-          "gltf": "metadata_only",
-          "radiance_rgb": [
-            1.0,
-            1.0,
-            1.0
-          ],
-          "from": [
-            0.0,
-            0.804621,
-            -0.593788
-          ],
-          "to": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "pbrt_transform": [
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0
-          ]
         }
       ]
     }
@@ -4711,7 +4689,8 @@
     "KHR_materials_clearcoat",
     "KHR_materials_transmission",
     "KHR_materials_ior",
-    "KHR_materials_emissive_strength"
+    "KHR_materials_emissive_strength",
+    "KHR_lights_punctual"
   ],
   "extensionsRequired": [
     "KHR_materials_specular",
@@ -4720,6 +4699,22 @@
     "KHR_materials_ior",
     "KHR_materials_emissive_strength"
   ],
+  "extensions": {
+    "KHR_lights_punctual": {
+      "lights": [
+        {
+          "name": "DistantLight_0",
+          "type": "directional",
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "intensity": 1.0
+        }
+      ]
+    }
+  },
   "cameras": [
     {
       "name": "Camera",

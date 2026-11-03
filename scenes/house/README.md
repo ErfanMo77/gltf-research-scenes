@@ -22,4 +22,4 @@ A large Victorian house scene converted from PBRT v4 to glTF. This scene contain
 - Materials are emitted double-sided for engine culling compatibility.
 - The texture image map is converted from TGA to embedded PNG.
 - Use the extended glTF for transmission and IOR data on glass materials.
-- Infinite and distant lights are preserved as metadata.
+- The PBRT distant light is a `KHR_lights_punctual` directional light in the extended glTF; the infinite light is preserved as metadata.

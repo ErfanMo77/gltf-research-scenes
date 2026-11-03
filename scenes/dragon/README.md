@@ -20,5 +20,5 @@ A dragon model scene converted from PBRT v4 to glTF. This is a dense mesh import
 ## Notes
 
 - The scene uses diffuse materials only.
-- The PBRT distant light is preserved as metadata.
+- The PBRT distant light is a `KHR_lights_punctual` directional light in the extended glTF.
 - Render settings and camera film parameters are preserved in glTF extras and the conversion report.

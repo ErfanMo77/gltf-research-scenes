@@ -41,20 +41,20 @@ Clone the repository for the full asset set: sources, .gltf files, textures, met
 
 | Scene | Reference | License | Notes |
 | --- | --- | --- | --- |
-| [`breakfast-room`](scenes/breakfast-room/) | <img src="scenes/breakfast-room/breakfast_room_thumbnail.png" width="160" alt="Breakfast Room reference"> | CC-BY-3.0 | Textured interior with metallic fixtures, environment map data, and distant-light data |
+| [`breakfast-room`](scenes/breakfast-room/) | <img src="scenes/breakfast-room/breakfast_room_thumbnail.png" width="160" alt="Breakfast Room reference"> | CC-BY-3.0 | Textured interior with metallic fixtures, environment map data, and a directional light |
 | [`bathroom`](scenes/bathroom/) | <img src="scenes/bathroom/bathroom_thumbnail.png" width="160" alt="Bathroom reference"> | CC0-1.0 | Large bathroom interior with glass, alpha masking, and emissive mesh lighting |
 | [`bathroom2`](scenes/bathroom2/) | <img src="scenes/bathroom2/bathroom2_thumbnail.png" width="160" alt="Bathroom 2 reference"> | CC-BY-3.0 | Bathroom interior with textured coated wood, rough glass, mirrors, and emissive mesh lighting |
 | [`bmw-m6`](scenes/bmw-m6/) | <img src="scenes/bmw-m6/bmw_m6_thumbnail.png" width="160" alt="BMW M6 reference"> | CC0-1.0 | Vehicle scene with clearcoat paint, dielectric glass, aluminum metals, coated conductors, and environment map data |
-| [`classroom`](scenes/classroom/) | <img src="scenes/classroom/classroom_thumbnail.png" width="160" alt="Classroom reference"> | CC-BY-3.0 | Classroom interior with textured wood, clearcoat materials, metals, environment map data, and distant-light data |
+| [`classroom`](scenes/classroom/) | <img src="scenes/classroom/classroom_thumbnail.png" width="160" alt="Classroom reference"> | CC-BY-3.0 | Classroom interior with textured wood, clearcoat materials, metals, environment map data, and a directional light |
 | [`classroom2`](scenes/classroom2/) | <img src="scenes/classroom2/classroom2_thumbnail.png" width="160" alt="Classroom 2 rendered in RTVK"> | CC0-1.0 | Blender Classroom by Christophe Seux, supplied as one GLB with embedded textures and camera |
 | [`coffee-maker`](scenes/coffee-maker/) | <img src="scenes/coffee-maker/coffee_maker_thumbnail.png" width="160" alt="Coffee Maker reference"> | CC-BY-3.0 | Compact appliance scene with coated plastics, glass, metal, and emissive mesh lighting |
 | [`cornell-box`](scenes/cornell-box/) | <img src="scenes/cornell-box/cornell_box_thumbnail.png" width="160" alt="Cornell Box reference"> | CC0-1.0 | Small diffuse box scene with emissive mesh lighting |
 | [`cornell-caustic`](scenes/cornell-caustic/) | <img src="scenes/cornell-caustic/cornell_caustic_thumbnail.png" width="160" alt="Cornell Caustic reference"> | CC0-1.0 | Cornell Box caustics scene with dielectric water and emissive mesh lighting |
-| [`dragon`](scenes/dragon/) | <img src="scenes/dragon/dragon_thumbnail.png" width="160" alt="Dragon reference"> | CC-BY-3.0 | Dense dragon model scene with diffuse materials and distant-light data |
+| [`dragon`](scenes/dragon/) | <img src="scenes/dragon/dragon_thumbnail.png" width="160" alt="Dragon reference"> | CC-BY-3.0 | Dense dragon model scene with diffuse materials and a directional light |
 | [`glass-of-water`](scenes/glass-of-water/) | <img src="scenes/glass-of-water/glass_of_water_thumbnail.png" width="160" alt="Glass of Water reference"> | CC0-1.0 | Transparent glass, water, ice, and emissive mesh lighting test |
-| [`house`](scenes/house/) | <img src="scenes/house/house_thumbnail.png" width="160" alt="House reference"> | CC0-1.0 | Large Victorian house with glass, environment map data, and distant-light data |
+| [`house`](scenes/house/) | <img src="scenes/house/house_thumbnail.png" width="160" alt="House reference"> | CC0-1.0 | Large Victorian house with glass, environment map data, and a directional light |
 | [`kitchen`](scenes/kitchen/) | <img src="scenes/kitchen/kitchen_thumbnail.png" width="160" alt="Kitchen reference"> | CC-BY-3.0 | Detailed kitchen with textures, glass, metals, and emissive mesh lighting |
-| [`lamp`](scenes/lamp/) | <img src="scenes/lamp/lamp_thumbnail.png" width="160" alt="Lamp reference"> | CC0-1.0 | Desk lamp with coated plastic, metals, bulb glass, and emissive mesh lighting |
+| [`lamp`](scenes/lamp/) | <img src="scenes/lamp/lamp_thumbnail.png" width="160" alt="Lamp reference"> | CC0-1.0 | Desk lamp with coated plastic, metals, bulb glass, emissive mesh lighting, and a directional light |
 | [`living-room`](scenes/living-room/) | <img src="scenes/living-room/living_room_thumbnail.png" width="160" alt="Living Room reference"> | CC-BY-3.0 | Textured interior with leaf cutouts, mirrors, glass, and environment map data |
 | [`living-room-2`](scenes/living-room-2/) | <img src="scenes/living-room-2/living_room_2_thumbnail.png" width="160" alt="Living Room 2 reference"> | CC-BY-3.0 | White living room interior with textured props, clearcoat materials, glass, and emissive mesh lighting |
 | [`material-testball`](scenes/material-testball/) | <img src="scenes/material-testball/material_testball_thumbnail.png" width="160" alt="Material Testball reference"> | Mixed; see scene license | Compact material ball with baked checkerboard and environment map data |
@@ -75,7 +75,7 @@ Some PBRT scene features are outside the current conversion scope because glTF c
 
 The included scenes were selected because their important geometry, materials, textures, lighting, cameras, and render settings can be represented in glTF or approximated with supported glTF features. PBRT-only details are recorded in glTF `extras` and `conversion.yaml`.
 
-The generated glTF files do not use explicit light objects. Base glTF 2.0 has no light object, and `KHR_lights_punctual` only supports `directional`, `point`, and `spot` lights. This repository does not emit that extension. PBRT area lights are converted to emissive mesh geometry using the source emitter shape and size, which better matches how path tracing engines model finite-area emitters. PBRT distant and infinite lights are preserved as metadata.
+PBRT distant lights are included as `KHR_lights_punctual` directional lights in the extended glTF files. PBRT area lights are converted to emissive mesh geometry using the source emitter shape and size, which better matches how path tracing engines model finite-area emitters. PBRT infinite lights are preserved as metadata. Light intensities use the same relative units as emissive strength; when importing into Blender, choose the **Unitless** lighting mode to keep that balance.
 
 ## Generated Outputs
 

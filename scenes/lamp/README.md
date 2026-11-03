@@ -22,5 +22,5 @@ A small desk lamp scene converted from PBRT v4 to glTF. Useful for checking dens
 - Use the extended glTF for clearcoat, transmission, IOR, specular, and emissive-strength data.
 - The scene contains 50 meshes and 619,358 triangles.
 - Two PBRT area lights are converted to emissive meshes.
-- The distant light is preserved as metadata.
+- The PBRT distant light is a `KHR_lights_punctual` directional light in the extended glTF.
 - Spectral metals, bulb glass behavior, and coated diffuse materials are approximations; exact mappings are in the conversion report.

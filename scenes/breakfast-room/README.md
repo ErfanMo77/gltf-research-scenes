@@ -22,5 +22,5 @@ A warm interior scene converted from PBRT v4 to glTF. It is useful for checking 
 
 - Use the extended glTF for the richer clearcoat material data.
 - Textures are converted from TGA to embedded PNG.
-- Distant and infinite lights are preserved as metadata.
+- The PBRT distant light is a `KHR_lights_punctual` directional light in the extended glTF; the infinite light is preserved as metadata.
 - Spectral metal behavior is approximated with glTF metallic materials.
