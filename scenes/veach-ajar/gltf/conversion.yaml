@@ -7,7 +7,7 @@ scene:
 outputs:
   core: "scenes/veach-ajar/gltf/veach_ajar_core.gltf"
   extended: "scenes/veach-ajar/gltf/veach_ajar_extended.gltf"
-  extended_extensions: ["KHR_materials_specular", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength"]
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength", "KHR_materials_volume"]
 summary:
   meshes: 22
   triangles: 382690
@@ -134,6 +134,8 @@ material_mappings:
         alpha: [0.0, 0.0]
         gltf_roughness: 0.0
 light_mappings:
+    volume_gltf: "KHR_materials_volume"
+    thickness_factor: 9.403962
   -
     pbrt: "diffuse area light"
     mesh: "00_Light"

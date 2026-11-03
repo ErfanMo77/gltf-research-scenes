@@ -2157,6 +2157,9 @@
         },
         "KHR_materials_ior": {
           "ior": 1.5
+        },
+        "KHR_materials_volume": {
+          "thicknessFactor": 0.274435
         }
       }
     },
@@ -6382,7 +6385,8 @@
     "KHR_materials_specular",
     "KHR_materials_clearcoat",
     "KHR_materials_transmission",
-    "KHR_materials_ior"
+    "KHR_materials_ior",
+    "KHR_materials_volume"
   ],
   "extensionsRequired": [
     "KHR_materials_specular",

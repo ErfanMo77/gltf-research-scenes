@@ -261,6 +261,9 @@
         },
         "KHR_materials_ior": {
           "ior": 1.5
+        },
+        "KHR_materials_volume": {
+          "thicknessFactor": 9.403962
         }
       }
     },

@@ -622,6 +622,9 @@
         },
         "KHR_materials_ior": {
           "ior": 1.33
+        },
+        "KHR_materials_volume": {
+          "thicknessFactor": 10.212771
         }
       }
     },
@@ -680,6 +683,9 @@
         },
         "KHR_materials_ior": {
           "ior": 1.31
+        },
+        "KHR_materials_volume": {
+          "thicknessFactor": 1.860899
         }
       }
     },
@@ -738,6 +744,9 @@
         },
         "KHR_materials_ior": {
           "ior": 1.5
+        },
+        "KHR_materials_volume": {
+          "thicknessFactor": 5.413829
         }
       }
     },
@@ -797,6 +806,9 @@
         },
         "KHR_materials_ior": {
           "ior": 1.310616
+        },
+        "KHR_materials_volume": {
+          "thicknessFactor": 1.727893
         }
       }
     },
@@ -1876,7 +1888,8 @@
     "KHR_materials_specular",
     "KHR_materials_transmission",
     "KHR_materials_ior",
-    "KHR_materials_emissive_strength"
+    "KHR_materials_emissive_strength",
+    "KHR_materials_volume"
   ],
   "extensionsRequired": [
     "KHR_materials_specular",

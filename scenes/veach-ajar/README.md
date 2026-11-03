@@ -17,7 +17,8 @@ A Veach lighting test scene converted from PBRT v4 to glTF. It contains three te
 
 ## Notes
 
-- Use the extended glTF for transmission, IOR, and emissive-strength data.
+- Use the extended glTF for transmission, IOR, volume, and emissive-strength data.
+- The glass material uses `KHR_materials_volume` so renderers treat it as a solid refractive volume instead of the default thin-walled surface. `thicknessFactor` is the largest bounding-box extent of the meshes using the material, the same convention as the other scenes.
 - Texture image maps are converted from TGA to embedded PNG.
 - The local source PBRT `Floor` material was changed from metallic to diffuse to match the reference image; the corrected floor checkerboard is baked to a PNG texture.
 - The rectangular PBRT area light is represented with emissive mesh geometry.

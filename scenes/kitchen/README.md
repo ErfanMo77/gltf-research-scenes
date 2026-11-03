@@ -19,7 +19,8 @@ A detailed kitchen interior converted from PBRT v4 to glTF. It is useful for che
 
 ## Notes
 
-- Use the extended glTF for clearcoat, transmission, IOR, and emissive-strength data.
+- Use the extended glTF for clearcoat, transmission, IOR, volume, and emissive-strength data.
+- The wine glasses material uses `KHR_materials_volume` so renderers treat it as a solid refractive volume instead of the default thin-walled surface. `thicknessFactor` is the largest bounding-box extent of the meshes using the material, the same convention as the other scenes.
 - Texture image maps are converted from TGA to embedded PNG.
 - Blinds transmittance and displacement details are preserved as metadata (such as the Bread word on the toaster).
 - Area lights are represented with emissive mesh geometry.

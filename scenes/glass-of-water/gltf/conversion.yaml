@@ -7,7 +7,7 @@ scene:
 outputs:
   core: "scenes/glass-of-water/gltf/glass_of_water_core.gltf"
   extended: "scenes/glass-of-water/gltf/glass_of_water_extended.gltf"
-  extended_extensions: ["KHR_materials_specular", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength"]
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength", "KHR_materials_volume"]
 summary:
   meshes: 17
   triangles: 406387
@@ -91,6 +91,8 @@ material_mappings:
         remaproughness: false
         alpha: [0.0, 0.0]
         gltf_roughness: 0.0
+    volume_gltf: "KHR_materials_volume"
+    thickness_factor: 10.212771
   -
     name: "IceAir"
     pbrt: "dielectric"
@@ -104,6 +106,8 @@ material_mappings:
         remaproughness: false
         alpha: [0.0, 0.0]
         gltf_roughness: 0.0
+    volume_gltf: "KHR_materials_volume"
+    thickness_factor: 1.860899
   -
     name: "Glass"
     pbrt: "dielectric"
@@ -117,6 +121,8 @@ material_mappings:
         remaproughness: false
         alpha: [0.0, 0.0]
         gltf_roughness: 0.0
+    volume_gltf: "KHR_materials_volume"
+    thickness_factor: 5.413829
   -
     name: "AirIce"
     pbrt: "dielectric"
@@ -131,6 +137,8 @@ material_mappings:
         alpha: [0.0, 0.0]
         gltf_roughness: 0.0
     gltf_ior: 1.310616
+    volume_gltf: "KHR_materials_volume"
+    thickness_factor: 1.727893
 light_mappings:
   -
     pbrt: "diffuse area light"

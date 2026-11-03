@@ -7,7 +7,7 @@ scene:
 outputs:
   core: "scenes/cornell-caustic/gltf/cornell_caustic_core.gltf"
   extended: "scenes/cornell-caustic/gltf/cornell_caustic_extended.gltf"
-  extended_extensions: ["KHR_materials_specular", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength"]
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_emissive_strength", "KHR_materials_volume"]
 summary:
   meshes: 10
   triangles: 103487
@@ -54,6 +54,8 @@ material_mappings:
         alpha: [0.0, 0.0]
         gltf_roughness: 0.0
 light_mappings:
+    volume_gltf: "KHR_materials_volume"
+    thickness_factor: 2.0
   -
     pbrt: "diffuse area light"
     mesh: "07_Light"

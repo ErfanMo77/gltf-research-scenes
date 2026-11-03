@@ -18,7 +18,8 @@ A compact science-fiction model converted from PBRT v4 to glTF. Good scene for c
 
 ## Notes
 
-- Use the extended glTF for clearcoat, transmission, IOR, and emissive-strength data.
+- Use the extended glTF for clearcoat, transmission, IOR, volume, and emissive-strength data.
+- The glass material uses `KHR_materials_volume` so renderers treat it as a solid refractive volume instead of the default thin-walled surface. `thicknessFactor` is the largest bounding-box extent of the meshes using the material, the same convention as the other scenes.
 - Area lights are represented with emissive mesh geometry.
 - The infinite light is preserved as metadata.
 - Spectral metals and glass behavior are approximations; exact mappings are in the conversion report.
