@@ -5216,7 +5216,7 @@
       "light_sources": [
         {
           "pbrt": "infinite",
-          "gltf": "metadata_only",
+          "gltf": "separate equirectangular HDR file",
           "source": "textures/Skydome.pfm",
           "pbrt_transform": [
             -0.992546151641322,
@@ -5235,7 +5235,21 @@
             0.0,
             0.0,
             1.0
-          ]
+          ],
+          "environment_map": {
+            "uri": "breakfast_room_environment.hdr",
+            "license_uri": "breakfast_room_environment_LICENSE.txt",
+            "file": "scenes/breakfast-room/gltf/breakfast_room_environment.hdr",
+            "license_file": "scenes/breakfast-room/gltf/breakfast_room_environment_LICENSE.txt",
+            "license": "CC-BY-3.0",
+            "map": "scenes/breakfast-room/source/textures/Skydome.pfm",
+            "projection": "equirectangular Radiance RGBE",
+            "orientation": "glTF world: top row +Y, center column +X, three-quarter column +Z",
+            "resolution": [
+              1024,
+              512
+            ]
+          }
         }
       ]
     }

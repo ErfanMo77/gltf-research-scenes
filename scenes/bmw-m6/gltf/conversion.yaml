@@ -411,8 +411,19 @@ material_mappings:
 light_mappings:
   -
     pbrt: "infinite"
-    gltf: "metadata_only"
+    gltf: "separate equirectangular HDR file"
     source: "textures/sunflowers_equiarea.exr"
     pbrt_transform: [0.17364817766693041, 0.0, -0.984807753012208, 0.0, -0.984807753012208, 0.0, -0.17364817766693041, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
-approximations: ["coateddiffuse_clearcoat", "coatedconductor_metallic_clearcoat", "mix_weighted_base_color", "dielectric_transmission_ior", "conductor_metallic"]
+    environment_map:
+      uri: "../../common/sunflowers_environment.hdr"
+      license_uri: "../../common/sunflowers_environment_LICENSE.txt"
+      file: "scenes/common/sunflowers_environment.hdr"
+      license_file: "scenes/common/sunflowers_environment_LICENSE.txt"
+      license: "CC0-1.0"
+      map: "scenes/bmw-m6/source/textures/sunflowers_equiarea.exr"
+      projection: "equirectangular Radiance RGBE"
+      orientation: "glTF world: top row +Y, center column +X, three-quarter column +Z"
+      resolution: [2048, 1024]
+      shared: "sunflowers"
+approximations: ["coateddiffuse_clearcoat", "coatedconductor_metallic_clearcoat", "mix_weighted_base_color", "dielectric_transmission_ior", "conductor_metallic", "environment_map_equirectangular_hdr"]
 losses: ["render_integrator", "render_sampler", "film_output", "infinite_environment_light"]

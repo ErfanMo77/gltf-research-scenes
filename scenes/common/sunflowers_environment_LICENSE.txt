@@ -1,0 +1,15 @@
+sunflowers_environment.hdr
+
+Environment map: "Sunflowers" by Sergej Majboroda
+https://polyhaven.com/a/sunflowers
+
+License: CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Poly Haven HDRI. The PBRT-v4 equal-area version comes from mmp/pbrt-v4-scenes.
+
+Environment map of: bmw-m6.
+Substitute for the environment maps of living-room, material-testball, teapot, teapot-full, vintage-car, which cannot be redistributed.
+Each scene's conversion.yaml records the reason and the intensity scale to apply.
+
+Changes: resampled from the PBRT-v4 equal-area map scenes/bmw-m6/source/textures/sunflowers_equiarea.exr to an equirectangular Radiance HDR in the glTF world orientation (top row +Y, center column +X, three-quarter column +Z), using the light transform "Rotate 80 0 1 0 Rotate -90 1 0 0".

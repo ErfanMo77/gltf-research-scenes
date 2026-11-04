@@ -9,18 +9,19 @@ A 1967 Pontiac GTO car model converted from PBRT v4 to glTF. It is useful for ch
 - Collection: [Benedikt Bitterli Rendering Resources](https://benedikt-bitterli.me/resources/)
 - Original model: [Pontiac GTO 67 on Blend Swap](https://blendswap.com/blend/13575)
 - Original author: thecali
+- Environment map: `source/textures/envmap.pfm`, from zbyg's [HDRi Pack 3](https://www.deviantart.com/zbyg/art/HDRi-Pack-3-112847728), CC-BY-3.0; see `source/ENVMAP_LICENSE.txt`
 - License: `source/LICENSE.txt`
 
 ## Outputs
 
 - Core glTF: `gltf/pontiac_gto_core.gltf`
 - Extended glTF: `gltf/pontiac_gto_extended.gltf`
+- Environment map: `gltf/pontiac_gto_environment.hdr`, licensed as described in `gltf/pontiac_gto_environment_LICENSE.txt`
 - Conversion report: `gltf/conversion.yaml`
 
 ## Notes
 
 - Use the extended glTF for clearcoat, transmission, IOR, and specular data.
 - The scene contains 63 meshes and about 1.06 million triangles.
-- The infinite light is preserved as metadata.
-- The original `textures/envmap.pfm` is not redistributed here because no separate redistributable environment-map license was included; use the source links above to obtain the original assets.
+- The environment map is exported as an equirectangular HDR in glTF world orientation. glTF has no environment light, so load the provided HDR environment map separately.
 - Spectral metals, glass behavior, and coated diffuse materials are approximations; exact mappings are in the conversion report.

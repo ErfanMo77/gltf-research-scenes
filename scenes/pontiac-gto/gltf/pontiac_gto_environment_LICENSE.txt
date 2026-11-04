@@ -1,0 +1,11 @@
+pontiac_gto_environment.hdr
+
+Environment map: "HDRi Pack 3 studio environment" by zbyg
+https://www.deviantart.com/zbyg/art/HDRi-Pack-3-112847728
+
+License: CC-BY-3.0
+https://creativecommons.org/licenses/by/3.0/
+
+Credited by thecali, the author of "Pontiac GTO 67". See scenes/pontiac-gto/source/ENVMAP_LICENSE.txt for its conversion to the PBRT-v4 equal-area map.
+
+Changes: resampled from the PBRT-v4 equal-area map scenes/pontiac-gto/source/textures/envmap.pfm to an equirectangular Radiance HDR in the glTF world orientation (top row +Y, center column +X, three-quarter column +Z), following the scene's PBRT light transform.

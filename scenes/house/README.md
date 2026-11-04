@@ -8,13 +8,14 @@ A large Victorian house scene converted from PBRT v4 to glTF. This scene contain
 
 - Collection: [Benedikt Bitterli Rendering Resources](https://benedikt-bitterli.me/resources/)
 - Original model: [Victorian Style House on Blend Swap](https://blendswap.com/blend/12687)
-- Environment map: `source/textures/Skydome.pfm`, included with the CC0 House source package
+- Environment map: `source/textures/Skydome.pfm`, a render of the procedural sky in the Tungsten version, included with the CC0 House source package
 - License: `source/LICENSE.txt`
 
 ## Outputs
 
 - Core glTF: `gltf/house_core.gltf`
 - Extended glTF: `gltf/house_extended.gltf`
+- Environment map: `gltf/house_environment.hdr`, licensed as described in `gltf/house_environment_LICENSE.txt`
 - Conversion report: `gltf/conversion.yaml`
 
 ## Notes
@@ -22,4 +23,4 @@ A large Victorian house scene converted from PBRT v4 to glTF. This scene contain
 - Materials are emitted double-sided for engine culling compatibility.
 - The texture image map is converted from TGA to embedded PNG.
 - Use the extended glTF for transmission and IOR data on glass materials.
-- The PBRT distant light is a `KHR_lights_punctual` directional light in the extended glTF; the infinite light is preserved as metadata.
+- The PBRT distant light is a `KHR_lights_punctual` directional light in the extended glTF. The environment map is exported as an equirectangular HDR in glTF world orientation. glTF has no environment light, so load the provided HDR environment map separately.

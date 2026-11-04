@@ -94,10 +94,24 @@ material_mappings:
 light_mappings:
   -
     pbrt: "infinite"
-    gltf: "metadata_only"
+    gltf: "separate equirectangular HDR file"
     source: "textures/envmap.pfm"
     pbrt_transform: [-0.386527, 0.0, 0.922278, 0.0, -0.922278, 0.0, -0.386527, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
-approximations: ["dielectric_transmission_ior", "homogeneous_medium_volume"]
+    environment_map:
+      uri: "../../common/sunflowers_environment.hdr"
+      license_uri: "../../common/sunflowers_environment_LICENSE.txt"
+      file: "scenes/common/sunflowers_environment.hdr"
+      license_file: "scenes/common/sunflowers_environment_LICENSE.txt"
+      license: "CC0-1.0"
+      map: "scenes/bmw-m6/source/textures/sunflowers_equiarea.exr"
+      projection: "equirectangular Radiance RGBE"
+      orientation: "glTF world: top row +Y, center column +X, three-quarter column +Z"
+      resolution: [2048, 1024]
+      shared: "sunflowers"
+      intensity_scale: 1.181245
+      substitute_for: "textures/envmap.pfm"
+      substitute_reason: "The original Bernhard Vogl light probe is licensed for non-commercial use only and is not redistributed."
+approximations: ["dielectric_transmission_ior", "homogeneous_medium_volume", "environment_map_equirectangular_hdr", "environment_map_substitute"]
 losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light", "medium_interface"]
 medium_mappings:
   -

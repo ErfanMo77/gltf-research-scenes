@@ -22501,7 +22501,7 @@
       "light_sources": [
         {
           "pbrt": "infinite",
-          "gltf": "metadata_only",
+          "gltf": "separate equirectangular HDR file",
           "source": "textures/Skydome.pfm",
           "pbrt_transform": [
             -1.0,
@@ -22520,7 +22520,21 @@
             0.0,
             0.0,
             1.0
-          ]
+          ],
+          "environment_map": {
+            "uri": "house_environment.hdr",
+            "license_uri": "house_environment_LICENSE.txt",
+            "file": "scenes/house/gltf/house_environment.hdr",
+            "license_file": "scenes/house/gltf/house_environment_LICENSE.txt",
+            "license": "CC0-1.0",
+            "map": "scenes/house/source/textures/Skydome.pfm",
+            "projection": "equirectangular Radiance RGBE",
+            "orientation": "glTF world: top row +Y, center column +X, three-quarter column +Z",
+            "resolution": [
+              1024,
+              512
+            ]
+          }
         }
       ]
     }

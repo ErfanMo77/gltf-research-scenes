@@ -59,9 +59,19 @@ material_mappings:
 light_mappings:
   -
     pbrt: "infinite"
-    gltf: "metadata_only"
+    gltf: "separate equirectangular HDR file"
     source: "textures/Skydome.pfm"
     pbrt_transform: [-1.0, 0.0, 8.74228e-08, 0.0, -8.74228e-08, 0.0, -1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+    environment_map:
+      uri: "house_environment.hdr"
+      license_uri: "house_environment_LICENSE.txt"
+      file: "scenes/house/gltf/house_environment.hdr"
+      license_file: "scenes/house/gltf/house_environment_LICENSE.txt"
+      license: "CC0-1.0"
+      map: "scenes/house/source/textures/Skydome.pfm"
+      projection: "equirectangular Radiance RGBE"
+      orientation: "glTF world: top row +Y, center column +X, three-quarter column +Z"
+      resolution: [1024, 512]
   -
     pbrt: "distant"
     gltf: "KHR_lights_punctual directional light (extended)"
@@ -69,5 +79,5 @@ light_mappings:
     color: [1.0, 1.0, 1.0]
     intensity: 5.0
     direction: [0.445695, -0.655031, 0.610156]
-approximations: ["dielectric_transmission_ior"]
+approximations: ["dielectric_transmission_ior", "environment_map_equirectangular_hdr"]
 losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light"]

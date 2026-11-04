@@ -57,17 +57,17 @@ Clone the repository for the full asset set: sources, .gltf files, textures, met
 | [`lamp`](scenes/lamp/) | <img src="scenes/lamp/lamp_thumbnail.png" width="160" alt="Lamp reference"> | CC0-1.0 | Desk lamp with coated plastic, metals, bulb glass, emissive mesh lighting, and a directional light |
 | [`living-room`](scenes/living-room/) | <img src="scenes/living-room/living_room_thumbnail.png" width="160" alt="Living Room reference"> | CC-BY-3.0 | Textured interior with leaf cutouts, mirrors, glass, and environment map data |
 | [`living-room-2`](scenes/living-room-2/) | <img src="scenes/living-room-2/living_room_2_thumbnail.png" width="160" alt="Living Room 2 reference"> | CC-BY-3.0 | White living room interior with textured props, clearcoat materials, glass, and emissive mesh lighting |
-| [`material-testball`](scenes/material-testball/) | <img src="scenes/material-testball/material_testball_thumbnail.png" width="160" alt="Material Testball reference"> | Mixed; see scene license | Compact material ball with baked checkerboard and environment map data |
+| [`material-testball`](scenes/material-testball/) | <img src="scenes/material-testball/material_testball_thumbnail.png" width="160" alt="Material Testball reference"> | CC0-1.0 | Compact material ball with baked checkerboard and environment map data |
 | [`modern-hall`](scenes/modern-hall/) | <img src="scenes/modern-hall/modern_hall_thumbnail.png" width="160" alt="Modern Hall reference"> | CC-BY-3.0 | Modern hallway interior with textured surfaces, volumetric glass, and disk emissive mesh lighting |
-| [`pontiac-gto`](scenes/pontiac-gto/) | <img src="scenes/pontiac-gto/pontiac_gto_thumbnail.png" width="160" alt="Pontiac GTO reference"> | CC0-1.0 | Vehicle scene with clearcoat car paint, glass, chrome, and environment map data |
+| [`pontiac-gto`](scenes/pontiac-gto/) | <img src="scenes/pontiac-gto/pontiac_gto_thumbnail.png" width="160" alt="Pontiac GTO reference"> | CC0-1.0; environment map CC-BY-3.0 | Vehicle scene with clearcoat car paint, glass, chrome, and environment map data |
 | [`spaceship`](scenes/spaceship/) | <img src="scenes/spaceship/spaceship_thumbnail.png" width="160" alt="Spaceship reference"> | CC0-1.0 | Sci-fi model with metals, glass, emissive mesh lighting, and environment map data |
 | [`staircase`](scenes/staircase/) | <img src="scenes/staircase/staircase_thumbnail.png" width="160" alt="Staircase reference"> | CC-BY-3.0 | Wooden staircase interior with portrait camera and emissive mesh lighting |
-| [`teapot`](scenes/teapot/) | <img src="scenes/teapot/teapot_thumbnail.png" width="160" alt="Teapot reference"> | Mixed; see scene license | Teapot with baked checkerboard and environment map data |
-| [`teapot-full`](scenes/teapot-full/) | <img src="scenes/teapot-full/teapot_full_thumbnail.png" width="160" alt="Full teapot reference"> | Mixed; see scene license | Teapot and liquid scene with volume, medium settings, and environment map data |
+| [`teapot`](scenes/teapot/) | <img src="scenes/teapot/teapot_thumbnail.png" width="160" alt="Teapot reference"> | CC0-1.0 | Teapot with baked checkerboard and environment map data |
+| [`teapot-full`](scenes/teapot-full/) | <img src="scenes/teapot-full/teapot_full_thumbnail.png" width="160" alt="Full teapot reference"> | CC0-1.0 | Teapot and liquid scene with volume, medium settings, and environment map data |
 | [`veach-ajar`](scenes/veach-ajar/) | <img src="scenes/veach-ajar/veach_ajar_thumbnail.png" width="160" alt="Veach Ajar reference"> | CC0-1.0 | Veach lighting scene with transformed meshes, glass, and emissive mesh lighting |
 | [`veach-bidir`](scenes/veach-bidir/) | <img src="scenes/veach-bidir/veach_bidir_thumbnail.png" width="160" alt="Veach Bidir reference"> | CC0-1.0 | Small bidirectional-lighting scene with emissive mesh lighting |
 | [`veach-mis`](scenes/veach-mis/) | <img src="scenes/veach-mis/veach_mis_thumbnail.png" width="160" alt="Veach MIS reference"> | CC0-1.0 | Compact MIS scene with tessellated emissive mesh lighting |
-| [`vintage-car`](scenes/vintage-car/) | <img src="scenes/vintage-car/vintage_car_thumbnail.png" width="160" alt="Vintage Car reference"> | Mixed; see scene license | Vehicle scene with clearcoat car paint, glass, chrome, rough steel, and environment map data |
+| [`vintage-car`](scenes/vintage-car/) | <img src="scenes/vintage-car/vintage_car_thumbnail.png" width="160" alt="Vintage Car reference"> | CC0-1.0 | Vehicle scene with clearcoat car paint, glass, chrome, rough steel, and environment map data |
 
 ## Limitations
 
@@ -75,7 +75,7 @@ Some PBRT scene features are outside the current conversion scope because glTF c
 
 The included scenes were selected because their important geometry, materials, textures, lighting, cameras, and render settings can be represented in glTF or approximated with supported glTF features. PBRT-only details are recorded in glTF `extras` and `conversion.yaml`.
 
-PBRT distant lights are included as `KHR_lights_punctual` directional lights in the extended glTF files. PBRT area lights are converted to emissive mesh geometry using the source emitter shape and size, which better matches how path tracing engines model finite-area emitters. PBRT infinite lights are preserved as metadata. Light intensities use the same relative units as emissive strength; when importing into Blender, choose the **Unitless** lighting mode to keep that balance.
+PBRT distant lights are included as `KHR_lights_punctual` directional lights in the extended glTF files. PBRT area lights are converted to emissive mesh geometry using the source emitter shape and size, which better matches how path tracing engines model finite-area emitters. glTF has no environment light, so PBRT image-based infinite lights are exported as separate HDR files beside the glTF. Light intensities use the same relative units as emissive strength; when importing into Blender, choose the **Unitless** lighting mode to keep that balance.
 
 ## Generated Outputs
 
@@ -85,6 +85,7 @@ Each PBRT scene's `gltf/` directory contains:
 - `scenes/<scene-id>/gltf/<scene_id>_extended.gltf`
 - `scenes/<scene-id>/gltf/<scene_id>.bin`
 - `scenes/<scene-id>/gltf/conversion.yaml`
+- `scenes/<scene-id>/gltf/<scene_id>_environment.hdr` and `<scene_id>_environment_LICENSE.txt`, for scenes with their own image environment map
 
 The `conversion.yaml` report may include:
 

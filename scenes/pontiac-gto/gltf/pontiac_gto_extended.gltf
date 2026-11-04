@@ -5753,7 +5753,7 @@
       "light_sources": [
         {
           "pbrt": "infinite",
-          "gltf": "metadata_only",
+          "gltf": "separate equirectangular HDR file",
           "source": "textures/envmap.pfm",
           "pbrt_transform": [
             0.693251,
@@ -5772,7 +5772,21 @@
             0.0,
             0.0,
             1.0
-          ]
+          ],
+          "environment_map": {
+            "uri": "pontiac_gto_environment.hdr",
+            "license_uri": "pontiac_gto_environment_LICENSE.txt",
+            "file": "scenes/pontiac-gto/gltf/pontiac_gto_environment.hdr",
+            "license_file": "scenes/pontiac-gto/gltf/pontiac_gto_environment_LICENSE.txt",
+            "license": "CC-BY-3.0",
+            "map": "scenes/pontiac-gto/source/textures/envmap.pfm",
+            "projection": "equirectangular Radiance RGBE",
+            "orientation": "glTF world: top row +Y, center column +X, three-quarter column +Z",
+            "resolution": [
+              2048,
+              1024
+            ]
+          }
         }
       ]
     }

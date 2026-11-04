@@ -1,0 +1,18 @@
+textures/envmap.pfm
+
+Environment map from "HDRi Pack 3" by zbyg:
+https://www.deviantart.com/zbyg/art/HDRi-Pack-3-112847728
+
+Licensed under the Creative Commons Attribution 3.0 Unported license (CC-BY-3.0):
+https://creativecommons.org/licenses/by/3.0/
+
+The author of "Pontiac GTO 67", thecali, credits this pack for the scene's sky
+texture on the original Blend Swap page. The pack's preview shows the same
+studio environment, and its 2000x1000 OpenEXR format matches the image in
+Benedikt Bitterli's version of the scene.
+
+Changes: Benedikt Bitterli's pbrt-v3 package stores the image as a 2000x1000
+equirectangular PFM. This file was converted to pbrt-v4's equal-area square
+parameterization with pbrt-v4 "imgtool makeequiarea", the same conversion used
+for the other environment maps in this repository. The image content is
+otherwise unchanged.

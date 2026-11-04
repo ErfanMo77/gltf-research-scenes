@@ -282,8 +282,18 @@ light_mappings:
     direction: [-0.88698, -0.288862, -0.360313]
   -
     pbrt: "infinite"
-    gltf: "metadata_only"
+    gltf: "separate equirectangular HDR file"
     source: "textures/Skydome.pfm"
     pbrt_transform: [-0.992546151641322, 0.12186934340514748, 8.74228e-08, 0.0, -8.677116370570897e-08, 1.0654159234639527e-08, -1.0, 0.0, 0.12186934340514748, 0.992546151641322, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
-approximations: ["coateddiffuse_clearcoat", "conductor_metallic"]
+    environment_map:
+      uri: "breakfast_room_environment.hdr"
+      license_uri: "breakfast_room_environment_LICENSE.txt"
+      file: "scenes/breakfast-room/gltf/breakfast_room_environment.hdr"
+      license_file: "scenes/breakfast-room/gltf/breakfast_room_environment_LICENSE.txt"
+      license: "CC-BY-3.0"
+      map: "scenes/breakfast-room/source/textures/Skydome.pfm"
+      projection: "equirectangular Radiance RGBE"
+      orientation: "glTF world: top row +Y, center column +X, three-quarter column +Z"
+      resolution: [1024, 512]
+approximations: ["coateddiffuse_clearcoat", "conductor_metallic", "environment_map_equirectangular_hdr"]
 losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light"]

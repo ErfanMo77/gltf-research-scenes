@@ -1,0 +1,11 @@
+classroom_environment.hdr
+
+Environment map: "Skydome from Japanese Classroom" by Benedikt Bitterli, for "Japanese Classroom" by NovaZeeke (https://blendswap.com/blend/13632)
+https://benedikt-bitterli.me/resources/
+
+License: CC-BY-3.0
+https://creativecommons.org/licenses/by/3.0/
+
+A render of the procedural Hosek-Wilkie sky in the Tungsten version of the scene, distributed with the scene under its license. It contains no third-party photograph.
+
+Changes: resampled from the PBRT-v4 equal-area map scenes/classroom/source/textures/Skydome.pfm to an equirectangular Radiance HDR in the glTF world orientation (top row +Y, center column +X, three-quarter column +Z), following the scene's PBRT light transform.

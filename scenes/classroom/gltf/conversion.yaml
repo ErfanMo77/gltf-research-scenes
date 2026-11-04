@@ -229,8 +229,18 @@ light_mappings:
     direction: [0.865804, -0.416766, 0.276929]
   -
     pbrt: "infinite"
-    gltf: "metadata_only"
+    gltf: "separate equirectangular HDR file"
     source: "textures/Skydome.pfm"
     pbrt_transform: [-1.0, 0.0, 8.74228e-08, 0.0, -8.74228e-08, 0.0, -1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
-approximations: ["coateddiffuse_clearcoat", "conductor_metallic"]
+    environment_map:
+      uri: "classroom_environment.hdr"
+      license_uri: "classroom_environment_LICENSE.txt"
+      file: "scenes/classroom/gltf/classroom_environment.hdr"
+      license_file: "scenes/classroom/gltf/classroom_environment_LICENSE.txt"
+      license: "CC-BY-3.0"
+      map: "scenes/classroom/source/textures/Skydome.pfm"
+      projection: "equirectangular Radiance RGBE"
+      orientation: "glTF world: top row +Y, center column +X, three-quarter column +Z"
+      resolution: [1024, 512]
+approximations: ["coateddiffuse_clearcoat", "conductor_metallic", "environment_map_equirectangular_hdr"]
 losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light"]

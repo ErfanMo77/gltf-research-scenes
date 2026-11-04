@@ -8307,7 +8307,7 @@
       "light_sources": [
         {
           "pbrt": "infinite",
-          "gltf": "metadata_only",
+          "gltf": "separate equirectangular HDR file",
           "source": "textures/Skydome.pfm",
           "pbrt_transform": [
             -1.0,
@@ -8326,7 +8326,21 @@
             0.0,
             0.0,
             1.0
-          ]
+          ],
+          "environment_map": {
+            "uri": "classroom_environment.hdr",
+            "license_uri": "classroom_environment_LICENSE.txt",
+            "file": "scenes/classroom/gltf/classroom_environment.hdr",
+            "license_file": "scenes/classroom/gltf/classroom_environment_LICENSE.txt",
+            "license": "CC-BY-3.0",
+            "map": "scenes/classroom/source/textures/Skydome.pfm",
+            "projection": "equirectangular Radiance RGBE",
+            "orientation": "glTF world: top row +Y, center column +X, three-quarter column +Z",
+            "resolution": [
+              1024,
+              512
+            ]
+          }
         }
       ]
     }

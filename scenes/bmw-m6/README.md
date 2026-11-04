@@ -17,11 +17,12 @@ A BMW M6 car scene converted from PBRT v4 to glTF. Good for checking dense vehic
 
 - Core glTF: `gltf/bmw_m6_core.gltf`
 - Extended glTF: `gltf/bmw_m6_extended.gltf`
+- Environment map: `../common/sunflowers_environment.hdr`, shared by several scenes and licensed as described in `../common/sunflowers_environment_LICENSE.txt`
 - Conversion report: `gltf/conversion.yaml`
 
 ## Notes
 
-- The PBRT infinite environment light is preserved as metadata.
+- glTF has no environment light, so load the provided HDR environment map separately. It is stored once in `scenes/common`.
 - `coatedconductor` materials are approximated as metallic glTF materials, with clearcoat in the extended output.
 - The `mix` material is approximated as a weighted base color.
 - PBRT named aluminum spectra are sampled to RGB for glTF metallic base color.
