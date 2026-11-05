@@ -1,0 +1,28 @@
+Austrian Imperial Crown
+
+Model courtesy of Martin Lubich, http://www.loramel.net/
+
+The original Crown model is licensed under the Creative Commons Attribution
+3.0 Unported license (CC-BY-3.0):
+https://creativecommons.org/licenses/by/3.0/
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+https://community.intel.com/t5/Intel-Embree-Ray-Tracing-Kernels/Crown-scene-available-for-download/td-p/788825
+
+The announcement specifies CC-BY-3.0 for the Crown model and requires credit
+to Martin Lubich with a link to his website when possible. It separately
+credits an HDR light to Lightmap Ltd; that HDR light is not included in this
+PBRT scene, which uses six mesh area lights.
+
+PBRT v4 scene and reference images obtained from:
+https://github.com/mmp/pbrt-v4-scenes/tree/30cf4a0346ae5a80a2d7a530a3ef7d0fa4f70572/crown
+https://github.com/mmp/pbrt-v4-scenes/tree/30cf4a0346ae5a80a2d7a530a3ef7d0fa4f70572/images/crown
+
+The PBRT collection credits Martin Lubich for this model. Its Crown directory
+does not contain a separate license file; this local notice records the
+original model's published license and attribution rather than applying this
+repository's MIT license to third-party assets.
+
+No scene geometry or materials have been edited during import. Source files
+are authoritative; any generated glTF is an approximation and a derivative
+of the source scene. Preserve this notice and attribution with the assets.

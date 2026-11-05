@@ -1,0 +1,1094 @@
+scene:
+  id: "crown"
+  format: "pbrt-v4"
+  source: "scenes/crown/source/crown.pbrt"
+  license: "see source license file"
+  license_file: "scenes/crown/source/LICENSE.txt"
+outputs:
+  core: "scenes/crown/gltf/crown_core.gltf"
+  extended: "scenes/crown/gltf/crown_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_volume", "KHR_materials_dispersion", "KHR_materials_emissive_strength"]
+summary:
+  meshes: 793
+  triangles: 5493854
+  materials: 48
+  textures: 20
+  lights: 6
+  media: 2
+  vertices: 2851437
+  displaced_vertices: 1003735
+  source_triangles: 3541174
+  displaced_meshes: 7
+render:
+  integrator: "volpath"
+  max_depth: 100
+  sampler: "halton"
+  samples_per_pixel: 512
+  resolution: [1000, 1400]
+  fov_degrees: 47.0
+  camera_parameters:
+    lensradius:
+      type: "float"
+      value: [0.1]
+    focaldistance:
+      type: "float"
+      value: [17]
+    fov:
+      type: "float"
+      value: [47]
+  film_parameters:
+    filename:
+      type: "string"
+      value: ["crown.exr"]
+    yresolution:
+      type: "integer"
+      value: [1400]
+    xresolution:
+      type: "integer"
+      value: [1000]
+    iso:
+      type: "float"
+      value: [150]
+    sensor:
+      type: "string"
+      value: ["canon_eos_5d_mkiv"]
+conversion:
+  double_sided: "auto"
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+  gltf_camera:
+    znear: 0.01
+    zfar: 1000.0
+  volume_winding_reversed_meshes: ["444_small_ruby", "474_small_ruby", "500_small_ruby", "530_small_ruby", "556_small_ruby", "586_small_ruby", "614_small_ruby", "640_small_ruby", "670_small_ruby", "696_small_ruby", "726_small_ruby", "752_small_ruby"]
+  displacement_mode: "mesh"
+  displacement_position_scale: 0.1
+  displacement_mesh_edge_texels:
+    08_mitra_right_front: 1.0
+  displacement_simplification:
+    library: "build/meshoptimizer/Release/meshoptimizer.dll"
+    error_limit: 0.00025
+    pass_error_limits: [0.00025, 0.00035]
+material_mappings:
+  -
+    pbrt: "diffuse"
+    gltf: "baseColorFactor"
+    count: 5
+  -
+    name: "arc_rosetta_red"
+    pbrt: "coateddiffuse scale"
+    texture: "arc_rosetta_red-kd"
+    roughness_mapping:
+      clearcoat:
+        source:
+          roughness: 0.010408
+        remaproughness: true
+        alpha: [0.1020196059588548, 0.1020196059588548]
+        gltf_roughness: 0.3194050812978009
+    gltf: "image map converted to embedded PNG"
+  -
+    name: "arc_zirk_socket_base"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "b_lily_arc"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "b_lily_tray"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "bl_clamp_a"
+    pbrt: "mix"
+    gltf: "baked baseColor and metallicRoughness textures; optional clearcoat mask"
+    materials: ["bl_clamp_a-red", "clamp_gold"]
+    amount: "bl_clamp_a-mask"
+    reflectance: [0.7, 0.41250000000000003, 0.41250000000000003]
+    source_materials:
+      -
+        name: "bl_clamp_a-red"
+        parameters:
+          type:
+            type: "string"
+            value: ["coateddiffuse"]
+          reflectance:
+            type: "rgb"
+            value: [0.6, 0.025, 0.025]
+          roughness:
+            type: "float"
+            value: [0.010408]
+      -
+        name: "clamp_gold"
+        parameters:
+          type:
+            type: "string"
+            value: ["conductor"]
+          eta:
+            type: "spectrum"
+            value: ["metal-Au-eta"]
+          k:
+            type: "spectrum"
+            value: ["metal-Au-k"]
+  -
+    name: "border_bott_inlay"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 1.0
+    roughness_mapping:
+      base:
+        source:
+          roughness: "border_bott_inlay-mask"
+        texture: "border_bott_inlay-mask"
+        remaproughness: true
+        gltf_roughness: 1.0
+        gltf: "baked metallicRoughnessTexture G"
+  -
+    name: "cross_enamel"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.5679914795336876
+    base_color_mapping:
+      method: "internal_fresnel_diffuse"
+      internal_reflectance: 0.5963457597077118
+      formula: "c * (1 - F) / (1 - F * c), blended with c by clearcoat_factor"
+      color_space: "linear RGB; texture RGB decoded from and re-encoded to sRGB"
+      gltf: "baseColorFactor"
+      base_color_factor: [0.6175347996087199, 0.6175347996087199, 0.6175347996087199]
+      approximation: "smooth IOR 1.5 internal-reflection approximation; PBRT spectral and angular layer scattering are not exact"
+    roughness_mapping:
+      clearcoat:
+        source:
+          roughness: 0.10408
+        remaproughness: true
+        alpha: [0.3226143208228674, 0.3226143208228674]
+        gltf_roughness: 0.5679914795336876
+  -
+    name: "cross_gold"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "cross_gold_cross_flower_mask.png"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "dark_velvet"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.668740304976422
+    base_color_mapping:
+      method: "internal_fresnel_diffuse"
+      internal_reflectance: 0.5963457597077118
+      formula: "c * (1 - F) / (1 - F * c), blended with c by clearcoat_factor"
+      color_space: "linear RGB; texture RGB decoded from and re-encoded to sRGB"
+      gltf: "baseColorFactor"
+      base_color_factor: [0.06649635933242723, 0.0006060234597191628, 0.0006060234597191628]
+      approximation: "smooth IOR 1.5 internal-reflection approximation; PBRT spectral and angular layer scattering are not exact"
+    roughness_mapping:
+      clearcoat:
+        source:
+          roughness: 0.2
+        remaproughness: true
+        alpha: [0.4472135954999579, 0.4472135954999579]
+        gltf_roughness: 0.668740304976422
+  -
+    name: "deco"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "diamond"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 3.389269
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+    spectral_ior:
+      wavelength_ior_pairs: [200, 3.5, 900, 3.3]
+      reference_wavelength_nm: 587.56
+      interpolation: "piecewise_linear"
+      ior: 3.389269
+      dispersion: 0.406915
+      dispersion_approximation: "Abbe fit at Fraunhofer F/d/C; original PBRT curve retained"
+    dispersion_gltf: "KHR_materials_dispersion"
+  -
+    name: "diamond_tray_normal_SPEC."
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 3.389269
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+    spectral_ior:
+      wavelength_ior_pairs: [200, 3.5, 900, 3.3]
+      reference_wavelength_nm: 587.56
+      interpolation: "piecewise_linear"
+      ior: 3.389269
+      dispersion: 0.406915
+      dispersion_approximation: "Abbe fit at Fraunhofer F/d/C; original PBRT curve retained"
+    dispersion_gltf: "KHR_materials_dispersion"
+  -
+    name: "gold.002"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "gold_base"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "gold_base_border"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "gold_base_border_mitra_border.png"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "gold_base_bumped"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "gold_base_bumped_mitra_border.png.002"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "gold_base_mitra_border.png"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "gold_base_mitra_border.png.002"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "gold_lower_arc"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "gold_tray"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.3194050812978009
+    roughness_mapping:
+      base:
+        source:
+          roughness: 0.010408
+        remaproughness: true
+        alpha: [0.1020196059588548, 0.1020196059588548]
+        gltf_roughness: 0.3194050812978009
+  -
+    name: "gold_tray_clamp"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "gold_tray_front"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "gold_upper_arc"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "mitra_inlay"
+    pbrt: "coateddiffuse scale"
+    texture: "mitra_inlay-kd"
+    roughness_mapping:
+      clearcoat:
+        source:
+          roughness: 0.010408
+        remaproughness: true
+        alpha: [0.1020196059588548, 0.1020196059588548]
+        gltf_roughness: 0.3194050812978009
+    gltf: "image map converted to embedded PNG"
+    displacement_texture: "mitra_inlay-bump-sc"
+    displacement_gltf: "tessellated vertex displacement; PBRT-style vertex shading normals; no normal texture"
+    displacement_source: "textures/mitra/mitra_border_bump.png"
+    displacement_scale: 0.25
+    displacement_zero_level: "mean sampled height per mesh"
+    displacement_edge_texels: 4.0
+    displacement_position_scale: 0.1
+  -
+    name: "mitra_right_back"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 1.0
+    roughness_mapping:
+      base:
+        source:
+          roughness: "mitra_right_back-roughness"
+        texture: "mitra_right_back-roughness"
+        remaproughness: true
+        gltf_roughness: 1.0
+        gltf: "baked metallicRoughnessTexture G"
+    displacement_texture: "mitra_right_back-bump-sc"
+    displacement_gltf: "tessellated vertex displacement; PBRT-style vertex shading normals; no normal texture"
+    displacement_source: "textures/mitra/right_front_bump2.png"
+    displacement_scale: 0.25
+    displacement_zero_level: "mean sampled height per mesh"
+    displacement_edge_texels: 4.0
+    displacement_position_scale: 0.1
+  -
+    name: "mitra_right_front"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+    displacement_texture: "mitra_right_back-bump-sc"
+    displacement_gltf: "tessellated vertex displacement; PBRT-style vertex shading normals; no normal texture"
+    displacement_source: "textures/mitra/right_front_bump2.png"
+    displacement_scale: 0.25
+    displacement_zero_level: "mean sampled height per mesh"
+    displacement_edge_texels: 1.0
+    displacement_position_scale: 0.1
+  -
+    name: "pearl"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.17782794100389226
+    base_color_mapping:
+      method: "internal_fresnel_diffuse"
+      internal_reflectance: 0.5963457597077118
+      formula: "c * (1 - F) / (1 - F * c), blended with c by clearcoat_factor"
+      color_space: "linear RGB; texture RGB decoded from and re-encoded to sRGB"
+      gltf: "baseColorFactor"
+      base_color_factor: [0.4284550257997138, 0.37713384618372936, 0.37713384618372936]
+      approximation: "smooth IOR 1.5 internal-reflection approximation; PBRT spectral and angular layer scattering are not exact"
+    roughness_mapping:
+      clearcoat:
+        source:
+          uroughness: 0.001
+          vroughness: 0.001
+        remaproughness: true
+        alpha: [0.03162277660168379, 0.03162277660168379]
+        gltf_roughness: 0.17782794100389226
+    pbrt_roughness: [0.001, 0.001]
+  -
+    name: "rosetta_deco"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "rosetta_deco_deco_mask.png"
+    pbrt: "mix"
+    gltf: "baked baseColor and metallicRoughness textures; optional clearcoat mask"
+    materials: ["deco-mask-white", "rosetta_gold"]
+    amount: "rosetta-deco-mask"
+    reflectance: [0.75, 0.75, 0.75]
+    source_materials:
+      -
+        name: "deco-mask-white"
+        parameters:
+          type:
+            type: "string"
+            value: ["diffuse"]
+          reflectance:
+            type: "rgb"
+            value: [0.7, 0.7, 0.7]
+      -
+        name: "rosetta_gold"
+        parameters:
+          type:
+            type: "string"
+            value: ["conductor"]
+          eta:
+            type: "spectrum"
+            value: ["metal-Au-eta"]
+          k:
+            type: "spectrum"
+            value: ["metal-Au-k"]
+  -
+    name: "rosetta_fix"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "rosetta_fix_tray_front_normal"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "s_lily_gold_tray"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "s_lily_ruby_socket"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "small_ruby"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 3.389269
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+    spectral_ior:
+      wavelength_ior_pairs: [200, 3.5, 900, 3.3]
+      reference_wavelength_nm: 587.56
+      interpolation: "piecewise_linear"
+      ior: 3.389269
+      dispersion: 0.406915
+      dispersion_approximation: "Abbe fit at Fraunhofer F/d/C; original PBRT curve retained"
+    dispersion_gltf: "KHR_materials_dispersion"
+  -
+    name: "socket_clamp"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "socket_clamp1"
+    pbrt: "conductor"
+    gltf: "metallicFactor + baseColorFactor from eta and k"
+    eta: [0.206057, 0.350409, 1.418608]
+    k: [3.030474, 2.714063, 1.843105]
+    named_spectra:
+      eta: "metal-Au-eta"
+      k: "metal-Au-k"
+    base_color: [0.922523, 0.847478, 0.386329]
+    roughness: 0.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "velvet"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.668740304976422
+    base_color_mapping:
+      method: "internal_fresnel_diffuse"
+      internal_reflectance: 0.5963457597077118
+      formula: "c * (1 - F) / (1 - F * c), blended with c by clearcoat_factor"
+      color_space: "linear RGB; texture RGB decoded from and re-encoded to sRGB"
+      gltf: "baseColorFactor"
+      base_color_factor: [0.06649635933242723, 0.0006060234597191628, 0.0006060234597191628]
+      approximation: "smooth IOR 1.5 internal-reflection approximation; PBRT spectral and angular layer scattering are not exact"
+    roughness_mapping:
+      clearcoat:
+        source:
+          roughness: 0.2
+        remaproughness: true
+        alpha: [0.4472135954999579, 0.4472135954999579]
+        gltf_roughness: 0.668740304976422
+  -
+    name: "zirkon"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 2.5
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+  -
+    name: "big_ruby_air_to_ruby_medium"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 3.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+    medium: "ruby-medium"
+    volume_gltf: "KHR_materials_volume"
+    volume_interface_approximation: "PBRT outside medium mapped as glTF interior attenuation; source interface preserved in extras"
+    thickness_factor: 1.761579
+    attenuation_color: [0.980199, 0.67032, 0.367879]
+    attenuation_distance: 2.0
+  -
+    name: "saphire_air_to_sapphire_medium"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 3.0
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+    medium: "sapphire-medium"
+    volume_gltf: "KHR_materials_volume"
+    volume_interface_approximation: "PBRT outside medium mapped as glTF interior attenuation; source interface preserved in extras"
+    thickness_factor: 2.624075
+    attenuation_color: [0.367879, 0.67032, 0.980199]
+    attenuation_distance: 2.0
+    displacement_texture: "sapphire-bump-sc"
+    displacement_source: "textures/arc/saphire_bump.png"
+    displacement_scale: 0.25
+    displacement_gltf: "tessellated vertex displacement; PBRT-style vertex shading normals; no normal texture"
+    displacement_zero_level: "mean sampled height per mesh"
+    displacement_edge_texels: 4.0
+    displacement_position_scale: 0.1
+light_mappings:
+  -
+    pbrt: "diffuse area light"
+    mesh: "00_Default"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [11.39249598124795, 9.72619606567598, 8.611910363091765]
+    twosided: false
+    source_parameters:
+      scale:
+        type: "float"
+        value: [10]
+      L:
+        type: "blackbody"
+        value: [5500]
+    blackbody_approximation: "Planck spectrum integrated against analytic CIE fits, normalized to unit linear-RGB luminance, scaled by PBRT light scale; brightness follows converter convention, not PBRT photometric/sensor calibration"
+  -
+    pbrt: "diffuse area light"
+    mesh: "01_Default"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [11.39249598124795, 9.72619606567598, 8.611910363091765]
+    twosided: false
+    source_parameters:
+      scale:
+        type: "float"
+        value: [10]
+      L:
+        type: "blackbody"
+        value: [5500]
+    blackbody_approximation: "Planck spectrum integrated against analytic CIE fits, normalized to unit linear-RGB luminance, scaled by PBRT light scale; brightness follows converter convention, not PBRT photometric/sensor calibration"
+  -
+    pbrt: "diffuse area light"
+    mesh: "02_Default"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [11.39249598124795, 9.72619606567598, 8.611910363091765]
+    twosided: false
+    source_parameters:
+      scale:
+        type: "float"
+        value: [10]
+      L:
+        type: "blackbody"
+        value: [5500]
+    blackbody_approximation: "Planck spectrum integrated against analytic CIE fits, normalized to unit linear-RGB luminance, scaled by PBRT light scale; brightness follows converter convention, not PBRT photometric/sensor calibration"
+  -
+    pbrt: "diffuse area light"
+    mesh: "03_Default"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [11.39249598124795, 9.72619606567598, 8.611910363091765]
+    twosided: false
+    source_parameters:
+      scale:
+        type: "float"
+        value: [10]
+      L:
+        type: "blackbody"
+        value: [5500]
+    blackbody_approximation: "Planck spectrum integrated against analytic CIE fits, normalized to unit linear-RGB luminance, scaled by PBRT light scale; brightness follows converter convention, not PBRT photometric/sensor calibration"
+  -
+    pbrt: "diffuse area light"
+    mesh: "04_Default"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [11.39249598124795, 9.72619606567598, 8.611910363091765]
+    twosided: false
+    source_parameters:
+      scale:
+        type: "float"
+        value: [10]
+      L:
+        type: "blackbody"
+        value: [5500]
+    blackbody_approximation: "Planck spectrum integrated against analytic CIE fits, normalized to unit linear-RGB luminance, scaled by PBRT light scale; brightness follows converter convention, not PBRT photometric/sensor calibration"
+  -
+    pbrt: "diffuse area light"
+    mesh: "05_Default"
+    gltf: "emissive mesh + KHR_materials_emissive_strength"
+    radiance_rgb: [11.39249598124795, 9.72619606567598, 8.611910363091765]
+    twosided: false
+    source_parameters:
+      scale:
+        type: "float"
+        value: [10]
+      L:
+        type: "blackbody"
+        value: [5500]
+    blackbody_approximation: "Planck spectrum integrated against analytic CIE fits, normalized to unit linear-RGB luminance, scaled by PBRT light scale; brightness follows converter convention, not PBRT photometric/sensor calibration"
+approximations: ["area_light_emissive_mesh", "sphere_mesh", "coateddiffuse_clearcoat", "texture_mix_baked_material_parameters", "spectral_ior_sample_and_dispersion_fit", "bump_height_mesh_displacement", "scaled_reflectance_clamped_to_gltf_range", "blackbody_emission_rgb", "dielectric_transmission_ior", "conductor_metallic", "homogeneous_medium_volume"]
+losses: ["render_integrator", "render_sampler", "film_output", "exact_pbrt_bump_mapping", "medium_interface", "exact_spectral_ior", "camera_depth_of_field", "film_sensor_response"]
+medium_mappings:
+  -
+    name: "sapphire-medium"
+    type: "homogeneous"
+    scale: 1.0
+    sigma_a: [0.5, 0.2, 0.01]
+    sigma_s: [0.0, 0.0, 0.0]
+    sigma_t: [0.5, 0.2, 0.01]
+    gltf: "KHR_materials_volume attenuation"
+    attenuation_color: [0.367879, 0.67032, 0.980199]
+    attenuation_distance: 2.0
+  -
+    name: "ruby-medium"
+    type: "homogeneous"
+    scale: 1.0
+    sigma_a: [0.01, 0.2, 0.5]
+    sigma_s: [0.0, 0.0, 0.0]
+    sigma_t: [0.01, 0.2, 0.5]
+    gltf: "KHR_materials_volume attenuation"
+    attenuation_color: [0.980199, 0.67032, 0.367879]
+    attenuation_distance: 2.0
+texture_graph:
+  -
+    name: "arc_rosetta_red-kd-img"
+    value_type: "spectrum"
+    type: "imagemap"
+    parameters:
+      filename:
+        type: "string"
+        value: ["textures/mitra/mitra_border_color.png"]
+  -
+    name: "arc_rosetta_red-kd"
+    value_type: "spectrum"
+    type: "scale"
+    parameters:
+      scale:
+        type: "float"
+        value: [0.620968]
+      tex:
+        type: "texture"
+        value: ["arc_rosetta_red-kd-img"]
+  -
+    name: "bl_clamp_a-mask"
+    value_type: "float"
+    type: "imagemap"
+    parameters:
+      filename:
+        type: "string"
+        value: ["textures/b_lily/clamp_mask.png"]
+  -
+    name: "border_bott_inlay-mask"
+    value_type: "float"
+    type: "imagemap"
+    parameters:
+      filename:
+        type: "string"
+        value: ["textures/mitra/mitra_border_color_mask.png"]
+  -
+    name: "mitra_inlay-kd-tex"
+    value_type: "spectrum"
+    type: "imagemap"
+    parameters:
+      filename:
+        type: "string"
+        value: ["textures/mitra/mitra_border_color.png"]
+  -
+    name: "mitra_inlay-kd"
+    value_type: "spectrum"
+    type: "scale"
+    parameters:
+      scale:
+        type: "float"
+        value: [1.5]
+      tex:
+        type: "texture"
+        value: ["mitra_inlay-kd-tex"]
+  -
+    name: "mitra_inlay-bump"
+    value_type: "float"
+    type: "imagemap"
+    parameters:
+      filename:
+        type: "string"
+        value: ["textures/mitra/mitra_border_bump.png"]
+  -
+    name: "mitra_inlay-bump-sc"
+    value_type: "float"
+    type: "scale"
+    parameters:
+      scale:
+        type: "float"
+        value: [0.25]
+      tex:
+        type: "texture"
+        value: ["mitra_inlay-bump"]
+  -
+    name: "mitra_right_back-bump"
+    value_type: "float"
+    type: "imagemap"
+    parameters:
+      filename:
+        type: "string"
+        value: ["textures/mitra/right_front_bump2.png"]
+  -
+    name: "mitra_right_back-bump-sc"
+    value_type: "float"
+    type: "scale"
+    parameters:
+      scale:
+        type: "float"
+        value: [0.25]
+      tex:
+        type: "texture"
+        value: ["mitra_right_back-bump"]
+  -
+    name: "mitra_right_back-roughness-tex"
+    value_type: "float"
+    type: "imagemap"
+    parameters:
+      filename:
+        type: "string"
+        value: ["textures/mitra/right_front_spec.png"]
+  -
+    name: "mitra_right_back-roughness"
+    value_type: "float"
+    type: "scale"
+    parameters:
+      scale:
+        type: "float"
+        value: [0.1]
+      tex:
+        type: "texture"
+        value: ["mitra_right_back-roughness-tex"]
+  -
+    name: "rosetta-deco-mask"
+    value_type: "float"
+    type: "imagemap"
+    parameters:
+      filename:
+        type: "string"
+        value: ["textures/pearl_tray/deco_mask.png"]
+  -
+    name: "sapphire-bump"
+    value_type: "float"
+    type: "imagemap"
+    parameters:
+      filename:
+        type: "string"
+        value: ["textures/arc/saphire_bump.png"]
+  -
+    name: "sapphire-bump-sc"
+    value_type: "float"
+    type: "scale"
+    parameters:
+      scale:
+        type: "float"
+        value: [0.25]
+      tex:
+        type: "texture"
+        value: ["sapphire-bump"]
