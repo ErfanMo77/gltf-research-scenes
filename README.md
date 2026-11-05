@@ -39,7 +39,9 @@ Clone the repository for the full asset set: sources, .gltf files, textures, met
 
 ## Scenes
 
-Reference images are Blender 5.3 Cycles renders of each scene's glTF (the extended), stored in the scene's `gltf/` folder. Cornell Caustic uses a PBRT v4 SPPM render instead, because Cycles could not reproduce its caustics. Render settings are recorded in the `reference_render` section of each `conversion.yaml`.
+Each scene's reference image is a Blender 5.3 Cycles render of its extended glTF, saved in the scene's gltf/ folder. Render settings are recorded in the `reference_render` section of each `conversion.yaml`. With them, you can reproduce the render in Blender and compare your own renderer's output against the reference.
+
+Cornell Caustic is the exception: its reference is a PBRT v4 render using photon mapping (SPPM), because Cycles could not reproduce its caustics.
 
 | Scene | Reference | License | Notes |
 | --- | --- | --- | --- |
@@ -108,6 +110,12 @@ The `conversion.yaml` report may include:
 - [Khronos glTF Extension Registry](https://registry.khronos.org/glTF/): reference for optional glTF extensions used by richer outputs.
 - [PBRT v4 File Format](https://www.pbrt.org/fileformat-v4): source format reference for PBRT scene parsing.
 - [Physically Based Rendering: From Theory to Implementation, 4th Edition](https://www.pbr-book.org/4ed/contents): rendering reference for PBRT concepts and behavior.
+
+## Contributing
+
+Contributions are welcome. Before starting a pull request, please [open an issue](https://github.com/ErfanMo77/gltf-research-scenes/issues) so we can discuss the scope and the planned changes first. Issues are also the place to report problems with a scene, such as materials, lighting, or geometry issues.
+
+More scenes will be added gradually. Each conversion takes time, because I check its materials and rendering manually against the original scene to keep it as accurate as possible.
 
 ## License
 
