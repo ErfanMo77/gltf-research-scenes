@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Build the release zip of generated GLBs, reports, environment maps, licenses, and reference images."""
+"""Build the release zip of generated GLBs, reports, environment maps, licenses, and reference images.
+
+Each scene's gltf folder includes the reference render named by the image field of its report's reference_render
+section; the source folder keeps the original reference images.
+"""
 from __future__ import annotations
 
 import argparse
@@ -11,6 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REFERENCE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
 ENVIRONMENT_FIELDS = re.compile(r'^\s+(uri|license_uri|file|license_file): "(.+)"$')
+REFERENCE_RENDER_IMAGE = re.compile(r'(?m)^reference_render:\n(?:[ \t].*\n)*?  image: "([^"]+)"$')
 
 
 def scene_files(scene_dir: Path) -> list[Path]:
@@ -20,10 +25,17 @@ def scene_files(scene_dir: Path) -> list[Path]:
         raise SystemExit(f"missing source directory: {source_dir}")
     single_glb = gltf_dir / f"{base_name}.glb"
     files = [single_glb] if single_glb.is_file() else [gltf_dir / f"{base_name}_{variant}.glb" for variant in ("core", "extended")]
-    files.append(gltf_dir / "conversion.yaml")
+    report = gltf_dir / "conversion.yaml"
+    files.append(report)
     for path in files:
         if not path.is_file():
             raise SystemExit(f"missing generated file: {path}")
+    if not (match := REFERENCE_RENDER_IMAGE.search(report.read_text(encoding="utf-8"))):
+        raise SystemExit(f"missing reference_render image field: {report}")
+    reference_render = gltf_dir / match[1]
+    if not reference_render.is_file():
+        raise SystemExit(f"missing reference render: {reference_render}")
+    files.append(reference_render)
     files += sorted(gltf_dir.glob(f"{base_name}_environment*"))
     licenses = sorted(path for path in source_dir.iterdir() if path.is_file() and "license" in path.name.lower())
     references = sorted(path for path in source_dir.iterdir() if path.is_file() and path.suffix.lower() in REFERENCE_SUFFIXES)

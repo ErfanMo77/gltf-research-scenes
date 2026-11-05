@@ -124,3 +124,28 @@ medium_mappings:
     gltf: "KHR_materials_volume attenuation"
     attenuation_color: [0.817175, 0.646526, 0.367879]
     attenuation_distance: 1.358696
+reference_render:
+  image: "teapot-full.png"
+  scene: "teapot-full"
+  renderer: "Blender Cycles"
+  blender_version: "5.3.0 Beta"
+  backend: "OPTIX"
+  resolution: [1280, 720]
+  camera:
+    type: "perspective"
+    yfov_degrees: 20.114294
+    znear: 0.01
+    zfar: 100.0
+  samples_per_pixel: 8192
+  pixel_filter: "BLACKMAN_HARRIS, 1.5 px"
+  denoiser: "OPTIX"
+  max_bounces: 65
+  environment_map: "sunflowers_environment.hdr"
+  environment_strength: 1.181245
+  working_color_space: "Linear Rec.709"
+  tonemapper: "Khronos PBR Neutral"
+  display_device: "sRGB"
+  exposure_multiplier: 1.0
+  gamma: 1.0
+  render_seconds: 182.1
+  gpu: "NVIDIA GeForce RTX 4060 Laptop GPU"

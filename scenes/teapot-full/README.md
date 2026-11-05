@@ -1,6 +1,6 @@
 # Teapot Full
 
-![Full teapot reference](source/TungstenRender.png)
+![Full teapot reference](gltf/teapot-full.png)
 
 A fuller Utah teapot scene converted from PBRT v4 to glTF. This is useful for checking glass and liquid volume approximation.
 

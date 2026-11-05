@@ -1,6 +1,6 @@
 # Bathroom
 
-![Bathroom reference](source/TungstenRender.png)
+![Bathroom reference](gltf/bathroom.png)
 
 A large bathroom interior converted from PBRT v4 to glTF. It is useful for checking dense textured geometry, glass, metallic surfaces, alpha-masked materials, and emissive area-light fallbacks.
 

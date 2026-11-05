@@ -1,6 +1,6 @@
 # Coffee Maker
 
-![Coffee Maker reference](source/TungstenRender.png)
+![Coffee Maker reference](gltf/coffee-maker.png)
 
 A coffee maker model converted from PBRT v4 to glTF. It is useful for checking coated plastic, glass, and spectral metal approximation.
 

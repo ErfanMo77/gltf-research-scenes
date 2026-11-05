@@ -85,3 +85,28 @@ light_mappings:
       substitute_reason: "The original Bernhard Vogl light probe is licensed for non-commercial use only and is not redistributed."
 approximations: ["coateddiffuse_clearcoat", "environment_map_equirectangular_hdr", "environment_map_substitute"]
 losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light"]
+reference_render:
+  image: "teapot.png"
+  scene: "teapot"
+  renderer: "Blender Cycles"
+  blender_version: "5.3.0 Beta"
+  backend: "OPTIX"
+  resolution: [1280, 720]
+  camera:
+    type: "perspective"
+    yfov_degrees: 20.114294
+    znear: 0.01
+    zfar: 1000.0
+  samples_per_pixel: 4096
+  pixel_filter: "BLACKMAN_HARRIS, 1.5 px"
+  denoiser: "OPTIX"
+  max_bounces: 12
+  environment_map: "sunflowers_environment.hdr"
+  environment_strength: 1.181245
+  working_color_space: "Linear Rec.709"
+  tonemapper: "Khronos PBR Neutral"
+  display_device: "sRGB"
+  exposure_multiplier: 1.0
+  gamma: 1.0
+  render_seconds: 48.9
+  gpu: "NVIDIA GeForce RTX 4060 Laptop GPU"

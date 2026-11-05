@@ -1,6 +1,6 @@
 # Veach MIS
 
-![Veach MIS reference](source/TungstenRender.png)
+![Veach MIS reference](gltf/veach-mis.png)
 
 A compact Veach multiple-importance-sampling test scene converted from PBRT v4 to glTF. It is built around glossy metal plates lit by small sphere area lights with different sizes and intensities, making it a useful scene for checking direct-light sampling, MIS behavior, and rough conductor materials.
 

@@ -1,6 +1,6 @@
 # BMW M6
 
-![BMW M6 reference](source/bmw-m6.png)
+![BMW M6 reference](gltf/bmw-m6.png)
 
 A BMW M6 car scene converted from PBRT v4 to glTF. Good for checking dense vehicle mesh import, clearcoat car paint, dielectric glass, aluminum conductors, and coated conductors.
 

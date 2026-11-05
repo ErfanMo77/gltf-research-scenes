@@ -10,26 +10,66 @@ scene:
 outputs:
   glb: "scenes/classroom2/gltf/classroom2.glb"
 conversion:
-  method: "Blender glTF export"
-  input_filename: "classroom.glb"
-  generator: "Khronos glTF Blender I/O v5.1.19"
+  generator: "Khronos glTF Blender I/O v5.3.42"
   variants: "single"
-  modified_after_export: false
 asset:
-  bytes: 96115780
-  sha256: "ab0465363ef4057a7db8ccb2e2e4fc8c5bd235e4c0e378a320a880db6d8a793a"
   self_contained: true
-  extensions_used: ["KHR_materials_transmission", "KHR_materials_emissive_strength", "KHR_materials_ior"]
-  extensions_required: []
+  extensions_used: ["KHR_materials_transmission", "KHR_materials_emissive_strength", "KHR_materials_ior", "KHR_lights_punctual"]
+  extensions_required: ["KHR_lights_punctual"]
 summary:
   scenes: 1
-  nodes: 893
+  nodes: 894
   meshes: 330
   materials: 78
   textures: 99
   images: 99
   cameras: 1
+  lights: 1
 reference_image:
   file: "scenes/classroom2/source/classroom2.png"
   renderer: "RTVK"
   resolution: [1920, 1009]
+lighting:
+  purpose: "Approximate the brightness and diagonal window sunlight in the supplied RTVK reference."
+  directional_light:
+    name: "Diagonal window sunlight"
+    extension: "KHR_lights_punctual"
+    travel_direction_gltf: [-0.7624928951263428, -0.4574957489967346, -0.4574957489967346]
+    color: [1, 0.9, 0.8]
+    intensity: 85
+    angular_diameter_degrees: 0
+  environment_map:
+    file: "scenes/common/sunflowers_environment.hdr"
+    uri: "../../common/sunflowers_environment.hdr"
+    intensity_scale: 8
+    projection: "equirectangular"
+    rotation_degrees: [0, 0, 0]
+    license_file: "scenes/common/sunflowers_environment_LICENSE.txt"
+  exposure_multiplier: 1
+  gamma: 1
+  reference: "scenes/classroom2/source/classroom2.png"
+reference_render:
+  image: "classroom2.png"
+  scene: "classroom2"
+  renderer: "Blender Cycles"
+  blender_version: "5.3.0 Beta"
+  backend: "OPTIX"
+  resolution: [1920, 1009]
+  camera:
+    type: "perspective"
+    yfov_degrees: 39.597752
+    znear: 0.1
+    zfar: 100.0
+  samples_per_pixel: 4096
+  pixel_filter: "BLACKMAN_HARRIS, 1.5 px"
+  denoiser: "OPTIX"
+  max_bounces: 17
+  environment_map: "sunflowers_environment.hdr"
+  environment_strength: 8.0
+  working_color_space: "Linear Rec.709"
+  tonemapper: "Khronos PBR Neutral"
+  display_device: "sRGB"
+  exposure_multiplier: 1.0
+  gamma: 1.0
+  render_seconds: 403.7
+  gpu: "NVIDIA GeForce RTX 4060 Laptop GPU"

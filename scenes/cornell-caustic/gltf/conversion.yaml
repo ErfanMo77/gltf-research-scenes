@@ -62,3 +62,6 @@ light_mappings:
     twosided: false
 approximations: ["area_light_emissive_mesh", "dielectric_transmission_ior"]
 losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output"]
+reference_render:
+  image: "cornell-caustic_pbrt-sppm.png"
+  renderer: "PBRT v4"

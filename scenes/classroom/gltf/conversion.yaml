@@ -244,3 +244,28 @@ light_mappings:
       resolution: [1024, 512]
 approximations: ["coateddiffuse_clearcoat", "conductor_metallic", "environment_map_equirectangular_hdr"]
 losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light"]
+reference_render:
+  image: "classroom.png"
+  scene: "classroom"
+  renderer: "Blender Cycles"
+  blender_version: "5.3.0 Beta"
+  backend: "OPTIX"
+  resolution: [1280, 720]
+  camera:
+    type: "perspective"
+    yfov_degrees: 35.9834
+    znear: 0.01
+    zfar: 1000.0
+  samples_per_pixel: 4096
+  pixel_filter: "BLACKMAN_HARRIS, 1.5 px"
+  denoiser: "OPTIX"
+  max_bounces: 17
+  environment_map: "classroom_environment.hdr"
+  environment_strength: 1.0
+  working_color_space: "Linear Rec.709"
+  tonemapper: "Khronos PBR Neutral"
+  display_device: "sRGB"
+  exposure_multiplier: 1.0
+  gamma: 1.0
+  render_seconds: 165.0
+  gpu: "NVIDIA GeForce RTX 4060 Laptop GPU"

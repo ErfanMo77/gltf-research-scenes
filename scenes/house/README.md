@@ -1,6 +1,6 @@
 # House
 
-![House reference](source/TungstenRender.png)
+![House reference](gltf/house.png)
 
 A large Victorian house scene converted from PBRT v4 to glTF. This scene contains large PLY geometry. It's useful for checking culling behavior, glass materials, GI, and indirect environment map lighting.
 

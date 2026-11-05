@@ -1,6 +1,6 @@
 # Glass of Water
 
-![Glass of Water reference](source/TungstenRender.png)
+![Glass of Water reference](gltf/glass-of-water.png)
 
 A transparent-material test scene converted from PBRT v4 to glTF. Useful for checking layered glass materials, refraction, IOR handling, and specular light paths with metallic background material.
 

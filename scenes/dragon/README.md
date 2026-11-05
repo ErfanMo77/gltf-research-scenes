@@ -1,6 +1,6 @@
 # Dragon
 
-![Dragon reference](source/TungstenRender.png)
+![Dragon reference](gltf/dragon.png)
 
 A dragon model scene converted from PBRT v4 to glTF. This is a dense mesh import case, with simple diffuse material.
 

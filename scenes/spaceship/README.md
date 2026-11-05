@@ -1,6 +1,6 @@
 # Spaceship
 
-![Spaceship reference](source/TungstenRender.png)
+![Spaceship reference](gltf/spaceship.png)
 
 A compact science-fiction model converted from PBRT v4 to glTF. Good scene for checking metallic materials, glass and emissive area-light.
 

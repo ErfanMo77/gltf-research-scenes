@@ -1,6 +1,6 @@
 # Pontiac GTO
 
-![Pontiac GTO reference](source/TungstenRender.png)
+![Pontiac GTO reference](gltf/pontiac-gto.png)
 
 A 1967 Pontiac GTO car model converted from PBRT v4 to glTF. It is useful for checking large vehicle geometry, clearcoat car paint, glass transmission, chrome and steel metal approximation, and leather materials.
 
@@ -25,3 +25,4 @@ A 1967 Pontiac GTO car model converted from PBRT v4 to glTF. It is useful for ch
 - The scene contains 63 meshes and about 1.06 million triangles.
 - The environment map is exported as an equirectangular HDR in glTF world orientation. glTF has no environment light, so load the provided HDR environment map separately.
 - Spectral metals, glass behavior, and coated diffuse materials are approximations; exact mappings are in the conversion report.
+- The reference render uses an exposure multiplier of 1.25 (+0.32 stops) instead of 1.0, so the car paint is closer to the Tungsten reference's brightness. Its hue still differs. The setting is recorded in the conversion report's `reference_render` section.

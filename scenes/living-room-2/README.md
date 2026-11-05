@@ -1,6 +1,6 @@
 # Living Room 2
 
-![Living Room 2 reference](source/TungstenRender.png)
+![Living Room 2 reference](gltf/living-room-2.png)
 
 A white living room interior converted from PBRT v4 to glTF. It is useful for checking many textured props, clearcoat materials, glass-like fixture parts, metallic details, and multiple emissive lighting geometries.
 

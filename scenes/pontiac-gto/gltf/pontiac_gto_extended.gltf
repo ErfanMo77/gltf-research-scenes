@@ -5785,7 +5785,9 @@
             "resolution": [
               2048,
               1024
-            ]
+            ],
+            "intensity_scale": 1.5,
+            "intensity_scale_reason": "Restores the environment bitmap scale 1.5 in the original Tungsten car2/scene.json, omitted by the PBRT export. Source: https://benedikt-bitterli.me/resources/tungsten/car2.zip"
           }
         }
       ]

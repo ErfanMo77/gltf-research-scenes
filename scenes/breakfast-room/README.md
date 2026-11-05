@@ -1,6 +1,6 @@
 # Breakfast Room
 
-![Breakfast Room reference](source/TungstenRender.png)
+![Breakfast Room reference](gltf/breakfast-room.png)
 
 A warm interior scene converted from PBRT v4 to glTF. It is useful for checking textured PLY geometry, coated furniture materials, metallic fixtures, and indirect lighting in an environment-lit room.
 

@@ -1,6 +1,6 @@
 # Veach Bidir
 
-![Veach Bidir reference](source/TungstenRender.png)
+![Veach Bidir reference](gltf/veach-bidir.png)
 
 A small Veach bidirectional-lighting test scene converted from PBRT v4 to glTF. It is useful for checking diffuse, metallic, and glass materials with two area-light fallbacks.
 

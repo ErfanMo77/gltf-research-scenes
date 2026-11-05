@@ -87,3 +87,28 @@ light_mappings:
     twosided: false
 approximations: ["area_light_emissive_mesh", "dielectric_transmission_ior", "conductor_metallic"]
 losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output"]
+reference_render:
+  image: "veach-bidir.png"
+  scene: "veach-bidir"
+  renderer: "Blender Cycles"
+  blender_version: "5.3.0 Beta"
+  backend: "OPTIX"
+  resolution: [1024, 1024]
+  camera:
+    type: "perspective"
+    yfov_degrees: 35.0
+    znear: 0.01
+    zfar: 100.0
+  samples_per_pixel: 4096
+  pixel_filter: "BLACKMAN_HARRIS, 1.5 px"
+  denoiser: "OPTIX"
+  max_bounces: 17
+  environment_map: null
+  environment_strength: null
+  working_color_space: "Linear Rec.709"
+  tonemapper: "Khronos PBR Neutral"
+  display_device: "sRGB"
+  exposure_multiplier: 1.0
+  gamma: 1.0
+  render_seconds: 103.9
+  gpu: "NVIDIA GeForce RTX 4060 Laptop GPU"

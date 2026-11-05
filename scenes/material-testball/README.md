@@ -1,6 +1,6 @@
 # Material Testball
 
-![Material Testball reference](source/TungstenRender.png)
+![Material Testball reference](gltf/material-testball.png)
 
 A small material testball scene converted from PBRT v4 to glTF. Useful scene to check materials with clearcoat.
 

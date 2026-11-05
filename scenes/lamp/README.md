@@ -1,6 +1,6 @@
 # Lamp
 
-![Lamp reference](source/TungstenRender.png)
+![Lamp reference](gltf/lamp.png)
 
 A small desk lamp scene converted from PBRT v4 to glTF. Useful for checking dense object geometry, coated black plastic, metallic conductor approximation, dielectric bulb glass, and emissive area-light conversion.
 

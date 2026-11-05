@@ -1,6 +1,6 @@
 # Living Room
 
-![Living Room reference](source/TungstenRender.png)
+![Living Room reference](gltf/living-room.png)
 
 A textured living-room interior converted from PBRT v4 to glTF. It is useful for checking image textures, leaf cutouts, mirrors, glass, and clearcoat materials.
 

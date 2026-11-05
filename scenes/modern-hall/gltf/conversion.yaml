@@ -225,3 +225,28 @@ medium_mappings:
     gltf: "KHR_materials_volume attenuation"
     attenuation_color: [0.367879, 0.67032, 0.449329]
     attenuation_distance: 2.0
+reference_render:
+  image: "modern-hall.png"
+  scene: "modern-hall"
+  renderer: "Blender Cycles"
+  blender_version: "5.3.0 Beta"
+  backend: "OPTIX"
+  resolution: [1024, 1024]
+  camera:
+    type: "perspective"
+    yfov_degrees: 70.000007
+    znear: 0.01
+    zfar: 100.0
+  samples_per_pixel: 4096
+  pixel_filter: "BLACKMAN_HARRIS, 1.5 px"
+  denoiser: "OPTIX"
+  max_bounces: 65
+  environment_map: null
+  environment_strength: null
+  working_color_space: "Linear Rec.709"
+  tonemapper: "Khronos PBR Neutral"
+  display_device: "sRGB"
+  exposure_multiplier: 1.0
+  gamma: 1.0
+  render_seconds: 210.9
+  gpu: "NVIDIA GeForce RTX 4060 Laptop GPU"

@@ -1,6 +1,6 @@
 # Bathroom 2
 
-![Bathroom 2 reference](source/TungstenRender.png)
+![Bathroom 2 reference](gltf/bathroom2.png)
 
 A bathroom interior converted from PBRT v4 to glTF. Good for checking textured coated wood, rough glass, metallic fixtures, mirrors, and emissive mesh lighting.
 

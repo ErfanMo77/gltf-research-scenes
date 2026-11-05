@@ -1,6 +1,6 @@
 # Kitchen
 
-![Kitchen reference](source/TungstenRender.png)
+![Kitchen reference](gltf/kitchen.png)
 
 A detailed kitchen interior converted from PBRT v4 to glTF. It is useful for checking clearcoat materials, glass, metallic surfaces, and multiple emissive mesh lights.
 

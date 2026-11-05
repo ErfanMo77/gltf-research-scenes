@@ -1,6 +1,6 @@
 # Classroom
 
-![Classroom reference](source/TungstenRender.png)
+![Classroom reference](gltf/classroom.png)
 
 A Japanese classroom interior converted from PBRT v4 to glTF. Useful for checking textured classroom furniture, clearcoat-style plastic and whiteboard materials, metallic chair and window frames.
 

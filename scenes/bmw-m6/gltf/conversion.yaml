@@ -427,3 +427,28 @@ light_mappings:
       shared: "sunflowers"
 approximations: ["coateddiffuse_clearcoat", "coatedconductor_metallic_clearcoat", "mix_weighted_base_color", "dielectric_transmission_ior", "conductor_metallic", "environment_map_equirectangular_hdr"]
 losses: ["render_integrator", "render_sampler", "film_output", "infinite_environment_light"]
+reference_render:
+  image: "bmw-m6.png"
+  scene: "bmw-m6"
+  renderer: "Blender Cycles"
+  blender_version: "5.3.0 Beta"
+  backend: "OPTIX"
+  resolution: [1400, 1000]
+  camera:
+    type: "perspective"
+    yfov_degrees: 30.000001
+    znear: 0.01
+    zfar: 100.0
+  samples_per_pixel: 4096
+  pixel_filter: "BLACKMAN_HARRIS, 1.5 px"
+  denoiser: "OPTIX"
+  max_bounces: 12
+  environment_map: "sunflowers_environment.hdr"
+  environment_strength: 1.0
+  working_color_space: "Linear Rec.709"
+  tonemapper: "Khronos PBR Neutral"
+  display_device: "sRGB"
+  exposure_multiplier: 1.0
+  gamma: 1.0
+  render_seconds: 105.1
+  gpu: "NVIDIA GeForce RTX 4060 Laptop GPU"

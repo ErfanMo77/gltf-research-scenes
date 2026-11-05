@@ -202,3 +202,28 @@ light_mappings:
       substitute_reason: "The original Sky 19 map has no verifiable redistribution license; the original Blend Swap author removed the DOSCH HDRI used for the scene."
 approximations: ["coateddiffuse_clearcoat", "dielectric_transmission_ior", "conductor_metallic", "environment_map_equirectangular_hdr", "environment_map_substitute"]
 losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light", "diffusetransmission_transmittance"]
+reference_render:
+  image: "living-room.png"
+  scene: "living-room"
+  renderer: "Blender Cycles"
+  blender_version: "5.3.0 Beta"
+  backend: "OPTIX"
+  resolution: [1280, 720]
+  camera:
+    type: "perspective"
+    yfov_degrees: 58.715509
+    znear: 0.01
+    zfar: 100.0
+  samples_per_pixel: 4096
+  pixel_filter: "BLACKMAN_HARRIS, 1.5 px"
+  denoiser: "OPTIX"
+  max_bounces: 12
+  environment_map: "sunflowers_environment.hdr"
+  environment_strength: 13.004234
+  working_color_space: "Linear Rec.709"
+  tonemapper: "Khronos PBR Neutral"
+  display_device: "sRGB"
+  exposure_multiplier: 1.0
+  gamma: 1.0
+  render_seconds: 85.6
+  gpu: "NVIDIA GeForce RTX 4060 Laptop GPU"

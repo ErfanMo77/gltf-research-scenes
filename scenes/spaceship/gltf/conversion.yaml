@@ -275,3 +275,28 @@ light_mappings:
     pbrt_transform: [-1.0, 0.0, 8.74228e-08, 0.0, -8.74228e-08, 0.0, -1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
 approximations: ["area_light_emissive_mesh", "coateddiffuse_clearcoat", "dielectric_transmission_ior", "conductor_metallic"]
 losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "infinite_environment_light"]
+reference_render:
+  image: "spaceship.png"
+  scene: "spaceship"
+  renderer: "Blender Cycles"
+  blender_version: "5.3.0 Beta"
+  backend: "OPTIX"
+  resolution: [1280, 720]
+  camera:
+    type: "perspective"
+    yfov_degrees: 35.9834
+    znear: 0.01
+    zfar: 100.0
+  samples_per_pixel: 4096
+  pixel_filter: "BLACKMAN_HARRIS, 1.5 px"
+  denoiser: "OPTIX"
+  max_bounces: 12
+  environment_map: "uniform color [0.3, 0.3, 0.3]"
+  environment_strength: 1.0
+  working_color_space: "Linear Rec.709"
+  tonemapper: "Khronos PBR Neutral"
+  display_device: "sRGB"
+  exposure_multiplier: 1.0
+  gamma: 1.0
+  render_seconds: 72.2
+  gpu: "NVIDIA GeForce RTX 4060 Laptop GPU"

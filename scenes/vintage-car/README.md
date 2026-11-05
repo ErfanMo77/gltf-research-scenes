@@ -1,6 +1,6 @@
 # Vintage Car
 
-![Vintage Car reference](source/TungstenRender.png)
+![Vintage Car reference](gltf/vintage-car.png)
 
 An old vintage car model converted from PBRT v4 to glTF. It is useful for checking large vehicle geometry, clearcoat car paint, glass transmission, and chrome and steel metal approximation.
 

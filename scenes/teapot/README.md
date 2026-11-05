@@ -1,6 +1,6 @@
 # Teapot
 
-![Teapot reference](source/TungstenRender.png)
+![Teapot reference](gltf/teapot.png)
 
 A compact Utah teapot scene converted from PBRT v4 to glTF. Useful for checking clearcoat-style materials.
 

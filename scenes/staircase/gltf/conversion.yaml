@@ -291,3 +291,28 @@ light_mappings:
     twosided: false
 approximations: ["area_light_emissive_mesh", "coateddiffuse_clearcoat", "dielectric_transmission_ior", "conductor_metallic"]
 losses: ["render_integrator", "render_sampler", "pixel_filter", "film_output", "displacement_texture"]
+reference_render:
+  image: "staircase.png"
+  scene: "staircase"
+  renderer: "Blender Cycles"
+  blender_version: "5.3.0 Beta"
+  backend: "OPTIX"
+  resolution: [720, 1280]
+  camera:
+    type: "perspective"
+    yfov_degrees: 58.543983
+    znear: 0.01
+    zfar: 100.0
+  samples_per_pixel: 4096
+  pixel_filter: "BLACKMAN_HARRIS, 1.5 px"
+  denoiser: "OPTIX"
+  max_bounces: 65
+  environment_map: null
+  environment_strength: null
+  working_color_space: "Linear Rec.709"
+  tonemapper: "Khronos PBR Neutral"
+  display_device: "sRGB"
+  exposure_multiplier: 1.0
+  gamma: 1.0
+  render_seconds: 118.9
+  gpu: "NVIDIA GeForce RTX 4060 Laptop GPU"

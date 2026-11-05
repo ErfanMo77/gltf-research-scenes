@@ -1,6 +1,6 @@
 # Veach Ajar
 
-![Veach Ajar reference](source/TungstenRender.png)
+![Veach Ajar reference](gltf/veach-ajar.png)
 
 A Veach lighting test scene converted from PBRT v4 to glTF. It contains three teapot instances with different materials. This is a good scene for checking indirect lighting, since light reaches the visible objects mostly through multiple bounces from the area light behind the door.
 

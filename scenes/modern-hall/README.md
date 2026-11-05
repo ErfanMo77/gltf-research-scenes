@@ -1,6 +1,6 @@
 # Modern Hall
 
-![Modern Hall reference](source/TungstenRender.png)
+![Modern Hall reference](gltf/modern-hall.png)
 
 A modern hallway interior converted from PBRT v4 to glTF. It is useful for checking textured clearcoat-style materials, metal approximation, glass with homogeneous medium data, and emissive area-light fallbacks including tessellated disk emitters.
 
