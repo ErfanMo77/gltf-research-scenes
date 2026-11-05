@@ -33,7 +33,7 @@ Classroom 2 is supplied as a single `classroom2.glb`, with its textures and came
 
 ## Download
 
-Download the [`latest release`](https://github.com/ErfanMo77/gltf-research-scenes/releases/tag/v1.1.0) if you only need the packaged `.glb` files.
+Download the [`latest release`](https://github.com/ErfanMo77/gltf-research-scenes/releases/latest) if you only need the packaged `.glb` files.
 
 Clone the repository for the full asset set: sources, .gltf files, textures, metadata, and licenses.
 
