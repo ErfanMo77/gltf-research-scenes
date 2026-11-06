@@ -7,7 +7,7 @@ scene:
 outputs:
   core: "scenes/crown/gltf/crown_core.gltf"
   extended: "scenes/crown/gltf/crown_extended.gltf"
-  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_volume", "KHR_materials_dispersion", "KHR_materials_emissive_strength"]
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_volume", "KHR_materials_dispersion", "KHR_materials_iridescence", "KHR_materials_sheen", "KHR_materials_emissive_strength"]
 summary:
   meshes: 793
   triangles: 5493854
@@ -244,6 +244,7 @@ material_mappings:
         gltf_roughness: 0.0
   -
     name: "dark_velvet"
+    extension_notes: "Same velvet treatment as "velvet": KHR_materials_sheen instead of the clearcoat"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
@@ -595,6 +596,7 @@ material_mappings:
     displacement_position_scale: 0.1
   -
     name: "pearl"
+    extension_notes: "Pearl nacre is not in the PBRT material; KHR_materials_iridescence (and the pearl_rosetta diffuse pearls) adds the subtle pearly shimmer on top of the converted coated diffuse"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
@@ -777,6 +779,7 @@ material_mappings:
         gltf_roughness: 0.0
   -
     name: "velvet"
+    extension_notes: "The PBRT coated diffuse reads as plastic; KHR_materials_sheen replaces the clearcoat to give the soft grazing-angle glow of velvet, tuned against the PBRT reference render"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
@@ -798,6 +801,7 @@ material_mappings:
         gltf_roughness: 0.668740304976422
   -
     name: "zirkon"
+    extension_notes: "KHR_materials_volume added so the stone refracts as a solid volume like the diamonds; no dispersion because PBRT uses a constant eta of 2.5"
     pbrt: "dielectric"
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 2.5
@@ -821,7 +825,8 @@ material_mappings:
     volume_interface_approximation: "PBRT outside medium mapped as glTF interior attenuation; source interface preserved in extras"
     thickness_factor: 1.761579
     attenuation_color: [0.980199, 0.67032, 0.367879]
-    attenuation_distance: 2.0
+    attenuation_distance: 0.05
+    attenuation_note: "Calibrated to the PBRT reference render: 40x the literal sigma_a (distance 2.0 -> 0.05), since PBRT absorbs along the whole path after light leaves the stone while KHR_materials_volume only absorbs inside it"
   -
     name: "saphire_air_to_sapphire_medium"
     pbrt: "dielectric"
@@ -837,7 +842,8 @@ material_mappings:
     volume_interface_approximation: "PBRT outside medium mapped as glTF interior attenuation; source interface preserved in extras"
     thickness_factor: 2.624075
     attenuation_color: [0.367879, 0.67032, 0.980199]
-    attenuation_distance: 2.0
+    attenuation_distance: 0.05
+    attenuation_note: "Calibrated to the PBRT reference render: 40x the literal sigma_a (distance 2.0 -> 0.05), since PBRT absorbs along the whole path after light leaves the stone while KHR_materials_volume only absorbs inside it"
     displacement_texture: "sapphire-bump-sc"
     displacement_source: "textures/arc/saphire_bump.png"
     displacement_scale: 0.25
