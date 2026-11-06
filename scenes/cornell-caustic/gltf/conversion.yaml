@@ -53,9 +53,9 @@ material_mappings:
         remaproughness: false
         alpha: [0.0, 0.0]
         gltf_roughness: 0.0
-light_mappings:
     volume_gltf: "KHR_materials_volume"
     thickness_factor: 2.0
+light_mappings:
   -
     pbrt: "diffuse area light"
     mesh: "07_Light"
