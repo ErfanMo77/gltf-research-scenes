@@ -19,6 +19,7 @@ A fuller Utah teapot scene converted from PBRT v4 to glTF. This is useful for ch
 ## Notes
 
 - Use the extended glTF for transmission, IOR, and volume attenuation data.
+- The teapot glass (`dielectric_00`) also uses `KHR_materials_volume` (no attenuation), so it refracts as a solid glass volume instead of a thin-walled surface. `thicknessFactor` follows the same largest-extent convention as the tea materials.
 - Medium interfaces are preserved in metadata, not reproduced as full PBRT boundary tracking.
 - The procedural checkerboard is baked to a PNG texture.
 - The environment map is exported as an equirectangular HDR in glTF world orientation. glTF has no environment light, so load the provided HDR environment map separately. It substitutes the CC0 [Sunflowers HDRI](https://polyhaven.com/a/sunflowers) shared with `bmw-m6`; apply the `intensity_scale` in the conversion report, which matches the original light probe's mean luminance.

@@ -17,7 +17,8 @@ A small Veach bidirectional-lighting test scene converted from PBRT v4 to glTF. 
 
 ## Notes
 
-- Use the extended glTF for transmission, IOR, and emissive-strength data.
+- Use the extended glTF for transmission, IOR, volume, and emissive-strength data.
+- The glass material uses `KHR_materials_volume` so renderers treat it as a solid refractive volume instead of the default thin-walled surface. `thicknessFactor` is the largest bounding-box extent of the meshes using the material, the same convention as the other scenes.
 - Area lights are represented with emissive mesh geometry.
 - The shared PBRT material on light rectangles is split into dedicated glTF light materials.
 - Spectral metals and glass behavior are approximations; exact mappings are in the conversion report.

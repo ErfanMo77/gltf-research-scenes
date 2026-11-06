@@ -55,6 +55,8 @@ material_mappings:
         remaproughness: false
         alpha: [0.0, 0.0]
         gltf_roughness: 0.0
+    volume_gltf: "KHR_materials_volume"
+    thickness_factor: 9.403962
   -
     name: "dielectric_01_Tea_to_air"
     pbrt: "dielectric"

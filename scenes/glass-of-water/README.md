@@ -18,7 +18,8 @@ A transparent-material test scene converted from PBRT v4 to glTF. Useful for che
 
 ## Notes
 
-- Use the extended glTF for transmission and IOR material properties.
+- Use the extended glTF for transmission, IOR, and volume material properties.
+- The water, ice, and glass materials use `KHR_materials_volume` so renderers treat them as solid refractive volumes instead of the default thin-walled surfaces. `thicknessFactor` is set to the largest bounding-box extent of the meshes using each material, the same convention as the other scenes; it only approximates thickness for rasterizers and has no effect on path tracers that trace the actual geometry.
 - The core glTF uses alpha-blended fallbacks for transparent materials.
 - The PBRT area light is represented with emissive mesh geometry.
 - Spectral metal and dielectric behavior are approximations; exact mappings are in the conversion report.

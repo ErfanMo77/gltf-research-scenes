@@ -21,7 +21,8 @@ A textured living-room interior converted from PBRT v4 to glTF. It is useful for
 
 ## Notes
 
-- Use the extended glTF for clearcoat, transmission, and IOR data.
+- Use the extended glTF for clearcoat, transmission, IOR, and volume data.
+- The glass material uses `KHR_materials_volume` so renderers treat it as a solid refractive volume instead of the default thin-walled surface. `thicknessFactor` is the largest bounding-box extent of the meshes using the material, the same convention as the other scenes.
 - Texture image maps are converted from TGA to embedded PNG.
 - Leaf alpha is derived from the source texture's white backing; transmittance remains metadata.
 - The environment map is exported as an equirectangular HDR in glTF world orientation. glTF has no environment light, so load the provided HDR environment map separately. It substitutes the CC0 [Sunflowers HDRI](https://polyhaven.com/a/sunflowers) shared with `bmw-m6`; apply the `intensity_scale` in the conversion report, which matches the original map's mean luminance.

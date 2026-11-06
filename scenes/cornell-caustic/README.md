@@ -17,7 +17,8 @@ A Cornell Box caustics scene converted from PBRT v4 to glTF. Useful for checking
 
 ## Notes
 
-- Use the extended glTF for transmission, IOR, and emissive-strength data.
+- Use the extended glTF for transmission, IOR, volume, and emissive-strength data.
+- The water material uses `KHR_materials_volume` so renderers treat it as a solid refractive volume instead of the default thin-walled surface. `thicknessFactor` is the largest bounding-box extent of the meshes using the material, the same convention as the other scenes.
 - The generated reference render comes from PBRT v4 using its stochastic progressive photon mapping (SPPM) integrator.
 - The rectangular PBRT area light is represented with emissive mesh geometry.
 - Blender Cycles could not produce good-quality caustics for this scene, even at 4096 samples per pixel with MNEE shadow caustics enabled. The result remained substantially too dark and missed important caustic illumination.
