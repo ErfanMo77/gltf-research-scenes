@@ -17950,13 +17950,13 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.4,
-          0.33,
-          0.34,
+          0.57,
+          0.499,
+          0.436,
           1.0
         ],
         "metallicFactor": 0.0,
-        "roughnessFactor": 1.0
+        "roughnessFactor": 0.15
       },
       "extras": {
         "pbrt": {
@@ -18011,17 +18011,17 @@
       },
       "extensions": {
         "KHR_materials_specular": {
-          "specularFactor": 0.0
+          "specularFactor": 1.0
         },
         "KHR_materials_clearcoat": {
           "clearcoatFactor": 1.0,
-          "clearcoatRoughnessFactor": 0.17782794100389226
+          "clearcoatRoughnessFactor": 0.15
         },
         "KHR_materials_iridescence": {
-          "iridescenceFactor": 0.9,
-          "iridescenceIor": 1.3,
-          "iridescenceThicknessMinimum": 300,
-          "iridescenceThicknessMaximum": 600
+          "iridescenceFactor": 1.0,
+          "iridescenceIor": 2.0,
+          "iridescenceThicknessMinimum": 420,
+          "iridescenceThicknessMaximum": 420
         }
       }
     },
@@ -18030,13 +18030,13 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.45,
-          0.45,
-          0.4,
+          0.57,
+          0.499,
+          0.436,
           1.0
         ],
         "metallicFactor": 0.0,
-        "roughnessFactor": 1.0
+        "roughnessFactor": 0.15
       },
       "extras": {
         "pbrt": {
@@ -18058,13 +18058,13 @@
       },
       "extensions": {
         "KHR_materials_specular": {
-          "specularFactor": 0.0
+          "specularFactor": 1.0
         },
         "KHR_materials_iridescence": {
-          "iridescenceFactor": 0.9,
-          "iridescenceIor": 1.3,
-          "iridescenceThicknessMinimum": 300,
-          "iridescenceThicknessMaximum": 600
+          "iridescenceFactor": 1.0,
+          "iridescenceIor": 2.0,
+          "iridescenceThicknessMinimum": 420,
+          "iridescenceThicknessMaximum": 420
         }
       }
     },
@@ -18073,13 +18073,13 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.45,
-          0.45,
-          0.4,
+          0.57,
+          0.499,
+          0.436,
           1.0
         ],
         "metallicFactor": 0.0,
-        "roughnessFactor": 1.0
+        "roughnessFactor": 0.15
       },
       "extras": {
         "pbrt": {
@@ -18101,13 +18101,13 @@
       },
       "extensions": {
         "KHR_materials_specular": {
-          "specularFactor": 0.0
+          "specularFactor": 1.0
         },
         "KHR_materials_iridescence": {
-          "iridescenceFactor": 0.9,
-          "iridescenceIor": 1.3,
-          "iridescenceThicknessMinimum": 300,
-          "iridescenceThicknessMaximum": 600
+          "iridescenceFactor": 1.0,
+          "iridescenceIor": 2.0,
+          "iridescenceThicknessMinimum": 420,
+          "iridescenceThicknessMaximum": 420
         }
       }
     },
@@ -19050,7 +19050,12 @@
       },
       "extensions": {
         "KHR_materials_specular": {
-          "specularFactor": 1.0
+          "specularFactor": 1.0,
+          "specularColorFactor": [
+            0.075,
+            0.137,
+            0.2
+          ]
         },
         "KHR_materials_transmission": {
           "transmissionFactor": 1.0
