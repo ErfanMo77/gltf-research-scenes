@@ -15969,9 +15969,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -16035,9 +16035,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -16101,9 +16101,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -16274,9 +16274,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -16453,9 +16453,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -16519,9 +16519,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -16660,9 +16660,9 @@
       "doubleSided": true,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -16787,13 +16787,13 @@
           "transmissionFactor": 1.0
         },
         "KHR_materials_ior": {
-          "ior": 3.389269
+          "ior": 2.417
         },
         "KHR_materials_volume": {
           "thicknessFactor": 0.88364
         },
         "KHR_materials_dispersion": {
-          "dispersion": 0.406915
+          "dispersion": 0.362
         }
       }
     },
@@ -16863,13 +16863,13 @@
           "transmissionFactor": 1.0
         },
         "KHR_materials_ior": {
-          "ior": 3.389269
+          "ior": 2.417
         },
         "KHR_materials_volume": {
           "thicknessFactor": 0.67209
         },
         "KHR_materials_dispersion": {
-          "dispersion": 0.406915
+          "dispersion": 0.362
         }
       }
     },
@@ -16878,9 +16878,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -16944,9 +16944,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -17010,9 +17010,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -17076,9 +17076,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -17142,9 +17142,9 @@
       "doubleSided": true,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -17208,9 +17208,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -17274,9 +17274,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -17340,9 +17340,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -17406,9 +17406,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -17472,9 +17472,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -17542,9 +17542,9 @@
       "doubleSided": true,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -17608,9 +17608,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -17674,9 +17674,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -17809,9 +17809,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -17882,9 +17882,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -18022,6 +18022,9 @@
           "iridescenceIor": 2.0,
           "iridescenceThicknessMinimum": 420,
           "iridescenceThicknessMaximum": 420
+        },
+        "KHR_materials_ior": {
+          "ior": 1.68
         }
       }
     },
@@ -18065,6 +18068,9 @@
           "iridescenceIor": 2.0,
           "iridescenceThicknessMinimum": 420,
           "iridescenceThicknessMaximum": 420
+        },
+        "KHR_materials_ior": {
+          "ior": 1.68
         }
       }
     },
@@ -18108,6 +18114,9 @@
           "iridescenceIor": 2.0,
           "iridescenceThicknessMinimum": 420,
           "iridescenceThicknessMaximum": 420
+        },
+        "KHR_materials_ior": {
+          "ior": 1.68
         }
       }
     },
@@ -18116,9 +18125,9 @@
       "doubleSided": true,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -18276,9 +18285,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -18342,9 +18351,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -18408,9 +18417,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -18474,9 +18483,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -18601,7 +18610,7 @@
           "transmissionFactor": 1.0
         },
         "KHR_materials_ior": {
-          "ior": 3.389269
+          "ior": 1.768
         },
         "KHR_materials_volume": {
           "thicknessFactor": 0.523473
@@ -18616,9 +18625,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -18682,9 +18691,9 @@
       "doubleSided": false,
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.922523,
-          0.847478,
-          0.386329,
+          1.0,
+          0.773,
+          0.307,
           1.0
         ],
         "metallicFactor": 1.0,
@@ -18868,7 +18877,7 @@
           "transmissionFactor": 1.0
         },
         "KHR_materials_ior": {
-          "ior": 2.5
+          "ior": 1.95
         },
         "KHR_materials_volume": {
           "thicknessFactor": 0.531914
@@ -18958,7 +18967,7 @@
           "transmissionFactor": 1.0
         },
         "KHR_materials_ior": {
-          "ior": 3.0
+          "ior": 1.768
         },
         "KHR_materials_volume": {
           "thicknessFactor": 1.761579,
@@ -19050,18 +19059,13 @@
       },
       "extensions": {
         "KHR_materials_specular": {
-          "specularFactor": 1.0,
-          "specularColorFactor": [
-            0.075,
-            0.137,
-            0.2
-          ]
+          "specularFactor": 1.0
         },
         "KHR_materials_transmission": {
           "transmissionFactor": 1.0
         },
         "KHR_materials_ior": {
-          "ior": 3.0
+          "ior": 1.768
         },
         "KHR_materials_volume": {
           "thicknessFactor": 2.624075,
