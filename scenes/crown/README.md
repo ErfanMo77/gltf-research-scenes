@@ -2,7 +2,7 @@
 
 ![Crown reference](gltf/crown.png)
 
-The Austrian Imperial Crown converted from PBRT v4 to glTF. It is useful for checking gold conductors, refractive and dispersive gemstones, absorbing ruby and sapphire media, texture-masked material mixes, fine height-map detail, and emissive mesh lighting.
+The Austrian Imperial Crown converted from PBRT v4 to glTF. It is useful for checking gold conductors, refractive and dispersive gemstones, absorbing ruby and sapphire media, iridescent pearls, sheen velvet, texture-masked material mixes, fine height-map detail, and emissive mesh lighting.
 
 ## Source
 

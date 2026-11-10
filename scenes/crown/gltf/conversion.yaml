@@ -1196,5 +1196,5 @@ reference_render:
   display_device: "sRGB"
   exposure_multiplier: 1.0
   gamma: 1.0
-  render_seconds: 396.1
+  render_seconds: 399.0
   gpu: "NVIDIA GeForce RTX 4060 Laptop GPU"
