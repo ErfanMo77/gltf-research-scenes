@@ -7,7 +7,7 @@ scene:
 outputs:
   core: "scenes/crown/gltf/crown_core.gltf"
   extended: "scenes/crown/gltf/crown_extended.gltf"
-  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_volume", "KHR_materials_dispersion", "KHR_materials_emissive_strength"]
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_volume", "KHR_materials_dispersion", "KHR_materials_iridescence", "KHR_materials_sheen", "KHR_materials_emissive_strength"]
 summary:
   meshes: 793
   triangles: 5493854
@@ -100,6 +100,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -116,6 +118,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -132,6 +136,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -180,6 +186,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 1.0
     roughness_mapping:
       base:
@@ -220,6 +228,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -236,6 +246,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -244,6 +256,7 @@ material_mappings:
         gltf_roughness: 0.0
   -
     name: "dark_velvet"
+    extension_notes: "Same velvet treatment as the velvet material: KHR_materials_sheen instead of the clearcoat"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
@@ -273,6 +286,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -297,6 +312,9 @@ material_mappings:
       dispersion: 0.406915
       dispersion_approximation: "Abbe fit at Fraunhofer F/d/C; original PBRT curve retained"
     dispersion_gltf: "KHR_materials_dispersion"
+    gltf_ior: 2.417
+    gltf_dispersion: 0.362
+    gltf_note: "Physical: IOR from the Physically Based database (2.417) and the Sellmeier formula for diamond (2.4175); dispersion = 20 / Abbe number (55.3). PBRT eta 3.3 to 3.5 is not a real diamond index"
   -
     name: "diamond_tray_normal_SPEC."
     pbrt: "dielectric"
@@ -315,6 +333,9 @@ material_mappings:
       dispersion: 0.406915
       dispersion_approximation: "Abbe fit at Fraunhofer F/d/C; original PBRT curve retained"
     dispersion_gltf: "KHR_materials_dispersion"
+    gltf_ior: 2.417
+    gltf_dispersion: 0.362
+    gltf_note: "Physical: IOR from the Physically Based database (2.417) and the Sellmeier formula for diamond (2.4175); dispersion = 20 / Abbe number (55.3). PBRT eta 3.3 to 3.5 is not a real diamond index"
   -
     name: "gold.002"
     pbrt: "conductor"
@@ -325,6 +346,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -341,6 +364,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -357,6 +382,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -373,6 +400,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -389,6 +418,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -405,6 +436,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -421,6 +454,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -437,6 +472,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -453,6 +490,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -469,6 +508,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.3194050812978009
     roughness_mapping:
       base:
@@ -487,6 +528,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -503,6 +546,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -519,6 +564,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -554,6 +601,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 1.0
     roughness_mapping:
       base:
@@ -580,6 +629,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -595,6 +646,7 @@ material_mappings:
     displacement_position_scale: 0.1
   -
     name: "pearl"
+    extension_notes: "Pearl nacre is not in the PBRT material; KHR_materials_iridescence (and the pearl_rosetta diffuse pearls) adds the subtle pearly shimmer on top of the converted coated diffuse"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
@@ -616,6 +668,8 @@ material_mappings:
         alpha: [0.03162277660168379, 0.03162277660168379]
         gltf_roughness: 0.17782794100389226
     pbrt_roughness: [0.001, 0.001]
+    gltf_values: "base color 0.570/0.499/0.436, roughness 0.15, specular 1.0, clearcoat roughness 0.15 (pearl only), iridescence 1.0 / IOR 2.0 / 420 nm, IOR 1.68; shared by pearl_rosetta and pearl_rosetta_tray_front_normal (no clearcoat)"
+    gltf_note: "Reference-based, not measured: the pearl look values are from the MaterialX pearl material (suggested on PR #7); the IOR 1.68 is from the Physically Based database. The pearls are not converted from PBRT"
   -
     name: "rosetta_deco"
     pbrt: "conductor"
@@ -626,6 +680,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -671,6 +727,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -687,6 +745,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -703,6 +763,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -719,6 +781,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -743,6 +807,9 @@ material_mappings:
       dispersion: 0.406915
       dispersion_approximation: "Abbe fit at Fraunhofer F/d/C; original PBRT curve retained"
     dispersion_gltf: "KHR_materials_dispersion"
+    gltf_ior: 1.768
+    gltf_dispersion: 0.277
+    gltf_note: "Physical: corundum IOR 1.768 (Physically Based database sapphire, Sellmeier formula for corundum 1.7682), dispersion = 20 / Abbe number (72.3) of corundum. PBRT eta 3.3 to 3.5 is not a real ruby index"
   -
     name: "socket_clamp"
     pbrt: "conductor"
@@ -753,6 +820,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -769,6 +838,8 @@ material_mappings:
       eta: "metal-Au-eta"
       k: "metal-Au-k"
     base_color: [0.922523, 0.847478, 0.386329]
+    gltf_base_color: [1.0, 0.773, 0.307]
+    gltf_base_color_note: "Physical: gold F0 from the Physically Based database (1.059, 0.773, 0.307), red clamped to 1.0 because a glTF base color cannot exceed 1. base_color above is the PBRT RGB eta/k Fresnel value, kept for reference"
     roughness: 0.0
     roughness_mapping:
       base:
@@ -777,6 +848,7 @@ material_mappings:
         gltf_roughness: 0.0
   -
     name: "velvet"
+    extension_notes: "The PBRT coated diffuse reads as plastic; KHR_materials_sheen replaces the clearcoat to give the soft grazing-angle glow of velvet, tuned against the PBRT reference render"
     pbrt: "coateddiffuse"
     gltf: "baseColorFactor + KHR_materials_clearcoat"
     clearcoat_factor: 1.0
@@ -798,9 +870,12 @@ material_mappings:
         gltf_roughness: 0.668740304976422
   -
     name: "zirkon"
+    extension_notes: "KHR_materials_volume added so the stone refracts as a solid volume like the diamonds; no dispersion because PBRT uses a constant eta of 2.5"
     pbrt: "dielectric"
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 2.5
+    gltf_ior: 1.95
+    gltf_note: "Chosen inside the reference range for zircon (1.925 to 2.015, Wikipedia), not computed or measured. PBRT eta 2.5 is outside that range"
     roughness_mapping:
       base:
         remaproughness: true
@@ -811,6 +886,8 @@ material_mappings:
     pbrt: "dielectric"
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 3.0
+    gltf_ior: 1.768
+    gltf_note: "Physical IOR: corundum, same as sapphire. The attenuation below is not physical"
     roughness_mapping:
       base:
         remaproughness: true
@@ -821,12 +898,15 @@ material_mappings:
     volume_interface_approximation: "PBRT outside medium mapped as glTF interior attenuation; source interface preserved in extras"
     thickness_factor: 1.761579
     attenuation_color: [0.980199, 0.67032, 0.367879]
-    attenuation_distance: 2.0
+    attenuation_distance: 0.05
+    attenuation_note: "Calibrated to the PBRT reference render: 40x the literal sigma_a (distance 2.0 -> 0.05), since PBRT absorbs along the whole path after light leaves the stone while KHR_materials_volume only absorbs inside it. Not a physical coefficient: the PBRT absorption itself is not physical"
   -
     name: "saphire_air_to_sapphire_medium"
     pbrt: "dielectric"
     gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
     eta: 3.0
+    gltf_ior: 1.768
+    gltf_note: "Physical IOR: corundum 1.768 (Physically Based database, Sellmeier formula). The specularColorFactor tint of an earlier revision is removed; the blue comes from the absorption below"
     roughness_mapping:
       base:
         remaproughness: true
@@ -837,7 +917,8 @@ material_mappings:
     volume_interface_approximation: "PBRT outside medium mapped as glTF interior attenuation; source interface preserved in extras"
     thickness_factor: 2.624075
     attenuation_color: [0.367879, 0.67032, 0.980199]
-    attenuation_distance: 2.0
+    attenuation_distance: 0.05
+    attenuation_note: "Calibrated to the PBRT reference render: 40x the literal sigma_a (distance 2.0 -> 0.05), since PBRT absorbs along the whole path after light leaves the stone while KHR_materials_volume only absorbs inside it. Not a physical coefficient: the PBRT absorption itself is not physical"
     displacement_texture: "sapphire-bump-sc"
     displacement_source: "textures/arc/saphire_bump.png"
     displacement_scale: 0.25
