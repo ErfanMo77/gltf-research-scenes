@@ -1,0 +1,11 @@
+Transparent Machines Sky, by Erfan Momeni
+textures/transparent_machines_sky_equiarea.exr
+
+CC0 1.0 Universal
+https://creativecommons.org/publicdomain/zero/1.0/
+
+A clear sky procedurally generated with scripts for this repository, inspired
+by the scene's original sky.exr, whose redistribution terms could not be
+verified. It is computed from an analytic sky model and contains no
+photograph, third-party image, or pixel of the original. It has the original's
+mean luminance, so the scene's PBRT light scale of 6 applies.

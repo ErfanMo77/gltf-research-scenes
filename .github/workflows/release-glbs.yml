@@ -1,4 +1,4 @@
-name: Release GLB Package
+name: Release Scene Packages
 
 on:
   workflow_dispatch:
@@ -51,28 +51,29 @@ jobs:
           subprocess.run([sys.executable, "tools/gltf_to_glb.py", *scenes], check=True)
           PY
 
-      - name: Build package
+      - name: Build packages
         run: python tools/package_release.py
 
-      - name: Publish release asset
+      - name: Publish release assets
         env:
           GH_TOKEN: ${{ github.token }}
           TAG_NAME: ${{ inputs.tag_name }}
           RELEASE_NAME: ${{ inputs.release_name }}
           DRAFT: ${{ inputs.draft }}
           PRERELEASE: ${{ inputs.prerelease }}
-          ZIP_PATH: dist/gltf_research_scenes_glb.zip
           REPOSITORY: ${{ github.repository }}
         run: |
           set -euo pipefail
 
           title="${RELEASE_NAME:-$TAG_NAME}"
-          notes="GLB package generated from commit ${GITHUB_SHA}."
+          notes="Scene packages generated from commit ${GITHUB_SHA}."
+          # The GLB collection zip plus one zip per scene listed in tools/scene_packages.json.
+          packages=(dist/*.zip)
 
           if gh release view "$TAG_NAME" --repo "$REPOSITORY" >/dev/null 2>&1; then
-            gh release upload "$TAG_NAME" "$ZIP_PATH" --clobber --repo "$REPOSITORY"
+            gh release upload "$TAG_NAME" "${packages[@]}" --clobber --repo "$REPOSITORY"
           else
-            args=(release create "$TAG_NAME" "$ZIP_PATH" --repo "$REPOSITORY" --title "$title" --notes "$notes" --target "$GITHUB_SHA")
+            args=(release create "$TAG_NAME" "${packages[@]}" --repo "$REPOSITORY" --title "$title" --notes "$notes" --target "$GITHUB_SHA")
             if [ "$DRAFT" = "true" ]; then
               args+=(--draft)
             fi

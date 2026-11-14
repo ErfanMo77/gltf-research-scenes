@@ -1,0 +1,540 @@
+scene:
+  id: "transparent-machines"
+  format: "pbrt-v4"
+  source: "scenes/transparent-machines/source/frame812.pbrt"
+  license: "see source license file"
+  license_file: "scenes/transparent-machines/source/LICENSE.txt"
+outputs:
+  core: "scenes/transparent-machines/gltf/transparent_machines_core.gltf"
+  extended: "scenes/transparent-machines/gltf/transparent_machines_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_volume", "KHR_materials_dispersion", "EXT_mesh_gpu_instancing"]
+  core_extensions: ["EXT_mesh_gpu_instancing"]
+summary:
+  meshes: 399
+  triangles: 2534286
+  materials: 2
+  textures: 0
+  lights: 1
+  repaired_normal_vertices: 5990
+  source_triangles: 10476064
+  source_vertices: 5993417
+  vertices: 1410266
+  shared_meshes: 2129
+  degenerate_triangles_removed: 10277
+  transparent_triangles_removed: 0
+  default_uv_meshes: 0
+  scenes: 5
+  primitives: 674
+  cameras: 5
+  placed_triangles: 16773816
+  buffer_bytes: 62082096
+render:
+  integrator: "volpath"
+  max_depth: 256
+  sampler: "halton"
+  samples_per_pixel: 1024
+  resolution: [1920, 840]
+  fov_degrees: 15.0
+conversion:
+  world_transform: "reflect X in geometry, placements, cameras and environment"
+  double_sided: "auto"
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+    dielectric_transmission_factor: 1.0
+    dielectric_roughness: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+  gltf_camera:
+    yfov: 0.2617993877991494
+    znear: 0.01
+    zfar: 562.5309327361384
+    aspectRatio: 2.2857142857142856
+  default_scene: 0
+  default_camera: 0
+material_mappings:
+  -
+    name: "dielectric_00"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.516803
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+    spectral_ior:
+      name: "glass-BK7"
+      wavelength_ior_pairs: [300, 1.5527702635739, 322, 1.5458699289209, 344, 1.5404466868331, 366, 1.536090527917, 388, 1.53252773217, 410, 1.529568767224, 432, 1.5270784291406, 454, 1.5249578457324, 476, 1.5231331738499, 498, 1.5215482528369, 520, 1.5201596882463, 542, 1.5189334783109, 564, 1.5178426478869, 586, 1.516865556749, 608, 1.5159846691816, 630, 1.5151856452759, 652, 1.5144566604975, 674, 1.513787889767, 696, 1.5131711117948, 718, 1.5125994024544, 740, 1.5120668948646, 762, 1.5115685899969, 784, 1.5111002059336, 806, 1.5106580569705, 828, 1.5102389559626, 850, 1.5098401349174, 872, 1.5094591800239, 894, 1.5090939781792, 916, 1.5087426727363]
+      reference_wavelength_nm: 587.56
+      interpolation: "piecewise_linear"
+      ior: 1.516803
+      dispersion: 0.312557
+      dispersion_approximation: "Abbe fit at Fraunhofer F/d/C; original PBRT curve retained"
+    dispersion_gltf: "metadata_only"
+  -
+    name: "dielectric_00_solid"
+    pbrt: "dielectric"
+    gltf: "alpha blend fallback + KHR_materials_transmission + KHR_materials_ior"
+    eta: 1.516803
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+    spectral_ior:
+      name: "glass-BK7"
+      wavelength_ior_pairs: [300, 1.5527702635739, 322, 1.5458699289209, 344, 1.5404466868331, 366, 1.536090527917, 388, 1.53252773217, 410, 1.529568767224, 432, 1.5270784291406, 454, 1.5249578457324, 476, 1.5231331738499, 498, 1.5215482528369, 520, 1.5201596882463, 542, 1.5189334783109, 564, 1.5178426478869, 586, 1.516865556749, 608, 1.5159846691816, 630, 1.5151856452759, 652, 1.5144566604975, 674, 1.513787889767, 696, 1.5131711117948, 718, 1.5125994024544, 740, 1.5120668948646, 762, 1.5115685899969, 784, 1.5111002059336, 806, 1.5106580569705, 828, 1.5102389559626, 850, 1.5098401349174, 872, 1.5094591800239, 894, 1.5090939781792, 916, 1.5087426727363]
+      reference_wavelength_nm: 587.56
+      interpolation: "piecewise_linear"
+      ior: 1.516803
+      dispersion: 0.312557
+      dispersion_approximation: "Abbe fit at Fraunhofer F/d/C; original PBRT curve retained"
+    dispersion_gltf: "KHR_materials_dispersion"
+    volume_gltf: "KHR_materials_volume"
+    thickness_factor: 22709.053711
+light_mappings:
+  -
+    pbrt: "infinite"
+    gltf: "separate equirectangular HDR file"
+    source: "textures/sky.exr"
+    pbrt_transform: [-0.766044443118978, 0.0, 0.6427876096865393, 0.0, -0.6427876096865393, 0.0, -0.766044443118978, 0.0, 0.0, -0.9999999999999999, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+    environment_map:
+      uri: "transparent_machines_environment.hdr"
+      license_uri: "transparent_machines_environment_LICENSE.txt"
+      file: "scenes/transparent-machines/gltf/transparent_machines_environment.hdr"
+      license_file: "scenes/transparent-machines/gltf/transparent_machines_environment_LICENSE.txt"
+      license: "CC0-1.0"
+      map: "scenes/transparent-machines/source/textures/transparent_machines_sky_equiarea.exr"
+      projection: "equirectangular Radiance RGBE"
+      orientation: "glTF world: top row +Y, center column +X, three-quarter column +Z"
+      resolution: [2048, 1024]
+      intensity_scale: 6.0
+      intensity_scale_reason: "PBRT's light scale of 6; the substitute has the original sky's mean luminance."
+      substitute_for: "textures/sky.exr"
+      substitute_reason: "The original sky.exr has no verified redistribution terms."
+alternative_environment_maps:
+  -
+    name: "prism"
+    title: "Transparent Machines Prism Studio"
+    uri: "transparent_machines_environment_prism.hdr"
+    license_uri: "transparent_machines_environment_prism_LICENSE.txt"
+    file: "scenes/transparent-machines/gltf/transparent_machines_environment_prism.hdr"
+    license_file: "scenes/transparent-machines/gltf/transparent_machines_environment_prism_LICENSE.txt"
+    license: "CC0-1.0"
+    projection: "equirectangular Radiance RGBE"
+    orientation: "glTF world: top row +Y, center column +X, three-quarter column +Z, aligned to the camera"
+    resolution: [4096, 2048]
+    intensity_scale: 1.0
+    exposure_ev: -0.75
+approximations: ["spectral_ior_sample_and_dispersion_fit", "dielectric_transmission_ior", "environment_map_equirectangular_hdr", "environment_map_substitute"]
+losses: ["render_integrator", "render_sampler", "film_output", "infinite_environment_light", "exact_spectral_ior"]
+frames:
+  -
+    name: "frame812"
+    source: "scenes/transparent-machines/source/frame812.pbrt"
+    camera: 0
+    camera_projection:
+      yfov: 0.2617993877991494
+      znear: 0.01
+      zfar: 562.5309327361384
+      aspectRatio: 2.2857142857142856
+    render:
+      integrator: "volpath"
+      max_depth: 256
+      sampler: "halton"
+      samples_per_pixel: 1024
+      resolution: [1920, 840]
+      fov_degrees: 15.0
+      film_parameters:
+        filename:
+          type: "string"
+          value: ["frame812.exr"]
+        maxcomponentvalue:
+          type: "float"
+          value: [10]
+        yresolution:
+          type: "integer"
+          value: [840]
+        xresolution:
+          type: "integer"
+          value: [1920]
+    world_rotation: [0.9426111839344936, -0.206757926249954, -0.2621742089802714, 0.0, 0.1858278128899491, 0.977217002281357, -0.10254245173963919, 0.0, 0.27740255924946056, 0.04793840198689073, 0.959557048714037, 0.0, 0.0, 0.0, 0.0, 1.0]
+    environment_map:
+      uri: "transparent_machines_environment.hdr"
+      license_uri: "transparent_machines_environment_LICENSE.txt"
+      file: "scenes/transparent-machines/gltf/transparent_machines_environment.hdr"
+      license_file: "scenes/transparent-machines/gltf/transparent_machines_environment_LICENSE.txt"
+      license: "CC0-1.0"
+      map: "scenes/transparent-machines/source/textures/transparent_machines_sky_equiarea.exr"
+      projection: "equirectangular Radiance RGBE"
+      orientation: "glTF world: top row +Y, center column +X, three-quarter column +Z"
+      resolution: [2048, 1024]
+      intensity_scale: 6.0
+      intensity_scale_reason: "PBRT's light scale of 6; the substitute has the original sky's mean luminance."
+      substitute_for: "textures/sky.exr"
+      substitute_reason: "The original sky.exr has no verified redistribution terms."
+    source_shapes: 488
+    source_triangles: 1999217
+    source_vertices: 1151776
+    placed_triangles: 3635494
+    placed_degenerate_triangles_removed: 2628
+    baked_sheared_transforms: 10
+    closed_glass_shapes: 330
+    open_or_ambiguous_glass_shapes: 158
+    glass_shapes_with_reversed_shells: 6
+    instancing:
+      instances: 11
+      instanced_nodes: 2
+      instanced_triangles: 1966969
+      empty_object_instances: 4
+      unplaced_object_definitions: []
+      max_matrix_error: 1.734723475976807e-18
+      mirrored_instances: 0
+      top_level_triangles: 1668525
+  -
+    name: "frame542"
+    source: "scenes/transparent-machines/source/frame542.pbrt"
+    camera: 1
+    camera_projection:
+      yfov: 0.20943951023931956
+      znear: 0.01
+      zfar: 470.01715074031307
+      aspectRatio: 2.2857142857142856
+    render:
+      integrator: "volpath"
+      max_depth: 256
+      sampler: "halton"
+      samples_per_pixel: 1024
+      resolution: [1920, 840]
+      fov_degrees: 12.0
+      film_parameters:
+        maxcomponentvalue:
+          type: "float"
+          value: [10]
+        filename:
+          type: "string"
+          value: ["frame542.exr"]
+        yresolution:
+          type: "integer"
+          value: [840]
+        xresolution:
+          type: "integer"
+          value: [1920]
+    world_rotation: [0.04839482752237779, -0.7474505606619415, -0.6625523375818911, 0.0, 0.40039332025486957, 0.6222187534090378, -0.6727027664588455, 0.0, 0.9150645495069517, -0.23272619593043647, 0.3293863809622179, 0.0, 0.0, 0.0, 0.0, 1.0]
+    environment_map:
+      uri: "transparent_machines_environment_frame542.hdr"
+      license_uri: "transparent_machines_environment_frame542_LICENSE.txt"
+      file: "scenes/transparent-machines/gltf/transparent_machines_environment_frame542.hdr"
+      license_file: "scenes/transparent-machines/gltf/transparent_machines_environment_frame542_LICENSE.txt"
+      license: "CC0-1.0"
+      map: "scenes/transparent-machines/source/textures/transparent_machines_sky_equiarea.exr"
+      projection: "equirectangular Radiance RGBE"
+      orientation: "glTF world: top row +Y, center column +X, three-quarter column +Z"
+      resolution: [2048, 1024]
+      intensity_scale: 6.0
+      intensity_scale_reason: "PBRT's light scale of 6; the substitute has the original sky's mean luminance."
+      substitute_for: "textures/sky.exr"
+      substitute_reason: "The original sky.exr has no verified redistribution terms."
+    source_shapes: 229
+    source_triangles: 1317820
+    source_vertices: 721208
+    placed_triangles: 1313664
+    placed_degenerate_triangles_removed: 9816
+    baked_sheared_transforms: 0
+    closed_glass_shapes: 158
+    open_or_ambiguous_glass_shapes: 71
+    glass_shapes_with_reversed_shells: 6
+    instancing:
+      instances: 5
+      instanced_nodes: 1
+      instanced_triangles: 7075
+      empty_object_instances: 10
+      unplaced_object_definitions: []
+      max_matrix_error: 5.421010862427522e-20
+      mirrored_instances: 0
+      top_level_triangles: 1306589
+  -
+    name: "frame675"
+    source: "scenes/transparent-machines/source/frame675.pbrt"
+    camera: 2
+    camera_projection:
+      yfov: 0.07870934016999104
+      znear: 0.01
+      zfar: 558.7950017230697
+      aspectRatio: 2.2857142857142856
+    render:
+      integrator: "volpath"
+      max_depth: 256
+      sampler: "halton"
+      samples_per_pixel: 1024
+      resolution: [1920, 840]
+      fov_degrees: 4.509713
+      camera_parameters:
+        lensradius:
+          type: "float"
+          value: [0]
+        focaldistance:
+          type: "float"
+          value: [2000]
+        fov:
+          type: "float"
+          value: [4.509713]
+      film_parameters:
+        maxcomponentvalue:
+          type: "float"
+          value: [10]
+        filename:
+          type: "string"
+          value: ["frame675.exr"]
+        yresolution:
+          type: "integer"
+          value: [840]
+        xresolution:
+          type: "integer"
+          value: [1920]
+    world_rotation: [0.04839482752237777, -0.7474505606619415, -0.6625523375818911, 0.0, 0.40039332025486973, 0.6222187534090378, -0.6727027664588455, 0.0, 0.9150645495069517, -0.23272619593043647, 0.3293863809622179, 0.0, 0.0, 0.0, 0.0, 1.0]
+    environment_map:
+      uri: "transparent_machines_environment_frame542.hdr"
+      license_uri: "transparent_machines_environment_frame542_LICENSE.txt"
+      file: "scenes/transparent-machines/gltf/transparent_machines_environment_frame542.hdr"
+      license_file: "scenes/transparent-machines/gltf/transparent_machines_environment_frame542_LICENSE.txt"
+      license: "CC0-1.0"
+      map: "scenes/transparent-machines/source/textures/transparent_machines_sky_equiarea.exr"
+      projection: "equirectangular Radiance RGBE"
+      orientation: "glTF world: top row +Y, center column +X, three-quarter column +Z"
+      resolution: [2048, 1024]
+      intensity_scale: 6.0
+      intensity_scale_reason: "PBRT's light scale of 6; the substitute has the original sky's mean luminance."
+      substitute_for: "textures/sky.exr"
+      substitute_reason: "The original sky.exr has no verified redistribution terms."
+    source_shapes: 390
+    source_triangles: 1545740
+    source_vertices: 892522
+    placed_triangles: 1583772
+    placed_degenerate_triangles_removed: 2628
+    baked_sheared_transforms: 10
+    closed_glass_shapes: 276
+    open_or_ambiguous_glass_shapes: 114
+    glass_shapes_with_reversed_shells: 6
+    instancing:
+      instances: 11
+      instanced_nodes: 2
+      instanced_triangles: 49075
+      empty_object_instances: 4
+      unplaced_object_definitions: []
+      max_matrix_error: 1.734723475976807e-18
+      mirrored_instances: 0
+      top_level_triangles: 1534697
+  -
+    name: "frame888"
+    source: "scenes/transparent-machines/source/frame888.pbrt"
+    camera: 3
+    camera_projection:
+      yfov: 0.13962634015954636
+      znear: 0.01
+      zfar: 476.4367691366748
+      aspectRatio: 2.2857142857142856
+    render:
+      integrator: "volpath"
+      max_depth: 256
+      sampler: "halton"
+      samples_per_pixel: 1024
+      resolution: [1920, 840]
+      fov_degrees: 8.0
+      camera_parameters:
+        lensradius:
+          type: "float"
+          value: [0]
+        focaldistance:
+          type: "float"
+          value: [2000]
+        fov:
+          type: "float"
+          value: [8]
+      film_parameters:
+        filename:
+          type: "string"
+          value: ["frame888.exr"]
+        maxcomponentvalue:
+          type: "float"
+          value: [10]
+        yresolution:
+          type: "integer"
+          value: [840]
+        xresolution:
+          type: "integer"
+          value: [1920]
+    world_rotation: [0.9426111839344936, -0.206757926249954, -0.2621742089802714, 0.0, 0.1858278128899491, 0.977217002281357, -0.10254245173963919, 0.0, 0.27740255924946056, 0.04793840198689073, 0.959557048714037, 0.0, 0.0, 0.0, 0.0, 1.0]
+    environment_map:
+      uri: "transparent_machines_environment.hdr"
+      license_uri: "transparent_machines_environment_LICENSE.txt"
+      file: "scenes/transparent-machines/gltf/transparent_machines_environment.hdr"
+      license_file: "scenes/transparent-machines/gltf/transparent_machines_environment_LICENSE.txt"
+      license: "CC0-1.0"
+      map: "scenes/transparent-machines/source/textures/transparent_machines_sky_equiarea.exr"
+      projection: "equirectangular Radiance RGBE"
+      orientation: "glTF world: top row +Y, center column +X, three-quarter column +Z"
+      resolution: [2048, 1024]
+      intensity_scale: 6.0
+      intensity_scale_reason: "PBRT's light scale of 6; the substitute has the original sky's mean luminance."
+      substitute_for: "textures/sky.exr"
+      substitute_reason: "The original sky.exr has no verified redistribution terms."
+    source_shapes: 678
+    source_triangles: 2386019
+    source_vertices: 1376879
+    placed_triangles: 4022418
+    placed_degenerate_triangles_removed: 2556
+    baked_sheared_transforms: 10
+    closed_glass_shapes: 449
+    open_or_ambiguous_glass_shapes: 229
+    glass_shapes_with_reversed_shells: 6
+    instancing:
+      instances: 11
+      instanced_nodes: 2
+      instanced_triangles: 1967029
+      empty_object_instances: 4
+      unplaced_object_definitions: []
+      max_matrix_error: 1.3010426069826053e-18
+      mirrored_instances: 0
+      top_level_triangles: 2055389
+  -
+    name: "frame1266"
+    source: "scenes/transparent-machines/source/frame1266.pbrt"
+    camera: 4
+    camera_projection:
+      yfov: 0.13962634015954636
+      znear: 0.01
+      zfar: 409.11475532982274
+      aspectRatio: 2.2857142857142856
+    render:
+      integrator: "volpath"
+      max_depth: 256
+      sampler: "halton"
+      samples_per_pixel: 64
+      resolution: [1920, 840]
+      fov_degrees: 8.0
+      film_parameters:
+        xresolution:
+          type: "integer"
+          value: [1920]
+        yresolution:
+          type: "integer"
+          value: [840]
+        maxcomponentvalue:
+          type: "float"
+          value: [10]
+    world_rotation: [0.9426111839344936, -0.206757926249954, -0.2621742089802714, 0.0, 0.1858278128899491, 0.977217002281357, -0.10254245173963919, 0.0, 0.27740255924946056, 0.04793840198689073, 0.959557048714037, 0.0, 0.0, 0.0, 0.0, 1.0]
+    environment_map:
+      uri: "transparent_machines_environment.hdr"
+      license_uri: "transparent_machines_environment_LICENSE.txt"
+      file: "scenes/transparent-machines/gltf/transparent_machines_environment.hdr"
+      license_file: "scenes/transparent-machines/gltf/transparent_machines_environment_LICENSE.txt"
+      license: "CC0-1.0"
+      map: "scenes/transparent-machines/source/textures/transparent_machines_sky_equiarea.exr"
+      projection: "equirectangular Radiance RGBE"
+      orientation: "glTF world: top row +Y, center column +X, three-quarter column +Z"
+      resolution: [2048, 1024]
+      intensity_scale: 6.0
+      intensity_scale_reason: "PBRT's light scale of 6; the substitute has the original sky's mean luminance."
+      substitute_for: "textures/sky.exr"
+      substitute_reason: "The original sky.exr has no verified redistribution terms."
+    source_shapes: 887
+    source_triangles: 3227268
+    source_vertices: 1851032
+    placed_triangles: 6218468
+    placed_degenerate_triangles_removed: 4223
+    baked_sheared_transforms: 10
+    closed_glass_shapes: 564
+    open_or_ambiguous_glass_shapes: 323
+    glass_shapes_with_reversed_shells: 6
+    instancing:
+      instances: 15
+      instanced_nodes: 3
+      instanced_triangles: 3775613
+      empty_object_instances: 0
+      unplaced_object_definitions: []
+      max_matrix_error: 7.2054532479493e-11
+      mirrored_instances: 0
+      top_level_triangles: 2442855
+reference_render:
+  image: "transparent-machines.png"
+  scene: "transparent-machines"
+  renderer: "Blender Cycles"
+  blender_version: "5.3.0"
+  backend: "OPTIX"
+  resolution: [1920, 840]
+  camera:
+    type: "perspective"
+    yfov_degrees: 15.0
+    znear: 0.01
+    zfar: 562.530945
+  samples_per_pixel: 16384
+  pixel_filter: "BLACKMAN_HARRIS, 1.5 px"
+  denoiser: "OPTIX"
+  max_bounces: 256
+  environment_map: "transparent_machines_environment.hdr"
+  environment_strength: 6.0
+  working_color_space: "Linear Rec.709"
+  tonemapper: "Khronos PBR Neutral"
+  display_device: "sRGB"
+  exposure_multiplier: 1.0
+  gamma: 1.0
+  render_seconds: 499.1
+  gpu: "NVIDIA GeForce RTX 4060 Laptop GPU"
+  frames:
+    -
+      gltf_scene: 0
+      name: "frame812"
+      image: "transparent-machines.png"
+      camera:
+        type: "perspective"
+        yfov_degrees: 15.0
+        znear: 0.01
+        zfar: 562.530945
+      environment_map: "transparent_machines_environment.hdr"
+      render_seconds: 499.1
+    -
+      gltf_scene: 1
+      name: "frame542"
+      image: "transparent-machines_frame542.png"
+      camera:
+        type: "perspective"
+        yfov_degrees: 12.0
+        znear: 0.01
+        zfar: 470.017151
+      environment_map: "transparent_machines_environment_frame542.hdr"
+      render_seconds: 542.3
+    -
+      gltf_scene: 2
+      name: "frame675"
+      image: "transparent-machines_frame675.png"
+      camera:
+        type: "perspective"
+        yfov_degrees: 4.509713
+        znear: 0.01
+        zfar: 558.794983
+      environment_map: "transparent_machines_environment_frame542.hdr"
+      render_seconds: 2382.1
+    -
+      gltf_scene: 3
+      name: "frame888"
+      image: "transparent-machines_frame888.png"
+      camera:
+        type: "perspective"
+        yfov_degrees: 8.0
+        znear: 0.01
+        zfar: 476.436768
+      environment_map: "transparent_machines_environment.hdr"
+      render_seconds: 2745.4
+    -
+      gltf_scene: 4
+      name: "frame1266"
+      image: "transparent-machines_frame1266.png"
+      camera:
+        type: "perspective"
+        yfov_degrees: 8.0
+        znear: 0.01
+        zfar: 409.114746
+      environment_map: "transparent_machines_environment.hdr"
+      render_seconds: 2572.9

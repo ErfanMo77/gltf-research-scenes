@@ -11,6 +11,7 @@ GLB_MAGIC = 0x46546C67
 GLB_VERSION = 2
 JSON_CHUNK = 0x4E4F534A
 BIN_CHUNK = 0x004E4942
+SCENE_PACKAGES = Path(__file__).with_name("scene_packages.json")
 
 
 def pad4(size: int) -> int:
@@ -79,6 +80,9 @@ def scene_gltf_paths(scene_id_or_dir: str, variant: str) -> list[Path]:
 
     base_name = scene_dir.name.replace("-", "_")
     if (scene_dir / "gltf" / f"{base_name}.glb").is_file():
+        return []
+    # Scenes released as their own archive keep glTF files that share external buffers.
+    if scene_dir.name in json.loads(SCENE_PACKAGES.read_text(encoding="utf-8"))["scenes"]:
         return []
     variants = ("core", "extended") if variant == "both" else (variant,)
     return [scene_dir / "gltf" / f"{base_name}_{name}.gltf" for name in variants]

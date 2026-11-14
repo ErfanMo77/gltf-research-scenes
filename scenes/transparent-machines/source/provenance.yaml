@@ -1,0 +1,45 @@
+scene:
+  id: "transparent-machines"
+  title: "Transparent Machines"
+  artist: "Mike Winkelmann (Beeple)"
+  project: "https://beeple-crap.com/resources"
+  film: "https://vimeo.com/78716671"
+  license_file: "LICENSE.txt"
+upstream:
+  repository: "https://github.com/mmp/pbrt-v4-scenes"
+  commit: "30cf4a0346ae5a80a2d7a530a3ef7d0fa4f70572"
+  directory: "transparent-machines"
+  git_tree_sha1: "77b5e94b56cdd80df0b35a042e2dd68e6301f848"
+  frame_git_blob_sha1:
+    frame542.pbrt: "5b03a79ce64cb83802f62bc1fa5502a39ae8799e"
+    frame675.pbrt: "edb146b9aea1992f2f93c318d0a30f8fd1a9e0c2"
+    frame812.pbrt: "cb0f35a304db8b182a5bed34baf44b5d73b921b3"
+    frame888.pbrt: "018c2173c23ca31ef893af030f549234fa59cc5b"
+    frame1266.pbrt: "0e0d8309069395a97abb331f79c03660c56ac05b"
+  original_sky:
+    path: "transparent-machines/textures/sky.exr"
+    git_blob_sha1: "76af4b4a6a09c4a3b7c62ffaee52ade29e2d8bed"
+    stored: false
+    redistribution_terms: "unverified"
+    mean_luminance: 0.149339474075
+  references:
+    path: "images/transparent-machines"
+    git_tree_sha1: "dbaa52f04fb50d448be02ac9273afc7d5fc8a050"
+    stored: true
+    git_blob_sha1:
+      frame542.exr: "03c1323daa739e43e79cd282348851d51a403741"
+      frame675.exr: "af80398875c2c62d183c1ea1c3e6f738e4d77a18"
+      frame812.exr: "3cace951a6e3df3c373ce7906dfd5d08224f1c16"
+      frame812.png: "8a258aa4dceca256afbf0bc2bb67cf0997374304"
+      frame888.exr: "d0cead38fd4f83e8694697a30a2c06240ba0c2d9"
+    converted_png: ["frame542.png", "frame675.png", "frame888.png"]
+    conversion: "pbrt-v4 imgtool convert, which reproduces the upstream frame812.png to within 1/255"
+    frame1266: "no upstream reference render"
+substitute_sky:
+  title: "Transparent Machines Sky"
+  author: "Erfan Momeni"
+  license: "CC0-1.0"
+  license_file: "sky_LICENSE.txt"
+  path: "textures/transparent_machines_sky_equiarea.exr"
+  origin: "procedurally generated, inspired by the original sky"
+  mean_luminance: 0.149339474075

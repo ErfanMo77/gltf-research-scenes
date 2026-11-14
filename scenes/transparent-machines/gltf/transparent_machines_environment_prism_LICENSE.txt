@@ -1,0 +1,11 @@
+transparent_machines_environment_prism.hdr
+
+Environment map: "Transparent Machines Prism Studio" by Erfan Momeni
+https://github.com/ErfanMo77/gltf-research-scenes
+
+License: CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+
+A dark studio procedurally generated with scripts for this repository: narrow light strips and small bright spots outline the glass and bring out its dispersion. It contains no photograph or third-party image. Use it at intensity 1 in place of the frame's sky.
+
+Aligned to the glTF camera that every view shares, in the glTF world orientation (top row +Y, center column +X, three-quarter column +Z).

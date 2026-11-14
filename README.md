@@ -31,6 +31,8 @@ For basic importer and engine testing, use the `core` version. And use the `exte
 
 Classroom 2 is supplied as a single `classroom2.glb`, with its textures and camera embedded.
 
+[Transparent Machines](scenes/transparent-machines/) requires `EXT_mesh_gpu_instancing` in both variants. Its five frames are separate glTF scenes, each with its own camera.
+
 ## Download
 
 Download the [`latest release`](https://github.com/ErfanMo77/gltf-research-scenes/releases/latest) if you only need the packaged `.glb` files.
@@ -69,6 +71,7 @@ Cornell Caustic is the exception: its reference is a PBRT v4 render using photon
 | [`staircase`](scenes/staircase/) | <a href="scenes/staircase/gltf/staircase.png"><img src="scenes/staircase/staircase_thumbnail.png" width="160" alt="Staircase reference"></a> | CC-BY-3.0 | Wooden staircase interior with portrait camera and emissive mesh lighting |
 | [`teapot`](scenes/teapot/) | <a href="scenes/teapot/gltf/teapot.png"><img src="scenes/teapot/teapot_thumbnail.png" width="160" alt="Teapot reference"></a> | CC0-1.0 | Teapot with baked checkerboard and environment map data |
 | [`teapot-full`](scenes/teapot-full/) | <a href="scenes/teapot-full/gltf/teapot-full.png"><img src="scenes/teapot-full/teapot_full_thumbnail.png" width="160" alt="Full teapot reference"></a> | CC0-1.0 | Teapot and liquid scene with volume, medium settings, and environment map data |
+| [`transparent-machines`](scenes/transparent-machines/) | <a href="scenes/transparent-machines/gltf/transparent-machines.png"><img src="scenes/transparent-machines/transparent_machines_thumbnail.png" width="160" alt="Transparent Machines reference"></a> | Beeple project terms | Five instanced BK7 glass frames with matching cameras, a reference render of each, and CC0 procedural sky and studio HDRs. Render with **64 or more max bounces**. Separate download |
 | [`veach-ajar`](scenes/veach-ajar/) | <a href="scenes/veach-ajar/gltf/veach-ajar.png"><img src="scenes/veach-ajar/veach_ajar_thumbnail.png" width="160" alt="Veach Ajar reference"></a> | CC0-1.0 | Veach lighting scene with transformed meshes, glass, and emissive mesh lighting |
 | [`veach-bidir`](scenes/veach-bidir/) | <a href="scenes/veach-bidir/gltf/veach-bidir.png"><img src="scenes/veach-bidir/veach_bidir_thumbnail.png" width="160" alt="Veach Bidir reference"></a> | CC0-1.0 | Small bidirectional-lighting scene with emissive mesh lighting |
 | [`veach-mis`](scenes/veach-mis/) | <a href="scenes/veach-mis/gltf/veach-mis.png"><img src="scenes/veach-mis/veach_mis_thumbnail.png" width="160" alt="Veach MIS reference"></a> | CC0-1.0 | Compact MIS scene with tessellated emissive mesh lighting |

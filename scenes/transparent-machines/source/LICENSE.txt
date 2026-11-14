@@ -1,0 +1,17 @@
+Transparent Machines
+
+Original Cinema 4D project and models by Mike Winkelmann (Beeple).
+Beeple publishes the project files at https://beeple-crap.com/resources
+and permits commercial and noncommercial use without required attribution.
+His project page identifies the files as Creative Commons without naming a
+specific license version.
+
+https://www.behance.net/gallery/11987377/Transparent-Machines
+https://vimeo.com/78716671
+
+PBRT frame conversion from mmp/pbrt-v4-scenes, added by Matt Pharr with
+credit to Beeple. The upstream README points to Beeple's usage terms.
+https://github.com/mmp/pbrt-v4-scenes#transparent-machines
+
+The glTF adaptation uses a separately licensed sky. The original PBRT
+sky.exr and upstream render images are linked in provenance.yaml.
