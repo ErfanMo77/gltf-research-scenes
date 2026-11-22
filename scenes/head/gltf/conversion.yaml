@@ -1,0 +1,149 @@
+scene:
+  id: "head"
+  format: "pbrt-v4"
+  source: "scenes/head/source/head.pbrt"
+  license: "CC-BY-2.0"
+  license_file: "scenes/head/source/LICENSE.txt"
+outputs:
+  core: "scenes/head/gltf/head_core.gltf"
+  extended: "scenes/head/gltf/head_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_volume", "KHR_materials_scatter"]
+summary:
+  meshes: 1
+  triangles: 17674
+  materials: 1
+  textures: 1
+  lights: 1
+render:
+  integrator: "volpath"
+  max_depth: 2
+  sampler: "halton"
+  samples_per_pixel: 4096
+  resolution: [1920, 1080]
+  fov_degrees: 30.0
+  camera_parameters:
+    fov:
+      type: "float"
+      value: [30]
+    focaldistance:
+      type: "float"
+      value: [0.573]
+    lensradius:
+      type: "float"
+      value: [0.0025]
+  film_parameters:
+    filename:
+      type: "string"
+      value: ["head.exr"]
+    yresolution:
+      type: "integer"
+      value: [1080]
+    xresolution:
+      type: "integer"
+      value: [1920]
+    iso:
+      type: "float"
+      value: [200]
+    cropwindow:
+      type: "float"
+      value: [0.3, 0.8, 0.15, 0.7]
+conversion:
+  world_transform: "reflect across the PBRT camera's vertical plane"
+  double_sided: "auto"
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+  gltf_camera:
+    znear: 0.01
+    zfar: 100.0
+  camera_pose: "PBRT eye, forward and up preserved; glTF looks along local -Z"
+  scatter_extension_draft: "https://github.com/KhronosGroup/glTF/pull/2579"
+material_mappings:
+  -
+    name: "subsurface_00"
+    pbrt: "subsurface"
+    gltf: "KHR_materials_scatter"
+    source_parameters:
+      remaproughness:
+        type: "bool"
+        value: [false]
+      vroughness:
+        type: "float"
+        value: [0.05]
+      uroughness:
+        type: "float"
+        value: [0.05]
+      eta:
+        type: "float"
+        value: [1.33]
+      reflectance:
+        type: "texture"
+        value: ["albedomap"]
+      mfp:
+        type: "rgb"
+        value: [0.0012953, 0.00095238, 0.00067114]
+    volume:
+      thicknessFactor: 0.4532900005578995
+      attenuationDistance: 0.00067114
+      attenuationColor: [0.5956304854607928, 0.4942579635356642, 0.3678794411714424]
+    scatter:
+      scatterStrengthFactor: 1.0
+      scatterAnisotropy: 0.0
+      multiscatterColorFactor: [1.0, 1.0, 1.0]
+    ior: 1.33
+    roughness_mapping:
+      base:
+        source:
+          uroughness: 0.05
+          vroughness: 0.05
+          remaproughness: false
+        remaproughness: false
+        alpha: [0.05, 0.05]
+        gltf_roughness: 0.22360679774997896
+    scatter_color_texture: "albedomap"
+    texture_mapping: "PBRT diffuse reflectance approximates glTF multi-scatter albedo at the volume boundary"
+light_mappings:
+  -
+    pbrt: "infinite"
+    gltf: "separate equirectangular HDR file"
+    source: "textures/small_rural_road_equiarea.exr"
+    pbrt_transform: [0.0, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+    environment_map:
+      name: "Small Rural Road"
+      uri: "head_environment.hdr"
+      license_uri: "head_environment_LICENSE.txt"
+      file: "scenes/head/gltf/head_environment.hdr"
+      license_file: "scenes/head/gltf/head_environment_LICENSE.txt"
+      license: "CC0-1.0"
+      map: "scenes/head/source/textures/small_rural_road_equiarea.exr"
+      projection: "equirectangular Radiance RGBE"
+      orientation: "glTF world: top row +Y, center column +X, three-quarter column +Z"
+      resolution: [2048, 1024]
+approximations: ["subsurface_volumetric_scattering", "environment_map_equirectangular_hdr"]
+losses: ["render_integrator", "render_sampler", "film_output", "infinite_environment_light", "camera_depth_of_field", "exact_pbrt_subsurface_profile"]
+reference_render:
+  image: "head_vk.png"
+  scene: "head"
+  renderer: "vk_gltf_renderer"
+  renderer_commit: "a7d0747f06df832e564ff3e93078e5c06a7b6f12"
+  variant: "extended"
+  resolution: [1920, 1080]
+  camera: "Camera"
+  samples_per_pixel: 2048
+  samples_per_frame: 8
+  max_bounces: 40
+  environment_map: "head_environment.hdr"
+  environment_strength: 1.0
+  environment_background: true
+  shadow_transmission: false
+  aperture: 6.25e-06
+  focal_distance: 0.573
+  denoiser: "OIDN"
+  denoiser_quality: "High"
+  denoiser_guides: "Color"
+  dlss: false
+  tonemapper: "Filmic"
+  exposure_multiplier: 1.38
+  auto_exposure: false

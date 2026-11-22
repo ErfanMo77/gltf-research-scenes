@@ -81,7 +81,7 @@ def scene_gltf_paths(scene_id_or_dir: str, variant: str) -> list[Path]:
     base_name = scene_dir.name.replace("-", "_")
     if (scene_dir / "gltf" / f"{base_name}.glb").is_file():
         return []
-    # Scenes released as their own archive keep glTF files that share external buffers.
+    # Listed scenes keep their glTF variants beside their shared external buffers.
     if scene_dir.name in json.loads(SCENE_PACKAGES.read_text(encoding="utf-8"))["scenes"]:
         return []
     variants = ("core", "extended") if variant == "both" else (variant,)

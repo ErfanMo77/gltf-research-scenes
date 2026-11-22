@@ -1,0 +1,4 @@
+{
+  "notes": "Listed scenes keep their glTF variants beside their shared buffers. They join the collection archive by default. Set archive to give a scene its own ZIP.",
+  "scenes": {}
+}

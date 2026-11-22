@@ -1,0 +1,20 @@
+SPDX-License-Identifier: CC-BY-2.0
+
+head
+
+Head scan and albedo map by Infinite Realities, Inc.
+The PBRT scene collection identifies the model license as Creative Commons Attribution 2.0 Generic.
+https://creativecommons.org/licenses/by/2.0/legalcode
+
+PBRT v4 scene, geometry and reference image source:
+https://github.com/mmp/pbrt-v4-scenes/tree/30cf4a0346ae5a80a2d7a530a3ef7d0fa4f70572/head
+https://github.com/mmp/pbrt-v4-scenes/tree/30cf4a0346ae5a80a2d7a530a3ef7d0fa4f70572/images/head
+
+Upstream scene attribution: https://github.com/mmp/pbrt-v4-scenes/blob/30cf4a0346ae5a80a2d7a530a3ef7d0fa4f70572/README.md#head
+
+The local small_rural_road_equiarea.exr is the same file in both upstream scene folders.
+Small Rural Road HDRI by Andreas Mischok via Poly Haven, CC0 1.0.
+https://polyhaven.com/a/small_rural_road
+https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+The glTF adaptations convert the scene geometry and approximate its PBRT material.

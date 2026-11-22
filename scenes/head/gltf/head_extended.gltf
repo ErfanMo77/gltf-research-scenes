@@ -1,0 +1,448 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "pbrt_to_gltf.py"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "head",
+      "nodes": [
+        2
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "00_subsurface_00",
+      "mesh": 0,
+      "matrix": [
+        0.5675310258314414,
+        -0.269119153622318,
+        -0.7781281487469268,
+        0.0,
+        0.269119153622318,
+        0.9537966919615021,
+        -0.13359173461297225,
+        0.0,
+        0.7781281487469268,
+        -0.13359173461297225,
+        0.6137343338699391,
+        0.0,
+        0.09925773642986453,
+        -0.017040911840519226,
+        -0.04927190430314716,
+        1.0
+      ]
+    },
+    {
+      "name": "Camera",
+      "camera": 0,
+      "matrix": [
+        0.8853053218611763,
+        -0.15199228276214877,
+        -0.4394688078408189,
+        0.0,
+        0.03557976011670595,
+        0.9644437734712921,
+        -0.2618822034474523,
+        0.0,
+        0.46364702927368895,
+        0.21620951365100965,
+        0.8592350542502771,
+        0.0,
+        0.32283899999999993,
+        0.05348249999999999,
+        0.504299,
+        1.0
+      ],
+      "extras": {
+        "camera::up": [
+          0.03557976011670595,
+          0.9644437734712921,
+          -0.2618822034474523
+        ]
+      }
+    },
+    {
+      "name": "head_root",
+      "translation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "children": [
+        0,
+        1
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "name": "00_subsurface_00",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "subsurface_00",
+      "doubleSided": false,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.22360679774997896
+      },
+      "extras": {
+        "pbrt": {
+          "type": "subsurface",
+          "reflectance_rgb": [
+            0.8,
+            0.8,
+            0.8
+          ],
+          "roughness_mapping": {
+            "base": {
+              "source": {
+                "uroughness": 0.05,
+                "vroughness": 0.05,
+                "remaproughness": false
+              },
+              "remaproughness": false,
+              "alpha": [
+                0.05,
+                0.05
+              ],
+              "gltf_roughness": 0.22360679774997896
+            }
+          },
+          "reflectance_texture": "albedomap",
+          "reflectance_texture_type": "imagemap",
+          "reflectance_texture_filename": "textures/head_albedomap.png",
+          "Kd": {
+            "encoding": "texture",
+            "value": "albedomap"
+          },
+          "subsurface_parameters": {
+            "remaproughness": {
+              "type": "bool",
+              "value": [
+                false
+              ]
+            },
+            "vroughness": {
+              "type": "float",
+              "value": [
+                0.05
+              ]
+            },
+            "uroughness": {
+              "type": "float",
+              "value": [
+                0.05
+              ]
+            },
+            "eta": {
+              "type": "float",
+              "value": [
+                1.33
+              ]
+            },
+            "reflectance": {
+              "type": "texture",
+              "value": [
+                "albedomap"
+              ]
+            },
+            "mfp": {
+              "type": "rgb",
+              "value": [
+                0.0012953,
+                0.00095238,
+                0.00067114
+              ]
+            }
+          }
+        }
+      },
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularFactor": 1.0
+        },
+        "KHR_materials_transmission": {
+          "transmissionFactor": 1.0
+        },
+        "KHR_materials_ior": {
+          "ior": 1.33
+        },
+        "KHR_materials_volume": {
+          "thicknessFactor": 0.4532900005578995,
+          "attenuationDistance": 0.00067114,
+          "attenuationColor": [
+            0.5956304854607928,
+            0.4942579635356642,
+            0.3678794411714424
+          ]
+        },
+        "KHR_materials_scatter": {
+          "scatterStrengthFactor": 1.0,
+          "scatterAnisotropy": 0.0,
+          "multiscatterColorFactor": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "multiscatterColorTexture": {
+            "index": 0
+          }
+        }
+      }
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "head.bin",
+      "byteLength": 5825320
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 5424140
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5424140,
+      "byteLength": 110676,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5534816,
+      "byteLength": 110676,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5645492,
+      "byteLength": 73784,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5719276,
+      "byteLength": 106044,
+      "target": 34963
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 9223,
+      "type": "VEC3",
+      "min": [
+        -0.23213499784469604,
+        -0.30504998564720154,
+        -0.2211029976606369
+      ],
+      "max": [
+        0.22115500271320343,
+        0.11603999882936478,
+        0.0534759983420372
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 9223,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 9223,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5123,
+      "count": 53022,
+      "type": "SCALAR"
+    }
+  ],
+  "extras": {
+    "sourceFormat": "pbrt-v4",
+    "sceneId": "head",
+    "pbrt": {
+      "render": {
+        "integrator": "volpath",
+        "max_depth": 2,
+        "sampler": "halton",
+        "samples_per_pixel": 4096,
+        "resolution": [
+          1920,
+          1080
+        ],
+        "fov_degrees": 30.0,
+        "camera_parameters": {
+          "fov": {
+            "type": "float",
+            "value": [
+              30
+            ]
+          },
+          "focaldistance": {
+            "type": "float",
+            "value": [
+              0.573
+            ]
+          },
+          "lensradius": {
+            "type": "float",
+            "value": [
+              0.0025
+            ]
+          }
+        },
+        "film_parameters": {
+          "filename": {
+            "type": "string",
+            "value": [
+              "head.exr"
+            ]
+          },
+          "yresolution": {
+            "type": "integer",
+            "value": [
+              1080
+            ]
+          },
+          "xresolution": {
+            "type": "integer",
+            "value": [
+              1920
+            ]
+          },
+          "iso": {
+            "type": "float",
+            "value": [
+              200
+            ]
+          },
+          "cropwindow": {
+            "type": "float",
+            "value": [
+              0.3,
+              0.8,
+              0.15,
+              0.7
+            ]
+          }
+        }
+      },
+      "light_sources": [
+        {
+          "pbrt": "infinite",
+          "gltf": "separate equirectangular HDR file",
+          "source": "textures/small_rural_road_equiarea.exr",
+          "pbrt_transform": [
+            0.0,
+            0.0,
+            -1.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "environment_map": {
+            "uri": "head_environment.hdr",
+            "license_uri": "head_environment_LICENSE.txt",
+            "file": "scenes/head/gltf/head_environment.hdr",
+            "license_file": "scenes/head/gltf/head_environment_LICENSE.txt",
+            "license": "CC0-1.0",
+            "map": "scenes/head/source/textures/small_rural_road_equiarea.exr",
+            "projection": "equirectangular Radiance RGBE",
+            "orientation": "glTF world: top row +Y, center column +X, three-quarter column +Z",
+            "resolution": [
+              2048,
+              1024
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "images": [
+    {
+      "name": "albedomap",
+      "bufferView": 0,
+      "mimeType": "image/png"
+    }
+  ],
+  "textures": [
+    {
+      "source": 0,
+      "sampler": 0
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_materials_specular",
+    "KHR_materials_transmission",
+    "KHR_materials_ior",
+    "KHR_materials_volume",
+    "KHR_materials_scatter"
+  ],
+  "extensionsRequired": [
+    "KHR_materials_specular",
+    "KHR_materials_transmission",
+    "KHR_materials_ior",
+    "KHR_materials_volume",
+    "KHR_materials_scatter"
+  ],
+  "cameras": [
+    {
+      "name": "Camera",
+      "type": "perspective",
+      "perspective": {
+        "yfov": 0.5235987755982988,
+        "znear": 0.01,
+        "zfar": 100.0,
+        "aspectRatio": 1.7777777777777777
+      }
+    }
+  ]
+}

@@ -67,7 +67,7 @@ jobs:
 
           title="${RELEASE_NAME:-$TAG_NAME}"
           notes="Scene packages generated from commit ${GITHUB_SHA}."
-          # The GLB collection zip plus one zip per scene listed in tools/scene_packages.json.
+          # The collection ZIP and any standalone ZIPs configured in tools/scene_packages.json.
           packages=(dist/*.zip)
 
           if gh release view "$TAG_NAME" --repo "$REPOSITORY" >/dev/null 2>&1; then

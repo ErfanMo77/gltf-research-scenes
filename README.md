@@ -41,9 +41,7 @@ Clone the repository for the full asset set: sources, .gltf files, textures, met
 
 ## Scenes
 
-Each scene's reference image is a Blender 5.3 Cycles render of its extended glTF, saved in the scene's gltf/ folder. Render settings are recorded in the `reference_render` section of each `conversion.yaml`. With them, you can reproduce the render in Blender and compare your own renderer's output against the reference.
-
-Cornell Caustic is the exception: its reference is a PBRT v4 render using photon mapping (SPPM), because Cycles could not reproduce its caustics.
+Most reference images are Blender 5.3 Cycles renders. Cornell Caustic uses PBRT v4 photon mapping (SPPM), and Head uses [vk_gltf_renderer](https://github.com/nvpro-samples/vk_gltf_renderer) to render its draft scattering material. The images are in each scene's `gltf/` folder, and render settings are recorded under `reference_render` in `conversion.yaml`.
 
 | Scene | Reference | License | Notes |
 | --- | --- | --- | --- |
@@ -59,6 +57,7 @@ Cornell Caustic is the exception: its reference is a PBRT v4 render using photon
 | [`crown`](scenes/crown/) | <a href="scenes/crown/gltf/crown.png"><img src="scenes/crown/crown_thumbnail.png" width="160" alt="Crown reference"></a> | CC-BY-3.0 | Austrian Imperial Crown with gold conductors, gemstones with dispersion, iridescent pearls, sheen velvet, height map baked into geometry, and emissive mesh lighting |
 | [`dragon`](scenes/dragon/) | <a href="scenes/dragon/gltf/dragon.png"><img src="scenes/dragon/dragon_thumbnail.png" width="160" alt="Dragon reference"></a> | CC-BY-3.0 | Dense dragon model scene with diffuse materials and a directional light |
 | [`glass-of-water`](scenes/glass-of-water/) | <a href="scenes/glass-of-water/gltf/glass-of-water.png"><img src="scenes/glass-of-water/glass_of_water_thumbnail.png" width="160" alt="Glass of Water reference"></a> | CC0-1.0 | Transparent glass, water, ice, and emissive mesh lighting test |
+| [`head`](scenes/head/) | <a href="scenes/head/gltf/head_vk.png"><img src="scenes/head/head_thumbnail.png" width="160" alt="Head reference"></a> | CC-BY-2.0 | Textured skin with volumetric subsurface scattering via draft `KHR_materials_scatter` |
 | [`house`](scenes/house/) | <a href="scenes/house/gltf/house.png"><img src="scenes/house/house_thumbnail.png" width="160" alt="House reference"></a> | CC0-1.0 | Large Victorian house with glass, environment map data, and a directional light |
 | [`kitchen`](scenes/kitchen/) | <a href="scenes/kitchen/gltf/kitchen.png"><img src="scenes/kitchen/kitchen_thumbnail.png" width="160" alt="Kitchen reference"></a> | CC-BY-3.0 | Detailed kitchen with textures, glass, metals, and emissive mesh lighting |
 | [`lamp`](scenes/lamp/) | <a href="scenes/lamp/gltf/lamp.png"><img src="scenes/lamp/lamp_thumbnail.png" width="160" alt="Lamp reference"></a> | CC0-1.0 | Desk lamp with coated plastic, metals, bulb glass, emissive mesh lighting, and a directional light |
@@ -71,7 +70,7 @@ Cornell Caustic is the exception: its reference is a PBRT v4 render using photon
 | [`staircase`](scenes/staircase/) | <a href="scenes/staircase/gltf/staircase.png"><img src="scenes/staircase/staircase_thumbnail.png" width="160" alt="Staircase reference"></a> | CC-BY-3.0 | Wooden staircase interior with portrait camera and emissive mesh lighting |
 | [`teapot`](scenes/teapot/) | <a href="scenes/teapot/gltf/teapot.png"><img src="scenes/teapot/teapot_thumbnail.png" width="160" alt="Teapot reference"></a> | CC0-1.0 | Teapot with baked checkerboard and environment map data |
 | [`teapot-full`](scenes/teapot-full/) | <a href="scenes/teapot-full/gltf/teapot-full.png"><img src="scenes/teapot-full/teapot_full_thumbnail.png" width="160" alt="Full teapot reference"></a> | CC0-1.0 | Teapot and liquid scene with volume, medium settings, and environment map data |
-| [`transparent-machines`](scenes/transparent-machines/) | <a href="scenes/transparent-machines/gltf/transparent-machines.png"><img src="scenes/transparent-machines/transparent_machines_thumbnail.png" width="160" alt="Transparent Machines reference"></a> | Beeple project terms | Five instanced BK7 glass frames with matching cameras, a reference render of each, and CC0 procedural sky and studio HDRs. Render with **64 or more max bounces**. Separate download |
+| [`transparent-machines`](scenes/transparent-machines/) | <a href="scenes/transparent-machines/gltf/transparent-machines_frame675.png"><img src="scenes/transparent-machines/transparent_machines_thumbnail.png" width="160" alt="Transparent Machines frame 675 reference"></a> | Beeple project terms | Five instanced BK7 glass frames with matching cameras, a reference render of each, and CC0 procedural sky and studio HDRs. Render with **64 or more max bounces**. |
 | [`veach-ajar`](scenes/veach-ajar/) | <a href="scenes/veach-ajar/gltf/veach-ajar.png"><img src="scenes/veach-ajar/veach_ajar_thumbnail.png" width="160" alt="Veach Ajar reference"></a> | CC0-1.0 | Veach lighting scene with transformed meshes, glass, and emissive mesh lighting |
 | [`veach-bidir`](scenes/veach-bidir/) | <a href="scenes/veach-bidir/gltf/veach-bidir.png"><img src="scenes/veach-bidir/veach_bidir_thumbnail.png" width="160" alt="Veach Bidir reference"></a> | CC0-1.0 | Small bidirectional-lighting scene with emissive mesh lighting |
 | [`veach-mis`](scenes/veach-mis/) | <a href="scenes/veach-mis/gltf/veach-mis.png"><img src="scenes/veach-mis/veach_mis_thumbnail.png" width="160" alt="Veach MIS reference"></a> | CC0-1.0 | Compact MIS scene with tessellated emissive mesh lighting |
