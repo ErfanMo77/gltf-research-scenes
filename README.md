@@ -35,13 +35,13 @@ Classroom 2 is supplied as a single `classroom2.glb`, with its textures and came
 
 ## Download
 
-Download the [`latest release`](https://github.com/ErfanMo77/gltf-research-scenes/releases/latest) if you only need the packaged `.glb` files.
+Download the [`latest release`](https://github.com/ErfanMo77/gltf-research-scenes/releases/latest) for the packaged GLB collection.
 
 Clone the repository for the full asset set: sources, .gltf files, textures, metadata, and licenses.
 
 ## Scenes
 
-Most reference images are Blender 5.3 Cycles renders. Cornell Caustic uses PBRT v4 photon mapping (SPPM), and Head uses [vk_gltf_renderer](https://github.com/nvpro-samples/vk_gltf_renderer) to render its draft scattering material. The images are in each scene's `gltf/` folder, and render settings are recorded under `reference_render` in `conversion.yaml`.
+Most reference images are Blender 5.3 Cycles renders. Cornell Caustic uses PBRT v4 photon mapping (SPPM), and Head and SSS Dragon use [vk_gltf_renderer](https://github.com/nvpro-samples/vk_gltf_renderer) to render their draft scattering materials. The images are in each scene's `gltf/` folder, and render settings are recorded under `reference_render` in `conversion.yaml`.
 
 | Scene | Reference | License | Notes |
 | --- | --- | --- | --- |
@@ -67,6 +67,7 @@ Most reference images are Blender 5.3 Cycles renders. Cornell Caustic uses PBRT 
 | [`modern-hall`](scenes/modern-hall/) | <a href="scenes/modern-hall/gltf/modern-hall.png"><img src="scenes/modern-hall/modern_hall_thumbnail.png" width="160" alt="Modern Hall reference"></a> | CC-BY-3.0 | Modern hallway interior with textured surfaces, volumetric glass, and disk emissive mesh lighting |
 | [`pontiac-gto`](scenes/pontiac-gto/) | <a href="scenes/pontiac-gto/gltf/pontiac-gto.png"><img src="scenes/pontiac-gto/pontiac_gto_thumbnail.png" width="160" alt="Pontiac GTO reference"></a> | CC0-1.0; environment map CC-BY-3.0 | Vehicle scene with clearcoat car paint, glass, chrome, and environment map data |
 | [`spaceship`](scenes/spaceship/) | <a href="scenes/spaceship/gltf/spaceship.png"><img src="scenes/spaceship/spaceship_thumbnail.png" width="160" alt="Spaceship reference"></a> | CC0-1.0 | Sci-fi model with metals, glass, emissive mesh lighting, and environment map data |
+| [`sss-dragon`](scenes/sss-dragon/) | <a href="scenes/sss-dragon/gltf/sss_dragon_vk_50.png"><img src="scenes/sss-dragon/sss_dragon_thumbnail.png" width="160" alt="SSS Dragon at scale 50"></a> | [Stanford 3D Scanning Repository terms](scenes/sss-dragon/source/LICENSE.txt) | Full-resolution Asian Dragon scan with three subsurface-scattering densities |
 | [`staircase`](scenes/staircase/) | <a href="scenes/staircase/gltf/staircase.png"><img src="scenes/staircase/staircase_thumbnail.png" width="160" alt="Staircase reference"></a> | CC-BY-3.0 | Wooden staircase interior with portrait camera and emissive mesh lighting |
 | [`teapot`](scenes/teapot/) | <a href="scenes/teapot/gltf/teapot.png"><img src="scenes/teapot/teapot_thumbnail.png" width="160" alt="Teapot reference"></a> | CC0-1.0 | Teapot with baked checkerboard and environment map data |
 | [`teapot-full`](scenes/teapot-full/) | <a href="scenes/teapot-full/gltf/teapot-full.png"><img src="scenes/teapot-full/teapot_full_thumbnail.png" width="160" alt="Full teapot reference"></a> | CC0-1.0 | Teapot and liquid scene with volume, medium settings, and environment map data |

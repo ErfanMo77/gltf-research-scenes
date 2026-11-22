@@ -1,0 +1,177 @@
+scene:
+  id: "sss-dragon"
+  format: "pbrt-v4"
+  source: "scenes/sss-dragon/source/dragon_50.pbrt"
+  license: "LicenseRef-Stanford-3D-Scanning-Repository"
+  license_file: "scenes/sss-dragon/source/LICENSE.txt"
+outputs:
+  core: "scenes/sss-dragon/gltf/sss_dragon_core.gltf"
+  extended: "scenes/sss-dragon/gltf/sss_dragon_extended.gltf"
+  extended_extensions: ["KHR_materials_specular", "KHR_materials_clearcoat", "KHR_materials_transmission", "KHR_materials_ior", "KHR_materials_volume", "KHR_materials_scatter", "KHR_materials_variants"]
+summary:
+  meshes: 2
+  triangles: 7219418
+  materials: 2
+  textures: 0
+  lights: 1
+render:
+  sampler: "halton"
+  samples_per_pixel: 1024
+  pixel_filter: "gaussian"
+  resolution: [1366, 1024]
+  fov_degrees: 28.841503
+  film_parameters:
+    iso:
+      type: "float"
+      value: [400]
+    filename:
+      type: "string"
+      value: ["dragon_50.exr"]
+    yresolution:
+      type: "integer"
+      value: [1024]
+    xresolution:
+      type: "integer"
+      value: [1366]
+conversion:
+  double_sided: "auto"
+  defaults:
+    metallic: 0.0
+    roughness: 1.0
+    extended_specular_factor: 0.0
+  coateddiffuse_clearcoat_factor: 1.0
+  gltf_camera:
+    znear: 0.01
+    zfar: 100.0
+  trimmed_geometry:
+    -
+      mesh: "00_subsurface_00"
+      vertices: 145
+      triangles: 139
+      reason: "Remove the detached planar patch appended after the watertight Stanford dragon shell."
+  camera_pose: "PBRT eye, forward and up preserved; glTF looks along local -Z"
+  scatter_extension_draft: "https://github.com/KhronosGroup/glTF/pull/2579"
+material_mappings:
+  -
+    name: "subsurface_00"
+    pbrt: "subsurface"
+    gltf: "KHR_materials_scatter"
+    source_parameters:
+      scale:
+        type: "float"
+        value: [50]
+      name:
+        type: "string"
+        value: ["Skin1"]
+      eta:
+        type: "float"
+        value: [1.5]
+    volume:
+      thicknessFactor: 201.74352264404297
+      attenuationDistance: 0.013422818791946308
+      attenuationColor: [0.5956388181864908, 0.49425782421450787, 0.36787944117144233]
+    scatter:
+      scatterStrengthFactor: 1.0
+      scatterAnisotropy: 0.0
+      multiscatterColorFactor: [0.6249849777668715, 0.38360379822552204, 0.23935325630009174]
+    ior: 1.5
+    roughness_mapping:
+      base:
+        remaproughness: true
+        alpha: [0.0, 0.0]
+        gltf_roughness: 0.0
+    density_variants:
+      -
+        scale: 50.0
+        volume:
+          thicknessFactor: 201.74352264404297
+          attenuationDistance: 0.013422818791946308
+          attenuationColor: [0.5956388181864908, 0.49425782421450787, 0.36787944117144233]
+      -
+        scale: 10.0
+        volume:
+          thicknessFactor: 201.74352264404297
+          attenuationDistance: 0.06711409395973154
+          attenuationColor: [0.5956388181864908, 0.49425782421450787, 0.36787944117144233]
+      -
+        scale: 250.0
+        volume:
+          thicknessFactor: 201.74352264404297
+          attenuationDistance: 0.0026845637583892616
+          attenuationColor: [0.5956388181864908, 0.49425782421450787, 0.36787944117144233]
+  -
+    name: "coateddiffuse_01"
+    pbrt: "coateddiffuse"
+    gltf: "baseColorFactor + KHR_materials_clearcoat"
+    clearcoat_factor: 1.0
+    clearcoat_roughness: 0.668740304976422
+    base_color_mapping:
+      method: "internal_fresnel_diffuse"
+      internal_reflectance: 0.5963457597077118
+      formula: "c * (1 - F) / (1 - F * c), blended with c by clearcoat_factor"
+      color_space: "linear RGB; texture RGB decoded from and re-encoded to sRGB"
+      gltf: "baseColorFactor"
+      base_color_factor: [0.6175347996087199, 0.6175347996087199, 0.6175347996087199]
+      approximation: "smooth IOR 1.5 internal-reflection approximation; PBRT spectral and angular layer scattering are not exact"
+    roughness_mapping:
+      clearcoat:
+        source:
+          roughness: 0.2
+        remaproughness: true
+        alpha: [0.4472135954999579, 0.4472135954999579]
+        gltf_roughness: 0.668740304976422
+light_mappings:
+  -
+    pbrt: "infinite"
+    gltf: "separate equirectangular HDR file"
+    source: "textures/small_rural_road_equiarea.exr"
+    pbrt_transform: [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+    environment_map:
+      name: "Small Rural Road"
+      uri: "sss_dragon_environment.hdr"
+      license_uri: "sss_dragon_environment_LICENSE.txt"
+      file: "scenes/sss-dragon/gltf/sss_dragon_environment.hdr"
+      license_file: "scenes/sss-dragon/gltf/sss_dragon_environment_LICENSE.txt"
+      license: "CC0-1.0"
+      map: "scenes/sss-dragon/source/textures/small_rural_road_equiarea.exr"
+      projection: "equirectangular Radiance RGBE"
+      orientation: "glTF world: top row +Y, center column +X, three-quarter column +Z"
+      resolution: [2048, 1024]
+approximations: ["coateddiffuse_clearcoat", "subsurface_volumetric_scattering", "environment_map_equirectangular_hdr"]
+losses: ["render_sampler", "pixel_filter", "film_output", "infinite_environment_light", "exact_pbrt_subsurface_profile"]
+reference_render:
+  image: "sss_dragon_vk_50.png"
+  scene: "sss-dragon"
+  renderer: "vk_gltf_renderer"
+  renderer_commit: "a7d0747f06df832e564ff3e93078e5c06a7b6f12"
+  variant: "extended"
+  material_variant: "Scale 50"
+  resolution: [1366, 1024]
+  camera: "Camera"
+  samples_per_pixel: 384
+  samples_per_frame: 8
+  max_bounces: 50
+  environment_map: "sss_dragon_environment.hdr"
+  environment_strength: 1.0
+  shadow_transmission: false
+  aperture: 0.0
+  denoiser: "OIDN"
+  denoiser_quality: "High"
+  denoiser_guides: "Color"
+  dlss: false
+  tonemapper: "Khronos PBR Neutral"
+  exposure_multiplier: 1.0
+  auto_exposure: false
+  variants:
+    -
+      name: "Scale 50"
+      scale: 50
+      image: "sss_dragon_vk_50.png"
+    -
+      name: "Scale 10"
+      scale: 10
+      image: "sss_dragon_vk_10.png"
+    -
+      name: "Scale 250"
+      scale: 250
+      image: "sss_dragon_vk_250.png"

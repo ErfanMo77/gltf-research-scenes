@@ -1,0 +1,714 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "pbrt_to_gltf.py"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "sss-dragon",
+      "nodes": [
+        3
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "00_subsurface_00",
+      "mesh": 0,
+      "matrix": [
+        0.0,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.02,
+        0.0,
+        -0.02,
+        0.0,
+        0.0,
+        0.0,
+        0.2,
+        0.3,
+        0.78,
+        1.0
+      ]
+    },
+    {
+      "name": "01_coateddiffuse_01",
+      "mesh": 1
+    },
+    {
+      "name": "Camera",
+      "camera": 0,
+      "matrix": [
+        0.6858837272184358,
+        0.7276307687387701,
+        -0.010815596219028611,
+        0.0,
+        -0.3173658606862583,
+        0.3124658648117587,
+        0.8953457398113371,
+        0.0,
+        0.6548606135719395,
+        -0.6106705721680605,
+        0.4452404171682044,
+        0.0,
+        3.6955800000000005,
+        -3.462430000000001,
+        3.2546300000000015,
+        1.0
+      ],
+      "extras": {
+        "camera::up": [
+          -0.3173658606862583,
+          0.3124658648117587,
+          0.8953457398113371
+        ]
+      }
+    },
+    {
+      "name": "sss-dragon_root",
+      "translation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "children": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "name": "00_subsurface_00",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0
+          },
+          "indices": 1,
+          "material": 0,
+          "mode": 4,
+          "extensions": {
+            "KHR_materials_variants": {
+              "mappings": [
+                {
+                  "material": 0,
+                  "variants": [
+                    0
+                  ]
+                },
+                {
+                  "material": 2,
+                  "variants": [
+                    1
+                  ]
+                },
+                {
+                  "material": 3,
+                  "variants": [
+                    2
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "01_coateddiffuse_01",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 2,
+            "NORMAL": 3,
+            "TEXCOORD_0": 4
+          },
+          "indices": 5,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "subsurface_00",
+      "doubleSided": false,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.0
+      },
+      "extras": {
+        "pbrt": {
+          "type": "subsurface",
+          "reflectance_rgb": [
+            0.8,
+            0.8,
+            0.8
+          ],
+          "roughness_mapping": {
+            "base": {
+              "remaproughness": true,
+              "alpha": [
+                0.0,
+                0.0
+              ],
+              "gltf_roughness": 0.0
+            }
+          },
+          "Kd": {
+            "encoding": "rgb",
+            "value": [
+              0.8,
+              0.8,
+              0.8
+            ]
+          },
+          "subsurface_parameters": {
+            "scale": {
+              "type": "float",
+              "value": [
+                50
+              ]
+            },
+            "name": {
+              "type": "string",
+              "value": [
+                "Skin1"
+              ]
+            },
+            "eta": {
+              "type": "float",
+              "value": [
+                1.5
+              ]
+            }
+          }
+        }
+      },
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularFactor": 1.0
+        },
+        "KHR_materials_transmission": {
+          "transmissionFactor": 1.0
+        },
+        "KHR_materials_ior": {
+          "ior": 1.5
+        },
+        "KHR_materials_volume": {
+          "thicknessFactor": 201.74352264404297,
+          "attenuationDistance": 0.013422818791946308,
+          "attenuationColor": [
+            0.5956388181864908,
+            0.49425782421450787,
+            0.36787944117144233
+          ]
+        },
+        "KHR_materials_scatter": {
+          "scatterStrengthFactor": 1.0,
+          "scatterAnisotropy": 0.0,
+          "multiscatterColorFactor": [
+            0.6249849777668715,
+            0.38360379822552204,
+            0.23935325630009174
+          ]
+        }
+      }
+    },
+    {
+      "name": "coateddiffuse_01",
+      "doubleSided": false,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.6175347996087199,
+          0.6175347996087199,
+          0.6175347996087199,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 1.0
+      },
+      "extras": {
+        "pbrt": {
+          "type": "coateddiffuse",
+          "reflectance_rgb": [
+            0.8,
+            0.8,
+            0.8
+          ],
+          "roughness_mapping": {
+            "clearcoat": {
+              "source": {
+                "roughness": 0.2
+              },
+              "remaproughness": true,
+              "alpha": [
+                0.4472135954999579,
+                0.4472135954999579
+              ],
+              "gltf_roughness": 0.668740304976422
+            }
+          },
+          "Kd": {
+            "encoding": "rgb",
+            "value": [
+              0.8,
+              0.8,
+              0.8
+            ]
+          },
+          "coateddiffuse": {
+            "clearcoat_factor": 1.0,
+            "clearcoat_roughness": 0.668740304976422,
+            "base_color_mapping": {
+              "method": "internal_fresnel_diffuse",
+              "internal_reflectance": 0.5963457597077118,
+              "formula": "c * (1 - F) / (1 - F * c), blended with c by clearcoat_factor",
+              "color_space": "linear RGB; texture RGB decoded from and re-encoded to sRGB",
+              "gltf": "baseColorFactor",
+              "base_color_factor": [
+                0.6175347996087199,
+                0.6175347996087199,
+                0.6175347996087199
+              ],
+              "approximation": "smooth IOR 1.5 internal-reflection approximation; PBRT spectral and angular layer scattering are not exact"
+            }
+          }
+        }
+      },
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularFactor": 0.0
+        },
+        "KHR_materials_clearcoat": {
+          "clearcoatFactor": 1.0,
+          "clearcoatRoughnessFactor": 0.668740304976422
+        }
+      }
+    },
+    {
+      "name": "subsurface_00_scale_10",
+      "doubleSided": false,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.0
+      },
+      "extras": {
+        "pbrt": {
+          "type": "subsurface",
+          "reflectance_rgb": [
+            0.8,
+            0.8,
+            0.8
+          ],
+          "roughness_mapping": {
+            "base": {
+              "remaproughness": true,
+              "alpha": [
+                0.0,
+                0.0
+              ],
+              "gltf_roughness": 0.0
+            }
+          },
+          "Kd": {
+            "encoding": "rgb",
+            "value": [
+              0.8,
+              0.8,
+              0.8
+            ]
+          },
+          "subsurface_parameters": {
+            "scale": {
+              "type": "float",
+              "value": [
+                50
+              ]
+            },
+            "name": {
+              "type": "string",
+              "value": [
+                "Skin1"
+              ]
+            },
+            "eta": {
+              "type": "float",
+              "value": [
+                1.5
+              ]
+            }
+          },
+          "subsurface_scale_override": 10.0
+        }
+      },
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularFactor": 1.0
+        },
+        "KHR_materials_transmission": {
+          "transmissionFactor": 1.0
+        },
+        "KHR_materials_ior": {
+          "ior": 1.5
+        },
+        "KHR_materials_volume": {
+          "thicknessFactor": 201.74352264404297,
+          "attenuationDistance": 0.06711409395973154,
+          "attenuationColor": [
+            0.5956388181864908,
+            0.49425782421450787,
+            0.36787944117144233
+          ]
+        },
+        "KHR_materials_scatter": {
+          "scatterStrengthFactor": 1.0,
+          "scatterAnisotropy": 0.0,
+          "multiscatterColorFactor": [
+            0.6249849777668715,
+            0.38360379822552204,
+            0.23935325630009174
+          ]
+        }
+      }
+    },
+    {
+      "name": "subsurface_00_scale_250",
+      "doubleSided": false,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.0
+      },
+      "extras": {
+        "pbrt": {
+          "type": "subsurface",
+          "reflectance_rgb": [
+            0.8,
+            0.8,
+            0.8
+          ],
+          "roughness_mapping": {
+            "base": {
+              "remaproughness": true,
+              "alpha": [
+                0.0,
+                0.0
+              ],
+              "gltf_roughness": 0.0
+            }
+          },
+          "Kd": {
+            "encoding": "rgb",
+            "value": [
+              0.8,
+              0.8,
+              0.8
+            ]
+          },
+          "subsurface_parameters": {
+            "scale": {
+              "type": "float",
+              "value": [
+                50
+              ]
+            },
+            "name": {
+              "type": "string",
+              "value": [
+                "Skin1"
+              ]
+            },
+            "eta": {
+              "type": "float",
+              "value": [
+                1.5
+              ]
+            }
+          },
+          "subsurface_scale_override": 250.0
+        }
+      },
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularFactor": 1.0
+        },
+        "KHR_materials_transmission": {
+          "transmissionFactor": 1.0
+        },
+        "KHR_materials_ior": {
+          "ior": 1.5
+        },
+        "KHR_materials_volume": {
+          "thicknessFactor": 201.74352264404297,
+          "attenuationDistance": 0.0026845637583892616,
+          "attenuationColor": [
+            0.5956388181864908,
+            0.49425782421450787,
+            0.36787944117144233
+          ]
+        },
+        "KHR_materials_scatter": {
+          "scatterStrengthFactor": 1.0,
+          "scatterAnisotropy": 0.0,
+          "multiscatterColorFactor": [
+            0.6249849777668715,
+            0.38360379822552204,
+            0.23935325630009174
+          ]
+        }
+      }
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "sss_dragon.bin",
+      "byteLength": 129952652
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 43313460,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 43313460,
+      "byteLength": 86626872,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 129940332,
+      "byteLength": 3468,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 129943800,
+      "byteLength": 3468,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 129947268,
+      "byteLength": 2312,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 129949580,
+      "byteLength": 3072,
+      "target": 34963
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 3609455,
+      "type": "VEC3",
+      "min": [
+        -98.65142059326172,
+        -41.28651428222656,
+        -57.263587951660156
+      ],
+      "max": [
+        103.09210205078125,
+        49.276268005371094,
+        76.93836212158203
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5125,
+      "count": 21656718,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 289,
+      "type": "VEC3",
+      "min": [
+        -7.064858436584473,
+        -5.432724475860596,
+        -0.012071399949491024
+      ],
+      "max": [
+        5.119974613189697,
+        8.067869186401367,
+        6.847081661224365
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 289,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 289,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5123,
+      "count": 1536,
+      "type": "SCALAR"
+    }
+  ],
+  "extras": {
+    "sourceFormat": "pbrt-v4",
+    "sceneId": "sss-dragon",
+    "pbrt": {
+      "render": {
+        "sampler": "halton",
+        "samples_per_pixel": 1024,
+        "pixel_filter": "gaussian",
+        "resolution": [
+          1366,
+          1024
+        ],
+        "fov_degrees": 28.841503,
+        "film_parameters": {
+          "iso": {
+            "type": "float",
+            "value": [
+              400
+            ]
+          },
+          "filename": {
+            "type": "string",
+            "value": [
+              "dragon_50.exr"
+            ]
+          },
+          "yresolution": {
+            "type": "integer",
+            "value": [
+              1024
+            ]
+          },
+          "xresolution": {
+            "type": "integer",
+            "value": [
+              1366
+            ]
+          }
+        }
+      },
+      "light_sources": [
+        {
+          "pbrt": "infinite",
+          "gltf": "separate equirectangular HDR file",
+          "source": "textures/small_rural_road_equiarea.exr",
+          "pbrt_transform": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "environment_map": {
+            "uri": "sss_dragon_environment.hdr",
+            "license_uri": "sss_dragon_environment_LICENSE.txt",
+            "file": "scenes/sss-dragon/gltf/sss_dragon_environment.hdr",
+            "license_file": "scenes/sss-dragon/gltf/sss_dragon_environment_LICENSE.txt",
+            "license": "CC0-1.0",
+            "map": "scenes/sss-dragon/source/textures/small_rural_road_equiarea.exr",
+            "projection": "equirectangular Radiance RGBE",
+            "orientation": "glTF world: top row +Y, center column +X, three-quarter column +Z",
+            "resolution": [
+              2048,
+              1024
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "extensionsUsed": [
+    "KHR_materials_specular",
+    "KHR_materials_clearcoat",
+    "KHR_materials_transmission",
+    "KHR_materials_ior",
+    "KHR_materials_volume",
+    "KHR_materials_scatter",
+    "KHR_materials_variants"
+  ],
+  "extensionsRequired": [
+    "KHR_materials_specular",
+    "KHR_materials_clearcoat",
+    "KHR_materials_transmission",
+    "KHR_materials_ior",
+    "KHR_materials_volume",
+    "KHR_materials_scatter"
+  ],
+  "extensions": {
+    "KHR_materials_variants": {
+      "variants": [
+        {
+          "name": "Scale 50"
+        },
+        {
+          "name": "Scale 10"
+        },
+        {
+          "name": "Scale 250"
+        }
+      ]
+    }
+  },
+  "cameras": [
+    {
+      "name": "Camera",
+      "type": "perspective",
+      "perspective": {
+        "yfov": 0.5033791885738221,
+        "znear": 0.01,
+        "zfar": 100.0,
+        "aspectRatio": 1.333984375
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+sss_dragon_environment.hdr
+
+Environment map: "Small Rural Road" by Andreas Mischok
+https://polyhaven.com/a/small_rural_road
+
+License: CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+
+PBRT-v4 equal-area version. The SSS Dragon checkout has an identical source EXR.
+
+Changes: resampled from the PBRT-v4 equal-area map scenes/sss-dragon/source/textures/small_rural_road_equiarea.exr to an equirectangular Radiance HDR in the glTF world orientation (top row +Y, center column +X, three-quarter column +Z), following the scene's PBRT light transform.

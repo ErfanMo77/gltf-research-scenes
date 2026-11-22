@@ -22,7 +22,7 @@ REFERENCE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
 ENVIRONMENT_FIELDS = re.compile(r'^\s+(uri|license_uri|file|license_file): "(.+)"$')
 REFERENCE_RENDER_IMAGE = re.compile(r'(?m)^reference_render:\n(?:[ \t].*\n)*?  image: "([^"]+)"$')
 REFERENCE_RENDER_SECTION = re.compile(r"(?m)^reference_render:\n(?:[ \t].*\n|\n)*")
-# The image field of each reference_render.frames entry.
+# Image fields in the reference_render.frames and reference_render.variants lists.
 FRAME_RENDER_IMAGE = re.compile(r'(?m)^ {6}image: "([^"]+)"$')
 
 
@@ -52,7 +52,7 @@ def reference_render(report: Path, required: bool = True) -> Path | None:
 
 
 def frame_renders(report: Path) -> list[Path]:
-    """Renders of every glTF scene listed under reference_render.frames, in order."""
+    """Additional frame and material variant renders listed in the report, in order."""
     section = REFERENCE_RENDER_SECTION.search(report.read_text(encoding="utf-8").rstrip() + "\n")
     images = [report.parent / name for name in FRAME_RENDER_IMAGE.findall(section.group())] if section else []
     for image in images:
